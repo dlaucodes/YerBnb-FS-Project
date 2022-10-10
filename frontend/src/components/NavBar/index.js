@@ -20,18 +20,17 @@ function NavBar() {
 
   return (
         <header className="site-header">
-            <ul>
-                <li className="nav-li">
+           
+                <div className="left">
                     <NavLink exact to="/" className="nav-title">
                         Home
                     </NavLink>
-                    <div className="session-links">
+                </div>
+                <div className="right">
                         {sessionLinks}
-        
-                    </div>
-                </li>
+                </div>
       
-            </ul>
+            
       </header>
   );
 }
