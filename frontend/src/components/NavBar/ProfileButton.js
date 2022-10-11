@@ -8,6 +8,7 @@ import LoginForm from '../LoginFormModal';
 function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -30,7 +31,7 @@ function ProfileButton() {
     e.preventDefault();
     dispatch(sessionActions.logoutUser());
   };
-
+  console.log()
 
 
 return (
@@ -40,6 +41,7 @@ return (
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
+          {/* <li><button onClick={setShowModal(true)}>test</button></li> */}
           <li><SignUpFormModal/></li>
           <li><LoginForm/></li>
           <li>
