@@ -15,17 +15,17 @@ function ProfileButton() {
     setShowMenu(true);
   };
 
-  useEffect(() => {
-    if (!showMenu) return;
+  // useEffect(() => {
+  //   if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
+  //   const closeMenu = () => {
+  //     setShowMenu(false);
+  //   };
 
-    document.addEventListener("click", closeMenu);
+  // //   document.addEventListener("click", closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+  // //   return () => document.removeEventListener("click", closeMenu);
+  // // }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -36,14 +36,14 @@ function ProfileButton() {
 
 return (
     <div className='profile-button'>
-      <button onClick={openMenu} className='profile-icon'>
+      <button onClick={openMenu} className='profile-icon'>profile
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
           {/* <li><button onClick={setShowModal(true)}>test</button></li> */}
-          <li><SignUpFormModal/></li>
-          <li><LoginForm/></li>
+          <div><SignUpFormModal/></div>
+          <div><LoginForm/></div>
           <li>
             <button onClick={logout}  className="button">Log Out</button>
           </li>
