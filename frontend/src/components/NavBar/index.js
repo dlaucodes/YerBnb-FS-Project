@@ -17,6 +17,7 @@ function NavBar() {
       <>
         <SignUpFormModal/>
         <LoginForm/>
+        <ProfileButton/>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
@@ -24,11 +25,13 @@ function NavBar() {
 
   return (
         <header className="site-header">
-           
                 <div className="left">
                     <NavLink exact to="/" className="nav-title">
                         Home
                     </NavLink>
+                <div>
+            
+                </div>
                 </div>
                 <div className="right">
                         {sessionLinks}

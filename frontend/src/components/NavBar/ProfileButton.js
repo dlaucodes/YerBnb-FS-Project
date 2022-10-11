@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import SignUpFormModal from '../SignUpFormModal';
+import LoginForm from '../LoginFormModal';
 
-function ProfileButton({ user }) {
+
+function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -28,20 +31,23 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logoutUser());
   };
 
-  return (
-    <>
-      <button onClick={openMenu}>
+
+
+return (
+    <div className='profile-button'>
+      <button onClick={openMenu} className='profile-icon'>
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
+          <li><SignUpFormModal/></li>
+          <li><LoginForm/></li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button onClick={logout}  className="button">Log Out</button>
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 
