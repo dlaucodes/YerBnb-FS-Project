@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 import "./SignupFormPage.css";
 
 
-function SignupFormPage() {
+function SignupForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -16,13 +16,13 @@ function SignupFormPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ username, password })).catch(
+      return dispatch(sessionActions.signup({ username, password, firstname, lastname })).catch(
         async (res) => {
           let data;
           try {
@@ -50,7 +50,7 @@ function SignupFormPage() {
         ))}
       </ul>
       <label>
-        username
+        Username
         <input
           type="text"
           value={username}
@@ -99,4 +99,4 @@ function SignupFormPage() {
   );
 }
 
-export default SignupFormPage;
+export default SignupForm;

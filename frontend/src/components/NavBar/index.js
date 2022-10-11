@@ -1,8 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import ProfileButton from "./ProfileButton";
-import "./NavBar.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import SignUpFormModal from '../SignUpFormModal';
+import ProfileButton from './ProfileButton';
+import './NavBar.css';
 
 function NavBar() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -13,6 +14,7 @@ function NavBar() {
   } else {
     sessionLinks = (
       <>
+        <SignUpFormModal/>
         <NavLink to="/signup">Sign Up</NavLink>
       </>
     );
