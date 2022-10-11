@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import * as sessionActions from "../../store/session";
 
-const LoginFormPage = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -58,4 +58,4 @@ const LoginFormPage = () => {
   );
 };
 
-export default LoginFormPage;
+export default LoginForm;

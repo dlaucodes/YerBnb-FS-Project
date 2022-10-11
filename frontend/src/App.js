@@ -1,6 +1,6 @@
-import LoginFormPage from "./components/LoginFormPage";
+import LoginFormPage from "./components/LoginFormModal/LoginForm";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignUpFormModal/SignUpForm";
+import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -10,12 +10,12 @@ function App() {
       <Switch>
         {/* <Route exact path="/">
         </Route> */}
-        <Route path="/login">
-          <LoginFormPage />
-        </Route>
-        <Route path="/signup">
+        {/* <Route path="/login">
           <SignupFormPage />
-        </Route>
+        </Route> */}
+        {/* <Route path="/signup">
+          <SignupForm />
+        </Route> */}
       </Switch>
     </>
   );
