@@ -1,4 +1,4 @@
-import LoginFormPage from "./components/LoginFormModal/LoginForm";
+import LoginFormPage from "./components/LoginFormModal/LoginFormModal";
 import { Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";

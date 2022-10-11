@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 import "./SignupFormPage.css";
 
 
-function SignupForm() {
+function SignUpForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -43,7 +43,7 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="signup" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -99,4 +99,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm;
+export default SignUpForm;

@@ -35,7 +35,7 @@ const LoginForm = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="login" onSubmit={handleSubmit}>
       {errors.map((error) => error)}
       <label htmlFor="username">Username:</label>
       <input
