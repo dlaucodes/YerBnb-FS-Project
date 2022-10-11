@@ -15,17 +15,19 @@ function ProfileButton() {
     setShowMenu(true);
   };
 
+    const closeMenu = () => {
+      setShowMenu(false);
+    };
+
+    // document.addEventListener("click", closeMenu);
+
   // useEffect(() => {
   //   if (!showMenu) return;
 
-  //   const closeMenu = () => {
-  //     setShowMenu(false);
-  //   };
+  const num =0
 
-  // //   document.addEventListener("click", closeMenu);
-
-  // //   return () => document.removeEventListener("click", closeMenu);
-  // // }, [showMenu]);
+  //   return () => document.removeEventListener("click", closeMenu);
+  // }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -42,7 +44,7 @@ return (
       {showMenu && (
         <ul className="profile-dropdown">
           {/* <li><button onClick={setShowModal(true)}>test</button></li> */}
-          <div><SignUpFormModal/></div>
+          <div><SignUpFormModal num={num} closeMenu={closeMenu}/></div>
           <div><LoginForm/></div>
           <li>
             <button onClick={logout}  className="button">Log Out</button>
