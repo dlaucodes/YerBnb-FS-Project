@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import SignUpForm from './SignUpForm';
 
-function SignUpFormModal({setShowModal}) {
+function SignUpFormModal({setShowSignUpModal}) {
   return (
-    <Modal onClose={() => setShowModal(false)}>
+    <Modal onClose={() => setShowSignUpModal(false)}>
       <SignUpForm/>
     </Modal>
   );
 }
-
-
 
 export default SignUpFormModal;

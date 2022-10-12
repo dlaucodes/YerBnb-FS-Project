@@ -24,18 +24,16 @@ function NavBar() {
   }
 
   return (
-        <header className="site-header">
-                <div className="left">
-                    <NavLink exact to="/" className="nav-title">
-                        Home
-                    </NavLink>
-                <div>
-            
-                </div>
-                </div>
-                <div className="right">
-                        {sessionLinks}
-                </div>
+    <header className="site-header">
+      <div className="left">
+        <NavLink exact to="/" className="nav-title">
+          YerBnB
+        </NavLink>
+      </div>
+
+      <div className="right">
+        {sessionLinks}
+      </div>
       
             
       </header>

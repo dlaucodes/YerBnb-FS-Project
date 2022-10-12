@@ -83,9 +83,9 @@ const initialState = {
 const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case REMOVE_USER:
-      return { ...state, user: action.payload };
+      return { ...state, user: null }
     case RECEIVE_USER:
-      return { ...state, user: null };
+       return { ...state, user: action.payload };
     default:
       return state;
   }
