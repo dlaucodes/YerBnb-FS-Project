@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <h1>Banner</h1>
       <Switch>
         {/* <Route exact path="/">
         </Route> */}
@@ -19,6 +20,8 @@ function App() {
       </Switch>
     </>
   );
+
+
 }
 
 export default App;

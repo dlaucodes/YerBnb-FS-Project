@@ -36,6 +36,7 @@ return (
     <div className='profile-button'>
       <button onClick={profileButton()}className='profile-icon'>profile
         <i className="fa-solid fa-user-circle" />
+        
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
