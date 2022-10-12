@@ -3,7 +3,7 @@ header.site-header {
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
-    background-color: red;
+    background-color: rgb(249, 16, 121);
 }
 
 header.left {
@@ -14,6 +14,7 @@ header.left {
 header.right {
     display: flex;
     align-items: flex-end;
+    margin-right: 100px;
 }
 
 .profile-button {
@@ -28,17 +29,29 @@ header.right {
 .profile-dropdown {
     position: absolute;
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5px;
-    top: 100%;
+    top: 90%;
     right: 0;
     display: flex;
     flex-direction: column;
     background: white;
-    z-index: 1;
+    height: 100px;
+    width: 150px;
+    cursor: pointer;
+
+    /* z-index: 1; */
 }
 
-.profile-dropdown li {
-    text-align: right;
+.profile-dropdown {
+    text-align: center;
     margin: 5px;
+    cursor: pointer;
 }
+
+/* #login {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+} */

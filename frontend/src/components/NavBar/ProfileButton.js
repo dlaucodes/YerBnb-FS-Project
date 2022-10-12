@@ -20,14 +20,13 @@ function ProfileButton() {
     };
 
     // document.addEventListener("click", closeMenu);
-
-  // useEffect(() => {
-  //   if (!showMenu) return;
-
-  const num =0
-
-  //   return () => document.removeEventListener("click", closeMenu);
-  // }, [showMenu]);
+    
+    // useEffect(() => {
+    //   if (showMenu) return;
+      
+    //   return () => document.removeEventListener("click", closeMenu);
+    // }, [showMenu]);
+    
 
   const logout = (e) => {
     e.preventDefault();
@@ -44,13 +43,18 @@ return (
       {showMenu && (
         <ul className="profile-dropdown">
           {/* <li><button onClick={setShowModal(true)}>test</button></li> */}
-          <div><SignUpFormModal num={num} closeMenu={closeMenu}/></div>
-          <div><LoginForm/></div>
-          <li>
+          
+        <button onClick={() => {
+          setShowModal(true)
+          closeMenu()
+        }
+        }>Sign Up</button>
             <button onClick={logout}  className="button">Log Out</button>
-          </li>
+        
         </ul>
       )}
+      {showModal && (<SignUpFormModal setShowModal={setShowModal}/>)}
+      <LoginForm/>
     </div>
   );
 }

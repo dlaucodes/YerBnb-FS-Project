@@ -2,23 +2,11 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import SignUpForm from './SignUpForm';
 
-function SignUpFormModal({num, closeMenu}) {
-  const [showModal, setShowModal] = useState(false);
-  debugger
-
+function SignUpFormModal({setShowModal}) {
   return (
-    <>
-      <button onClick={() => {
-          setShowModal(true)
-          closeMenu()
-        }
-        }>Sign Up</button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <SignUpForm/>
-        </Modal>
-      )}
-    </>
+    <Modal onClose={() => setShowModal(false)}>
+      <SignUpForm/>
+    </Modal>
   );
 }
 

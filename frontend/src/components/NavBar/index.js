@@ -15,8 +15,8 @@ function NavBar() {
   } else {
     sessionLinks = (
       <>
-        <SignUpFormModal/>
-        <LoginForm/>
+        {/* <SignUpFormModal/>
+        <LoginForm/> */}
         <ProfileButton/>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
