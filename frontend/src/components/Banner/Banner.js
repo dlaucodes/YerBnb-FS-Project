@@ -1,11 +1,16 @@
 import React from 'react'
-import './banner.css'
+import './Banner.css'
 
-function banner(){
+
+function Banner(){
     return(
-        <div>
-
-            
+        <div className="banner">
+            <div className="banner_info">
+               
+            </div>
         </div>
     )
 }
+
+
+export default Banner

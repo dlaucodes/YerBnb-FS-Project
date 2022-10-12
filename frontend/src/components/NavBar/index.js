@@ -34,11 +34,10 @@ function NavBar() {
 
       <div className="right">
         {sessionLinks}
-        
       </div>
       
             
-      </header>
+    </header>
   );
 }
 

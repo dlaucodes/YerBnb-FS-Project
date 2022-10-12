@@ -2,12 +2,13 @@ import LoginFormPage from "./components/LoginFormModal/LoginFormModal";
 import { Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   return (
     <>
       <NavBar />
-      <h1>Banner</h1>
+      <Banner/>
       <Switch>
         {/* <Route exact path="/">
         </Route> */}

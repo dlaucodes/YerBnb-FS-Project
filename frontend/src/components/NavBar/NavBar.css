@@ -52,7 +52,7 @@ header.right {
     width: 150px;
     cursor: pointer;
 
-    /* z-index: 1; */
+    z-index: 999;
 }
 
 .profile-dropdown {
