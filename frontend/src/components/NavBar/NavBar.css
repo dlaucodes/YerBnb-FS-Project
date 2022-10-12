@@ -2,18 +2,30 @@ header.site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 0;
-    background-color: rgb(249, 16, 121);
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    width: 100;
+    height: 100px
 }
 
-header.left {
+/* header.home_icon {
+    
+
+} */
+
+#home-icon{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    object-fit: contain;
+    margin-left: 20px;
+    height: 100px;
+    
 }
 
 header.right {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     margin-right: 100px;
 }
 

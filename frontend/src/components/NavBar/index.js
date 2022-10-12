@@ -25,9 +25,8 @@ function NavBar() {
 
   return (
     <header className="site-header">
-      <div className="left">
-        <NavLink exact to="/" className="nav-title">
-          YerBnB
+      <div className="home_icon">
+        <NavLink exact to="/" className="nav-title"><img id="home-icon" src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png" alt=""/>
         </NavLink>
       </div>
 
