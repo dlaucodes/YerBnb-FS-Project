@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
 import ProfileButton from './ProfileButton';
-import SearchIcon from "@material-ui/icons/Search";
+
 import './NavBar.css';
 
 function NavBar() {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal } from "../../context/modal";
+import { Modal } from "../../context/Modal";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupFormPage.css";
@@ -99,8 +99,8 @@ function SignUpForm() {
       <button type="submit">Sign Up</button>
   
     <div class="modal-content animate-bottom"> 
-    </div>
-
+    
+          </div>
     </form>
     </div>
   );

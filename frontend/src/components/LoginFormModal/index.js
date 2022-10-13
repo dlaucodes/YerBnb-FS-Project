@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from '../../context/modal';
+import { Modal } from '../../context/Modal';
 import LoginForm from './LoginFormModal';
 
 function LoginFormModal({setShowLoginModal}) {
