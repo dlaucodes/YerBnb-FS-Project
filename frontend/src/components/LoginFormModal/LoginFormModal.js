@@ -4,12 +4,15 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import * as sessionActions from "../../store/session";
 
+
+
 const LoginForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -61,7 +64,7 @@ const LoginForm = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <br />
-      {/* <button type="submit" onClick={setShowLogin}>Login</button> */}
+      <button type="submit" >Login</button>
       <button type="submit" onClick={handleDemo}>Demo User</button>
     </form>
     </div>
