@@ -41,7 +41,7 @@ function SignUpForm() {
       "Confirm Password field must be the same as the Password field",
     ]);
   };
-  console.log(errors)
+
 
   return (
     <div class="modal-content animate-bottom"> 
