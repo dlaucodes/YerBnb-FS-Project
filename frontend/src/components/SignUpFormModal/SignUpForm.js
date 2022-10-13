@@ -51,6 +51,9 @@ function SignUpForm() {
           <li key={error}>{error}</li>
         ))}
       </ul>
+      <div>
+        <h2>Welcome to yerbnb</h2>
+      </div>
 
        <div className="input-field">
             <input
@@ -94,7 +97,7 @@ function SignUpForm() {
         </div>
           <div className="input-field">
             <input
-              className="last-name-field"
+              className="lastname-field"
               placeholder="Last name"
               type="text"
               value={lastName}

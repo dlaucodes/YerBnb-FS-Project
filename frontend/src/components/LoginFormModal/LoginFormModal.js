@@ -60,7 +60,7 @@ const LoginForm = () => {
         </div>
         <div className="input-field">
             <input
-              className="password-field"
+              className="password-field1"
               placeholder="Password"
               type="password"
               value={password}

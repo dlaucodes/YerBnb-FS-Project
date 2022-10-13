@@ -1,18 +1,44 @@
 #login {
     background-color: rgb(255, 255, 255);
-    border-radius: 10%;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 250px;
+    height: 682px;
+    width: 574px;
 
+}
+
+.password-field1 {
+    font-size: 15px;
+    border-radius: 0 0 8px 8px;
+    color: rgb(27, 27, 27);
+    width: 500px;
+    height: 45px;
+    border: 0.5px solid #999999;
+    font-family: ;
+    font-weight: 400;
+    padding: 10px 0px 0px 13px;
+   
+}
+
+
+.username-field {
+    font-size: 15px;
+    border-radius: 8px 8px 0px 0px;
+    color: rgb(27, 27, 27);
+    width: 500px;
+    height: 45px;
+    border: 0.5px solid #999999;
+    font-family: ;
+    font-weight: 400;
+    padding: 10px 0px 0px 13px;
 }
 
 .animate-bottom {
     position: relative;
-    animation: animatebottom 0.7s;
+    animation: animatebottom 0.4s;
 }
 
 @keyframes animatebottom {
