@@ -48,21 +48,26 @@ const LoginForm = () => {
     <div class="modal-content animate-bottom"> 
     <form id="login" onSubmit={handleSubmit}>
       {errors.map((error) => error)}
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        name="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div className="input-field">
+            <input
+              className="username-field"
+              placeholder="Username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+        </div>
+        <div className="input-field">
+            <input
+              className="password-field"
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+        </div>
       <br />
       <button type="submit" >Login</button>
       <button type="submit" onClick={handleDemo}>Demo User</button>
