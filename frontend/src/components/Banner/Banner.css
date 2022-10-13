@@ -1,6 +1,7 @@
 .banner {
-    background: url("https://www.tosomeplacenew.com/wp-content/uploads/2021/02/aspen-condo-for-two-with-hot-tub.png") center center; 
-    height: 75vh;
+    background: url("https://images1.apartments.com/i2/iDj-FW5pnhvyFAt-fgFmSAHWSuT5YUODH8-QN58CnjI/116/930-s-mill-st-aspen-co-primary-photo.jpg") center center; 
+    padding-bottom: px;
+    height: 70vh;
     position: relative;
     z-index: -1;
 }
