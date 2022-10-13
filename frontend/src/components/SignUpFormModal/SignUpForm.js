@@ -45,14 +45,14 @@ function SignUpForm() {
 
   return (
     <div class="modal-content animate-bottom"> 
-    <form id="signup" onSubmit={handleSubmit}>
+    <form className="signup" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <div>
-        <h2>Welcome to yerbnb</h2>
+      <div className="welcome-div">
+        <h2 id="welcome-text">Welcome to yerbnb</h2>
       </div>
 
        <div className="input-field">
@@ -106,8 +106,8 @@ function SignUpForm() {
             />
         </div>
 
-      
-      <button type="submit">Sign Up</button>
+      <br />
+      <button id="signup-button" type="submit">Sign Up</button>
   
     <div class="modal-content animate-bottom"> 
     
