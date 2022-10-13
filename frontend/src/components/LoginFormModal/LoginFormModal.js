@@ -42,6 +42,7 @@ const LoginForm = () => {
   }
   
   return (
+    <div class="modal-content animate-bottom"> 
     <form id="login" onSubmit={handleSubmit}>
       {errors.map((error) => error)}
       <label htmlFor="username">Username:</label>
@@ -63,7 +64,7 @@ const LoginForm = () => {
       <button type="submit">Login</button>
       <button type="submit" onClick={handleDemo}>Demo User</button>
     </form>
-    
+    </div>
   );
 };
 

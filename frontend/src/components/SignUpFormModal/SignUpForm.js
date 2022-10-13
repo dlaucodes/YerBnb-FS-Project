@@ -44,6 +44,7 @@ function SignUpForm() {
   console.log(errors)
 
   return (
+    <div class="modal-content animate-bottom"> 
     <form id="signup" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => (
@@ -96,7 +97,12 @@ function SignUpForm() {
         />
       </label>
       <button type="submit">Sign Up</button>
+  
+    <div class="modal-content animate-bottom"> 
+    </div>
+
     </form>
+    </div>
   );
 }
 

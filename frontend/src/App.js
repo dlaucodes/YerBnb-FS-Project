@@ -4,9 +4,12 @@ import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner/Banner";
 
+
+
 function App() {
   return (
     <>
+
       <NavBar />
       <Banner/>
       <Switch>

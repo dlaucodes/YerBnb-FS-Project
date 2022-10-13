@@ -10,6 +10,23 @@
 
 }
 
+.animate-bottom {
+    position: relative;
+    animation: animatebottom 1.1s;
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
 /* .overlay{
     background-color: yellow;
     width: 100%;
