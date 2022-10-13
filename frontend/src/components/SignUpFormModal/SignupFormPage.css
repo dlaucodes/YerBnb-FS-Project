@@ -12,12 +12,11 @@
 
 .animate-bottom {
     position: relative;
-    animation: animatebottom 1.1s;
+    animation: animatebottom 0.7s;
 }
-
 @keyframes animatebottom {
     from {
-        bottom: -300px;
+        bottom: -200px;
         opacity: 0;
     }
 

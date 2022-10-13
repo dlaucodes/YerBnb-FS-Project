@@ -27,7 +27,6 @@ const storeCurrentUser = (user) => {
 };
 
 export const loginUser = (user) => async (dispatch) => {
-  debugger
   const {username, password} = user;
   const res = await csrfFetch("/api/session", {
     method: "POST",
