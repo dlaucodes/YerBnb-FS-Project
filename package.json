@@ -2,5 +2,30 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3"
+  },
+  "name": "yerbnb1",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlaucodes/YerBnb-FS-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlaucodes/YerBnb-FS-Project/issues"
+  },
+  "homepage": "https://github.com/dlaucodes/YerBnb-FS-Project#readme",
+  "engines": {
+    "node": "16.x"
   }
 }
