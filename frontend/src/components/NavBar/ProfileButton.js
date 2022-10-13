@@ -15,10 +15,19 @@ function ProfileButton() {
     if (showMenu) return;
     setShowMenu(true);
   };
-
-    const closeMenu = () => {
-      setShowMenu(false);
+  const closeMenu = () => {
+  setShowMenu(false);
     };
+
+  useEffect(() => {
+    if (!showMenu) return;
+  
+  document.addEventListener('click', closeMenu);
+  
+  return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+
 
   const logout = () => {
     // e.preventDefault();
@@ -36,7 +45,7 @@ return (
     <div className='profile-button'>
       <button onClick={profileButton()}className='profile-icon'>profile
         <i className="fa-solid fa-user-circle" />
-        
+
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
