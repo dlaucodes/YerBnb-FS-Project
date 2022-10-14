@@ -5,7 +5,7 @@ import SignUpForm from './SignUpForm';
 function SignUpFormModal({setShowSignUpModal}) {
   return (
     <Modal onClose={() => setShowSignUpModal(false)}>
-      <SignUpForm/>
+      <SignUpForm setShowSignUpModal={setShowSignUpModal}/>
     </Modal>
   );
 }

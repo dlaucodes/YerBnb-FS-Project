@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 
 
 
-const LoginForm = () => {
+const LoginForm = ({setShowLoginModal}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -18,7 +18,7 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return dispatch(sessionActions.loginUser({username, password})).catch(
+    return dispatch(sessionActions.loginUser({username, password})).then(()=>setShowLoginModal(false)).catch(
       async (res) => {
         let data;
         try {

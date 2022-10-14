@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 import "./SignupFormPage.css";
 
 
-function SignUpForm() {
+function SignUpForm({setShowSignUpModal}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -22,7 +22,9 @@ function SignUpForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ username, password, firstName, lastName })).catch(
+      return dispatch(sessionActions.signup({ username, password, firstName, lastName })).then(() => {
+        setShowSignUpModal(false);
+      }).catch(
         async (res) => {
           let data;
           try {
@@ -44,7 +46,7 @@ function SignUpForm() {
 
 
   return (
-    <div class="modal-content animate-bottom"> 
+    <div className="modal-content animate-bottom"> 
     <form className="signup" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error) => (

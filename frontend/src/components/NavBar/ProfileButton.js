@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
@@ -11,20 +11,24 @@ function ProfileButton() {
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
+  const currentUser = useSelector((state) => {
+    return state.session.user;
+  });
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
   const closeMenu = () => {
-  setShowMenu(false);
-    };
+    setShowMenu(false);
+  };
 
   useEffect(() => {
     if (!showMenu) return;
   
-  document.addEventListener('click', closeMenu);
+    document.addEventListener('click', closeMenu);
   
-  return () => document.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
 
@@ -49,25 +53,28 @@ return (
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          
-        <button onClick={() => {
-          setShowSignUpModal(true)
-          closeMenu()
+        {currentUser ? (
+            <button onClick={()=>{
+              logout()
+              closeMenu()
+            }} 
+            className="button">Log Out</button>
+          ) : (
+            <>
+              <button onClick={() => {
+                setShowSignUpModal(true)
+                closeMenu()
+              }
+              }>Sign Up</button>
+  
+              <button onClick={() => {
+                setShowLoginModal(true)
+                closeMenu()
+              }
+              }>Login</button>
+            </>  
+          )
         }
-        }>Sign Up</button>
-
-         <button onClick={() => {
-           setShowLoginModal(true)
-           closeMenu()
-         }
-         }>Login</button>
-
-        <button onClick={()=>{
-          logout()
-          closeMenu()
-        }} 
-        className="button">Log Out</button>
-        
         </ul>
       )}
       {showSignUpModal && (<SignUpFormModal setShowSignUpModal={setShowSignUpModal}/>)}
