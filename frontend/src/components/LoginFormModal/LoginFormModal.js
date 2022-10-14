@@ -37,8 +37,8 @@ const LoginForm = () => {
     );
   };
 
-  const handleDemo = (e)=>{
-    e.preventDefault();
+  const handleDemo = ()=>{
+    // e.preventDefault();
     setUsername("Demo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "Demo", password: "password"}))
