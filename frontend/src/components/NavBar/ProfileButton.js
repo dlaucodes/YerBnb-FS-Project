@@ -5,7 +5,7 @@ import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
 
 
-function ProfileButton() {
+function ProfileButton(props) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);

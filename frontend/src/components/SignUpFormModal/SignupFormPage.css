@@ -1,3 +1,5 @@
+
+
 .signup {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -9,10 +11,6 @@
     width: 574px;
 
 }
-
-
-
-
 
 .welcome-div{
     display: flex;
@@ -42,6 +40,11 @@
     font-weight: 200;
     padding: 10px 0px 0px 13px;
 
+}
+
+.password-field.active {
+    border: 1px solid;
+    border-color: red;
 }
 
 

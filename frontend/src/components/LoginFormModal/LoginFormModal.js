@@ -48,6 +48,10 @@ const LoginForm = ({setShowLoginModal}) => {
     <div class="modal-content animate-bottom"> 
     <form id="login" onSubmit={handleSubmit}>
       {errors.map((error) => error)}
+          <hr id="divider"/>
+           <div className="welcome-div">
+        <h2 id="welcome-text">Welcome to yerbnb</h2>
+      </div>
       <div className="input-field">
             <input
               className="username-field"
