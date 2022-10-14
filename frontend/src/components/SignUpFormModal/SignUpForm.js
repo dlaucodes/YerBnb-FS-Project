@@ -109,11 +109,8 @@ function SignUpForm() {
       <br />
       <button id="signup-button" type="submit">Sign Up</button>
           
-    <div class="modal-content animate-bottom"> 
-    
-    
-          </div>
-    </form>
+      
+      </form>
     </div>
   );
 }

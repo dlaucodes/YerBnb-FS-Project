@@ -69,8 +69,12 @@ const LoginForm = () => {
             />
         </div>
       <br />
-      <button type="submit" >Login</button>
-      <button type="submit" onClick={handleDemo}>Demo User</button>
+        <div>
+          <button type="submit" id="login-button">Login</button>
+        </div>
+        <div>
+          <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
+        </div>
     </form>
     </div>
   );

@@ -37,6 +37,34 @@
     padding: 10px 0px 0px 13px;
 }
 
+#login-button {
+    background-color: #e0024c;
+    font-size: 15px;
+    border-radius: 11px 11px 11px 11px;
+    color: rgb(255, 255, 255);
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #ffffff;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+#demo-button {
+    background-color: #e0024c;
+    font-size: 15px;
+    border-radius: 11px 11px 11px 11px;
+    color: rgb(255, 255, 255);
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #ffffff;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
 .animate-bottom {
     position: relative;
     animation: animatebottom 0.4s;
