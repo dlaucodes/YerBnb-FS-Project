@@ -4,6 +4,8 @@ import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner/Banner";
 
+import ListingIndex from "./components/ListForm";
+
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
 
       <NavBar />
       <Banner/>
+      {/* <ListingIndex /> */}
       <Switch>
         {/* <Route exact path="/">
         </Route> */}

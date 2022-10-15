@@ -52,15 +52,18 @@ export const logoutUser = () => async (dispatch) => {
 };
 
 export const signup = (user) => async (dispatch) => {
-  const { username, password, firstName, lastName } = user;
+  // const { username, password, firstName, lastName } = user;
   const res = await csrfFetch("/api/users", {
     method: "POST",
-    body: JSON.stringify({
-      username,
-      password,
-      firstName,
-      lastName
-    }),
+    body: JSON.stringify(user)
+      // {
+      
+      // username,
+      // password,
+      // firstName,
+      // lastName
+    // }
+    // ), this is extra code since user is already defining these properties and passing it in
   });
   const data = await res.json();
   storeCurrentUser(data.user);
