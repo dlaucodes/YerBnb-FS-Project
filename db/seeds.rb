@@ -6,3 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 demo_user = User.create(username: "Demo", password: "password", first_name: "Demo", last_name: "User")
+
+demo_listing = Listing.create!(price: "2", title: "demotitle", description: "demodesc", location: "demoloc", owner_id: "1")
+
+puts ('done')
