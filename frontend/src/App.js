@@ -3,8 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner/Banner";
+import ListingIndex from "./components/ListForm"
+import ListForm from './components/ListForm/ListForm'
 
-import ListingIndex from "./components/ListForm";
 
 
 
@@ -14,7 +15,8 @@ function App() {
 
       <NavBar />
       <Banner/>
-      {/* <ListingIndex /> */}
+      <ListForm />
+      <ListingIndex />
       <Switch>
         {/* <Route exact path="/">
         </Route> */}

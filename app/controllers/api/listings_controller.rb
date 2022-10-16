@@ -1,4 +1,7 @@
 class Api::ListingsController < ActionController::API
+
+    wrap_parameters include: Listing.attribute_names + [:photo]
+
     def index
         @listings = Listing.all
     end
@@ -12,5 +15,20 @@ class Api::ListingsController < ActionController::API
                 render json: { user: nil }
             end
     end
-    
+
+    def create
+        @listing = Listing.new(listing_params)
+        @listing.photo.attach(params[:listing][:photo])
+
+        if @listing.save
+            render json: {message: "You did it!"}
+        else 
+            debugger
+            render json: @listing.errors.full_messages, status: 422
+        end
+    end
+
+    def listing_params
+        params.require(:listing).permit(:price, :title, :description, :location, :photo, :owner_id)
+    end
 end
