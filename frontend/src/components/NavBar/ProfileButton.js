@@ -49,7 +49,6 @@ return (
     <div className='profile-button'>
       <button id="profile-button" onClick={profileButton()}className='profile-icon'>profile
         <i className="fa-solid fa-user-circle" />
-
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
@@ -61,19 +60,23 @@ return (
             }}>Log Out</button>
           ) : (
             <>
-              <button id="drop-access"
+              <div className="signup-button">
+              <button id="drop-signup"
                  onClick={() => {
                   setShowSignUpModal(true)
                   closeMenu()
               }
               }>Sign Up</button>
+              </div>
               <br />
+              <div className="login-button">
               <button id="drop-login" 
                 onClick={() => {
                 setShowLoginModal(true)
                 closeMenu()
               }
               }>Login</button>
+              </div>
             </>  
           )
         }

@@ -63,12 +63,21 @@ header.right {
     z-index: 999;
 }
 
+.signup-button{
+    display: flex;
+}
 
-#drop-access{
+#drop-signup{
     background-color: transparent;
     border: 0px;
     cursor: pointer;
     padding-right: 90px;
+
+}
+
+.login-button{
+    display: flex;
+    height: 10px;
 
 }
 
@@ -80,6 +89,17 @@ header.right {
     padding-bottom: 70px;
 
 }
+
+#drop-signup:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+#drop-login:hover{
+    background-color: rgb(228, 228, 228)
+    ;
+    display: flex;
+}
+
 
 /* #login {
     cursor: pointer;
