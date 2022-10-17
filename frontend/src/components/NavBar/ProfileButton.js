@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
+import ListFormModal from "../ListForm/indexListFormModal";
 
 
 function ProfileButton(props) {
@@ -10,6 +11,7 @@ function ProfileButton(props) {
   const [showMenu, setShowMenu] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showListFormModal, setShowListFormModal] = useState(false);
 
   const currentUser = useSelector((state) => {
     return state.session.user;
@@ -53,11 +55,20 @@ return (
       {showMenu && (
         <ul className="profile-dropdown">
         {currentUser ? (
+            <>
             <button id="drop-logout" 
               onClick={()=>{
               logout()
               closeMenu()
             }}>Log Out</button>
+             <button id="drop-logout" 
+              onClick={()=>{
+              setShowListFormModal(true)
+              closeMenu()
+            }}>Host</button>
+
+            </>
+            
           ) : (
             <>
               <div className="signup-button">
@@ -82,7 +93,12 @@ return (
         </ul>
       )}
       {showSignUpModal && (<SignUpFormModal setShowSignUpModal={setShowSignUpModal}/>)}
+
       {showLoginModal && (<LoginForm setShowLoginModal = {setShowLoginModal}/>)}
+
+      {showListFormModal && (<ListFormModal
+      setShowListFormModal = {setShowListFormModal}/>
+      )}
     </div>
   );
 }

@@ -1,15 +1,20 @@
+import "./listform.css"
 import {useState} from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Redirect } from "react-router-dom";
+import * as sessionActions from "../../store/session";
 
-function ListForm (){
+const ListForm = ({setShowListFormModal}) =>{
+    const dispatch = useDispatch();
+    const sessionUser = useSelector((state) => state.session.user);
     const [title,setTitle] = useState ("")
     const [photoFile, setPhotoFile] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null)
-    const [price, setPrice] = useState ("")
-    const [description, setDescription] = useState ("")
-    const [location, setLocation] = useState ("")
-    const [lat, setLat] = useState ("")
-    const [lng, setLng] = useState ("")
+    const [price, setPrice] = useState("")
+    const [description, setDescription] = useState("")
+    const [location, setLocation] = useState("")
+    const [lat, setLat] = useState("")
+    const [lng, setLng] = useState("")
     
     
     const owner = useSelector(({session}) => session.user);
@@ -56,7 +61,10 @@ function ListForm (){
     
     // console.log(photoFile)
     return (
-        <form onSubmit = {handleSubmit}>
+        <>
+        <div onClick={() => setShowListFormModal(false)}  className="close-modal"><span >X<p>Sign up</p></span>
+      </div>
+        <form id="listform" onSubmit = {handleSubmit}>
         <label htmlFor="listing-title"> Title</label>
         <input type="text"
             id="list-title"
@@ -90,7 +98,7 @@ function ListForm (){
         <input type="file" onChange={handleFile}/>
         <button>Make a new Listing!</button>
         </form>
-        
+      </>  
     )
 }
 
