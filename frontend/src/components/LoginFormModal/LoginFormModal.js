@@ -49,8 +49,11 @@ const LoginForm = ({setShowLoginModal}) => {
     <form id="login" onSubmit={handleSubmit}>
       {errors.map((error) => error)}
           <hr id="divider"/>
-            <div 
-        onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span></div>
+      <div className="modal-heading">
+      <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span>
+      </div>
+      <div id="login-text">Login</div>
+      </div>
            <div className="welcome-div">
         <h2 id="welcome-text">Welcome to yerbnb</h2>
       </div>

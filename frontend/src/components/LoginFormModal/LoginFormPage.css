@@ -10,6 +10,12 @@
 
 }
 
+.modal-heading{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 
 
 .password-field1 {

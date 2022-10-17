@@ -47,27 +47,29 @@ function ProfileButton(props) {
 
 return (
     <div className='profile-button'>
-      <button onClick={profileButton()}className='profile-icon'>profile
+      <button id="profile-button" onClick={profileButton()}className='profile-icon'>profile
         <i className="fa-solid fa-user-circle" />
 
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
         {currentUser ? (
-            <button onClick={()=>{
+            <button id="drop-access" 
+              onClick={()=>{
               logout()
               closeMenu()
-            }} 
-            className="button">Log Out</button>
+            }}>Log Out</button>
           ) : (
             <>
-              <button onClick={() => {
-                setShowSignUpModal(true)
-                closeMenu()
+              <button id="drop-access"
+                 onClick={() => {
+                  setShowSignUpModal(true)
+                  closeMenu()
               }
               }>Sign Up</button>
-  
-              <button onClick={() => {
+              <br />
+              <button id="drop-login" 
+                onClick={() => {
                 setShowLoginModal(true)
                 closeMenu()
               }

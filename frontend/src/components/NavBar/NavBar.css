@@ -26,11 +26,10 @@ header.right {
     margin-right: 100px;
 }
 
-.profile-button {
-    position: relative;
-    border-radius: 20px;
-    border-color: red;
-    fill:#ff0000;
+#profile-button {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
     
 }
 
@@ -44,7 +43,7 @@ header.right {
     border: 1px solid grey;
     border-radius: 15px;
     padding: 5px;
-    top: 90%;
+    top: 85%;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -52,6 +51,12 @@ header.right {
     height: 100px;
     width: 150px;
     cursor: pointer;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
     
     -webkit-box-shadow: inset 0px 0px 3px 0px rgba(255, 0, 0, 20);
     box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
@@ -59,11 +64,21 @@ header.right {
 }
 
 
-
-.profile-dropdown {
-    text-align: center;
-    margin: 5px;
+#drop-access{
+    background-color: transparent;
+    border: 0px;
     cursor: pointer;
+    padding-right: 90px;
+
+}
+
+#drop-login {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    padding-right: 100px;
+    padding-bottom: 70px;
+
 }
 
 /* #login {
