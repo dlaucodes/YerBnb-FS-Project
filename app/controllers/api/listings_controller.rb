@@ -23,12 +23,11 @@ class Api::ListingsController < ActionController::API
         if @listing.save
             render json: {message: "You did it!"}
         else 
-            debugger
             render json: @listing.errors.full_messages, status: 422
         end
     end
 
     def listing_params
-        params.require(:listing).permit(:price, :title, :description, :location, :photo, :owner_id)
+        params.require(:listing).permit(:price, :title, :description, :location, :photo, :owner_id, :lat, :lng)
     end
 end

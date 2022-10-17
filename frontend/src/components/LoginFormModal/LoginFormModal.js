@@ -46,17 +46,25 @@ const LoginForm = ({setShowLoginModal}) => {
   
   return (
     <div class="modal-content animate-bottom"> 
+
+
     <form id="login" onSubmit={handleSubmit}>
-      <div className="modal-heading">
+    <div className="modal-heading">
+      
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span>
       {errors.map((error) => error)}
-          <hr id="divider"/>
       </div>
       <div id="login-text">Login</div>
+
       </div>
-           <div className="welcome-div">
+      <div className="hr-div">
+          <hr id="divider"/>
+      </div>
+
+    <div className="welcome-div">
         <h2 id="welcome-text">Welcome to yerbnb</h2>
-      </div>
+    </div>
+    
       <div className="input-field">
             <input
               className="username-field"
@@ -81,7 +89,7 @@ const LoginForm = ({setShowLoginModal}) => {
         <div>
           <button type="submit" id="login-button">Login</button>
         </div>
-        <div>
+        <div className="demouser">
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
         </div>
     </form>

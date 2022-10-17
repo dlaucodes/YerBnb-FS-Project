@@ -8,6 +8,8 @@ function ListForm (){
     const [price, setPrice] = useState ("")
     const [description, setDescription] = useState ("")
     const [location, setLocation] = useState ("")
+    const [lat, setLat] = useState ("")
+    const [lng, setLng] = useState ("")
     
     
     const owner = useSelector(({session}) => session.user);
@@ -19,7 +21,11 @@ function ListForm (){
         formData.append('listing[title]', title);
         formData.append('listing[description]', description);
         formData.append('listing[location]', location );
+        formData.append('listing[lat]', lat );
+        formData.append('listing[lng]', lng);
         formData.append('listing[owner_id]', owner.id);
+
+
         if (photoFile) {
             formData.append('listing[photo]', photoFile)
         }
@@ -35,6 +41,11 @@ function ListForm (){
             setTitle("")
             setPhotoFile(null)
             setPhotoUrl(null)
+            setDescription("")
+            setPrice("")
+            setLocation("")
+            setLat("")
+            setLng("")
         }
     }
     
@@ -66,6 +77,16 @@ function ListForm (){
             id="list-location"
             value={location}
             onChange={e =>setLocation(e.target.value)}/>
+              <label htmlFor="listing-lat">Lat</label>
+        <input type="float"
+            id="list-lat"
+            value={lat}
+            onChange={e =>setLat(e.target.value)}/>
+              <label htmlFor="listing-title"> Lng</label>
+        <input type="float"
+            id="list-lng"
+            value={lng}
+            onChange={e =>setLng(e.target.value)}/>
         <input type="file" onChange={handleFile}/>
         <button>Make a new Listing!</button>
         </form>
