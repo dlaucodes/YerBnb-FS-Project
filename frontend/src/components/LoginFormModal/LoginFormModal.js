@@ -47,10 +47,10 @@ const LoginForm = ({setShowLoginModal}) => {
   return (
     <div class="modal-content animate-bottom"> 
     <form id="login" onSubmit={handleSubmit}>
-      {errors.map((error) => error)}
-          <hr id="divider"/>
       <div className="modal-heading">
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span>
+      {errors.map((error) => error)}
+          <hr id="divider"/>
       </div>
       <div id="login-text">Login</div>
       </div>

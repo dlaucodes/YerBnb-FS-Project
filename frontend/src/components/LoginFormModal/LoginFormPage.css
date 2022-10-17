@@ -13,10 +13,8 @@
 .modal-heading{
     display: flex;
     justify-content: space-between;
-
+    
 }
-
-
 
 .password-field1 {
     font-size: 15px;
@@ -30,9 +28,6 @@
     padding: 10px 0px 0px 13px;
    
 }
-
-
-
 
 .username-field {
     font-size: 15px;

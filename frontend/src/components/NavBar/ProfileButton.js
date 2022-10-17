@@ -53,7 +53,7 @@ return (
       {showMenu && (
         <ul className="profile-dropdown">
         {currentUser ? (
-            <button id="drop-access" 
+            <button id="drop-logout" 
               onClick={()=>{
               logout()
               closeMenu()
@@ -68,7 +68,6 @@ return (
               }
               }>Sign Up</button>
               </div>
-              <br />
               <div className="login-button">
               <button id="drop-login" 
                 onClick={() => {
