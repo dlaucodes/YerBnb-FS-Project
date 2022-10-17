@@ -48,6 +48,8 @@ function SignUpForm({setShowSignUpModal}) {
   return (
     <div className="modal-content animate-bottom"> 
     <form className="signup" onSubmit={handleSubmit}>
+      <div 
+        onClick={() => setShowSignUpModal(false)} className="close-modal"><span >X</span></div>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
