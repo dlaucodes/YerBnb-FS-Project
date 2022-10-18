@@ -56,16 +56,20 @@ return (
         <ul className="profile-dropdown">
         {currentUser ? (
             <>
+            <div className="logout-button">
             <button id="drop-logout" 
               onClick={()=>{
               logout()
               closeMenu()
-            }}>Log Out</button>
-             <button id="drop-logout" 
+            }}>Log out</button>
+            </div>
+            <div className="host-button">
+             <button id="drop-host" 
               onClick={()=>{
               setShowListFormModal(true)
               closeMenu()
-            }}>Host</button>
+            }}>Host your home</button>
+            </div>
 
             </>
             

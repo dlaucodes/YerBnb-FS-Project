@@ -6,7 +6,6 @@ import * as sessionActions from "../../store/session";
 
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
-    const sessionUser = useSelector((state) => state.session.user);
     const [title,setTitle] = useState ("")
     const [photoFile, setPhotoFile] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null)
@@ -63,42 +62,50 @@ const ListForm = ({setShowListFormModal}) =>{
     // console.log(photoFile)
     return (
         <>
+        <div className="modal-content animate-bottom"> 
         <div onClick={() => setShowListFormModal(false)}  className="close-modal"><span >X<p>Sign up</p></span>
       </div>
         <form id="listform" onSubmit = {handleSubmit}>
-        <label htmlFor="listing-title"> Title</label>
+        <label htmlFor="listing-title"></label>
         <input type="text"
             id="list-title"
             value={title}
+            placeholder="Title"
             onChange={e => setTitle(e.target.value)}/>
-            <label htmlFor="listing-title"> Price</label>
+            <label htmlFor="listing-title"></label>
         <input type="float"
             id="list-price"
             value={price}
+            placeholder="Price"
             onChange={e => setPrice(e.target.value)}/>
-            <label htmlFor="listing-title">Description</label>
-         <input type="text"
-            id="list-description"
-            value={description}
-            onChange={e => setDescription(e.target.value)}/>
-            <label htmlFor="listing-title"> Location</label>
+            <label htmlFor="listing-title"></label>
          <input type="text"
             id="list-location"
             value={location}
+            placeholder="Location"
             onChange={e =>setLocation(e.target.value)}/>
-              <label htmlFor="listing-lat">Lat</label>
+              <label htmlFor="listing-lat"></label>
         <input type="float"
             id="list-lat"
             value={lat}
+            placeholder="Latitude"
             onChange={e =>setLat(e.target.value)}/>
-              <label htmlFor="listing-title"> Lng</label>
+              <label htmlFor="listing-title"></label>
         <input type="float"
             id="list-lng"
             value={lng}
+            placeholder="Longitude"
             onChange={e =>setLng(e.target.value)}/>
+         <input type="text"
+            id="list-description"
+            value={description}
+            placeholder="Description"
+            onChange={e => setDescription(e.target.value)}/>
+            <label htmlFor="listing-title"></label>
         <input type="file" onChange={handleFile}/>
         <button type="submit">Make a new Listing!</button>
         </form>
+        </div>
       </>  
     )
 }

@@ -6,4 +6,5 @@
     height: 60vh;
     position: relative;
     z-index: -1;
+    border-radius: 8px 8px 8px 8px;
 }

@@ -89,25 +89,58 @@ header.right {
     cursor: pointer;
     padding-right: 100px;
    
+}
 
+.logout-button {
+    display: flex;
+    height: 25px;
+    width: 100%;
 }
 
 #drop-logout{
+    display: flex;
     background-color: transparent;
     border: 0px;
     cursor: pointer;
-    padding-right: 90px;
-    padding-bottom: 70px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    width: 150px;
+
+}
+
+.host-button {
+    display: inline;
+    height: 25px;
+    width: 150px;
+}
+
+#drop-host {
+    display: flex;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+    /* padding-right: 90px; */
+    width: 150px;
+    height: 25px
 
 }
 
 #drop-signup:hover{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(236, 236, 236);
 }
 
 #drop-login:hover{
-    background-color: rgb(228, 228, 228)
+    background-color: rgb(236, 236, 236)
     ;
+}
+
+#drop-logout:hover {
+    background-color: rgb(236, 236, 236);
+    width: 150px;
+}
+
+#drop-host:hover {
+    background-color: rgb(236, 236, 236);
 }
 
 
