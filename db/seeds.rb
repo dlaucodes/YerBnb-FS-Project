@@ -8,5 +8,8 @@
 demo_user = User.create(username: "Demo", password: "password", first_name: "Demo", last_name: "User")
 
 demo_listing = Listing.create!(price: "2", title: "demotitle", description: "demodesc", location: "demoloc", owner_id: "1")
+#put seeded photo in here too 
+
+
 
 puts ('done')

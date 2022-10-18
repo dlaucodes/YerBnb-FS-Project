@@ -1,7 +1,34 @@
-.listing-img{
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-    overflow: contain;
-
+.listings-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%
 }
+
+.listing{
+ 
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+   
+}
+
+.listing-img {
+    max-width: 300px;
+    max-height: 300px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-radius: 10px;
+    border: solid 1px #999999;
+}
+
+.listing-img img{
+    justify-content: center;
+    height: 300px;
+    width: auto;    
+}
+

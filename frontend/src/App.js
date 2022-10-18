@@ -14,9 +14,8 @@ function App() {
     <>
 
       <NavBar />
-      {/* <Banner/> */}
-      {/* <ListForm /> */}
       <ListingIndex />
+      {/* </div> */}
       <Switch>
         {/* <Route exact path="/">
         </Route> */}
