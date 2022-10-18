@@ -47,24 +47,28 @@ function SignUpForm({setShowSignUpModal}) {
 
   return (
     <div className="modal-content animate-bottom"> 
+
     <form className="signup" onSubmit={handleSubmit}>
-      
-      <div onClick={() => setShowSignUpModal(false)}  className="close-modal"><span >X<p>Sign up</p></span>
+      <div className="modal-heading">
+
+      <div onClick={() => setShowSignUpModal(false)}  className="close-modal"><span >X</span>
       </div>
-      
+      <div id="signup-text">Sign Up</div>
+
         <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
         </ul>
+    </div>
       <div className="hr-div">
           <hr id="divider"/>
       </div>
 
-
       <div className="welcome-div">
         <h2 id="welcome-text">Welcome to yerbnb</h2>
       </div>
+ 
 
        <div className="input-field">
             <input
@@ -118,8 +122,9 @@ function SignUpForm({setShowSignUpModal}) {
         </div>
 
       <br />
+      <div className="signup-div">
       <button id="signup-button" type="submit">Sign Up</button>
-          
+      </div>
       
       </form>
     </div>
