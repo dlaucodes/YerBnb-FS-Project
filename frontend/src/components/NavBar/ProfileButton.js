@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
-import ListFormModal from "../ListForm/indexListFormModal";
+import ListFormModal from "../Listings/indexListFormModal";
 
 
 function ProfileButton(props) {

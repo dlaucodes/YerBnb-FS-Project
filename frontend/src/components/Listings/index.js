@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import csrfFetch from "../../store/csrf";
+import "./listing.css"
 
 export const ListingIndex = () => {
     const [list, setList] = useState([]);
@@ -15,10 +16,11 @@ export const ListingIndex = () => {
     const listings = list.map(item => (
         <li key={item.id}>
             <div>{item.title}</div>
+            <div className="listing-img">
             <img src={`${item.photoUrl}`} />
+            </div>
             <div>{item.price}</div>
-           
-        </li>
+            </li>
     ));
 
     return (
