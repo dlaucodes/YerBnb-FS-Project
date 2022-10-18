@@ -52,6 +52,7 @@ const ListForm = ({setShowListFormModal}) =>{
             setLat("")
             setLng("")
         }
+        setShowListFormModal(false)
     }
     
     const handleFile = e =>{
@@ -96,7 +97,7 @@ const ListForm = ({setShowListFormModal}) =>{
             value={lng}
             onChange={e =>setLng(e.target.value)}/>
         <input type="file" onChange={handleFile}/>
-        <button>Make a new Listing!</button>
+        <button type="submit">Make a new Listing!</button>
         </form>
       </>  
     )
