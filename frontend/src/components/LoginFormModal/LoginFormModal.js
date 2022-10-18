@@ -50,7 +50,7 @@ const LoginForm = ({setShowLoginModal}) => {
 
     <form id="login" onSubmit={handleSubmit}>
     <div className="modal-heading">
-      
+
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span>
       {errors.map((error) => error)}
       </div>
@@ -67,7 +67,7 @@ const LoginForm = ({setShowLoginModal}) => {
     
       <div className="input-field">
             <input
-              className="username-field"
+              className="username-field1"
               placeholder="Username"
               type="text"
               value={username}

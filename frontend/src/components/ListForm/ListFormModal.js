@@ -103,7 +103,7 @@ const ListForm = ({setShowListFormModal}) =>{
             onChange={e => setDescription(e.target.value)}/>
             <label htmlFor="listing-title"></label>
         <input type="file" onChange={handleFile}/>
-        <button type="submit">Make a new Listing!</button>
+        <button id="listing-button" type="submit">Create New Listing</button>
         </form>
         </div>
       </>  
