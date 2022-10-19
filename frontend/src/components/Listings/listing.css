@@ -13,7 +13,7 @@
 
 .listing{
     justify-content: center;
-    width: 300px;
+    width: 400px;
     flex-wrap: wrap;
     overflow-y: auto;
     overflow-x: hidden;
@@ -27,7 +27,7 @@
     max-height: 300px;
     overflow-y: hidden;
     overflow-x: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
     border: solid 1px #999999;
 
    

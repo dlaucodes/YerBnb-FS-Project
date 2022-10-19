@@ -7,7 +7,7 @@ header.site-header {
     position: sticky;
     width: 100;
     height: 70px;
-    border-bottom: 1px #999999 solid;
+    border-bottom: 1px #d6d6d6 solid;
 }
 
 
@@ -17,13 +17,34 @@ header.site-header {
     object-fit: contain;
     margin-left: 20px;
     height: 100px;
-    
 }
 
 header.right {
     display: flex;
     align-items: center;
     margin-right: 100px;
+}
+
+.profile-button-div {
+    display: flex;
+    justify-content: space-evenly;
+    height: 40px;
+    width: 80px;
+    border-radius: 21px;
+    background-color: #00000000;
+    border: solid 1px #c7c7c7;
+    padding: 3px 3px 3px 3px;
+    cursor: pointer;
+}
+
+.profile-button-div:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
+}
+
+.profile-menu {
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 #profile-button {
@@ -34,18 +55,16 @@ header.right {
 }
 
 .profile-icon {
-    font-size: 15;
     cursor: pointer;
 }
 
 .profile-dropdown {
     position: absolute;
-    border: 1px solid grey;
+    border: 1px solid rgb(238, 238, 238);
     border-radius: 15px;
     padding: 5px;
     top: 85%;
     right: 0;
-    display: flex;
     flex-direction: column;
     background: white;
     height: 100px;
@@ -57,6 +76,7 @@ header.right {
     padding-top: 20px;
     display: flex;
     justify-content: flex-start;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
     
     /* -webkit-box-shadow: inset 0px 0px 3px 0px rgba(255, 0, 0, 20);
     box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.4); */
