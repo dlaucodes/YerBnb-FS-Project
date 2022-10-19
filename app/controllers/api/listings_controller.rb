@@ -4,6 +4,7 @@ class Api::ListingsController < ActionController::API
 
     def index
         @listings = Listing.all
+        render :index
     end
     
     
@@ -24,6 +25,15 @@ class Api::ListingsController < ActionController::API
             render json: {message: "You did it!"}
         else 
             render json: @listing.errors.full_messages, status: 422
+        end
+    end
+
+    def destroy
+        @listing = Listing.find_by(id: params[:id])
+        if @listing 
+            @listing.destroy
+        else
+            render json: {message: "nothing to delete"}
         end
     end
 

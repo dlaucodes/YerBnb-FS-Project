@@ -2,6 +2,8 @@ import csrfFetch from "./csrf";
 
 const RECEIVE_LISTING = "listings/RECEIVE_LISTING";
 const REMOVE_LISTING = "listings/REMOVE_LISTING";
+const RECEIVE_LISTINGS = "listings/RECEIVE_LISTINGS";
+
 
 export const receiveListing = (listing) => {
     return {
@@ -10,25 +12,44 @@ export const receiveListing = (listing) => {
     }
 };
 
-export const removeListing = ()=>{
+export const receiveListings = (listings) => {
     return {
-        type: REMOVE_LISTING
+        type: RECEIVE_LISTINGS,
+        payload: listings,
+    }
+};
+
+export const removeListing = (listingId)=>{
+    return {
+        type: REMOVE_LISTING,
+        payload: listingId
     }
 }
 
-const storeCSRFToken = (res) => {
-  const csrfToken = res.headers.get("X-CSRF-Token");
-  if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
-};
+export const getListings = (state) => { return Object.values(state.listing)}
 
-export const getListing= (listing) => async (dispatch)=>{
-    const res = await csrfFetch("api/listing",{
-        method: "GET",
-    })
+export const fetchListing = (listingId) => async (dispatch)=>{
+    const res = await csrfFetch(`/api/listing/${listingId}`)
 
     let data = await res.json();
   dispatch(receiveListing(data.listing));
   return res;
+};
+
+export const fetchListings = () => async (dispatch)=>{
+    const res = await csrfFetch(`/api/listings`)
+
+    let data = await res.json();
+  dispatch(receiveListings(data));
+  return res;
+};
+
+export const deleteListing = (listingId) => async (dispatch)=>{
+    const res = await csrfFetch(`/api/listing/${listingId}`, {
+        method: "DELETE"
+
+    })
+  dispatch(removeListing(listingId));
 };
 
 
@@ -37,7 +58,12 @@ const listingReducer = (state = {}, action) => {
         case REMOVE_LISTING:
             return {...state, listing: null}
         case RECEIVE_LISTING:
-            return {...state, listing: action.payload}
+            // return {...state, listing: action.payload}
+            // return {...state, ...action.payload}
+            // return {...state, action.payload}
+        case RECEIVE_LISTINGS:
+            return {...state, ...action.payload}
+            // return {...state, ...action.payload}
         default:
             return state;
     }
