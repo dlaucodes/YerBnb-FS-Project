@@ -1,9 +1,10 @@
 class Api::ListingsController < ActionController::API
 
-    wrap_parameters include: Listing.attribute_names + [:photo]
+    wrap_parameters include: Listing.attribute_names + [:photos]
 
     def index
         @listings = Listing.all
+        # debugger
         render :index
     end
     
@@ -18,8 +19,9 @@ class Api::ListingsController < ActionController::API
     end
 
     def create
+        # debugger
         @listing = Listing.new(listing_params)
-        @listing.photo.attach(params[:listing][:photo])
+        @listing.photos.attach(params[:listing][:photos].tempfile)
 
         if @listing.save
             render json: {message: "You did it!"}
@@ -38,6 +40,6 @@ class Api::ListingsController < ActionController::API
     end
 
     def listing_params
-        params.require(:listing).permit(:price, :title, :description, :location, :photo, :owner_id, :lat, :lng)
+        params.require(:listing).permit(:price, :title, :description, :location, :photos, :owner_id, :lat, :lng)
     end
 end

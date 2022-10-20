@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Redirect, useLocation } from "react-router-dom";
 import { useSelector} from "react-redux"
 import { useEffect, useState } from "react";
 import "./ListingShow.css"
@@ -16,31 +16,35 @@ const ListingShow = () => {
     //     setItem(location.item)    
     // }, [listingId])
     
-
+    // if(!sessionUser){
+    //     return(
+    //         <Redirect to="/"/>
+    //     )
+    // }
     if(item){
-        const sessionUserIsOwner = (sessionUser.id === item.ownerId) 
+        const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
     <div>
         {/* {listingId} */}
         {item.title}
         <div className="photo-container">
             <div className="photo-container1">
-                <img src={`${item.photoUrl}`} className="photo-main"/>
+                <img src={`${item.photoUrls[0].imgUrl}`} className="photo-main"/>
             </div>
             <div className="photo-container2">
                 <div className="top-photo">
-                    <img src={`${item.photoUrl}`} className="photo-small"/>
+                    <img src={`${item.photoUrls[1].imgUrl}`} className="photo-small"/>
                 </div>
                 <div className="bottom-photo">
-                <img src={`${item.photoUrl}`} className="photo-small"/>
+                <img src={`${item.photoUrls[2].imgUrl}`} className="photo-small"/>
                 </div>
             </div>
             <div className="photo-container3">
                 <div className="top-photo">
-                    <img src={`${item.photoUrl}`} className="photo-small"/>
+                    <img src={`${item.photoUrls[3].imgUrl}`} className="photo-small"/>
                 </div>
                 <div className="bottom-photo">
-                    <img src={`${item.photoUrl}`} className="photo-small"/>
+                    <img src={`${item.photoUrls[4].imgUrl}`} className="photo-small"/>
                 </div>
             </div>
         </div>

@@ -31,13 +31,13 @@ const ListForm = ({setShowListFormModal}) =>{
 
 
         if (photoFile) {
-            formData.append('listing[photo]', photoFile)
+            formData.append('listing[photos]', photoFile)
         }
+        console.log(formData);
         const response = await fetch('api/listings', {
             method: 'POST',
             body: formData
         })
-
         if (response.ok) {
             const message = await response.json();
             // debugger
@@ -51,6 +51,7 @@ const ListForm = ({setShowListFormModal}) =>{
             setLat("")
             setLng("")
         }
+        
         setShowListFormModal(false)
     }
     

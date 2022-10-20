@@ -17,12 +17,12 @@ const Listing = ({listingItem}) => {
             <ul>
             <div className="listing-img">
             <Link to={{pathname: `/listings/${item.id}`, item: item}}   >
-            <img src={`${item.photoUrl}`} />
+            <img src={`${item.photoUrls[0].imgUrl}`} />
             </Link>
             </div>
             <ul>{item.location}</ul>
-            <ul>${item.price}</ul>
-            <ul>{item.description}</ul>
+            <ul>${item.price}/night</ul>
+            {/* <ul>{item.description}</ul> */}
             </ul>
         </div>
      )}else{
