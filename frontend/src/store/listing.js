@@ -58,7 +58,7 @@ const listingReducer = (state = {}, action) => {
         case REMOVE_LISTING:
             return {...state, listing: null}
         case RECEIVE_LISTING:
-            // return {...state, listing: action.payload}
+            return {...state, listing: action.payload}
             // return {...state, ...action.payload}
             // return {...state, action.payload}
         case RECEIVE_LISTINGS:

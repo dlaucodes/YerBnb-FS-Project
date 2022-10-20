@@ -1,7 +1,7 @@
 .listing-container {
     display: flex;
-    margin-left: -24px;
-    justify-content: space-evenly;
+    margin-left: -20px;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     overflow-y: hidden;
@@ -17,6 +17,8 @@
     flex-wrap: wrap;
     overflow-y: auto;
     overflow-x: hidden;
+    margin-left: 0px;
+    margin-right: -20px;
 }
 
 .listing-img {
@@ -28,9 +30,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     border-radius: 12px;
-    border: solid 1px #999999;
-
-   
+    border: solid 1px #999999; 
 }
 
 .listing-img {
@@ -44,4 +44,5 @@
     height: 300px;
     width: auto;    
 }
+
 

@@ -64,7 +64,7 @@ const ListForm = ({setShowListFormModal}) =>{
         <>
         <div className="modal-content animate-bottom"> 
         <div onClick={() => setShowListFormModal(false)}  className="close-modal"><span >X<p>Sign up</p></span>
-      </div>
+        </div>
         <form id="listform" onSubmit = {handleSubmit}>
         <label htmlFor="listing-title"></label>
         <input type="text"
