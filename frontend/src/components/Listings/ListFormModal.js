@@ -60,7 +60,6 @@ const ListForm = ({setShowListFormModal}) =>{
         setPhotoFile(file);
     }
     
-    // console.log(photoFile)
     return (
         <>
         <div className="modal-content animate-bottom"> 
