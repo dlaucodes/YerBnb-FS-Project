@@ -30,8 +30,8 @@ header.right {
 .profile-button-div {
     display: flex;
     justify-content: space-evenly;
-    height: 40px;
-    width: 80px;
+    /* height: 40px;
+    width: 80px; */
     border-radius: 21px;
     background-color: #00000000;
     border: solid 1px #c7c7c7;
@@ -79,9 +79,6 @@ header.right {
     display: flex;
     justify-content: flex-start;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
-    
-    /* -webkit-box-shadow: inset 0px 0px 3px 0px rgba(255, 0, 0, 20);
-    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.4); */
     z-index: 999;
 }
 

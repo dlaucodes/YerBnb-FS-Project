@@ -8,7 +8,7 @@
     height: 50%;
     align-self: center;
     justify-content: space-between;
-    border: blue 3px solid;
+    /* border: blue 3px solid; */
 }
 
 
@@ -31,7 +31,7 @@
     width: 50%;
     object-fit: cover;
     aspect-ratio: 1;
-    border: green solid 3px;
+    /* border: green solid 3px; */
 }
 .photo-container1 img{
     display: flex;
@@ -46,7 +46,7 @@
 .photo-container2 {
     height: 200%;
     width: auto;
-    border: red solid 3px;
+    /* border: red solid 3px; */
 }
 
 
@@ -68,7 +68,7 @@
     width: 30%;
     overflow: hidden;
     align-items: flex-end;
-    border: rgb(85, 255, 0) solid 3px;
+    /* border: rgb(85, 255, 0) solid 3px; */
 }
 
 /* .photo-container3 img:first-child {
