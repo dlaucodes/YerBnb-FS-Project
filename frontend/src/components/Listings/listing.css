@@ -1,4 +1,5 @@
 .listing-container {
+    padding-top: 30px;
     display: flex;
     margin-left: -20px;
     justify-content: center;

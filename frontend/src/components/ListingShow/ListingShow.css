@@ -1,0 +1,90 @@
+
+.photo-container {
+    max-width: 100%;
+    min-width: 50%;
+    display: flex;
+    width: 85%;
+    min-height: 40%;
+    height: 50%;
+    align-self: center;
+    justify-content: space-between;
+    border: blue 3px solid;
+}
+
+
+.photo-main {
+    height: 100%;
+    width: 98.9%;
+    object-fit: cover;
+    border-radius: 12px;
+    /* aspect-ratio: 1; */
+}
+
+
+.photo-container1 img {
+    
+}
+
+.photo-container1 {
+    display: flex;
+    height:50%;
+    width: 50%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border: green solid 3px;
+}
+.photo-container1 img{
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+    overflow: hidden;
+    height: 80%;
+    width: auto;
+
+}
+
+.photo-container2 {
+    height: 200%;
+    width: auto;
+    border: red solid 3px;
+}
+
+
+.photo-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 30%;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.photo-container3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+    overflow: hidden;
+    align-items: flex-end;
+    border: rgb(85, 255, 0) solid 3px;
+}
+
+/* .photo-container3 img:first-child {
+    border-top-right-radius: 12px;
+} */
+
+/* .photocontainer3 img:last-child {
+    border-bottom-right-radius: 12px;
+} */
+
+.photo-small {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+
+    /* aspect-ratio: 1; */
+  
+}
