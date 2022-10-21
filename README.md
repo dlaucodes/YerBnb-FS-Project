@@ -5,7 +5,7 @@
 <p>
     Yerbnb is a fullstack clone of AirBnb.  Users are able to view, book and review listings.
     <br>
-    [live site!](https://yerbnb.herokuapp.com/)
+    Live site: https://yerbnb.herokuapp.com/
 </p>
 <br>
 
