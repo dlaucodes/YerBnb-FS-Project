@@ -63,7 +63,7 @@ return (
       {showMenu && (
         <ul className="profile-dropdown">
         {currentUser ? (
-            <>
+          <>
             <div className="logout-button">
             <button id="drop-logout" 
               onClick={()=>{
