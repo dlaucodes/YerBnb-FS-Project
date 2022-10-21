@@ -12,9 +12,12 @@
 ## Features
 
 <br>
+
 ### User Auth
+<br>
 <p>
     User Auth Demo:
+    <br>
     <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/authdemo.gif">
 </p>
 <ul>
