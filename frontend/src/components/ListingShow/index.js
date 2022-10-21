@@ -24,15 +24,19 @@ const ListingShow = () => {
     if(item){
         const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
-    <div>
+    <>
         {/* {listingId} */}
-        {item.title}
+        <div className="title-container">
+        <h1>{item.title}</h1>
+        </div>
         <div className="photo-container">
-            <div className="photo-container1">
+            <div className="photo-container1"
+            >
                 <img src={`${item.photoUrls[0].imgUrl}`} className="photo-main"/>
             </div>
             <div className="photo-container2">
-                <div className="top-photo">
+                <div className="top-photo"
+                >
                     <img src={`${item.photoUrls[1].imgUrl}`} className="photo-small"/>
                 </div>
                 <div className="bottom-photo">
@@ -48,18 +52,29 @@ const ListingShow = () => {
                 </div>
             </div>
         </div>
-        <div>
+
+        <div className="hr-divider">
+            <hr />
+        </div>
+
+        <div className="location-container">
         {item.location} 
-        ${item.price}
+        </div>
+
+        <div className="price-container">
+        ${item.price} night
+        </div>
+
+        <div className="description-container">
         {item.description}
         </div>
 
         {sessionUserIsOwner && (
             <div>
-                Session User is Owner
+                {/* Session User is Owner */}
             </div>
         )}
-    </div>
+    </>
     )}else{
         return(
             <div>

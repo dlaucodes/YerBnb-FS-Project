@@ -78,26 +78,32 @@ return (
               closeMenu()
             }}>Host your home</button>
             </div>
+            <div className="div-container">
+              <hr className="divider"/>
+              </div>
 
             </>
             
           ) : (
             <>
               <div className="signup-button">
-              <button id="drop-signup"
-                 onClick={() => {
-                  setShowSignUpModal(true)
-                  closeMenu()
-              }
+                  <button id="drop-signup"
+                    onClick={() => {
+                    setShowSignUpModal(true)
+                    closeMenu()
+                  }
               }>Sign Up</button>
               </div>
               <div className="login-button">
-              <button id="drop-login" 
-                onClick={() => {
-                setShowLoginModal(true)
-                closeMenu()
-              }
-              }>Login</button>
+                <button id="drop-login" 
+                    onClick={() => {
+                    setShowLoginModal(true)
+                    closeMenu()
+                    }
+                  }>Login</button>
+              </div>
+              <div>
+                <hr className="divider"/>
               </div>
             </>  
           )

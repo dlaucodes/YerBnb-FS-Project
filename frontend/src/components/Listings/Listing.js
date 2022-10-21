@@ -20,8 +20,12 @@ const Listing = ({listingItem}) => {
             <img src={`${item.photoUrls[0].imgUrl}`} />
             </Link>
             </div>
+            <div className="listing-location-container">
             <ul>{item.location}</ul>
-            <ul>${item.price}/night</ul>
+            </div>
+            <div className="listing-price-container">
+            <ul>${item.price} night</ul>
+            </div>
             {/* <ul>{item.description}</ul> */}
             </ul>
         </div>

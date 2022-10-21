@@ -51,7 +51,7 @@ const LoginForm = ({setShowLoginModal}) => {
     <form id="login" onSubmit={handleSubmit}>
     <div className="modal-heading">
 
-      <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >X</span>
+      <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >×</span>
       {errors.map((error) => error)}
       </div>
       <div id="login-text">Login</div>

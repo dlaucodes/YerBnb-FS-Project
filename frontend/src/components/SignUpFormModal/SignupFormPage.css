@@ -1,8 +1,6 @@
-.modal-heading {
-    width: 572px;
-    display: flex;
-    justify-content: space-between;
-}
+/* .modal-heading {
+   
+} */
 
 .signup {
     background-color: rgb(255, 255, 255);
@@ -29,9 +27,7 @@
     justify-content: center;
     width: 55px
 }
-.close-modal:hover {
-    cursor: pointer;
-}
+
 
 .welcome-div{
     display: flex;

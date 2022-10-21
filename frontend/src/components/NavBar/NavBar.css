@@ -18,7 +18,7 @@ header.site-header {
     align-items: center;
     object-fit: contain;
     margin-left: 20px;
-    height: 100px;
+    height: 50px;
 }
 
 header.right {
@@ -52,8 +52,7 @@ header.right {
 #profile-button {
     background-color: transparent;
     border: 0px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .profile-icon {
@@ -99,15 +98,13 @@ header.right {
     display: flex;
     height: 25px;
     width: 100%;
-
 }
 
 #drop-login {
     background-color: transparent;
     border: 0px;
     cursor: pointer;
-    padding-right: 100px;
-   
+    padding-right: 100px;   
 }
 
 .logout-button {
@@ -124,7 +121,6 @@ header.right {
     padding-right: 0px;
     padding-bottom: 0px;
     width: 150px;
-
 }
 
 .host-button {

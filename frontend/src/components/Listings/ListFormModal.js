@@ -62,48 +62,58 @@ const ListForm = ({setShowListFormModal}) =>{
     
     return (
         <>
-        <div className="modal-content animate-bottom"> 
-        <div onClick={() => setShowListFormModal(false)}  className="close-modal"><span >X<p>Sign up</p></span>
-        </div>
+        <div className="modal-content animate-bottom">
+
         <form id="listform" onSubmit = {handleSubmit}>
-        <label htmlFor="listing-title"></label>
-        <input type="text"
-            id="list-title"
-            value={title}
-            placeholder="Title"
-            onChange={e => setTitle(e.target.value)}/>
-            <label htmlFor="listing-title"></label>
-        <input type="float"
-            id="list-price"
-            value={price}
-            placeholder="Price"
-            onChange={e => setPrice(e.target.value)}/>
-            <label htmlFor="listing-title"></label>
-         <input type="text"
-            id="list-location"
-            value={location}
-            placeholder="Location"
-            onChange={e =>setLocation(e.target.value)}/>
-              <label htmlFor="listing-lat"></label>
-        <input type="float"
-            id="list-lat"
-            value={lat}
-            placeholder="Latitude"
-            onChange={e =>setLat(e.target.value)}/>
-              <label htmlFor="listing-title"></label>
-        <input type="float"
-            id="list-lng"
-            value={lng}
-            placeholder="Longitude"
-            onChange={e =>setLng(e.target.value)}/>
-         <input type="text"
-            id="list-description"
-            value={description}
-            placeholder="Description"
-            onChange={e => setDescription(e.target.value)}/>
-            <label htmlFor="listing-title"></label>
-        <input type="file" onChange={handleFile}/>
-        <button id="listing-button" type="submit">Create New Listing</button>
+            <div className="modal-heading-create">
+                <div onClick={() => setShowListFormModal(false)} className="close-modal">
+                    <span >×</span>
+                </div>
+                <div id="create-text">Host your home</div>
+            </div>
+             <div className="hr-div">
+                <hr id="divider"/>
+            </div>
+            <div className="input-container">
+                <input type="text"
+                    id="list-title"
+                    value={title}
+                    placeholder="Title"
+                    onChange={e => setTitle(e.target.value)}/>
+                    <label htmlFor="listing-title"></label>
+                <input type="float"
+                    id="list-price"
+                    value={price}
+                    placeholder="Price"
+                    onChange={e => setPrice(e.target.value)}/>
+                    <label htmlFor="listing-title"></label>
+                 <input type="text"
+                    id="list-location"
+                    value={location}
+                    placeholder="Location"
+                    onChange={e =>setLocation(e.target.value)}/>
+                      <label htmlFor="listing-lat"></label>
+                <input type="float"
+                    id="list-lat"
+                    value={lat}
+                    placeholder="Latitude"
+                    onChange={e =>setLat(e.target.value)}/>
+                    <label htmlFor="listing-title"></label>
+                <input type="float"
+                    id="list-lng"
+                    value={lng}
+                    placeholder="Longitude"
+                    onChange={e =>setLng(e.target.value)}/>
+                 <input type="text"
+                    id="list-description"
+                    value={description}
+                    placeholder="Description"
+                    onChange={e => setDescription(e.target.value)}/>
+                    <label htmlFor="listing-title"></label>
+                <input type="file" onChange={handleFile}/>
+                <div className="create-div"></div>
+                <button id="listing-button" type="submit">Create New Listing</button>
+            </div>
         </form>
         </div>
       </>  

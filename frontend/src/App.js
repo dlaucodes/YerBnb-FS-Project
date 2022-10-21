@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchListings, getListings } from "./store/listing";
 import ListingShow from "./components/ListingShow";
+import Footer from "./components/Footer";
 
 
 
@@ -29,7 +30,7 @@ function App() {
     <>
       <NavBar />
       {/* <Banner /> */}
-      
+       
       {/* </div> */}
       <Switch>
         <Route exact path="/">
@@ -42,6 +43,8 @@ function App() {
           <SignupForm />
         </Route> */}
       </Switch>
+      <Footer/>
+     
     </>
   );
 
