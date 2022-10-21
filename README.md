@@ -1,24 +1,73 @@
-# README
+# YERBNB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Background
 
-Things you may want to cover:
+<p>
+    Yerbnb is a fullstack clone of AirBnb.  Users are able to view, book and review listings.
+    Live site: <a href="https://yerbnb.herokuapp.com/">
 
-* Ruby version
+</p>
+<br>
 
-* System dependencies
+## Features
 
-* Configuration
+<br>
+### User Auth
+<p>
+    User Auth Demo:
+    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/authdemo.gif">
+</p>
+<ul>
+    <li>Users are able to Sign Up
+    <li>Users are able to Log in
+    <li>Users are able to Log out
+    <li>Users can sign in as a Demo User
+</ul>
 
-* Database creation
+### Listings
 
-* Database initialization
+<p>
+Users can view and create Listings
+</p>
+<br>
 
-* How to run the test suite
+Listing Demo:
+<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+<p>
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo.gif">
+</p>
 
-* Deployment instructions
+## Technologies, Libraries, APIs
 
-* ...
+<br>
+<ul>
+    <li> Ruby on Rails
+    <li> CSS/HTML
+    <li> AWS
+    <li> Google Maps API
+    <li> JavaScript
+    <li> PostgreSQL
+    <li> React/Redux
+</ul>
+<br>
+<br>
+
+## Future Features
+
+<br>
+<ul>
+    <li> Search Bar functionality
+    <li> Airbnb API
+    <li> Reserve a Listing
+    <li> Review a Listing
+    <li> View Map of Listing
+</ul>
+<br>
+
+## Credits & Resources
+
+<ul>
+    <li>AWS
+    <li>Airbnb Picture Seeds
+</ul>
