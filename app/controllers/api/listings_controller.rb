@@ -4,7 +4,7 @@ class Api::ListingsController < ActionController::API
 
     def index
         @listings = Listing.all
-        # debugger
+
         render :index
     end
     
@@ -19,9 +19,12 @@ class Api::ListingsController < ActionController::API
     end
 
     def create
-        # debugger
         @listing = Listing.new(listing_params)
-        @listing.photos.attach(params[:listing][:photos].tempfile)
+ 
+        params[:listing][:photos].each do |photo|
+            @listing.photos.attach(photo)
+        end
+        # @listing.photos.attach(params[:listing][:photos].each)
 
         if @listing.save
             render json: {message: "You did it!"}

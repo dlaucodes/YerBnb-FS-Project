@@ -7,7 +7,7 @@ import * as sessionActions from "../../store/session";
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
     const [title,setTitle] = useState ("")
-    const [photoFile, setPhotoFile] = useState(null);
+    const [photoFiles, setPhotoFiles] = useState([]);
     const [photoUrl, setPhotoUrl] = useState(null)
     const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
@@ -30,8 +30,8 @@ const ListForm = ({setShowListFormModal}) =>{
         formData.append('listing[owner_id]', owner.id);
 
 
-        if (photoFile) {
-            formData.append('listing[photos]', photoFile)
+        if (photoFiles) {
+            formData.append('listing[photos]', photoFiles)
         }
         console.log(formData);
         const response = await fetch('api/listings', {
@@ -40,10 +40,8 @@ const ListForm = ({setShowListFormModal}) =>{
         })
         if (response.ok) {
             const message = await response.json();
-            // debugger
-            console.log(message.message);
             setTitle("")
-            setPhotoFile(null)
+            setPhotoFiles(null)
             setPhotoUrl(null)
             setDescription("")
             setPrice("")
@@ -56,8 +54,12 @@ const ListForm = ({setShowListFormModal}) =>{
     }
     
     const handleFile = e =>{
+        let SubmitPhotoFiles = [];
+        // e.target.files.forEach((file) => {
+        //     SubmitPhotoFiles.push(file);
+        // })
         const file = e.currentTarget.files[0];
-        setPhotoFile(file);
+        setPhotoFiles(SubmitPhotoFiles);
     }
     
     return (
@@ -110,7 +112,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                <input type="file" onChange={handleFile}/>
+                <input type="file" multiple onChange={handleFile}/>
                 <div className="create-div"></div>
                 <button id="listing-button" type="submit">Create New Listing</button>
             </div>

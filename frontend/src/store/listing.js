@@ -8,14 +8,14 @@ const RECEIVE_LISTINGS = "listings/RECEIVE_LISTINGS";
 export const receiveListing = (listing) => {
     return {
         type: RECEIVE_LISTING,
-        payload: listing,
+        payload: listing
     }
 };
 
 export const receiveListings = (listings) => {
     return {
         type: RECEIVE_LISTINGS,
-        payload: listings,
+        payload: listings
     }
 };
 
