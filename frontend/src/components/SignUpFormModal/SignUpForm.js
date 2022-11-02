@@ -55,15 +55,17 @@ function SignUpForm({setShowSignUpModal}) {
       </div>
       <div id="signup-text">Sign Up</div>
 
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
+       
     </div>
       <div className="hr-div">
           <hr id="divider"/>
       </div>
+
+       <div className="errors">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </div>
 
       <div className="welcome-div">
         <h2 id="welcome-text">Welcome to yerbnb</h2>

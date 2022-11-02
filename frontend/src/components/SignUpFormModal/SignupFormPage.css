@@ -1,6 +1,8 @@
-/* .modal-heading {
-   
-} */
+.modal-heading {
+   display: flex;
+   justify-content: flex-start;
+    width: 572px;
+}
 
 .signup {
     background-color: rgb(255, 255, 255);
@@ -16,9 +18,9 @@
 
 #signup-text {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100px;
+    width: 250px;
     height: 37px;
 }
 

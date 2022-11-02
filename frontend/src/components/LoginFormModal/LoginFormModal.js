@@ -52,13 +52,17 @@ const LoginForm = ({setShowLoginModal}) => {
     <div className="modal-heading">
 
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >×</span>
-      {errors.map((error) => error)}
+      
       </div>
       <div id="login-text">Login</div>
 
       </div>
       <div className="hr-div">
           <hr id="divider"/>
+      </div>
+
+      <div className="errors">
+        {errors.map((error) => error)}
       </div>
 
     <div className="welcome-div">
