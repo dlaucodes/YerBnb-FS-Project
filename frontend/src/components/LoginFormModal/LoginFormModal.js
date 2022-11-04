@@ -12,6 +12,7 @@ const LoginForm = ({setShowLoginModal}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [passwordError, setPasswordError] = useState(false)
   
 
   if (sessionUser) return <Redirect to="/" />;
@@ -42,6 +43,15 @@ const LoginForm = ({setShowLoginModal}) => {
     setUsername("Demo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "Demo", password: "password"}))
+  }
+
+  const handlePasswordError = (e) => {
+    if(password.length < 5) {
+      setPasswordError(true)
+    } else {
+      setPasswordError(false)
+    }
+    setPassword(e.target.value)
   }
   
   return (
@@ -85,10 +95,11 @@ const LoginForm = ({setShowLoginModal}) => {
               placeholder="Password"
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordError}
               required
             />
         </div>
+        <div class="password-error">{passwordError ? "password too short" : ""}</div>
       <br />
         <div>
           <button type="submit" id="login-button">Login</button>
