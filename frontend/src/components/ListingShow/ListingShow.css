@@ -122,6 +122,10 @@
 }
 
 .description-container{
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px black;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     margin-left: 20px;
