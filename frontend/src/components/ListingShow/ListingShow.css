@@ -23,7 +23,8 @@
     height: 100%;
     width: 98.9%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 11px;
+
     /* aspect-ratio: 1; */
 }
 
