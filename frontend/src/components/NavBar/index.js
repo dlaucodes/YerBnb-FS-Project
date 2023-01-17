@@ -35,6 +35,7 @@ function NavBar() {
         Yerbnb your home
       </div>
       <div className="right">
+        
         {sessionLinks}
       </div>
       

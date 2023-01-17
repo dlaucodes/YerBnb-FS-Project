@@ -21,16 +21,19 @@ header.site-header {
     height: 50px;
 }
 
-header.right {
+/* header.menu {
     display: flex;
     align-items: center;
-    margin-right: 100px;
-}
+    width: 100px;
+    border: 1px red solid;
+} */
 
 .host-home{
     display: flex;
+    position: relative;
     align-items: center;
-    
+    margin-right: -700px;
+    border: 1px solid red;
 }
 
 .profile-button-div {

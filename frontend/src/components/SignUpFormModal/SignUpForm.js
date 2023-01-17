@@ -127,6 +127,8 @@ function SignUpForm({setShowSignUpModal}) {
       <div className="signup-div">
       <button id="signup-button" type="submit">Sign Up</button>
       </div>
+      <br/>
+      <button id="github-button" type="github"></button>
       
       </form>
     </div>
