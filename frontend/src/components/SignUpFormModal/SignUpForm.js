@@ -122,16 +122,21 @@ function SignUpForm({setShowSignUpModal}) {
               required
             />
         </div>
-
-      <br />
       <div className="signup-div">
       <button id="signup-button" type="submit">Sign Up</button>
       </div>
+      <div className="or"> 
+        <div className="ruler"></div>
+        <div className="or-text">
+        or
+        </div>
+        <div className="ruler"></div> 
+      </div>
       <div className="developer-links">
-      <button id="github-button" type="github">Continue with Github</button>
-      <button id="github-button" type="github">Continue with Linkedin</button>
-      <button id="github-button" type="github">Continue with Wellfound</button>
-      <button id="github-button" type="github">Continue with email</button>
+      <button id="developer-button" type="github">Continue with Github</button>
+      <button id="developer-button" type="github">Continue with Linkedin</button>
+      <button id="developer-button" type="github">Continue with Wellfound</button>
+      <button id="developer-button" type="github">Continue with email</button>
       </div>
       </form>
     </div>

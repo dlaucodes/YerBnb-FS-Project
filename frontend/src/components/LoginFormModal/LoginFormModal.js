@@ -76,7 +76,7 @@ const LoginForm = ({setShowLoginModal}) => {
       </div>
 
     <div className="welcome-div">
-        <h2 id="welcome-text">Welcome to yerbnb</h2>
+        <h2 id="welcome-text">Welcome to Yerbnb</h2>
     </div>
     
       <div className="input-field">
@@ -100,13 +100,26 @@ const LoginForm = ({setShowLoginModal}) => {
             />
         </div>
         <div class="password-error">{passwordError ? "password too short" : ""}</div>
-      <br />
+        
         <div>
           <button type="submit" id="login-button">Login</button>
         </div>
         <div className="demouser">
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
         </div>
+        <div className="or"> 
+        <div className="ruler"></div>
+        <div className="or-text">
+        or
+        </div>
+        <div className="ruler"></div> 
+      </div>
+      <div className="developer-links">
+      <button id="developer-button" type="github">Continue with Github</button>
+      <button id="developer-button" type="github">Continue with Linkedin</button>
+      <button id="developer-button" type="github">Continue with Wellfound</button>
+      <button id="developer-button" type="github">Continue with email</button>
+      </div>
     </form>
     </div>
   );
