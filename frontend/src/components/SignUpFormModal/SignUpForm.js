@@ -68,7 +68,7 @@ function SignUpForm({setShowSignUpModal}) {
         </div>
 
       <div className="welcome-div">
-        <h2 id="welcome-text">Welcome to yerbnb</h2>
+        <h2 id="welcome-text">Welcome to Yerbnb</h2>
       </div>
  
 
@@ -127,9 +127,11 @@ function SignUpForm({setShowSignUpModal}) {
       <div className="signup-div">
       <button id="signup-button" type="submit">Sign Up</button>
       </div>
-      <br/>
-      <button id="github-button" type="github"></button>
-      
+      <div className="developer-links">
+      <button id="github-button" type="github">Github</button>
+      <button id="github-button" type="github">Github</button>
+      <button id="github-button" type="github">Github</button>
+      </div>
       </form>
     </div>
   );
