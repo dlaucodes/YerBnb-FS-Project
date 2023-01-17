@@ -31,7 +31,9 @@ function NavBar() {
         <NavLink exact to="/" className="nav-title"><img id="home-icon" src={logo}/>
         </NavLink>
       </div>
-
+      <div className="host-home">
+        Yerbnb your home
+      </div>
       <div className="right">
         {sessionLinks}
       </div>

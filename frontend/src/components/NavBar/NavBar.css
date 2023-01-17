@@ -27,6 +27,12 @@ header.right {
     margin-right: 100px;
 }
 
+.host-home{
+    display: flex;
+    align-items: center;
+    
+}
+
 .profile-button-div {
     display: flex;
     justify-content: space-evenly;
