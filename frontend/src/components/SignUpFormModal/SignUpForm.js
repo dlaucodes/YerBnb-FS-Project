@@ -128,9 +128,10 @@ function SignUpForm({setShowSignUpModal}) {
       <button id="signup-button" type="submit">Sign Up</button>
       </div>
       <div className="developer-links">
-      <button id="github-button" type="github">Github</button>
-      <button id="github-button" type="github">Github</button>
-      <button id="github-button" type="github">Github</button>
+      <button id="github-button" type="github">Continue with Github</button>
+      <button id="github-button" type="github">Continue with Linkedin</button>
+      <button id="github-button" type="github">Continue with Wellfound</button>
+      <button id="github-button" type="github">Continue with email</button>
       </div>
       </form>
     </div>
