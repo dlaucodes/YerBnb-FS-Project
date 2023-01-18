@@ -57,9 +57,6 @@ function SignUpForm({setShowSignUpModal}) {
 
        
     </div>
-      <div className="hr-div">
-          <hr id="divider"/>
-      </div>
 
        <div className="errors">
           {errors.map((error) => (
@@ -128,15 +125,15 @@ function SignUpForm({setShowSignUpModal}) {
       <div className="or"> 
         <div className="ruler"></div>
         <div className="or-text">
-        or
+        developer links
         </div>
         <div className="ruler"></div> 
       </div>
       <div className="developer-links">
-      <button id="developer-button" type="github">Continue with Github</button>
-      <button id="developer-button" type="github">Continue with Linkedin</button>
-      <button id="developer-button" type="github">Continue with Wellfound</button>
-      <button id="developer-button" type="github">Continue with email</button>
+      <button id="developer-button" type="github"> Github</button>
+      <button id="developer-button" type="github"> Linkedin</button>
+      <button id="developer-button" type="github"> Wellfound</button>
+      <button id="developer-button" type="github"> email</button>
       </div>
       </form>
     </div>

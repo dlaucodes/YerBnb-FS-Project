@@ -4,6 +4,7 @@
    align-items: center;
    justify-content: flex-start;
    width: 572px;
+   border-bottom: 1px solid rgb(226, 226, 226);
 }
 
 .signup {
@@ -40,7 +41,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 25px;
+    width: 100px;
 }
 
 .ruler{
@@ -48,7 +49,7 @@
     align-items: center;
     justify-content: center;
     border-bottom: 0.5px solid #c8c8c8;
-    width: 244px;
+    width: 200px;
 }
 
 .close-modal {
@@ -64,7 +65,7 @@
     width:100%;
     justify-content: flex-start;
     margin-left: 60px;
-    height: 50px;
+    height: 40px;
 }
 
 #divider{
@@ -75,6 +76,7 @@
 
 #welcome-text {
     display: flex;
+    align-items: center;
     justify-content: flex-start;
     color: rgb(13, 13, 13);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -171,16 +173,15 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 5px;
-    
-
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .developer-links{
-    margin-top: 5px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 #developer-button:hover{

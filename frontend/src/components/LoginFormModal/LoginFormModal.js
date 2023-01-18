@@ -59,7 +59,7 @@ const LoginForm = ({setShowLoginModal}) => {
 
 
     <form id="login" onSubmit={handleSubmit}>
-      <div className="modal-heading">
+      <div className="login-modal-heading">
 
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >×</span>
       
@@ -67,16 +67,14 @@ const LoginForm = ({setShowLoginModal}) => {
       <div id="login-text">Login</div>
 
       </div>
-      <div className="hr-div">
-          <hr id="divider"/>
-      </div>
+     
 
       <div className="errors">
         {errors.map((error) => error)}
       </div>
 
-    <div className="welcome-div">
-        <h2 id="welcome-text">Welcome to Yerbnb</h2>
+    <div className="welcome-text">
+        Welcome to Yerbnb
     </div>
     
       <div className="input-field">
@@ -110,15 +108,15 @@ const LoginForm = ({setShowLoginModal}) => {
         <div className="or"> 
         <div className="ruler"></div>
         <div className="or-text">
-        or
+        developer links
         </div>
         <div className="login-ruler"></div> 
       </div>
       <div className="login-developer-links">
-      <button id="login-developer-button" type="github">Continue with Github</button>
-      <button id="login-developer-button" type="github">Continue with Linkedin</button>
-      <button id="login-developer-button" type="github">Continue with Wellfound</button>
-      <button id="login-developer-button" type="github">Continue with email</button>
+      <button id="login-developer-button" type="github"> Github</button>
+      <button id="login-developer-button" type="github"> Linkedin</button>
+      <button id="login-developer-button" type="github"> Wellfound</button>
+      <button id="login-developer-button" type="github"> email</button>
       </div>
     </form>
     </div>
