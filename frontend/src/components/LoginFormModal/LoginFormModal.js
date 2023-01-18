@@ -13,6 +13,10 @@ import emaillogo from "../../assets/logos/email.png";
     window.open(url, '_blank', 'noreferrer');
   };
 
+   const buttonMailto = (mailto) =>{
+    window.open(mailto)
+  }
+
 const LoginForm = ({setShowLoginModal}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
@@ -133,7 +137,7 @@ const LoginForm = ({setShowLoginModal}) => {
         <img src={wellfoundlogo} alt=""/> 
         <div className="dev-text">Wellfound</div> 
       </div>
-       <div className="email-developer-button">
+       <div className="email-developer-button" onClick={()=> buttonMailto('mailto: dlaucodes@gmail.com')}>
         <img src={emaillogo} alt=""/> 
         <div className="dev-text">Email</div> 
       </div>
