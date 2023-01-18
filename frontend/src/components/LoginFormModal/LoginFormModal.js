@@ -3,8 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import * as sessionActions from "../../store/session";
+import gitlogo from "../../assets/logos/github-mark.png";
+import linkedinlogo from "../../assets/logos/linkedinlogo.png";
+import wellfoundlogo from "../../assets/logos/wellfoundlogo.png";
+import emaillogo from "../../assets/logos/email.png";
 
 
+  const openInNewTab = (url) => {
+    window.open(url, '_blank', 'noreferrer');
+  };
 
 const LoginForm = ({setShowLoginModal}) => {
   const dispatch = useDispatch();
@@ -112,11 +119,24 @@ const LoginForm = ({setShowLoginModal}) => {
         </div>
         <div className="login-ruler"></div> 
       </div>
-      <div className="login-developer-links">
-      <div id="login-developer-button">Github</div>
-      <div id="login-developer-button"> Linkedin</div>
-      <div id="login-developer-button"> Wellfound</div>
-      <div id="login-developer-button"> email</div>
+      <div className="developer-links">
+       <div className="github-developer-button" onClick={() => openInNewTab('https://github.com/dlaucodes')}>
+        <img src={gitlogo} alt=""/>
+        <div className="dev-text">Github</div> 
+      </div>
+
+      <div className="linkedin-developer-button" onClick={() => openInNewTab('https://linkedin.com/in/dlaucodes')}>
+        <img src={linkedinlogo} alt=""/> 
+        <div className="dev-text">Linkedin</div> 
+      </div>
+       <div className="wellfound-developer-button" onClick={() => openInNewTab('https://angel.co/u/chun-k-lau')}>
+        <img src={wellfoundlogo} alt=""/> 
+        <div className="dev-text">Wellfound</div> 
+      </div>
+       <div className="email-developer-button">
+        <img src={emaillogo} alt=""/> 
+        <div className="dev-text">Email</div> 
+      </div>
       </div>
     </form>
     </div>

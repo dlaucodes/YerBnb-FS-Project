@@ -138,11 +138,84 @@
     gap: 10px;
 }
 
-#login-developer-button:hover {
-    background: #ededed;
+.developer-links img {
+    display: flex;
+    width: 30px;
+    justify-content: flex-start;
 }
 
-#login-developer-button {
+.github-developer-button:hover {
+    background: #f5f5f5;
+}
+
+.github-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dev-text {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-right: 77px;
+}
+
+.linkedin-developer-button:hover {
+    background: #f5f5f5;
+}
+
+.linkedin-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.wellfound-developer-button:hover {
+    background: #f5f5f5;
+}
+
+.wellfound-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.email-developer-button:hover {
+    background: #f5f5f5;
+}
+
+.email-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     font-size: 15px;
     border-radius: 11px;
     background-color: white;
