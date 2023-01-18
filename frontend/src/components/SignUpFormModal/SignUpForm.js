@@ -63,7 +63,7 @@ function SignUpForm({setShowSignUpModal}) {
     <form className="signup" onSubmit={handleSubmit}>
       <div className="modal-heading">
 
-      <div onClick={() => setShowSignUpModal(false)}  className="close-modal"><span >×</span>
+      <div onClick={() => setShowSignUpModal(false)}  className="close-modal"><span >╳</span>
       </div>
       <div id="signup-text">Sign Up</div>
 

@@ -69,7 +69,7 @@ const ListForm = ({setShowListFormModal}) =>{
         <form id="listform" onSubmit = {handleSubmit}>
             <div className="modal-heading-create">
                 <div onClick={() => setShowListFormModal(false)} className="close-modal">
-                    <span >×</span>
+                    <span >╳</span>
                 </div>
                 <div id="create-text">Host your home</div>
             </div>

@@ -72,7 +72,7 @@ const LoginForm = ({setShowLoginModal}) => {
     <form id="login" onSubmit={handleSubmit}>
       <div className="login-modal-heading">
 
-      <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >×</span>
+      <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >╳</span>
       
       </div>
       <div id="login-text">Login</div>
