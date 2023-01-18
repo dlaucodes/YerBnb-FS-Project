@@ -59,7 +59,7 @@ const LoginForm = ({setShowLoginModal}) => {
 
 
     <form id="login" onSubmit={handleSubmit}>
-    <div className="modal-heading">
+      <div className="modal-heading">
 
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >×</span>
       
@@ -100,7 +100,7 @@ const LoginForm = ({setShowLoginModal}) => {
             />
         </div>
         <div class="password-error">{passwordError ? "password too short" : ""}</div>
-        
+
         <div>
           <button type="submit" id="login-button">Login</button>
         </div>
@@ -112,13 +112,13 @@ const LoginForm = ({setShowLoginModal}) => {
         <div className="or-text">
         or
         </div>
-        <div className="ruler"></div> 
+        <div className="login-ruler"></div> 
       </div>
-      <div className="developer-links">
-      <button id="developer-button" type="github">Continue with Github</button>
-      <button id="developer-button" type="github">Continue with Linkedin</button>
-      <button id="developer-button" type="github">Continue with Wellfound</button>
-      <button id="developer-button" type="github">Continue with email</button>
+      <div className="login-developer-links">
+      <button id="login-developer-button" type="github">Continue with Github</button>
+      <button id="login-developer-button" type="github">Continue with Linkedin</button>
+      <button id="login-developer-button" type="github">Continue with Wellfound</button>
+      <button id="login-developer-button" type="github">Continue with email</button>
       </div>
     </form>
     </div>
