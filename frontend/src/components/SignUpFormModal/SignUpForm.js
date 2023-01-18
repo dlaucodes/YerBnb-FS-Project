@@ -130,10 +130,10 @@ function SignUpForm({setShowSignUpModal}) {
         <div className="ruler"></div> 
       </div>
       <div className="developer-links">
-      <button id="developer-button" type="github"> Github</button>
-      <button id="developer-button" type="github"> Linkedin</button>
-      <button id="developer-button" type="github"> Wellfound</button>
-      <button id="developer-button" type="github"> email</button>
+      <div id="login-developer-button">Github</div>
+      <div id="login-developer-button"> Linkedin</div>
+      <div id="login-developer-button"> Wellfound</div>
+      <div id="login-developer-button"> email</div>
       </div>
       </form>
     </div>

@@ -113,10 +113,10 @@ const LoginForm = ({setShowLoginModal}) => {
         <div className="login-ruler"></div> 
       </div>
       <div className="login-developer-links">
-      <button id="login-developer-button" type="github"> Github</button>
-      <button id="login-developer-button" type="github"> Linkedin</button>
-      <button id="login-developer-button" type="github"> Wellfound</button>
-      <button id="login-developer-button" type="github"> email</button>
+      <div id="login-developer-button">Github</div>
+      <div id="login-developer-button"> Linkedin</div>
+      <div id="login-developer-button"> Wellfound</div>
+      <div id="login-developer-button"> email</div>
       </div>
     </form>
     </div>
