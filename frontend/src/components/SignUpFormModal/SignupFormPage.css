@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 730px;
     width: 574px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -200,7 +200,13 @@
     cursor: pointer;
 }
 
-#github-button {
+.developer-links img{
+    display: flex;
+    width: 30px;
+    justify-content: flex-start;
+}
+
+/* #github-button {
     background-color: #e0024c;
     font-size: 15px;
     border-radius: 11px 11px 11px 11px;
@@ -211,8 +217,115 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     cursor: pointer;
+} */
+
+.github-developer-button:hover {
+    background: #ededed;
 }
 
+.github-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.git-text{
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    width: 50%;
+    margin-right: 77px;
+}
+
+.linkedin-developer-button:hover {
+    background: #ededed;
+}
+
+.linkedin-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dev-text {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    width: 50%;
+    margin-right: 77px;
+}
+
+.wellfound-developer-button:hover {
+    background: #ededed;
+}
+
+.wellfound-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.git-text {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    width: 50%;
+    margin-right: 77px;
+}
+
+.email-developer-button:hover {
+    background: #ededed;
+}
+
+.email-developer-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border-radius: 11px;
+    background-color: white;
+    width: 518px;
+    height: 48px;
+    border: 0.5px solid #000000;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.git-text {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    width: 50%;
+    margin-right: 77px;
+}
 
 .animate-bottom {
     position: relative;
