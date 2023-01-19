@@ -12,9 +12,13 @@
 .close-modal{
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 12px;
+    font-weight: bolder;
     margin-left: 10px;
 }
+ .close-modal:hover{
+    
+ }
 
 .login-modal-heading {
     display: flex;
