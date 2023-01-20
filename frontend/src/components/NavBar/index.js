@@ -31,10 +31,10 @@ function NavBar() {
         <NavLink exact to="/" className="nav-title"><img id="home-icon" src={logo}/>
         </NavLink>
       </div>
-      <div className="host-home">
-        Yerbnb your home
+      <div className="search-bar">
+        Search Bar
       </div>
-      <div className="right">
+      <div className="profile-button-container">
         
         {sessionLinks}
       </div>
