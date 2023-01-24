@@ -61,7 +61,7 @@ return (
 
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
+        <div className="profile-dropdown">
         {currentUser ? (
           <>
             <div className="logout-button">
@@ -78,9 +78,7 @@ return (
               closeMenu()
             }}>Host your home</button>
             </div>
-            <div className="div-container">
-              <hr className="divider"/>
-              </div>
+          
 
             </>
             
@@ -106,7 +104,7 @@ return (
             </>  
           )
         }
-        </ul>
+        </div>
       )}
       {showSignUpModal && (<SignUpFormModal setShowSignUpModal={setShowSignUpModal}/>)}
 
