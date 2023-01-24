@@ -70,18 +70,17 @@
     position: absolute;
     border: 1px solid rgb(238, 238, 238);
     border-radius: 15px;
-    padding: 5px;
-    top: 85%;
+    top: 58px;
     right: 0;
     flex-direction: column;
     background: white;
     height: 100px;
     width: 150px;
     cursor: pointer;
-    text-align: center;
-    margin: 5px;
+    align-items: center;
+    
     cursor: pointer;
-    padding-top: 20px;
+   
     display: flex;
     justify-content: flex-start;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
@@ -90,34 +89,34 @@
 
 .signup-button{
     display: flex;
+    width: 150px;
     height: 25px;
 }
 
 #drop-signup{
     background-color: transparent;
     border: 0px;
+    width: 150px;
     cursor: pointer;
-    padding-right: 90px;
 
 }
 
 .login-button{
     display: flex;
     height: 25px;
-    width: 100%;
+    width: 150px;
 }
 
 #drop-login {
     background-color: transparent;
     border: 0px;
-    cursor: pointer;
-    padding-right: 100px;   
+    cursor: pointer;  
 }
 
 .logout-button {
     display: flex;
     height: 25px;
-    width: 100%;
+    width: 150px;
 }
 
 #drop-logout{
@@ -158,7 +157,6 @@
 
 #drop-logout:hover {
     background-color: rgb(236, 236, 236);
-    width: 150px;
 }
 
 #drop-host:hover {

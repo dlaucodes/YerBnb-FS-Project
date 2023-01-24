@@ -102,9 +102,7 @@ return (
                     }
                   }>Login</button>
               </div>
-              <div>
-                <hr className="divider"/>
-              </div>
+            
             </>  
           )
         }
