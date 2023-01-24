@@ -38,7 +38,7 @@ const ListingShow = () => {
 
             <div className="photo-container2" >
             {item.photoUrls.map((photo, i) => {
-                    if ( i === 5 ) {
+                    if ( i >= 5 ) {
                         return
                     } else if (i % 2 !== 0) {
                         return (
