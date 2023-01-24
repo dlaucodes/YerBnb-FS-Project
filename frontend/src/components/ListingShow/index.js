@@ -10,8 +10,6 @@ const ListingShow = () => {
     // const [item, setItem] = useState()
     // const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
-    
-    console.log(location)
     // useEffect(()=>{
     //     setItem(location.item)    
     // }, [listingId])
@@ -26,6 +24,7 @@ const ListingShow = () => {
     return (
     <>
         {/* {listingId} */}
+        <div className= "listing-template">
         <div className="title-container">
         <h1>{item.title}</h1>
         </div>
@@ -80,6 +79,7 @@ const ListingShow = () => {
                 {/* Session User is Owner */}
             </div>
         )}
+        </div>
     </>
     )}else{
         return(
