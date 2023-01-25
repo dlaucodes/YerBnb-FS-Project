@@ -2,8 +2,7 @@
     top: 70px;
     position: fixed;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
     height: auto;
     width: 99%;
     bottom: 0;
