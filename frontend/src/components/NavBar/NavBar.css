@@ -37,8 +37,6 @@
 .profile-button-div {
     display: flex;
     justify-content: space-evenly;
-    /* height: 40px;
-    width: 80px; */
     border-radius: 21px;
     background-color: #00000000;
     border: solid 1px #c7c7c7;
@@ -167,4 +165,11 @@
 
 #drop-host:hover {
     background-color: rgb(236, 236, 236);
+}
+
+.divider{
+    display: flex;
+    height: 5px;
+    width: 100%;
+    border-bottom: 1px solid #c5c5c5;
 }

@@ -104,6 +104,9 @@ return (
             </>  
           )
         }
+              <div className="divider">
+
+              </div>
         </div>
       )}
       {showSignUpModal && (<SignUpFormModal setShowSignUpModal={setShowSignUpModal}/>)}
