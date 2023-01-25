@@ -19,16 +19,19 @@
 
 .photo-container {
     display: flex;
+    height: 100%;
     width: 100%;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: contain;
     margin-bottom: 20px;
 }
 
 .photo-container1 {
     display: flex;
     width: 50%;
-    
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .photo-container1 img{
@@ -46,14 +49,19 @@
 
 .photo-container2 {
     width: 100%;
+    height: 100%;
     display: flex;
-    overflow: contain;    
+    overflow: hidden;
+    border-top-right-radius: 12px; 
+     
 }
 
 .photo-container3 {
     width: 100%;
+    height: 100%;
     display: flex;
-    overflow: contain;
+    overflow: hidden;
+    border-bottom-right-radius: 12px;
 
 }
 
