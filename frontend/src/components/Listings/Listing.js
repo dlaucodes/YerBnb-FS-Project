@@ -14,7 +14,7 @@ const Listing = ({listingItem}) => {
     if(item){
     return ( 
         <div className="listing" key={item.id}>
-            <ul>
+            
             <div className="listing-img">
             <Link to={{pathname: `/listings/${item.id}`, item: item}}   >
             <img src={`${item.photoUrls[0].imgUrl}`} />
@@ -27,7 +27,7 @@ const Listing = ({listingItem}) => {
             <ul>${item.price} night</ul>
             </div>
             {/* <ul>{item.description}</ul> */}
-            </ul>
+            
         </div>
      )}else{
          return (

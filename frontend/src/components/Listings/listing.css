@@ -15,25 +15,27 @@
 }
 
 .listing{
+    display: flex;
     justify-content: center;
-    width: 400px;
+    width: 300px;
+    height: 300px;
     flex-wrap: wrap;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-left: 0px;
-    margin-right: -20px;
-}
+    border: solid 1px green;
+    margin-right: 10px;
+    margin-bottom: 10px;
+ }
 
 .listing-img {
     display: flex;
     justify-content: center;
-    padding-left: 50px;
+    width: 100%;
     max-width: 300px;
     max-height: 300px;
     overflow-y: hidden;
     overflow-x: hidden;
     border-radius: 12px;
     border: solid 1px #999999; 
+    gap: 10px;
 }
 
 .listing-img {
@@ -43,7 +45,7 @@
 .listing-img img{
     
     /* justify-content: center; */
-    margin-right: 50px;
+   
     height: 300px;
     width: auto;    
 }
