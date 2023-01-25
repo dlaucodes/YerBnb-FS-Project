@@ -68,8 +68,7 @@ const ListingShow = () => {
             </div>
         </div>
 
-        <div className="hr-divider">
-            <hr />
+        <div className="listing-divider">
         </div>
 
         <div className="location-container">
