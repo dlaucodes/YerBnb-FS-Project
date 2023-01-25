@@ -1,5 +1,5 @@
 .listing-container {
-    top: 70px;
+    top: 90px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -43,9 +43,6 @@
 }
 
 .listing-img img{
-    
-    /* justify-content: center; */
-   
     height: 300px;
     width: auto;    
 }

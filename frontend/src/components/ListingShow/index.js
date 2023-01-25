@@ -6,13 +6,13 @@ import "./ListingShow.css"
 const ListingShow = () => {
     const location = useLocation()
     const listingId = location.pathname.slice(10)
-    const item = location.item
-    // const [item, setItem] = useState()
-    // const photoUrl = location.photoUrl
+    // const item = location.item
+    const [item, setItem] = useState()
+    const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
-    // useEffect(()=>{
-    //     setItem(location.item)    
-    // }, [listingId])
+    useEffect(()=>{
+        setItem(location.item)    
+    }, [listingId])
     
     // if(!sessionUser){
     //     return(
@@ -70,7 +70,8 @@ const ListingShow = () => {
 
         <div className="listing-divider">
         </div>
-
+        
+        <div className="listing-descriptions">
         <div className="location-container">
         {item.location} 
         </div>
@@ -81,6 +82,7 @@ const ListingShow = () => {
 
         <div className="description-container">
         {item.description}
+        </div>
         </div>
 
         {sessionUserIsOwner && (
