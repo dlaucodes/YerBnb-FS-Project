@@ -38,21 +38,12 @@ const ListingShow = () => {
 
             <div className="photo-container2" >
             {item.photoUrls.map((photo, i) => {
-                    if ( i >= 5 ) {
-                        return
-                    } else if (i % 2 !== 0) {
-                        return (
-                            <div className="top-photo">
-                                <img src={`${photo.imgUrl}`} className="photo-small"/>
-                            </div>
-                        )
-                    } else if (i % 2 === 0 && i !== 0) {
-                        return (
-                            <div className="bottom-photo">
-                                <img src={`${photo.imgUrl}`} className="photo-small"/>
-                            </div>
-                        )
-                    }
+                        
+                return (         
+                <img src={`${photo.imgUrl}`} className="photo-small"/>
+                )
+                         
+                     
             })}
             </div>
             }
@@ -91,3 +82,23 @@ const ListingShow = () => {
 }
  
 export default ListingShow;
+
+    //  <div className="photo-container2" >
+    //         {item.photoUrls.map((photo, i) => {
+    //                 if ( i === 5 ) {
+    //                     return
+    //                 } else if (i % 2 !== 0) {
+    //                     return (
+    //                         <div className="top-photo">
+    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
+    //                         </div>
+    //                     )
+    //                 } else if (i % 2 === 0 && i !== 0) {
+    //                     return (
+    //                         <div className="bottom-photo">
+    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
+    //                         </div>
+    //                     )
+    //                 }
+    //         })}
+    //         </div>
