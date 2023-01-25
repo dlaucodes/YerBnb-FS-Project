@@ -2,9 +2,10 @@
     top: 70px;
     position: fixed;
     display: flex;
+    align-items: center;
     flex-direction: column;
     height: auto;
-    width: 99%;
+    width: 99.4%;
     bottom: 0;
     overflow: auto;
 }
