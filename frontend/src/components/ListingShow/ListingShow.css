@@ -1,5 +1,5 @@
 .listing-template {
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -17,27 +17,10 @@
 
 .photo-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     border-radius: 11px;
     overflow: hidden;
-    
-    /* border: blue 3px solid; */
 }
-
-.photo-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-
-/* .photo-container1 img {
-    
-} */
 
 .photo-container1 {
     display: flex;
@@ -54,12 +37,11 @@
     display: flex;
     width: 50%;
     flex-direction: column;
-    gap: calc(height-5px);
+    gap: 8px;
 
 }
 
 .photo-container2 {
-    /* border: 3px solid blue; */
     width: 100%;
     display: flex;
     overflow: contain;
@@ -67,7 +49,6 @@
 }
 
 .photo-container3 {
-    /* border: 3px solid red; */
     width: 100%;
     display: flex;
     overflow: contain;
@@ -76,12 +57,12 @@
 
 .photo-container2 img{
     width: 50%;
-    margin-left: 5px;
+    margin-left: 8px;
 }
 
 .photo-container3 img {
     width: 50%;
-    margin-left: 5px;
+    margin-left: 8px;
 }
 
 
