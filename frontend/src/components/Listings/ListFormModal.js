@@ -7,7 +7,7 @@ import * as sessionActions from "../../store/session";
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
     const [title,setTitle] = useState ("")
-    const [photoFiles, setPhotoFiles] = useState([]);
+    const [photoFiles, setPhotoFiles] = useState();
     const [photoUrl, setPhotoUrl] = useState(null)
     const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
@@ -112,7 +112,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                <input type="file" multiple onChange={handleFile}/>
+                <input type="file" onChange={handleFile}/>
                 <div className="create-div"></div>
                 <button id="listing-button" type="submit">Create New Listing</button>
             </div>
