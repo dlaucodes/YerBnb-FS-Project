@@ -23,7 +23,7 @@ class Api::ListingsController < ActionController::API
         @listing = Listing.new(listing_params)
         # @listing.user_id = current_user.id
         # params[:listing][:photos].each do |photo|
-        #     @listing.photos.attach(photo)
+        @listing.photos.attach(params[:photos])
         end
         # @listing.photos.attach(params[:listing][:photos].each)
 
