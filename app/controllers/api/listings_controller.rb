@@ -10,21 +10,21 @@ class Api::ListingsController < ActionController::API
     
     
     def show
-        # @listing = Listing.find_by(id: params[:id])
-        #     if @listing
-        #         render :show #'api/listings/show' same as :show 
-        #     else
-        #         render json: { user: nil }
-        #     end
-        @listing = Listing.find(params[:id])
+        @listing = Listing.find_by(id: params[:id])
+            if @listing
+                render :show #'api/listings/show' same as :show 
+            else
+                render json: { user: nil }
+            end
+        # @listing = Listing.find(params[:id])
     end
 
     def create
         @listing = Listing.new(listing_params)
-        @listing.user_id = current_user.id
-        params[:listing][:photos].each do |photo|
-            @listing.photos.attach(photo)
-        end
+        # @listing.user_id = current_user.id
+        # params[:listing][:photos].each do |photo|
+        #     @listing.photos.attach(photo)
+        # end
         # @listing.photos.attach(params[:listing][:photos].each)
 
         if @listing.save

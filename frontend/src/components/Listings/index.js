@@ -9,7 +9,6 @@ import "./listing.css"
 const ListingIndex = () => {
     const [list, setList] = useState({});
     const test = useSelector(state=> getListings(state))
-    console.log(test)
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
             return res.json();
