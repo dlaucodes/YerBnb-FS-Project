@@ -33,11 +33,12 @@ const ListForm = ({setShowListFormModal}) =>{
         if (photoFiles) {
             formData.append('listing[photos]', photoFiles)
         }
-        console.log(formData);
+        
         const response = await fetch('api/listings', {
             method: 'POST',
             body: formData
         })
+        console.log(formData);
         if (response.ok) {
             const message = await response.json();
             setTitle("")
@@ -59,6 +60,10 @@ const ListForm = ({setShowListFormModal}) =>{
         //     SubmitPhotoFiles.push(file);
         // })
         const file = e.currentTarget.files[0];
+        const file2 = e.currentTarget.files[1];
+        const file3 = e.currentTarget.files[2];
+        const file4 = e.currentTarget.files[3];
+        const file5 = e.currentTarget.files[4];
         setPhotoFiles(SubmitPhotoFiles);
     }
     
@@ -112,7 +117,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                <input type="file" onChange={handleFile} accept="image/png, image/jpg, image/jpeg" multiple/>
+                <input type="file" onChange={handleFile} multiple/>
                 <div className="create-div"></div>
                 <button id="listing-button" type="submit">Create New Listing</button>
             </div>
