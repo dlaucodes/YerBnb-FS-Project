@@ -16,19 +16,23 @@ const ListingIndex = () => {
             setList((oldData) => ({...oldData, ...data}));
         });
     }, []);
+    console.log(list)
 
     if (list){
         let array = Object.values(list)
         let showArray = array.reverse()
+        console.log(array)
+        let listings = Object.values(showArray)
+        console.log((listings))
     return (
         <div className="listing-container">
-            {showArray.map((item, i) => (
-                <Listing key={i} listingItem={item}/>
+            {listings.map((item) => (
+                <Listing key={item.id} listingItem={item}/>
             ))}
         </div>
     );
     }else{
-        return <div></div>
+        return <div> loading</div>
     }
 };
 

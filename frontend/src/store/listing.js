@@ -40,7 +40,7 @@ export const fetchListings = () => async (dispatch)=>{
     const res = await csrfFetch(`/api/listings`)
 
     let data = await res.json();
-  dispatch(receiveListings(data.listings));
+  dispatch(receiveListings(data));
   return res;
 };
 

@@ -8,33 +8,35 @@ import "./listing.css"
 
 const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
-    useEffect(()=>{
-        setItem(listingItem)    
-    }, [listingItem])
-    if(item){
+    
+    console.log(listingItem)
+    // if(item.length > 0){
     return ( 
-        <div className="listing" key={item.id}>
-            
-            <div className="listing-img">
-            <Link to={{pathname: `/listings/${item.id}`, item: item}}   >
-            <img src={`${item.photoUrls[0].imgUrl}`} />
-            </Link>
+        
+       <>
+           <div className="listing-img">
+                <Link to={{pathname: `/listings/${listingItem.id}`}}   >
+                    
+                {/* <img src={`${item.photoUrls[0].imgUrl}`} /> */}
+                </Link>
             </div>
             <div className="listing-location-container">
-            <ul>{item.location}</ul>
+                <ul>{listingItem.location}</ul>
             </div>
             <div className="listing-price-container">
-            <ul>${item.price} night</ul>
-            </div>
-            {/* <ul>{item.description}</ul> */}
+                <ul>${listingItem.price} night</ul>
+            </div> 
+           
+       </>
             
-        </div>
-     )}else{
-         return (
-         <div>
-             loading...
-        </div>)
-     }
+        
+     )
+    //  else{
+    //      return (
+    //      <div>
+    //          loading...
+    //     </div>)
+    //  }
 }
  
 export default Listing;
