@@ -17,7 +17,7 @@ const Listing = ({listingItem}) => {
            <div className="listing-img">
                 <Link to={{pathname: `/listings/${listingItem.id}`}}   >
                     
-                {/* <img src={`${listingItem.photoUrls[0].imgUrl}`} /> */}
+                <img src={`${listingItem.photoUrls[0].imgUrl}`} />
                 </Link>
             </div>
             <div className="listing-location-container">

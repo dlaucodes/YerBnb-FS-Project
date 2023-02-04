@@ -15,22 +15,25 @@ const ListingIndex = () => {
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, [list]);
+    }, []);
 
     if (list){
         let array = Object.values(list)
-        let showArray = array.reverse()
-        let listings = Object.values(showArray)
-        let listingarray = listings[0]
+        // let showArray = array.reverse()
+        let listings = Object.values(array)
+        
+        let listingsarray = Object.values(listings[0])
+    
+        console.log(array)
         console.log(listings)
-        console.log(listings[0])
-        console.log(listingarray[2].id)
+       
+        
         
         
     return (
         <div className="listing-container">
-            {listingarray.map((item) => (
-                <Listing key={item.id} listingItem={item}/>
+            {listingsarray.map((item, i) => (
+                <Listing key={i} listingItem={item}/>
             ))}
         </div>
     );
