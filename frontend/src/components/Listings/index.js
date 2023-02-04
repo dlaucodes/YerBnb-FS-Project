@@ -7,7 +7,7 @@ import "./listing.css"
 
 
 const ListingIndex = () => {
-    const [list, setList] = useState({});
+    const [list, setList] = useState();
     const test = useSelector(state=> getListings(state))
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
@@ -15,18 +15,21 @@ const ListingIndex = () => {
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, []);
-    console.log(list)
+    }, [list]);
 
     if (list){
         let array = Object.values(list)
         let showArray = array.reverse()
-        console.log(array)
         let listings = Object.values(showArray)
-        console.log((listings))
+        let listingarray = listings[0]
+        console.log(listings)
+        console.log(listings[0])
+        console.log(listingarray[2].id)
+        
+        
     return (
         <div className="listing-container">
-            {listings.map((item) => (
+            {listingarray.map((item) => (
                 <Listing key={item.id} listingItem={item}/>
             ))}
         </div>
@@ -34,6 +37,8 @@ const ListingIndex = () => {
     }else{
         return <div> loading</div>
     }
+    
+
 };
 
 export default ListingIndex;

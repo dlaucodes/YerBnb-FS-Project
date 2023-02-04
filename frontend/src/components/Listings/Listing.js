@@ -10,14 +10,14 @@ const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
     
     console.log(listingItem)
-    // if(item.length > 0){
+    // if(listingItem.length > 0){
     return ( 
         
        <>
            <div className="listing-img">
                 <Link to={{pathname: `/listings/${listingItem.id}`}}   >
                     
-                {/* <img src={`${item.photoUrls[0].imgUrl}`} /> */}
+                {/* <img src={`${listingItem.photoUrls[0].imgUrl}`} /> */}
                 </Link>
             </div>
             <div className="listing-location-container">
