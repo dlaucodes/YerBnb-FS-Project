@@ -1,5 +1,6 @@
 import { Redirect, useLocation } from "react-router-dom";
-import { useSelector} from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
+
 import { useEffect, useState } from "react";
 import "./ListingShow.css";
 
@@ -9,14 +10,19 @@ const ListingShow = () => {
     const location = useLocation()
     const listingId = location.pathname.slice(10)
     // const item = location.item
-    // const [item, setItem] = useState()
+    const [item, setItem] = useState()
     const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
-    console.log(item)
-    // useEffect(()=>{
-    //     setItem(location.item)    
-    // }, [listingId])
-    
+    const dispatch = useDispatch()
+    const listings = useSelector(state => state.listing)
+   
+    useEffect(()=>{
+        setItem(location.item)    
+    }, [])
+//     useEffect(()=>{
+//     dispatch(fetchListings())
+//   },[])
+    console.log(location.item)
     // if(!sessionUser){
     //     return(
     //         <Redirect to="/"/>

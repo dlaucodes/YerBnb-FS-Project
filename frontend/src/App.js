@@ -22,9 +22,9 @@ function App() {
     dispatch(fetchListings())
   },[])
 
-  if (listings) {
-    console.log(Object.values(listings))
-  }
+  // if (listings) {
+  //   console.log(Object.values(listings))
+  // }
 
   return (
     <>
@@ -37,7 +37,7 @@ function App() {
             <ListingIndex />
         </Route>
         <Route path="/listings">
-            <ListingShow/>
+            <ListingShow />
         </Route>
         {/* <Route path="/signup">
           <SignupForm />
