@@ -25,9 +25,6 @@ class Api::ListingsController < ActionController::API
         # params[:listing][:photos].each do |photo|
         #     @listing.photos.attach(photo)
         # @listing.photos.attach(params[:listing][:photos])
-
-        
-
         if @listing.save
             render json: {message: "you did it!"}
         else 
