@@ -36,8 +36,8 @@ const ListingShow = ({listingItem}) => {
     //         <Redirect to="/"/>
     //     )
     // }
-    if(item){
-        const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
+    // if(item){
+    //     const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
     <>
         {/* {listingId} */}
@@ -102,23 +102,20 @@ const ListingShow = ({listingItem}) => {
         </div>
         </div>
 
-        {sessionUserIsOwner && (
-            <div>
-                {/* Session User is Owner */}
-            </div>
-        )}
+        {/* sessionownerinfo under */}
         </div>
     </>
-    )}else{
-        return(
-            <div>
-                loading...
-            </div>
-        )
-    }
+    )
 }
  
 export default ListingShow;
+
+// {sessionUserIsOwner && (
+//             <div>
+//                 {/* Session User is Owner */}
+//             </div>
+//         )}
+//belonged inside the empty div above 
 
     //  <div className="photo-container2" >
     //         {item.photoUrls.map((photo, i) => {
