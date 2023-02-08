@@ -36,7 +36,7 @@ function App() {
         <Route exact path="/">
             <ListingIndex />
         </Route>
-        <Route path="/listings">
+        <Route path="/listings/:listingId">
             <ListingShow />
         </Route>
         {/* <Route path="/signup">

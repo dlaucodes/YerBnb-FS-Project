@@ -8,8 +8,12 @@ import "./listing.css"
 
 const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
+
+    useEffect(()=>{
+        
+    }, [listingItem])
     
-    console.log(listingItem)
+    // console.log(listingItem)
     // if(listingItem.length > 0){
     return ( 
         

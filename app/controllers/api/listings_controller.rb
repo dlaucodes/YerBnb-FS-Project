@@ -11,11 +11,14 @@ class Api::ListingsController < ActionController::API
     
     def show
         @listing = Listing.find_by(id: params[:id])
+           
             if @listing
                 render :show #'api/listings/show' same as :show 
             else
                 render json: { user: nil }
             end
+
+            
         # @listing = Listing.find(params[:id])
     end
 
@@ -42,6 +45,6 @@ class Api::ListingsController < ActionController::API
     end
 
     def listing_params
-        params.require(:listing).permit(:price, :title, :description, :location, :owner_id, :lat, :lng, :photos)
+        params.require(:listing).permit(:price, :title, :description, :location, :owner_id, :lat, :lng, photos:[])
     end
 end

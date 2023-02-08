@@ -1,43 +1,56 @@
-import { Redirect, useLocation } from "react-router-dom";
+import { Redirect, useLocation, useParams } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
-
+import ListingIndex from "../Listings";
+import Listing from "../Listings/Listing";
+import { getListings } from "../../store/listing";
 import { useEffect, useState } from "react";
 import "./ListingShow.css";
+import csrfFetch from "../../store/csrf";
+import { fetchListing } from "../../store/listing";
 
 
 
-const ListingShow = ({listingItem}) => {
+
+const ListingShow = () => {
     const location = useLocation()
-    const listingId = location.pathname.slice(10)
+    // const listingId = location.pathname.slice(10)
     // const item = location.item
-    const [item, setItem] = useState(listingItem)
+    // const [item, setItem] = useState()
+    const {listingId} = useParams()
     const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
     const dispatch = useDispatch()
     const listings = useSelector(state => state.listing)
     const listingvalues = Object.values(listings)
     const listingarray = listingvalues[0]
-    const itemvalue = listingarray.id
-    // useEffect(()=>{
-    //     setItem(location.item)    
-    // }, [])
+    const item = Object.values(listingarray)[listingId -1]
+    
+    useEffect(()=>{
+        dispatch(fetchListing(listingId))
+        // .then(()=>{
+        //   item = setItem(actualListing[listingId -1])  
+        // })
+    }, [])
+
+    console.log(item)
+
+
 //     useEffect(()=>{
 //     dispatch(fetchListings())
 //   },[])
-    console.log(listingId)
-    console.log(listingItem)
-    console.log(listingvalues)
-    console.log(listingarray)
-    console.log(itemvalue)
-    console.log(item)
-    console.log(location)
+    // console.log(item)
+    // console.log(listingId)
+
+    // console.log(listingarray[1])
+    // console.log(listingItem)
+
     // if(!sessionUser){
     //     return(
     //         <Redirect to="/"/>
     //     )
     // }
-    // if(item){
-    //     const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
+    if(item){
+        const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
     <>
         {/* {listingId} */}
@@ -48,7 +61,7 @@ const ListingShow = ({listingItem}) => {
         <div className="photo-container">
             {item.photoUrls.length > 0 && 
             <div className="photo-container1">
-                <img src={`${item.photoUrls[0].imgUrl}`} className="photo-main"/>
+                <img src={`${item.photoUrls[0]}`} className="photo-main" alt=""/>
             </div>} 
             <div className="right-photocontainer">
             {item.photoUrls.length > 0 &&
@@ -58,7 +71,7 @@ const ListingShow = ({listingItem}) => {
                 if ( i === 1 || i === 3){      
                 return (
                             
-                <img src={`${photo.imgUrl}`} className="photo-small"/>
+                <img src={`${photo}`} className="photo-small"/>
                 
                 )
                 }     
@@ -74,7 +87,7 @@ const ListingShow = ({listingItem}) => {
                 if ( i === 2 || i === 4){      
                 return (
                             
-                <img src={`${photo.imgUrl}`} className="photo-small"/>
+                <img src={`${photo}`} className="photo-small"/>
                
                 )
                 }     
@@ -102,20 +115,23 @@ const ListingShow = ({listingItem}) => {
         </div>
         </div>
 
-        {/* sessionownerinfo under */}
+        {sessionUserIsOwner && (
+            <div>
+                {/* Session User is Owner */}
+            </div>
+        )}
         </div>
     </>
-    )
+    )}else{
+        return(
+            <div>
+                loading...
+            </div>
+        )
+    }
 }
  
 export default ListingShow;
-
-// {sessionUserIsOwner && (
-//             <div>
-//                 {/* Session User is Owner */}
-//             </div>
-//         )}
-//belonged inside the empty div above 
 
     //  <div className="photo-container2" >
     //         {item.photoUrls.map((photo, i) => {
