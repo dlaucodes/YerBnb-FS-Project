@@ -20,19 +20,20 @@ const ListingIndex = () => {
     if (list){
         let array = Object.values(list)
         // let showArray = array.reverse()
-        let listings = Object.values(array)
-        
+        let listings = Object.values(array.reverse())
         let listingsarray = Object.values(listings[0])
+        let showArray = listingsarray.reverse()
     
-        console.log(array)
-        console.log(listings)
+        // console.log(array)
+        // console.log(listings)
+        // was used to test for the data 
        
         
         
         
     return (
         <div className="listing-container">
-            {listingsarray.map((item, i) => (
+            {showArray.map((item, i) => (
                 <Listing key={i} listingItem={item}/>
             ))}
         </div>
