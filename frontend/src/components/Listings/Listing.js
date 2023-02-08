@@ -14,6 +14,7 @@ const Listing = ({listingItem}) => {
     return ( 
         
        <>
+        <div className="listing">
            <div className="listing-img">
                 <Link to={{pathname: `/listings/${listingItem.id}`}}   >
                     
@@ -22,12 +23,12 @@ const Listing = ({listingItem}) => {
                 </Link>
             </div>
             <div className="listing-location-container">
-                <ul>{listingItem.location}</ul>
+                {listingItem.location}
             </div>
             <div className="listing-price-container">
-                <ul>${listingItem.price} night</ul>
+               ${listingItem.price} night
             </div> 
-           
+           </div>
        </>
             
         

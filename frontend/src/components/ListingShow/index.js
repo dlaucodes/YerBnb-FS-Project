@@ -6,23 +6,31 @@ import "./ListingShow.css";
 
 
 
-const ListingShow = () => {
+const ListingShow = ({listingItem}) => {
     const location = useLocation()
     const listingId = location.pathname.slice(10)
     // const item = location.item
-    const [item, setItem] = useState()
+    const [item, setItem] = useState(listingItem)
     const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
     const dispatch = useDispatch()
     const listings = useSelector(state => state.listing)
-   
-    useEffect(()=>{
-        setItem(location.item)    
-    }, [])
+    const listingvalues = Object.values(listings)
+    const listingarray = listingvalues[0]
+    const itemvalue = listingarray.id
+    // useEffect(()=>{
+    //     setItem(location.item)    
+    // }, [])
 //     useEffect(()=>{
 //     dispatch(fetchListings())
 //   },[])
-    console.log(location.item)
+    console.log(listingId)
+    console.log(listingItem)
+    console.log(listingvalues)
+    console.log(listingarray)
+    console.log(itemvalue)
+    console.log(item)
+    console.log(location)
     // if(!sessionUser){
     //     return(
     //         <Redirect to="/"/>
