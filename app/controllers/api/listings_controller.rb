@@ -22,10 +22,11 @@ class Api::ListingsController < ActionController::API
     def create
         @listing = Listing.new(listing_params)
         # @listing.user_id = current_user.id
-        params[:listing][:photos].each do |photo|
-            @listing.photos.attach(photo)
-        end
-        # @listing.photos.attach(params[:listing][:photos].each)
+        # params[:listing][:photos].each do |photo|
+        #     @listing.photos.attach(photo)
+        # @listing.photos.attach(params[:listing][:photos])
+
+        
 
         if @listing.save
             render json: {message: "you did it!"}
