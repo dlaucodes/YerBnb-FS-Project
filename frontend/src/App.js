@@ -39,7 +39,7 @@ function App() {
         <Route path="/listings/:listingId">
             <ListingShow />
         </Route>
-        {/* <Route path="/signup">
+        {/* <Route exact path="/signup">
           <SignupForm />
         </Route> */}
       </Switch>

@@ -12,12 +12,12 @@ import { fetchListing } from "../../store/listing";
 
 
 const ListingShow = () => {
-    const location = useLocation()
+    // const location = useLocation()
     // const listingId = location.pathname.slice(10)
     // const item = location.item
     // const [item, setItem] = useState()
     const {listingId} = useParams()
-    const photoUrl = location.photoUrl
+    // const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
     const dispatch = useDispatch()
     const listings = useSelector(state => state.listing)
