@@ -2,17 +2,21 @@ import React, {useEffect, useRef, useState} from 'react';
 import { Wrapper } from '@googlemaps/react-wrapper';
 import './Map.css';
 
-function Map({
+function benchMap({
     
     
 }) {
     const [map, setMap] = useState(null);
-    const mapRef = useRef(null)
+    const mapRef = useRef(null);
+    const markers = useRef({});
+    const history = useHistory();
+    let center = null;
+    if (map) center = map.getCenter().toJSON();
 
 
     useEffect(()=>{
        if(!map){
-           setMap(new window.__googleMapsCallback.maps.Map(mapRef.current, {
+           setMap(new window.google.maps.Map(mapRef.current, {
                center: {
                    lat: 40.74363402543966,
                    lng: -73.98377122848856
@@ -25,21 +29,21 @@ function Map({
                ...mapOptions,
            }))
        } 
-    })
+    }, [mapRef, map, mapOptions]);
 
 
     useEffect(()=>{
-        
+    // another useeffect
     }
 }
 
 
 
 
-function MapWrapper(props){
+function benchMapWrapper(props){
 
 }
 
 
 
-export default MapWrapper;
+export default benchMapWrapper;
