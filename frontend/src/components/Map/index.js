@@ -35,16 +35,28 @@ function benchMap({
                clickableIcons: false,
                diableDefaultUI: true,
                ...mapOptions,
-           }))
+           }));
        } 
     }, [mapRef, map, mapOptions]);
 
 
-    useEffect(()=>{
-        
+    useEffect(() => {
+    if (map) {
+      const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
+        window.google.maps.event.addListener(
+          map, 
+          event, 
+          (...args) => handler(...args, map)
+        )
+      );
+      // console.log(map.getCenter().toJSON());
+      if (setLat && setLng) {
+        setLat(map.getCenter().toJSON().lat);
+        setLng(map.getCenter().toJSON().lng);
+      }
+      return () => listeners.forEach(window.google.maps.event.removeListener);
     }
-}
-
+  }, [map, center, mapEventHandlers]);
 
 
 
