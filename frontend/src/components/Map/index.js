@@ -3,7 +3,15 @@ import { Wrapper } from '@googlemaps/react-wrapper';
 import './Map.css';
 
 function benchMap({
-    
+    lat,
+    lng,
+    setLat,
+    setLng,
+    listings,
+    selectedListing,
+    mapOptions = {},
+    mapEventHandlers = {},
+    markerEventHandlers = {}
     
 }) {
     const [map, setMap] = useState(null);
@@ -33,7 +41,7 @@ function benchMap({
 
 
     useEffect(()=>{
-    
+        
     }
 }
 
@@ -41,7 +49,11 @@ function benchMap({
 
 
 function benchMapWrapper(props){
-
+    return (
+        <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
+            <ListingMap {...props} />
+        </Wrapper>
+    )
 }
 
 
