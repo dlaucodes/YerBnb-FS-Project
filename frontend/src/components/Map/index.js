@@ -37,26 +37,30 @@ function benchMap({
                ...mapOptions,
            }));
        } 
-    }, [mapRef, map, mapOptions]);
+    }, [mapRef, map, mapOptions, lat, lng]);
 
 
     useEffect(() => {
-    if (map) {
-      const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
-        window.google.maps.event.addListener(
-          map, 
-          event, 
-          (...args) => handler(...args, map)
-        )
-      );
-      // console.log(map.getCenter().toJSON());
-      if (setLat && setLng) {
-        setLat(map.getCenter().toJSON().lat);
-        setLng(map.getCenter().toJSON().lng);
-      }
-      return () => listeners.forEach(window.google.maps.event.removeListener);
-    }
-  }, [map, center, mapEventHandlers]);
+        if (map) {
+            const position = {lat: lat, lng: lng, zoom: 13}
+            map.setCenter(position);
+        }
+    }, [lat, lng])
+
+    useEffect(()=>{
+        if(map){
+            const listeners = Object.entries(mapEventHandlers).map(([event, handler]) =>
+            window.google.maps.event.addListner(
+                map,
+                event,
+            (...args) => handler(...args, map)
+            ));
+            return ()=> listeners.forEach(window.google.maps.event.removeListener);
+        }
+    }, [map, mapEventHandlers]);
+
+
+
 
 
 
