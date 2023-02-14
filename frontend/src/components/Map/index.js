@@ -69,5 +69,6 @@ function benchMapWrapper(props){
 }
 
 
+}
 
 export default benchMapWrapper;
