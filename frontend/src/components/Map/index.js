@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { Wrapper } from '@googlemaps/react-wrapper';
+import { useHistory } from 'react-router-dom';
 import './Map.css';
 
 function benchMap({
@@ -67,7 +68,7 @@ function benchMap({
 function benchMapWrapper(props){
     return (
         <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
-            <ListingMap {...props} />
+            <benchMap {...props} />
         </Wrapper>
     )
 }

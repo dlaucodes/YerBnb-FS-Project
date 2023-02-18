@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 
 
 
+
 function App() {
   const dispatch = useDispatch()
   const listings = useSelector(state => state.listing)
@@ -29,7 +30,8 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* <Banner /> */}
+      {/* <benchMapWrapper /> */}
+      
        
       {/* </div> */}
       <Switch>
