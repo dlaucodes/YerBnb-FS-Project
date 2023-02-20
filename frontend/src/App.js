@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { fetchListings, getListings } from "./store/listing";
 import ListingShow from "./components/ListingShow";
 import Footer from "./components/Footer";
+import Profile from './components/Profile';
 
 
 
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/listings/:listingId">
             <ListingShow />
+        </Route>
+        <Route path="/profiles/:id/">
+          <Profile />
         </Route>
         {/* <Route exact path="/signup">
           <SignupForm />
