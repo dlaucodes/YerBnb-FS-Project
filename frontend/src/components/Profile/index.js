@@ -1,9 +1,15 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import './Profile.css';
 
 const ProfileDetails = () => {
-    return ( 
-        <h2>Profile</h2>
+    const { id } = useParams
+    return (
+        <>
+        <div className="testing">
+        Profile details
+        </div> 
+        </>
      );
 }
  
