@@ -6,5 +6,5 @@ class Listing < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
-  has_many_attached :photos
+  has_many_attached :photos, service: :s3
 end
