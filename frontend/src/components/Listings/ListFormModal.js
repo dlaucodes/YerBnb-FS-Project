@@ -50,7 +50,7 @@ const ListForm = ({setShowListFormModal}) =>{
             setLat("")
             setLng("")
         }
-        
+        console.log(photoFiles)
         setShowListFormModal(false)
 
         
@@ -129,6 +129,8 @@ const ListForm = ({setShowListFormModal}) =>{
       </>  
     )
 }
+
+
 
 export default ListForm;
 

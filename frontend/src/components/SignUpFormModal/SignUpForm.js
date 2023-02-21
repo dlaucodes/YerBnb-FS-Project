@@ -19,6 +19,8 @@ function SignUpForm({setShowSignUpModal}) {
   const [lastName, setLastName] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+
+  console.log(sessionUser)
   
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');

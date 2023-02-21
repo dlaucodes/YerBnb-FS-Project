@@ -5,15 +5,15 @@
     
     json.photoUrls listing.photos.url
     
-    # json.photoUrls do
-    #   if @listing.photos.attached?
-    #     json.array! @listing.photos do |photo|
-    #       json.imgUrl photo.url
-    #     end
-    #   else
-    #     json.array! [{imgUrl: ''}]
-    #   end
-    # end
+    json.photoUrls do
+      if @listing.photos.attached?
+        json.array! @listing.photos do |photo|
+          json.imgUrl photo.url
+        end
+      else
+        json.array! [{imgUrl: ''}]
+      end
+    end
   end
 end
 
