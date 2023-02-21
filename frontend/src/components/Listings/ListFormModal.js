@@ -7,7 +7,7 @@ import * as sessionActions from "../../store/session";
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
     const [title,setTitle] = useState ("")
-    const [photoFiles, setPhotoFiles] = useState(null);
+    const [photoFiles, setPhotoFiles] = useState([]);
     const [photoUrl, setPhotoUrl] = useState(null)
     const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
@@ -38,7 +38,7 @@ const ListForm = ({setShowListFormModal}) =>{
             method: 'POST',
             body: formData
         })
-        console.log(formData);
+       
         if (response.ok) {
             const message = await response.json();
             setTitle("")
@@ -50,7 +50,7 @@ const ListForm = ({setShowListFormModal}) =>{
             setLat("")
             setLng("")
         }
-        console.log(photoFiles)
+        
         setShowListFormModal(false)
 
         
@@ -63,10 +63,10 @@ const ListForm = ({setShowListFormModal}) =>{
             SubmitPhotoFiles.push(file);
         })
         const file = e.currentTarget.files[0];
-        // const file2 = e.currentTarget.files[1];
-        // const file3 = e.currentTarget.files[2];
-        // const file4 = e.currentTarget.files[3];
-        // const file5 = e.currentTarget.files[4];
+        const file2 = e.currentTarget.files[1];
+        const file3 = e.currentTarget.files[2];
+        const file4 = e.currentTarget.files[3];
+        const file5 = e.currentTarget.files[4];
         setPhotoFiles(SubmitPhotoFiles);
     }
     
@@ -120,7 +120,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                <input type="file" multiple onChange={handleFile}/>
+                <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
                 <div className="create-div"></div>
                 <button id="listing-button" type="submit">Create New Listing</button>
             </div>

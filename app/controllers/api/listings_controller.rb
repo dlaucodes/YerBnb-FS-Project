@@ -26,9 +26,10 @@ class Api::ListingsController < ActionController::API
         @listing = Listing.new(listing_params)
         # @listing.user_id = current_user.id
         # params[:listing][:photos].each do |photo|
-            @listing.photos.attach(params[:photos])
-        # @listing.photos.attach(params[:listing][:photos])
+            # @listing.photos.attach(params[:photos])
+        @listing.photos.attach(params[:listing][photos:[]])
         if @listing.save
+            
             render json: {message: "you did it!"}
         else 
             render json: @listing.errors.full_messages, status: 422

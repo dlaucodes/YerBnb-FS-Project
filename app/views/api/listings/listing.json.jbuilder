@@ -7,8 +7,9 @@
     
     json.photoUrls do
       if @listing.photos.attached?
-        json.array! @listing.photos do |photo|
-          json.imgUrl photo.url
+        json.photo_urls listing.photos.map { |photo| photo.url }
+        # json.array! @listing.photos do |photo|
+        #   json.imgUrl photo.url
         end
       else
         json.array! [{imgUrl: ''}]
