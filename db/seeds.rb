@@ -7,6 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 demo_user = User.create!(username: "Demo", password: "password", first_name: "Demo", last_name: "User")
 
+facebook_user = User.create!(username: "FacebookDemo", password: "password", first_name: "Mark", last_name: "Burg")
+
+google_user = User.create!(username: "GoogleDemo", password: "password", first_name: "Larry", last_name: "Paige")
+
+apple_user = User.create!(username: "AppleDemo", password: "password", first_name: "Timothy", last_name: "Book")
+
+
+
 # demo_listing = Listing.create!(price: "200", title: "demotitle", description: "demodesc", location: "demoloc", owner_id: "1", lng: 500, lat: 600)
 # # #put seeded photo in here too 
 

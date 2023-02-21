@@ -18,11 +18,11 @@ const ListForm = ({setShowListFormModal}) =>{
     const [photoUrl4, setPhotoUrl4] = useState(null);
     const [photoUrl5, setPhotoUrl5] = useState(null);
     const [files, setFiles] = useState(null);
-    const [price, setPrice] = useState("")
-    const [description, setDescription] = useState("")
-    const [location, setLocation] = useState("")
-    const [lat, setLat] = useState("")
-    const [lng, setLng] = useState("")
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+    const [location, setLocation] = useState("");
+    const [lat, setLat] = useState("");
+    const [lng, setLng] = useState("");
     
     
     const owner = useSelector(({session}) => session.user);
@@ -70,10 +70,6 @@ const ListForm = ({setShowListFormModal}) =>{
     
     
     const handleFile = e =>{
-    //     let SubmitPhotoFiles = [];
-    //     e.target.files.forEach((file) => {
-    //         SubmitPhotoFiles.push(file);
-    //     })
         const file = e.currentTarget.files[0];
         const file2 = e.currentTarget.files[1];
         const file3 = e.currentTarget.files[2];

@@ -56,6 +56,27 @@ const LoginForm = ({setShowLoginModal}) => {
     dispatch(sessionActions.loginUser({username: "Demo", password: "password"}))
   }
 
+  const fbDemo = ()=>{
+    // e.preventDefault();
+    setUsername("FacebookDemo")
+    setPassword("password")
+    dispatch(sessionActions.loginUser({username: "FacebookDemo", password: "password"}))
+  }
+
+  const googleDemo = ()=>{
+    // e.preventDefault();
+    setUsername("GoogleDemo")
+    setPassword("password")
+    dispatch(sessionActions.loginUser({username: "GoogleDemo", password: "password"}))
+  }
+
+  const appleDemo = ()=>{
+    // e.preventDefault();
+    setUsername("Demo")
+    setPassword("password")
+    dispatch(sessionActions.loginUser({username: "AppleDemo", password: "password"}))
+  }
+
   const handlePasswordError = (e) => {
     if(password.length < 5) {
       setPasswordError(true)
@@ -73,8 +94,8 @@ const LoginForm = ({setShowLoginModal}) => {
       <div className="login-modal-heading">
 
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >╳</span>
-      
       </div>
+
       <div id="login-text">Login</div>
 
       </div>
@@ -124,15 +145,16 @@ const LoginForm = ({setShowLoginModal}) => {
         <div className="login-ruler"></div> 
       </div>
       <div className="developer-links">
-       <div className="github-developer-button" onClick={() => openInNewTab('https://github.com/dlaucodes')}>
-        <img src={gitlogo} alt=""/>
-        <div className="dev-text">Github</div> 
+       <div className="demouser">
+          <button type="submit" id="demo-button" onClick={fbDemo}>Facebook User</button>
+      
       </div>
 
-      <div className="linkedin-developer-button" onClick={() => openInNewTab('https://linkedin.com/in/dlaucodes')}>
+      <div className="linkedin-developer-button" type="submit" onClick={googleDemo}>
         <img src={linkedinlogo} alt=""/> 
         <div className="dev-text">Linkedin</div> 
       </div>
+
        <div className="wellfound-developer-button" onClick={() => openInNewTab('https://angel.co/u/chun-k-lau')}>
         <img src={wellfoundlogo} alt=""/> 
         <div className="dev-text">Wellfound</div> 
