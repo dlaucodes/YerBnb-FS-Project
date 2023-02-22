@@ -18,7 +18,10 @@ const LoginForm = ({setShowLoginModal}) => {
   const [passwordError, setPasswordError] = useState(false);
   
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return(
+     <Redirect to="/" /> &&
+     setShowLoginModal(false)
+  )
 
   const handleSubmit = (e) => {
     e.preventDefault();
