@@ -153,7 +153,8 @@ const LoginForm = ({setShowLoginModal}) => {
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
         </div>
          <div className="no-login">
-          No login? <span onClick={toggleModal}>Sign up</span>        
+           No login?
+          <span onClick={toggleModal}> Sign Up</span>        
         </div>
         <div className="or"> 
         <div className="ruler"></div>
