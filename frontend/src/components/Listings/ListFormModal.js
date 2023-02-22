@@ -136,48 +136,45 @@ const ListForm = ({setShowListFormModal}) =>{
                 </div>
                 <div id="create-text">Host your home</div>
             </div>
-             <div className="hr-div">
-                <hr id="divider"/>
-            </div>
-            <div className="input-container">
+            <div className="input-field">
                 <input type="text"
-                    id="list-title"
+                    className="list-title"
                     value={title}
                     placeholder="Title"
                     onChange={e => setTitle(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
                 <input type="float"
-                    id="list-price"
+                    className="list-price"
                     value={price}
                     placeholder="Price"
                     onChange={e => setPrice(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
                  <input type="text"
-                    id="list-location"
+                    className="list-location"
                     value={location}
                     placeholder="Location"
                     onChange={e =>setLocation(e.target.value)}/>
                       <label htmlFor="listing-lat"></label>
                 <input type="float"
-                    id="list-lat"
+                    className="list-lat"
                     value={lat}
                     placeholder="Latitude"
                     onChange={e =>setLat(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
                 <input type="float"
-                    id="list-lng"
+                    className="list-lng"
                     value={lng}
                     placeholder="Longitude"
                     onChange={e =>setLng(e.target.value)}/>
                  <input type="text"
-                    id="list-description"
+                    className="list-description"
                     value={description}
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
                 <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
                 <div className="create-div"></div>
-                <button id="listing-button" type="submit">Create New Listing</button>
+                <button className="listing-button" type="submit">Create New Listing</button>
             </div>
         </form>
         </div>
