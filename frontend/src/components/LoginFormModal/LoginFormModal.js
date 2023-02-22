@@ -72,7 +72,7 @@ const LoginForm = ({setShowLoginModal}) => {
 
   const appleDemo = ()=>{
     // e.preventDefault();
-    setUsername("Demo")
+    setUsername("AppleDemo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "AppleDemo", password: "password"}))
   }
@@ -140,29 +140,31 @@ const LoginForm = ({setShowLoginModal}) => {
         <div className="or"> 
         <div className="ruler"></div>
         <div className="or-text">
-        developer links
+        or
         </div>
         <div className="login-ruler"></div> 
       </div>
       <div className="developer-links">
-       <div className="demouser">
-          <button type="submit" id="demo-button" onClick={fbDemo}>Facebook User</button>
-      
-      </div>
-
-      <div className="linkedin-developer-button" type="submit" onClick={googleDemo}>
+       
+      <button className="linkedin-developer-button" type="submit" onClick={fbDemo}>
         <img src={linkedinlogo} alt=""/> 
-        <div className="dev-text">Linkedin</div> 
-      </div>
+        <div className="dev-text">Facebook</div> 
+      </button>
+    
 
-       <div className="wellfound-developer-button" onClick={() => openInNewTab('https://angel.co/u/chun-k-lau')}>
+      <button className="linkedin-developer-button" type="submit" onClick={googleDemo}>
+        <img src={linkedinlogo} alt=""/> 
+        <div className="dev-text">Google</div> 
+      </button>
+
+       <button className="wellfound-developer-button" type="submit" onClick={appleDemo}>
         <img src={wellfoundlogo} alt=""/> 
-        <div className="dev-text">Wellfound</div> 
-      </div>
-       <div className="email-developer-button" onClick={()=> buttonMailto('mailto: dlaucodes@gmail.com')}>
+        <div className="dev-text">Apple</div> 
+      </button>
+       {/* <button className="email-developer-button" type="submit" onClick={googleDemo}>
         <img src={emaillogo} alt=""/> 
         <div className="dev-text">Email</div> 
-      </div>
+      </button> */}
       </div>
     </form>
     </div>
