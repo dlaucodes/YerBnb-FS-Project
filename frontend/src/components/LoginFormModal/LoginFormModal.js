@@ -7,11 +7,9 @@ import gitlogo from "../../assets/logos/github-mark.png";
 import fblogo from "../../assets/logos/fblogo.svg";
 import applelogo from "../../assets/logos/applelogo.svg";
 import gmaillogo from "../../assets/logos/gmailicon.svg";
-import SignUpFormModal from "../SignUpFormModal";
 
 
-
-const LoginForm = ({setShowLoginModal, setShowSignUpModal}) => {
+const LoginForm = ({setShowLoginModal}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -77,13 +75,7 @@ const LoginForm = ({setShowLoginModal, setShowSignUpModal}) => {
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "GitDemo", password: "password"}))
   }
-
-  const toggleSignup = (e) => {
-    e.preventDefault();
-    setShowLoginModal(false);
-    setShowSignUpModal(true);
-  }
-  
+ 
 
   const handlePasswordError = (e) => {
     if(password.length < 5) {
@@ -143,9 +135,7 @@ const LoginForm = ({setShowLoginModal, setShowSignUpModal}) => {
           <button type="submit" id="login-button">Login</button>
         </div>
         <div className="no-login">
-        Don't have a login? <span className="signup-span"
-          onClick={toggleSignup}
-          >Signup</span>
+        Don't have a login? Signup
         </div>
         <div className="demouser">
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
@@ -179,10 +169,7 @@ const LoginForm = ({setShowLoginModal, setShowSignUpModal}) => {
         <img src={gitlogo} alt=""/> 
         <div className="dev-text">Github</div> 
       </button>
-       {/* <button className="email-developer-button" type="submit" onClick={googleDemo}>
-        <img src={emaillogo} alt=""/> 
-        <div className="dev-text">Email</div> 
-      </button> */}
+      
       </div>
     </form>
     </div>

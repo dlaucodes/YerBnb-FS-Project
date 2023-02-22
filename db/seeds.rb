@@ -13,6 +13,8 @@ google_user = User.create!(username: "GoogleDemo", password: "password", first_n
 
 apple_user = User.create!(username: "AppleDemo", password: "password", first_name: "Timothy", last_name: "Book")
 
+git_user = User.create!(username: "GitDemo", password: "password", first_name: "Dommy", last_name: "Tohmke")
+
 
 
 # demo_listing = Listing.create!(price: "200", title: "demotitle", description: "demodesc", location: "demoloc", owner_id: "1", lng: 500, lat: 600)
