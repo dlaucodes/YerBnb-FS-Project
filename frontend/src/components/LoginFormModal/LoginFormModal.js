@@ -7,6 +7,9 @@ import gitlogo from "../../assets/logos/github-mark.png";
 import fblogo from "../../assets/logos/fblogo.svg";
 import applelogo from "../../assets/logos/applelogo.svg";
 import gmaillogo from "../../assets/logos/gmailicon.svg";
+import SignUpFormModal from "../SignUpFormModal";
+import SignUpForm from "../SignUpFormModal/SignUpForm";
+
 
 
 const LoginForm = ({setShowLoginModal}) => {
@@ -16,6 +19,8 @@ const LoginForm = ({setShowLoginModal}) => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [passwordError, setPasswordError] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false)
+  
   
 
   if (sessionUser) return(
@@ -88,12 +93,18 @@ const LoginForm = ({setShowLoginModal}) => {
     }
     setPassword(e.target.value)
   }
+
+  const toggleModal = (e) =>{
+    e.preventDefault()
+    setShowSignUpModal(true)   
+  }
   
+  if(!showSignUpModal){
   return (
-    <div class="modal-content animate-bottom"> 
+    <div className="modal-content animate-bottom"> 
 
 
-    <form id="login" onSubmit={handleSubmit}>
+    <form className="login" onSubmit={handleSubmit}>
       <div className="login-modal-heading">
 
       <div onClick={() => setShowLoginModal(false)} className="close-modal"><span >╳</span>
@@ -132,7 +143,7 @@ const LoginForm = ({setShowLoginModal}) => {
               required
             />
         </div>
-        <div class="password-error">{passwordError ? "password too short" : ""}</div>
+        <div className="password-error">{passwordError ? "password too short" : ""}</div>
 
         <div>
           <button type="submit" id="login-button">Login</button>
@@ -142,7 +153,7 @@ const LoginForm = ({setShowLoginModal}) => {
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
         </div>
          <div className="no-login">
-          No login? Sign up        
+          No login? <span onClick={toggleModal}>Sign up</span>        
         </div>
         <div className="or"> 
         <div className="ruler"></div>
@@ -178,6 +189,13 @@ const LoginForm = ({setShowLoginModal}) => {
     </form>
     </div>
   );
+  }else {
+    return(
+    
+    <SignUpForm setShowLoginModal={setShowLoginModal} setShowSignUpModal={setShowSignUpModal}/>
+    
+    )
+  }
 };
 
 export default LoginForm;

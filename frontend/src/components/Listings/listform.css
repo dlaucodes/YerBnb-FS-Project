@@ -14,7 +14,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 60px;
+    
+}
+
+.listingform-container{
+    display: flex;
+    border: 1px solid green;
+    margin-top: 20px;
 }
 
 #create-text{

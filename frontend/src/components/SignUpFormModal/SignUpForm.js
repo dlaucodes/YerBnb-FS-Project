@@ -10,7 +10,7 @@ import emaillogo from "../../assets/logos/email.png";
 import "./SignupFormPage.css";
 
 
-function SignUpForm({setShowSignUpModal}) {
+function SignUpForm({setShowSignUpModal, setShowLoginModal}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -56,6 +56,12 @@ function SignUpForm({setShowSignUpModal}) {
     ]);
   };
 
+  const closeModal = () =>{
+    setShowSignUpModal(false)
+    setShowLoginModal(false)  
+  };
+
+  
 
   return (
     <div className="modal-content animate-bottom"> 
@@ -63,7 +69,7 @@ function SignUpForm({setShowSignUpModal}) {
     <form className="signup" onSubmit={handleSubmit}>
       <div className="modal-heading">
 
-      <div onClick={() => setShowSignUpModal(false)}  className="close-modal"><span >╳</span>
+      <div onClick={closeModal}  className="close-modal"><span >╳</span>
       </div>
       <div id="signup-text">Sign Up</div>
 

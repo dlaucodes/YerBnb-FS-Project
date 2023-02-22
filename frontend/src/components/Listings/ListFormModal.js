@@ -89,7 +89,7 @@ const ListForm = ({setShowListFormModal}) =>{
         setPhotoUrl(fileReader.result);
       };
     } else setPhotoUrl(null);
-    if (file2) {
+      if (file2) {
       const fileReader2 = new FileReader();
       fileReader2.readAsDataURL(file2);
       fileReader2.onload = () => {
@@ -97,7 +97,7 @@ const ListForm = ({setShowListFormModal}) =>{
         setPhotoUrl2(fileReader2.result);
       };
     } else setPhotoUrl2(null);
-    if (file3) {
+      if (file3) {
       const fileReader3 = new FileReader();
       fileReader3.readAsDataURL(file3);
       fileReader3.onload = () => {
@@ -105,7 +105,7 @@ const ListForm = ({setShowListFormModal}) =>{
         setPhotoUrl3(fileReader3.result);
       };
     } else setPhotoUrl3(null);
-    if (file4) {
+      if (file4) {
       const fileReader4 = new FileReader();
       fileReader4.readAsDataURL(file4);
       fileReader4.onload = () => {
@@ -113,7 +113,7 @@ const ListForm = ({setShowListFormModal}) =>{
         setPhotoUrl4(fileReader4.result);
       };
     } else setPhotoUrl4(null);
-    if (file5) {
+      if (file5) {
       const fileReader5 = new FileReader();
       fileReader5.readAsDataURL(file5);
       fileReader5.onload = () => {
@@ -136,6 +136,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 </div>
                 <div id="create-text">Host your home</div>
             </div>
+            <div className="listingform-container">
             <div className="input-field">
                 <input type="text"
                     className="list-title"
@@ -175,6 +176,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
                 <div className="create-div"></div>
                 <button className="listing-button" type="submit">Create New Listing</button>
+            </div>
             </div>
         </form>
         </div>
