@@ -4,26 +4,20 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import * as sessionActions from "../../store/session";
 import gitlogo from "../../assets/logos/github-mark.png";
-import linkedinlogo from "../../assets/logos/linkedinlogo.png";
-import wellfoundlogo from "../../assets/logos/wellfoundlogo.png";
-import emaillogo from "../../assets/logos/email.png";
+import fblogo from "../../assets/logos/fblogo.svg";
+import applelogo from "../../assets/logos/applelogo.svg";
+import gmaillogo from "../../assets/logos/gmailicon.svg";
+import SignUpFormModal from "../SignUpFormModal";
 
 
-  const openInNewTab = (url) => {
-    window.open(url, '_blank', 'noreferrer');
-  };
 
-   const buttonMailto = (mailto) =>{
-    window.open(mailto)
-  }
-
-const LoginForm = ({setShowLoginModal}) => {
+const LoginForm = ({setShowLoginModal, setShowSignUpModal}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const [passwordError, setPasswordError] = useState(false)
+  const [passwordError, setPasswordError] = useState(false);
   
 
   if (sessionUser) return <Redirect to="/" />;
@@ -49,33 +43,47 @@ const LoginForm = ({setShowLoginModal}) => {
     );
   };
 
-  const handleDemo = ()=>{
-    // e.preventDefault();
+  const handleDemo = (e)=>{
+    e.preventDefault();
     setUsername("Demo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "Demo", password: "password"}))
   }
 
-  const fbDemo = ()=>{
-    // e.preventDefault();
+  const fbDemo = (e)=>{
+    e.preventDefault();
     setUsername("FacebookDemo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "FacebookDemo", password: "password"}))
   }
 
-  const googleDemo = ()=>{
-    // e.preventDefault();
+  const googleDemo = (e)=>{
+    e.preventDefault();
     setUsername("GoogleDemo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "GoogleDemo", password: "password"}))
   }
 
-  const appleDemo = ()=>{
-    // e.preventDefault();
+  const appleDemo = (e)=>{
+    e.preventDefault();
     setUsername("AppleDemo")
     setPassword("password")
     dispatch(sessionActions.loginUser({username: "AppleDemo", password: "password"}))
   }
+
+  const gitDemo = (e)=>{
+    e.preventDefault();
+    setUsername("GitDemo")
+    setPassword("password")
+    dispatch(sessionActions.loginUser({username: "GitDemo", password: "password"}))
+  }
+
+  const toggleSignup = (e) => {
+    e.preventDefault();
+    setShowLoginModal(false);
+    setShowSignUpModal(true);
+  }
+  
 
   const handlePasswordError = (e) => {
     if(password.length < 5) {
@@ -134,32 +142,42 @@ const LoginForm = ({setShowLoginModal}) => {
         <div>
           <button type="submit" id="login-button">Login</button>
         </div>
+        <div className="no-login">
+        Don't have a login? <span className="signup-span"
+          onClick={toggleSignup}
+          >Signup</span>
+        </div>
         <div className="demouser">
           <button type="submit" id="demo-button" onClick={handleDemo}>Demo User</button>
         </div>
         <div className="or"> 
         <div className="ruler"></div>
         <div className="or-text">
-        or
+        or Sign in with
         </div>
         <div className="login-ruler"></div> 
       </div>
       <div className="developer-links">
        
       <button className="linkedin-developer-button" type="submit" onClick={fbDemo}>
-        <img src={linkedinlogo} alt=""/> 
+        <img src={fblogo} alt=""/> 
         <div className="dev-text">Facebook</div> 
       </button>
     
 
       <button className="linkedin-developer-button" type="submit" onClick={googleDemo}>
-        <img src={linkedinlogo} alt=""/> 
+        <img src={gmaillogo} alt=""/> 
         <div className="dev-text">Google</div> 
       </button>
 
        <button className="wellfound-developer-button" type="submit" onClick={appleDemo}>
-        <img src={wellfoundlogo} alt=""/> 
+        <img src={applelogo} alt=""/> 
         <div className="dev-text">Apple</div> 
+      </button>
+
+      <button className="wellfound-developer-button" type="submit" onClick={gitDemo}>
+        <img src={gitlogo} alt=""/> 
+        <div className="dev-text">Github</div> 
       </button>
        {/* <button className="email-developer-button" type="submit" onClick={googleDemo}>
         <img src={emaillogo} alt=""/> 
