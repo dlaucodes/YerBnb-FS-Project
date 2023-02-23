@@ -11,6 +11,7 @@ import { fetchListings, getListings } from "./store/listing";
 import ListingShow from "./components/ListingShow";
 import Footer from "./components/Footer";
 import ProfileDetails from "./components/Profile";
+import Home from "./components/Map";
 
 
 
@@ -31,6 +32,7 @@ function App() {
   return (
     <>
       <NavBar />
+      {/* <Home /> */}
       {/* <benchMapWrapper /> */}
       
        

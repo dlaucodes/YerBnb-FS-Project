@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
 import { fetchListing } from "../../store/listing";
+import Map, { Home } from "../Map";
+import { GoogleMap } from "@react-google-maps/api";
 
 
 
@@ -55,16 +57,19 @@ const ListingShow = () => {
     <>
         {/* {listingId} */}
         <div className= "listing-template">
-        <div className="title-container">
-        <h1>{item.title}</h1>
-        </div>
-        <div className="photo-container">
-            {item.photoUrls.length > 0 && 
-            <div className="photo-container1">
-                <img src={`${item.photoUrls[0]}`} className="photo-main" alt=""/>
-            </div>} 
+            <div className="title-container">
+                <h1>{item.title}</h1>
+            </div>
+            <div className="location-container">
+                {item.location} 
+             </div>
+            <div className="photo-container">
+                {item.photoUrls.length > 0 && 
+                <div className="photo-container1">
+                    <img src={`${item.photoUrls[0]}`} className="photo-main" alt=""/>
+                </div>} 
             <div className="right-photocontainer">
-            {item.photoUrls.length > 0 &&
+                {item.photoUrls.length > 0 &&
            
             <div className="photo-container2" >
             {item.photoUrls.map((photo, i) => {
@@ -102,22 +107,34 @@ const ListingShow = () => {
         </div>
         
         <div className="listing-descriptions">
-        <div className="location-container">
-        {item.location} 
-        </div>
+            <div className="listing-info-left">
+            
+            <div className="host-info">
+                host info here
+            </div>
 
-        <div className="price-container">
-        ${item.price} night
-        </div>
+            <div className="price-container">
+                ${item.price} night
+            </div>
 
-        <div className="description-container">
-        {item.description}
+            <div className="description-container">
+                {item.description}
+            </div>
+            </div>
+            <div className="listing-info-right">
+            <div className="reservation-container">
+                reservations here
+            </div>
+          
+            </div>
         </div>
-        </div>
+            <div className="map-container">
+                {/* {Map()} */}
+            </div>
 
         {sessionUserIsOwner && (
             <div>
-                {/* Session User is Owner */}
+                Session User is Owner
             </div>
         )}
         </div>

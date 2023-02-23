@@ -25,6 +25,10 @@ function ProfileButton(props) {
     setShowMenu(false);
   };
 
+   const buttonMailto = (mailto) =>{
+    window.open(mailto)
+  }
+
   useEffect(() => {
     if (!showMenu) return;
   
@@ -106,6 +110,21 @@ return (
         }
               <div className="divider">
 
+              </div>
+
+              <div className="account-button">
+                <button id="drop-help"
+                    onClick={()=>
+                    buttonMailto('mailto: dlaucodes@gmail.com')}>
+                    Account
+                </button>
+              </div>
+                <div className="help-button">
+                <button id="drop-help"
+                    onClick={()=>
+                    buttonMailto('mailto: dlaucodes@gmail.com')}>
+                    Help
+                </button>
               </div>
         </div>
       )}

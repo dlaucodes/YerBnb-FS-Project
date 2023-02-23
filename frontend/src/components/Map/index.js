@@ -1,79 +1,26 @@
-import React, {useEffect, useRef, useState} from 'react';
-import { Wrapper } from '@googlemaps/react-wrapper';
-import { useHistory } from 'react-router-dom';
-import './Map.css';
+import { useMemo } from 'react';
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import "./Map.css"
 
-function benchMap({
-    lat,
-    lng,
-    setLat,
-    setLng,
-    listings,
-    selectedListing,
-    mapOptions = {},
-    mapEventHandlers = {},
-    markerEventHandlers = {}
-    
-}) {
-    const [map, setMap] = useState(null);
-    const mapRef = useRef(null);
-    const markers = useRef({});
-    const history = useHistory();
-    let center = null;
-    if (map) center = map.getCenter().toJSON();
+export default function Home(){
+    const {isLoaded} = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
+    })
 
 
-    useEffect(()=>{
-       if(!map){
-           setMap(new window.google.maps.Map(mapRef.current, {
-               center: {
-                   lat: 40.74363402543966,
-                   lng: -73.98377122848856
-               },
-               zoom: 13,
-               mapId: "49aa6f67e21bd8eb",
-               gestureHandling: "greedy",
-               clickableIcons: false,
-               diableDefaultUI: true,
-               ...mapOptions,
-           }));
-       } 
-    }, [mapRef, map, mapOptions, lat, lng]);
+if (!isLoaded) return <div>Loading...</div>
+return <Map />;
+}
 
-
-    useEffect(() => {
-        if (map) {
-            const position = {lat: lat, lng: lng, zoom: 13}
-            map.setCenter(position);
-        }
-    }, [lat, lng])
-
-    useEffect(()=>{
-        if(map){
-            const listeners = Object.entries(mapEventHandlers).map(([event, handler]) =>
-            window.google.maps.event.addListner(
-                map,
-                event,
-            (...args) => handler(...args, map)
-            ));
-            return ()=> listeners.forEach(window.google.maps.event.removeListener);
-        }
-    }, [map, mapEventHandlers]);
-
-
-
-
-
-
-function benchMapWrapper(props){
+function Map(){
+    const center = useMemo(()=> ({lat: 44, lng: -80}), []);
     return (
-        <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
-            <benchMap {...props} />
-        </Wrapper>
+        <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+            <Marker position={center}/>
+        </GoogleMap>
     )
 }
 
 
-}
 
-export default benchMapWrapper;
+
