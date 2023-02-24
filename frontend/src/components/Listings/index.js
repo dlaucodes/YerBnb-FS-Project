@@ -32,10 +32,12 @@ const ListingIndex = () => {
         
         
     return (
-        <div className="listing-container">
+        <div className="listing-page">
+            <div className="listing-container">
             {showArray.map((item, i) => (
                 <Listing key={i} listingItem={item}/>
             ))}
+            </div>
         </div>
     );
     }else{
