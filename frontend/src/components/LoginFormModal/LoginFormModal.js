@@ -116,7 +116,7 @@ const LoginForm = ({setShowLoginModal}) => {
      
 
       <div className="errors">
-        {errors.map((error) => error)}
+        {errors.map((error, i) => error)}
       </div>
 
     <div className="welcome-text">
