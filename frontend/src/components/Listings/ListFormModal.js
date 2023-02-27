@@ -50,7 +50,9 @@ const ListForm = ({setShowListFormModal}) =>{
             method: 'POST',
             body: formData
         })
-       
+        
+        console.log(formData)
+        
         if (response.ok) {
             const message = await response.json();
             setTitle("")
@@ -62,7 +64,6 @@ const ListForm = ({setShowListFormModal}) =>{
             setLat("")
             setLng("")
         }
-        
         setShowListFormModal(false) && <Redirect to="/" />
 
         

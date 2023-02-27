@@ -7,8 +7,7 @@ import { useEffect, useState } from "react";
 import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
 import { fetchListing } from "../../store/listing";
-import Map, { Home } from "../Map";
-import { GoogleMap } from "@react-google-maps/api";
+
 
 
 
@@ -17,7 +16,7 @@ const ListingShow = () => {
     // const location = useLocation()
     // const listingId = location.pathname.slice(10)
     // const item = location.item
-    // const [item, setItem] = useState()
+    const [items, setItems] = useState()
     const {listingId} = useParams()
     // const photoUrl = location.photoUrl
     const sessionUser = useSelector(state=>state.session.user)
@@ -29,9 +28,9 @@ const ListingShow = () => {
     
     useEffect(()=>{
         dispatch(fetchListing(listingId))
-        // .then(()=>{
-        //   item = setItem(actualListing[listingId -1])  
-        // })
+        .then(()=>{
+          setItems(items)  
+        })
     }, [])
 
     console.log(item)
@@ -132,20 +131,14 @@ const ListingShow = () => {
                 {/* {Map()} */}
             </div>
 
-        {sessionUserIsOwner && (
+        {/* {sessionUserIsOwner && (
             <div>
                 Session User is Owner
             </div>
-        )}
+        )} */}
         </div>
     </>
-    )}else{
-        return(
-            <div>
-                loading...
-            </div>
-        )
-    }
+    )}
 }
  
 export default ListingShow;

@@ -7,7 +7,7 @@ import "./listing.css"
 
 
 const ListingIndex = () => {
-    const [list, setList] = useState();
+    const [list, setList] = useState(null);
     const test = useSelector(state=> getListings(state))
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
