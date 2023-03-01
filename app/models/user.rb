@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :reservations,
     foreign_key: :guest_id,
     dependent: :destroy
+  
+  has_many_attached :photos
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
