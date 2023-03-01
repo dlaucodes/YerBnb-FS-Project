@@ -28,9 +28,9 @@ const ListingShow = () => {
     
     useEffect(()=>{
         dispatch(fetchListing(listingId))
-        .then(()=>{
-          setItems(items)  
-        })
+        // .then(()=>{
+        //   setItems(items)  
+        // })
     }, [])
 
     console.log(item)

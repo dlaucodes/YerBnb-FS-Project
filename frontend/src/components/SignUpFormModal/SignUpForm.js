@@ -28,8 +28,6 @@ function SignUpForm({setShowSignUpModal, setShowLoginModal}) {
     window.open(mailto)
   }
 
-  
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {

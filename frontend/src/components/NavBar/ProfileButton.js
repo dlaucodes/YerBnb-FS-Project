@@ -4,6 +4,7 @@ import * as sessionActions from "../../store/session";
 import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
 import ListFormModal from "../Listings/indexListFormModal";
+import { Link } from 'react-router-dom'
 
 
 function ProfileButton(props) {
@@ -16,6 +17,8 @@ function ProfileButton(props) {
   const currentUser = useSelector((state) => {
     return state.session.user;
   });
+
+  console.log(currentUser)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -50,6 +53,10 @@ function ProfileButton(props) {
     else{return openMenu}
   }
 
+  // const handleAccount = ()=>{
+  //   <Link to={{pathname: `/profiles/${currentUser.id}`}}/>
+  // }
+
 
 return (
     <div className='profile-button-div'>
@@ -82,6 +89,18 @@ return (
               closeMenu()
             }}>Host your home</button>
             </div>
+            <div className="divider">
+
+              </div>
+
+              <div className="account-button">
+               
+                    <Link id="drop-signup" to={{pathname: `/profiles/${currentUser.id}`}}>
+
+                    
+                    Account</Link>
+                
+              </div>
           
 
             </>
@@ -104,21 +123,17 @@ return (
                     }
                   }>Login</button>
               </div>
+               <div className="divider">
+
+              </div>
+              
+
+              
             
             </>  
           )
         }
-              <div className="divider">
-
-              </div>
-
-              <div className="account-button">
-                <button id="drop-help"
-                    onClick={()=>
-                    buttonMailto('mailto: dlaucodes@gmail.com')}>
-                    Account
-                </button>
-              </div>
+              
                 <div className="help-button">
                 <button id="drop-help"
                     onClick={()=>
