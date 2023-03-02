@@ -1,13 +1,23 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './Profile.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 
 const ProfileDetails = () => {
     const currentUser = useSelector((state)=> state.session.user);
+    const dispatch = useDispatch();
     const { id } = useParams();
+
+    const uploadPhoto = (e)=> {
+        const file = e.currentTarget.files[0];
+        const formData = new FormData();
+        formData.append('user[photo]', file);
+        dispatch(userActions.updateUser(formData));
+    }
+
 
     console.log(currentUser.firstName)
     return (
