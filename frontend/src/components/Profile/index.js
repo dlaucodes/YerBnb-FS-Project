@@ -20,8 +20,6 @@ const ProfileDetails = () => {
         dispatch(userActions.updateUser(formData));
     }
 
-    
-    
     return (
         <>
         <div className="profile-container">

@@ -18,8 +18,6 @@ function ProfileButton(props) {
     return state.session.user;
   });
 
-  console.log(currentUser)
-
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -104,15 +102,8 @@ return (
               </div>
 
               <div className="account-button">
-               
-                    <Link id="drop-signup" to={{pathname: `/profiles/${currentUser.id}`}}>
-
-                    
-                    Account</Link>
-                
-              </div>
-          
-
+               <Link id="drop-signup" to={{pathname: `{currentUser.id}`}}>  Account</Link>
+                </div>
             </>
             
           ) : (
@@ -136,10 +127,6 @@ return (
                <div className="divider">
 
               </div>
-              
-
-              
-            
             </>  
           )
         }
