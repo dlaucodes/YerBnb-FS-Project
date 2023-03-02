@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
+import { useEffect } from 'react';
 
 
 
@@ -20,8 +21,6 @@ const ProfileDetails = () => {
     }
 
     
-
-
     
     return (
         <>
