@@ -131,7 +131,7 @@ return (
           )
         }
               
-                <div className="help-button">
+              <div className="help-button">
                 <button id="drop-help"
                     onClick={()=>
                     buttonMailto('mailto: dlaucodes@gmail.com')}>

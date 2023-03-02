@@ -28,7 +28,6 @@ const ProfileDetails = () => {
                 <div className="profile-picture-container">
                     {currentUser.photoUrl && (<img className='profile-picture' src={currentUser.photoUrl} alt="" />)}
                 </div>
-                
                     <label className='update-photo' htmlFor="update-photo">Update photo</label>
                 <input type="file" id='update-photo' onChange={uploadPhoto} accept="image"/>
                 
