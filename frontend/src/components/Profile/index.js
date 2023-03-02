@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
+import * as userActions from '../../store/user'
 
 
 
@@ -18,19 +19,22 @@ const ProfileDetails = () => {
         dispatch(userActions.updateUser(formData));
     }
 
+    
 
-    console.log(currentUser.firstName)
+
+    
     return (
         <>
         <div className="profile-container">
             <div className="left-container">
                 <div className="left-inner-container">
-                <div className="profile-picture">
-                    profile picture
+                <div className="profile-picture-container">
+                    {currentUser.photoUrl && (<img className='profile-picture' src={currentUser.photoUrl} alt="" />)}
                 </div>
-                <div className="photo-update">
-                    Update photo
-                </div>
+                
+                    <label className='update-photo' htmlFor="update-photo">Update photo</label>
+                <input type="file" id='update-photo' onChange={uploadPhoto} accept="image"/>
+                
             </div>
             </div>
 

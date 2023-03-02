@@ -28,7 +28,8 @@
     border-radius: 10px;
 }
 
-.profile-picture{
+
+.profile-picture-container{
     display: flex;
     border: 1px solid red;
     border-radius: 50%;
@@ -36,7 +37,14 @@
     width: 125px;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
+
+.profile-picture{
+    width: 200px;
+}
+
+
 
 .photo-update{
     display: flex;

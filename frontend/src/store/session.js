@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf";
 
 const RECEIVE_USER = "users/RECEIVE_USER";
+const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_USER = "users/REMOVE_USER";
 
 export const receiveUser = (user) => {
@@ -16,6 +17,11 @@ export const removeUser = () => {
   }
 };
 
+const setCurrentUser = (user) => ({
+    type: SET_CURRENT_USER,
+    payload: user
+});
+
 const storeCSRFToken = (res) => {
   const csrfToken = res.headers.get("X-CSRF-Token");
   if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
@@ -24,6 +30,11 @@ const storeCSRFToken = (res) => {
 const storeCurrentUser = (user) => {
   if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
   else sessionStorage.removeItem("currentUser");
+};
+
+export const getCurrentUser = (data) => async dispatch => {
+    storeCurrentUser(data.user);
+    return dispatch(setCurrentUser(data.user));
 };
 
 export const loginUser = (user) => async (dispatch) => {
