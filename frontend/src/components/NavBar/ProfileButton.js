@@ -102,7 +102,7 @@ return (
               </div>
 
               <div className="account-button">
-               <Link id="drop-signup" to={{pathname: `{currentUser.id}`}}>  Account</Link>
+               <Link id="drop-signup" to={{pathname: `/profiles/${currentUser.id}`}}>Account</Link>
                 </div>
             </>
             
@@ -131,7 +131,7 @@ return (
           )
         }
               
-              <div className="help-button">
+                <div className="help-button">
                 <button id="drop-help"
                     onClick={()=>
                     buttonMailto('mailto: dlaucodes@gmail.com')}>
