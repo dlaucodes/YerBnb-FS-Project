@@ -60,7 +60,7 @@ return (
     <div className='profile-button-div'>
       <button id="profile-button" onClick={profileButton()}>
 
-        <svg className='profile-menu' width={16} height={16} viewBox="0 0 32 32" fill={'#929292'} stroke={'#929292'} strokeWidth={3}>
+        <svg className='profile-menu' width={16} height={16} viewBox="0 0 32 32" fill={'none'} stroke={'#000000'} strokeWidth={3}>
         <g fill="none" fillRule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
         </svg>
 

@@ -44,6 +44,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    width: 65px;
 }
 
 .profile-photo{
