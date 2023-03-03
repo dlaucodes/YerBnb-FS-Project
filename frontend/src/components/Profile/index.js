@@ -41,6 +41,9 @@ const ProfileDetails = () => {
                     <div className="confirmed-container">
                         {`${currentUser.firstName}`} confirmed
                     </div>
+                    <div className="confirmed-list"><svg viewBox="0 0 16 16" height="16px" width="16px"><path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path></svg><div className="confirmed-text">Identity</div></div>
+                      <div className="confirmed-list"><svg viewBox="0 0 16 16" height="16px" width="16px"><path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path></svg><div className="confirmed-text">Email address</div></div>
+                      <div className="confirmed-list"><svg viewBox="0 0 16 16" height="16px" width="16px"><path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path></svg><div className="confirmed-text">Phone number</div></div>
                 </div>
             </div>
 

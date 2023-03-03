@@ -54,11 +54,15 @@
     height: 30px;
     width: 30px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-photo img{
     justify-content: center;
     align-items: center;
+    width: 30px;
+    margin-top: 5px;
 }
 
 .profile-button-div:hover {

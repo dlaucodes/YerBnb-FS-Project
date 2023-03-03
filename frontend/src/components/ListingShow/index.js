@@ -26,15 +26,7 @@ const ListingShow = () => {
     const listingarray = listingvalues[0]
     const item = Object.values(listingarray)[listingId -1]
     
-    useEffect(()=>{
-        dispatch(fetchListing(listingId))
-        // .then(()=>{
-        //   setItems(items)  
-        // })
-    }, [])
-
-    console.log(item)
-
+ 
 
 //     useEffect(()=>{
 //     dispatch(fetchListings())
@@ -51,7 +43,7 @@ const ListingShow = () => {
     //     )
     // }
     if(item){
-        const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
+        // const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
     <>
         {/* {listingId} */}
