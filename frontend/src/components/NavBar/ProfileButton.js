@@ -51,11 +51,6 @@ function ProfileButton(props) {
     else{return openMenu}
   }
 
-  // const handleAccount = ()=>{
-  //   <Link to={{pathname: `/profiles/${currentUser.id}`}}/>
-  // }
-
-
 return (
     <div className='profile-button-div'>
       <button id="profile-button" onClick={profileButton()}>
@@ -131,7 +126,7 @@ return (
           )
         }
               
-                <div className="help-button">
+              <div className="help-button">
                 <button id="drop-help"
                     onClick={()=>
                     buttonMailto('mailto: dlaucodes@gmail.com')}>
