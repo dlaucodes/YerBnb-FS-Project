@@ -43,7 +43,8 @@
 
 .profile-picture{
     width: 125px;
-    margin-top: 18px;
+    margin-top: 8px;
+    object-fit: cover;
 }
 
 
