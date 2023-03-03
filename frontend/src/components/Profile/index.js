@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
@@ -19,6 +19,10 @@ const ProfileDetails = () => {
         formData.append('user[photo]', file);
         dispatch(userActions.updateUser(formData));
     }
+
+    const buttonMailto = (mailto) =>{
+    window.open(mailto)
+  }
 
     return (
         <>
@@ -47,8 +51,13 @@ const ProfileDetails = () => {
                       <div className="confirmed-list"><svg viewBox="0 0 16 16" height="16px" width="16px"><path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path></svg><div className="confirmed-text">Phone number</div>
                       </div>
                       <div className="learn-more">
-                          Learn more about how confirming account info helps keep the Airbnb community secure.
-                      </div>
+                      <p>
+                          <Link id="learn-more"
+                    onClick={()=>
+                    buttonMailto('mailto: dlaucodes@gmail.com')}>
+                    Learn more</Link> about how confirming account info helps keep the Yerbnb community secure.
+                    </p>
+                    </div>
                 </div>
             </div>
 
