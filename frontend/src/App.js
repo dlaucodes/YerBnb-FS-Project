@@ -1,5 +1,5 @@
 import LoginFormPage from "./components/LoginFormModal/LoginFormModal";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner/Banner";
@@ -48,7 +48,7 @@ function App() {
             <ListingShow />
         </Route>
         <Route path="/profiles/:id/">
-          <ProfileDetails />
+          {currentUser ? <ProfileDetails /> : <Redirect to="/"/>}
         </Route>
         {/* <Route exact path="/signup">
           <SignupForm />
