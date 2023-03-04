@@ -41,7 +41,7 @@ function ProfileButton(props) {
 
 
   const logout = () => {
-    // e.preventDefault();
+   
     dispatch(sessionActions.logoutUser());
   };
   console.log()

@@ -19,11 +19,14 @@ import ProfileDetails from "./components/Profile";
 
 function App() {
   const dispatch = useDispatch()
+  const currentUser = useSelector(state => state.session.user)
   const listings = useSelector(state => state.listing)
 
-  useEffect(()=>{
-    dispatch(fetchListings())
-  },[])
+  console.log(currentUser)
+
+  // useEffect(()=>{
+  //   dispatch(fetchListings())
+  // },[])
 
   // if (listings) {
   //   console.log(Object.values(listings))
@@ -41,7 +44,7 @@ function App() {
         <Route exact path="/">
             <ListingIndex />
         </Route>
-        <Route path="/listings/:listingId">
+        <Route exact path="/listings/:listingId">
             <ListingShow />
         </Route>
         <Route path="/profiles/:id/">

@@ -20,9 +20,7 @@ const ProfileDetails = () => {
         dispatch(userActions.updateUser(formData));
     }
 
-    // useEffect(()=>{
-
-    // }, [uploadPhoto])
+ 
 
     const buttonMailto = (mailto) =>{
     window.open(mailto)
