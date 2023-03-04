@@ -20,6 +20,10 @@ const ProfileDetails = () => {
         dispatch(userActions.updateUser(formData));
     }
 
+    // useEffect(()=>{
+
+    // }, [uploadPhoto])
+
     const buttonMailto = (mailto) =>{
     window.open(mailto)
   }
@@ -62,6 +66,7 @@ const ProfileDetails = () => {
             </div>
 
             <div className="right-container">
+                <div className="right-inner-container">
                 <div className="intro">
                     Hi, I'm {`${currentUser.firstName}`}
                 </div>
@@ -74,8 +79,15 @@ const ProfileDetails = () => {
                 <div className="about">
                     About
                 </div>
+                <div className="right-divider">
+                    <div className="lives-in">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height="16px" width="16px"><path d="M8.602 1.147l.093.08 7.153 6.914-.696.718L14 7.745V14.5a.5.5 0 0 1-.41.492L13.5 15H10V9.5a.5.5 0 0 0-.41-.492L9.5 9h-3a.5.5 0 0 0-.492.41L6 9.5V15H2.5a.5.5 0 0 1-.492-.41L2 14.5V7.745L.847 8.86l-.696-.718 7.153-6.915a1 1 0 0 1 1.297-.08z"></path></svg>
+                    <div className="lives-in-text">Lives in New York, NY</div>
+                    </div>
+                </div>
                 <div className="reviews">
-                    Reviews
+                    3 reviews
+                </div>
                 </div>
             </div>
                 
