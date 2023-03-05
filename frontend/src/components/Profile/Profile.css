@@ -215,4 +215,5 @@ label {
    color: black;
    cursor: pointer;
    font-style: bold;
+   text-decoration: underline;
 }

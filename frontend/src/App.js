@@ -2,7 +2,6 @@ import LoginFormPage from "./components/LoginFormModal/LoginFormModal";
 import { Redirect, Route, Switch } from "react-router-dom";
 import SignupForm from "./components/SignUpFormModal/SignUpForm";
 import NavBar from "./components/NavBar";
-import Banner from "./components/Banner/Banner";
 import ListingIndex from "./components/Listings"
 import ListForm from './components/Listings/ListFormModal'
 import { useDispatch, useSelector } from "react-redux";
@@ -22,11 +21,11 @@ function App() {
   const currentUser = useSelector(state => state.session.user)
   const listings = useSelector(state => state.listing)
 
-  console.log(currentUser)
+  console.log(listings.owner_id)
 
-  // useEffect(()=>{
-  //   dispatch(fetchListings())
-  // },[])
+  useEffect(()=>{
+    dispatch(fetchListings())
+  },[])
 
   // if (listings) {
   //   console.log(Object.values(listings))

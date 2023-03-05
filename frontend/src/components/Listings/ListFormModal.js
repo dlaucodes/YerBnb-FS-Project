@@ -51,7 +51,7 @@ const ListForm = ({setShowListFormModal}) =>{
             body: formData
         })
         
-        console.log(formData)
+      console.log(owner.id)
         
         if (response.ok) {
             const message = await response.json();
