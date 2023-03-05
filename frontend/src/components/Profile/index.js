@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchListings, getListings } from '../../store/listing';
 
 
 
@@ -17,10 +18,11 @@ const ProfileDetails = () => {
     const ownerId = listingArray.map((item, i) =>(
                         item.ownerId
                     ))
+    const listings = useSelector(state => getListings(state))
+
+    
 
  
-
-    console.log(ownerId)
     
     const uploadPhoto = (e)=> {
         const file = e.currentTarget.files[0];

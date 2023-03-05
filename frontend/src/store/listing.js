@@ -28,6 +28,7 @@ export const removeListing = (listingId)=>{
 
 export const getListings = (state) => { return Object.values(state.listing)}
 
+
 export const fetchListing = (listingId) => async (dispatch)=>{
     const res = await csrfFetch(`/api/listing/${listingId}`)
 
