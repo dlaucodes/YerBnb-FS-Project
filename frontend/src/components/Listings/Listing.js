@@ -14,7 +14,7 @@ const Listing = ({listingItem}) => {
         
     }, [listingItem])
     
-    console.log(listingItem.ownerId)
+    // console.log(listingItem.ownerId)
     // if(listingItem.length > 0){
     return ( 
         
@@ -32,8 +32,9 @@ const Listing = ({listingItem}) => {
             </div>
             <div className="listing-price-container">
                ${listingItem.price} night
-            </div> 
+            </div>
         </div>
+        
        </>
             
         

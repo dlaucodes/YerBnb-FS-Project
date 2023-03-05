@@ -4,6 +4,7 @@ import csrfFetch from "../../store/csrf";
 import { getListings } from "../../store/listing";
 import Listing from "./Listing";
 import "./listing.css"
+import Profile from '../Profile'
 
 
 const ListingIndex = () => {

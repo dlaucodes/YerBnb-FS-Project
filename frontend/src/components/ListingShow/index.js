@@ -67,7 +67,7 @@ const ListingShow = () => {
                 if ( i === 1 || i === 3){      
                 return (
                             
-                <img src={`${photo}`} className="photo-small"/>
+                <img src={`${photo}`} className="photo-small" key={i} />
                 
                 )
                 }     
@@ -83,7 +83,7 @@ const ListingShow = () => {
                 if ( i === 2 || i === 4){      
                 return (
                             
-                <img src={`${photo}`} className="photo-small"/>
+                <img src={`${photo}`} className="photo-small" key={i}/>
                
                 )
                 }     

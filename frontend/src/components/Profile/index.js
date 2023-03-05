@@ -5,23 +5,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
 import { fetchListings, getListings } from '../../store/listing';
+import Listing from '../Listings/Listing';
 
 
 
 
-const ProfileDetails = () => {
+
+const ProfileDetails = ({item}) => {
     const currentUser = useSelector((state)=> state.session.user);
-    const allListings = useSelector((state)=> state.listing.listings);
-    const listingArray = Object.values(allListings)
+    const listings = useSelector(state => state.listing)
+    const [list, setList] = useState()
+
     const dispatch = useDispatch();
     const { id } = useParams();
-    const ownerId = listingArray.map((item, i) =>(
-                        item.ownerId
-                    ))
-    const listings = useSelector(state => getListings(state))
+    // const ownerId = listingArray.map((item, i) =>(
+    //                     item.ownerId
+    //                 ))
+    // const listings = useSelector(state => getListings(state))
 
-    
-
+    console.log(item)
  
     
     const uploadPhoto = (e)=> {
@@ -31,7 +33,7 @@ const ProfileDetails = () => {
         dispatch(userActions.updateUser(formData));
     }
     
-    console.log(ownerId[0])
+   
     
  
 
