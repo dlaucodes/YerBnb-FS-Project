@@ -37,6 +37,7 @@ const ListingIndex = () => {
             <div className="listing-container">
             {showArray.map((item, i) => (
                 <Listing key={i} listingItem={item}/>
+                
             ))}
             </div>
         </div>

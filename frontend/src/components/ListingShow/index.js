@@ -22,12 +22,17 @@ const ListingShow = () => {
     const sessionUser = useSelector(state=>state.session.user)
     const dispatch = useDispatch()
     const listings = useSelector(state => state.listing)
+    const list = useSelector(state=> state.listing.listings)
     const listingvalues = Object.values(listings)
-    const listingarray = listingvalues[0]
+    const listingarray = (listingvalues[0])
     const item = Object.values(listingarray)[listingId -1]
     
+    
  
-
+    console.log(listings)
+    console.log(list)
+    console.log(item)
+    
 //     useEffect(()=>{
 //     dispatch(fetchListings())
 //   },[])
@@ -94,14 +99,14 @@ const ListingShow = () => {
             </div>
         </div>
 
-        <div className="listing-divider">
-        </div>
+        {/* <div className="listing-divider">
+        </div> */}
         
         <div className="listing-descriptions">
             <div className="listing-info-left">
             
             <div className="host-info">
-                host info here
+                Hosted by name
             </div>
 
             <div className="price-container">
@@ -130,7 +135,13 @@ const ListingShow = () => {
         )} */}
         </div>
     </>
-    )}
+    )}else{
+        return(
+            <div>
+            loading
+            </div>
+        )
+    }
 }
  
 export default ListingShow;
