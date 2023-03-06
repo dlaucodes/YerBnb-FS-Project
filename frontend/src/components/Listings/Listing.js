@@ -34,10 +34,7 @@ const Listing = ({listingItem}) => {
                ${listingItem.price} night
             </div>
         </div>
-        
-       </>
-            
-        
+       </>  
      )
     //  else{
     //      return (

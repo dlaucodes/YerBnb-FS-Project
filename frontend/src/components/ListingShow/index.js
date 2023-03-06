@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
 import { fetchListing } from "../../store/listing";
+import Reservation from "../Reservation"
 
 
 
@@ -142,8 +143,8 @@ const ListingShow = () => {
             </div>
             </div>
             <div className="listing-info-right">
-            <div className="reservation-container">
-                <p>reservations here</p>
+            <div className="reservation-container-outer">
+                <Reservation />
             </div>
           
             </div>

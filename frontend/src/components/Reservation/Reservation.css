@@ -1,0 +1,11 @@
+.reservation-container{
+    display: flex;
+    width: 370px;
+    margin-left: 70px;
+    border-radius: 10px;
+    border: 1px solid #a8a8a8;
+    height: 500px;
+    box-shadow: #999999;
+    align-items: center;
+    justify-content: center;
+}
