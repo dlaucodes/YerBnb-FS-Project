@@ -5,6 +5,7 @@ const REMOVE_LISTING = "listings/REMOVE_LISTING";
 const RECEIVE_LISTINGS = "listings/RECEIVE_LISTINGS";
 
 
+
 export const receiveListing = (listing) => {
     return {
         type: RECEIVE_LISTING,
@@ -27,6 +28,13 @@ export const removeListing = (listingId)=>{
 }
 
 export const getListings = (state) => { return Object.values(state.listing)}
+
+export const getListing = (listingId) => {
+    return (
+        (store)=>{
+        return store.listings[listingId]
+    })
+}
 
 
 export const fetchListing = (listingId) => async (dispatch)=>{
@@ -55,11 +63,13 @@ export const deleteListing = (listingId) => async (dispatch)=>{
 
 
 const listingReducer = (state = {}, action) => {
+    let newState = {...state}
     switch(action.type){
         case REMOVE_LISTING:
             return {...state, listing: null}
         case RECEIVE_LISTING:
-            return {...state, listing: action.payload}
+            newState[action.listing.id] = action.listing;
+            return newState
             // return {...state, ...action.payload}
             // return {...state, action.payload}
         case RECEIVE_LISTINGS:

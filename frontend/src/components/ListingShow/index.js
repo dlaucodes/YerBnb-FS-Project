@@ -6,9 +6,9 @@ import { getListings } from "../../store/listing";
 import { useEffect, useState } from "react";
 import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
-import { fetchListing } from "../../store/listing";
+import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
-import GoogleApiWrapper from "../Map"
+
 
 
 
@@ -21,35 +21,45 @@ const ListingShow = () => {
     const [items, setItems] = useState()
     const {listingId} = useParams()
     // const photoUrl = location.photoUrl
-    const sessionUser = useSelector(state=>state.session.user)
+    // const sessionUser = useSelector(state=>state.session.user)
+    const test = useSelector(state=>getListings(state))
+    // const item = test[0].id
     const dispatch = useDispatch()
-    const listings = useSelector(state => state.listing)
-    const list = useSelector(state=> state.listing.listings)
-    const listingvalues = Object.values(listings)
-    const listingarray = (listingvalues[0])
-    const item = Object.values(listingarray)[listingId -1]
+    // const listings = useSelector(state => state.listings)
+    // const listingsarray = useSelector(getListings)
+    // const gettingListing = useSelector(getListing(listingId)) 
+    // const listingvalues = Object.values(listings)
+    // const listingarray = (listingvalues[0])
+    // const item = Object.values(listingarray)[listingId -1]
+    useEffect(()=>{
+        dispatch(fetchListings())
+    },[])
     
+    // console.log(listings)
+    // console.log(test)
+    // console.log(item[listingId])
+
+    // console.log(listings)
+   
     
- 
-    console.log(listings)
-    console.log(list)
-    console.log(item)
+    // console.log(gettingListing)
+
     
-//     useEffect(()=>{
-//     dispatch(fetchListings())
-//   },[])
     // console.log(item)
     // console.log(listingId)
 
     // console.log(listingarray[1])
     // console.log(listingItem)
 
+    // return(<div></div>)
     // if(!sessionUser){
     //     return(
     //         <Redirect to="/"/>
     //     )
     // }
-    if(item){
+    if(test[0]){
+        let item = test[0][listingId]
+        console.log(item)
         // const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
     return (
     <>
@@ -161,13 +171,7 @@ const ListingShow = () => {
         )} */}
         </div>
     </>
-    )}else{
-        return(
-            <div>
-            loading
-            </div>
-        )
-    }
+    )}
 }
  
 export default ListingShow;

@@ -4,9 +4,8 @@ import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
-import { fetchListings, getListings } from '../../store/listing';
+import { fetchListings } from '../../store/listing';
 import Listing from '../Listings/Listing';
-
 
 
 
@@ -23,6 +22,11 @@ const ProfileDetails = ({item}) => {
     // const listings = useSelector(state => getListings(state))
 
     console.log(item)
+
+    // useEffect(()=>{
+    //     dispatch(fetchListings())
+    // })
+
  
     
     const uploadPhoto = (e)=> {
@@ -33,9 +37,6 @@ const ProfileDetails = ({item}) => {
     }
     
    
-    
- 
-
     const buttonMailto = (mailto) =>{
     window.open(mailto)
   }
@@ -108,8 +109,6 @@ const ProfileDetails = ({item}) => {
             </div>
                 
         </div>
-
-        
         </>
      );
 }
