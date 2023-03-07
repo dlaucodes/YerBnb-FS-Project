@@ -1,17 +1,17 @@
 import csrfFetch from "./csrf";
 import * as sessionActions from "./session";
 
-const ADD_USERS = 'users/addUsers';
-const ADD_USER = 'users/addUser';
+const RECEIVE_USERS = 'users/RECEIVE_USERS';
+const RECEIVE_USER = 'users/RECEIVE_USER';
 
 
-export const addUser = (user) => ({
-    type: ADD_USER,
+export const receiveUser = (user) => ({
+    type: RECEIVE_USER,
     payload: user
   });
   
-  export const addUsers = (users) => ({
-    type: ADD_USERS,
+  export const receiveUsers = (users) => ({
+    type: RECEIVE_USERS,
     payload: users
   });
 
@@ -19,7 +19,7 @@ export const fetchUsers = () => async dispatch => {
     const res = await csrfFetch('/api/users')
     if (res.ok) {
         const data = await res.json();
-        dispatch(addUsers(data.users));
+        dispatch(receiveUsers(data.users));
     }
 };
 
@@ -35,9 +35,9 @@ export const updateUser = (user) => async dispatch => {
 
 const usersReducer = (state = {}, action) => {
     switch(action.type){
-        case ADD_USER:
+        case RECEIVE_USER:
             return {...state, user: action.payload}
-        case ADD_USERS:
+        case RECEIVE_USERS:
             return {...state, ...action.payload};
         default:
             return state;

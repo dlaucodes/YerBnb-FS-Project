@@ -103,7 +103,8 @@ const ProfileDetails = ({item}) => {
                     <div className="lives-in-text">3 reviews</div>
                 </div>
                 <div className="test">
-                    testing          </div>
+                    testing          
+                </div>
                 </div>
             </div>
                 

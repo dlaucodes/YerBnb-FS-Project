@@ -8,6 +8,7 @@ import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
 import { fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
+import GoogleApiWrapper from "../Map"
 
 
 
@@ -150,7 +151,7 @@ const ListingShow = () => {
             </div>
         </div>
             <div className="map-container">
-                {/* {Map()} */}
+                {/* <GoogleApiWrapper/> */}
             </div>
 
         {/* {sessionUserIsOwner && (
