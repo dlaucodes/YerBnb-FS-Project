@@ -62,14 +62,14 @@ export const deleteListing = (listingId) => async (dispatch)=>{
 };
 
 
-const listingReducer = (state = {}, action) => {
+const listingReducer = (state = [], action) => {
     let newState = {...state}
     switch(action.type){
         case REMOVE_LISTING:
             return {...state, listing: null}
         case RECEIVE_LISTING:
-            newState[action.listing.id] = action.listing;
-            return newState
+            return {...state, listing: action.payload}
+        
             // return {...state, ...action.payload}
             // return {...state, action.payload}
         case RECEIVE_LISTINGS:

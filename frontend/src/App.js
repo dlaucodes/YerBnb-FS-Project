@@ -21,7 +21,6 @@ function App() {
   const currentUser = useSelector(state => state.session.user)
   const listings = useSelector(state => state.listing)
 
-  console.log(listings.owner_id)
 
   useEffect(()=>{
     dispatch(fetchListings())

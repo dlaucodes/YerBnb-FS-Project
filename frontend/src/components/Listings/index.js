@@ -18,6 +18,8 @@ const ListingIndex = () => {
         });
     }, []);
 
+    console.log(list)
+
     if (list){
         let array = Object.values(list)
         // let showArray = array.reverse()
@@ -28,7 +30,7 @@ const ListingIndex = () => {
         // console.log(array)
         // console.log(listings)
         // was used to test for the data 
-       
+        
         
         
         

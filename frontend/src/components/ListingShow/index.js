@@ -22,7 +22,7 @@ const ListingShow = () => {
     const {listingId} = useParams()
     // const photoUrl = location.photoUrl
     // const sessionUser = useSelector(state=>state.session.user)
-    const test = useSelector(state=>getListings(state))
+    const listings = useSelector(state=>getListings(state))
     // const item = test[0].id
     const dispatch = useDispatch()
     // const listings = useSelector(state => state.listings)
@@ -35,52 +35,30 @@ const ListingShow = () => {
         dispatch(fetchListings())
     },[])
     
-    // console.log(listings)
-    // console.log(test)
-    // console.log(item[listingId])
-
-    // console.log(listings)
    
-    
-    // console.log(gettingListing)
-
-    
-    // console.log(item)
-    // console.log(listingId)
-
-    // console.log(listingarray[1])
-    // console.log(listingItem)
-
-    // return(<div></div>)
-    // if(!sessionUser){
-    //     return(
-    //         <Redirect to="/"/>
-    //     )
-    // }
-    if(test[0]){
-        let item = test[0][listingId]
-        console.log(item)
-        // const sessionUserIsOwner = sessionUser ? (sessionUser.id === item.ownerId) : null
+    if(listings[0]){
+        let listing = listings[0][listingId]
+        // const sessionUserIsOwner = sessionUser ? (sessionUser.id === listing.ownerId) : null
     return (
     <>
         {/* {listingId} */}
         <div className= "listing-template">
             <div className="title-container">
-                <h1>{item.title}</h1>
+                <h1>{listing.title}</h1>
             </div>
             <div className="location-container">
-                {item.location} 
+                {listing.location} 
              </div>
             <div className="photo-container">
-                {item.photoUrls.length > 0 && 
+                {listing.photoUrls.length > 0 && 
                 <div className="photo-container1">
-                    <img src={`${item.photoUrls[0]}`} className="photo-main" alt=""/>
+                    <img src={`${listing.photoUrls[0]}`} className="photo-main" alt=""/>
                 </div>} 
             <div className="right-photocontainer">
-                {item.photoUrls.length > 0 &&
+                {listing.photoUrls.length > 0 &&
            
             <div className="photo-container2" >
-            {item.photoUrls.map((photo, i) => {
+            {listing.photoUrls.map((photo, i) => {
                 if ( i === 1 || i === 3){      
                 return (
                             
@@ -93,10 +71,10 @@ const ListingShow = () => {
             </div>
             }
 
-            {item.photoUrls.length > 0 &&
+            {listing.photoUrls.length > 0 &&
 
             <div className="photo-container3" >
-            {item.photoUrls.map((photo, i) => {
+            {listing.photoUrls.map((photo, i) => {
                 if ( i === 2 || i === 4){      
                 return (
                             
@@ -149,7 +127,7 @@ const ListingShow = () => {
 
             <div className="description-container">
                 <p>
-                {item.description}
+                {listing.description}
                 </p>
             </div>
             </div>
