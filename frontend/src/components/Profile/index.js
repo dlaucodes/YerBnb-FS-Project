@@ -26,12 +26,7 @@ const ProfileDetails = () => {
         dispatch(fetchListings())
     }, [])
 
-    function Listing({ listing, currentUser }) {
-    const matchingListings = Object.keys(listing.listings)
-    .filter(key => listing.listings[key].ownerId === currentUser.id)
-    .map(key => listing.listings[key]);
-    }
-    
+  
  
     
     const uploadPhoto = (e)=> {
@@ -108,7 +103,21 @@ const ProfileDetails = () => {
                     <div className="lives-in-text">3 reviews</div>
                 </div>
                 <div className="user-listings">
-                      
+                      <div>
+                {Object.keys(listings.listings).map((key) => {
+                const listing = listings.listings[key];
+                if (listing.ownerId === currentUser.id) {
+                    return (
+                    <div key={key}>
+                    <p>Owner ID: {<img src={listing.photoUrls[0]}></img>}</p>
+                    <p>Listing ID: {key}</p>
+              {/* Other listing details */}
+            </div>
+          );
+        }
+        return null;
+      })}
+    </div>
                 </div>
                 </div>
             </div>
