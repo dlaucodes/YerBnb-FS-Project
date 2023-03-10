@@ -13,7 +13,7 @@ import ProfileListing from './ProfileListingShow';
 
 const ProfileDetails = () => {
     const currentUser = useSelector((state)=> state.session.user);
-    const listings = useSelector(state => getListings(state))
+    const listings = useSelector(state => state.listing)
     const [list, setList] = useState()
     const dispatch = useDispatch();
     const { listingId } = useParams();
@@ -26,7 +26,12 @@ const ProfileDetails = () => {
         dispatch(fetchListings())
     }, [])
 
-
+    function Listing({ listing, currentUser }) {
+    const matchingListings = Object.keys(listing.listings)
+    .filter(key => listing.listings[key].ownerId === currentUser.id)
+    .map(key => listing.listings[key]);
+    }
+    
  
     
     const uploadPhoto = (e)=> {
@@ -103,7 +108,7 @@ const ProfileDetails = () => {
                     <div className="lives-in-text">3 reviews</div>
                 </div>
                 <div className="user-listings">
-                   <ProfileListing />
+                      
                 </div>
                 </div>
             </div>

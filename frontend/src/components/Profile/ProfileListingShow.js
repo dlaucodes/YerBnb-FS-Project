@@ -1,36 +1,38 @@
 import React from "react";
 import {useParams } from "react-router-dom";
 import { getListings, fetchListings } from "../../store/listing";
+import * as userActions from '../../store/session'
 import {useSelector, useDispatch} from 'react-redux'
 import { useEffect } from "react";
 import { getCurrentUser } from "../../store/session";
 
+
 const ProfileListing = () =>{
     const listings = useSelector(state=>getListings(state));
+    // const matchingListings = Object.keys(listings).filter(key => listings[key].ownerId === currentUser.id)
+    // .map(key => listings[key]);
     const currentUser = useSelector((state)=>state.session.user)
     const dispatch = useDispatch();
-    const listingsArray = Object.values(listings[0])
-   
-    
-
-    console.log(listingsArray[0])
     
     
     useEffect(()=>{
         dispatch(fetchListings())
+        
+
     },[])
 
-   console.log(currentUser)
-  
+    console.log(currentUser.id)
 
     
-    if(currentUser){
-        return(
-            <div className="profile-listing">
-               test 
-            </div>
-        )
-    }
+
+   return (
+    <div>
+      {/* {matchingListings.map(listing => (
+        <img src={listing.photoUrls[0]} alt={`Listing ${listing.id}`} />
+      ))} */}
+    </div>
+  );
 }
+
 
 export default ProfileListing;
