@@ -17,10 +17,7 @@ const ProfileDetails = () => {
     const [list, setList] = useState()
     const dispatch = useDispatch();
     const { listingId } = useParams();
-    // const ownerId = listingArray.map((item, i) =>(
-    //                     item.ownerId
-    //                 ))
-    // const listings = useSelector(state => getListings(state))
+   
 
     useEffect(()=>{
         dispatch(fetchListings())
@@ -103,21 +100,21 @@ const ProfileDetails = () => {
                     <div className="lives-in-text">3 reviews</div>
                 </div>
                 <div className="user-listings">
-                      <div>
+                   User Listings:   
                 {Object.keys(listings.listings).map((key) => {
                 const listing = listings.listings[key];
                 if (listing.ownerId === currentUser.id) {
                     return (
                     <div key={key}>
-                    <p>Owner ID: {<img src={listing.photoUrls[0]}></img>}</p>
-                    <p>Listing ID: {key}</p>
+                    <p>Owner ID: {<img src={listing.photoUrls[0]}></img>}{listing.ownerId}</p>
+                    {/* <p>Listing ID: {key}</p> */}
               {/* Other listing details */}
             </div>
           );
         }
         return null;
       })}
-    </div>
+    
                 </div>
                 </div>
             </div>
