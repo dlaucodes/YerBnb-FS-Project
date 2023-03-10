@@ -27,7 +27,7 @@ const ProfileListing = () =>{
     if(currentUser){
         return(
             <div className="profile-listing">
-               hello 
+               test 
             </div>
         )
     }
