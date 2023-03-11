@@ -43,11 +43,12 @@
     margin-bottom: 8px;
 }
 
-.profile-picture{
+.profile-picture-container img{
     margin-top: 15px;
     width: 125px;
     object-fit: cover;
 }
+
 
 
 
@@ -199,16 +200,27 @@ label {
     font-size: 23px;
     height: 80px;
     align-items: center;
+}
+
+.listing-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
     
-    
+    overflow: hidden;
+}
+
+.listing-info img{
+    width: 100px;
 }
 
 .learn-more{
     display: flex;
     width: 270px;
     margin-top: 20px;
-    font-size: 14px;
-    
+    font-size: 14px;   
 }
 
 #learn-more{

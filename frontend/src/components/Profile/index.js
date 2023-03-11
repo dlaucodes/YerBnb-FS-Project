@@ -6,7 +6,7 @@ import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing } from '../../store/listing';
 import Listing from '../Listings/Listing';
-import ProfileListing from './ProfileListingShow';
+
 
 
 
@@ -43,9 +43,20 @@ const ProfileDetails = () => {
         <div className="profile-container">
             <div className="left-container">
                 <div className="left-inner-container">
-                    <div className="profile-picture-container">
-                        {currentUser.photoUrl && (<img className='profile-picture' src={currentUser.photoUrl} alt="" />)}
+                    {currentUser.photoUrl ? (
+                    <>
+                    <div className='profile-picture-container' viewBox="0 0 125 125">
+                    {<img src={currentUser.photoUrl}></img>}
                     </div>
+                    </>
+                ) : (
+                    <>
+
+            <svg className='profile-picture-container' width={125} height={125} viewBox="0 0 32 32" fill={'#717171'}>
+          <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
+        </svg>
+            </>
+          )}
                         <label id='update-photo-label' htmlFor="update-photo">Update photo</label>
                         <input type="file" id='update-photo' onChange={uploadPhoto} accept="image"/>
                     <div className="reviews-container">
@@ -100,21 +111,24 @@ const ProfileDetails = () => {
                     <div className="lives-in-text">3 reviews</div>
                 </div>
                 <div className="user-listings">
-                   User Listings:   
-                {Object.keys(listings.listings).map((key) => {
-                const listing = listings.listings[key];
-                if (listing.ownerId === currentUser.id) {
-                    return (
-                    <div key={key}>
-                    <p>Owner ID: {<img src={listing.photoUrls[0]}></img>}{listing.ownerId}</p>
-                    {/* <p>Listing ID: {key}</p> */}
-              {/* Other listing details */}
-            </div>
-          );
-        }
-        return null;
-      })}
-    
+                    <div className="listing-info">
+                        User Listings:   
+                        {Object.keys(listings.listings).map((key) => {
+                        const listing = listings.listings[key];
+                        if (listing.ownerId === currentUser.id) {
+                            return (
+                            <div key={key}>
+                            <p>
+                         {<img src={listing.photoUrls[0]}></img>}</p>
+                         Owner id:{listing.ownerId}
+                            {/* <p>Listing ID: {key}</p> */}
+                                {/* Other listing details */}
+                            </div>
+                        );
+                    }
+                        return null;
+                    })}
+                    </div>
                 </div>
                 </div>
             </div>
