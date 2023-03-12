@@ -8,13 +8,14 @@ import "./ListingShow.css";
 import csrfFetch from "../../store/csrf";
 import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
+import ProfileDetails from "../Profile"
 
 
 
 
 
 
-const ListingShow = () => {
+const ListingShow = ({profilePictureUrl}) => {
     // const location = useLocation()
     // const listingId = location.pathname.slice(10)
     // const item = location.item
@@ -100,7 +101,7 @@ const ListingShow = () => {
                     Hosted by name
                 </div>
                 <div className="host-picture">
-                    picture here
+                    {/* <img src={profilePictureUrl} alt="Profile Picture" /> */}
                 </div>
             </div>
 

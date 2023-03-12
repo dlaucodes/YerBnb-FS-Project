@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing } from '../../store/listing';
 
 
+
 const ProfileDetails = () => {
     const currentUser = useSelector((state)=> state.session.user);
     const listings = useSelector(state => state.listing)
@@ -28,6 +29,8 @@ const ProfileDetails = () => {
         formData.append('user[photo]', file);
         dispatch(userActions.updateUser(formData));
     }
+
+    // const profilePictureUrl = currentUser.photoUrl
     
     
    
@@ -127,9 +130,10 @@ const ProfileDetails = () => {
                 </div>
                 </div>
             </div>
-                
+                {/* {<ListingShow profilePictureUrl={profilePictureUrl}/>} */}
         </div>
         </>
+        
      );
 }
  
