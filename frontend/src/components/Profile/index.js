@@ -20,8 +20,9 @@ const ProfileDetails = () => {
         dispatch(fetchListings())
     },[])
 
-  
- 
+    const handleDelete = ()=>{
+        
+    } 
     
     const uploadPhoto = (e)=> {
         const file = e.currentTarget.files[0];
