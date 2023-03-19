@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./listing.css"
+import MapContainer from "../Map";
 
 
 
@@ -34,6 +35,8 @@ const Listing = ({listingItem}) => {
                ${listingItem.price} night
             </div>
         </div>
+       
+
        </>  
      )
     //  else{

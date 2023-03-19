@@ -10,6 +10,7 @@ import { fetchListings, getListings } from "./store/listing";
 import ListingShow from "./components/ListingShow";
 import Footer from "./components/Footer";
 import ProfileDetails from "./components/Profile";
+import MapContainer from "./components/Map";
 
 
 
@@ -52,6 +53,7 @@ function App() {
           <SignupForm />
         </Route> */}
       </Switch>
+        
       <Footer/>
      
     </>

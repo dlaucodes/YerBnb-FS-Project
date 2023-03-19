@@ -5,6 +5,7 @@ import { getListings } from "../../store/listing";
 import Listing from "./Listing";
 import "./listing.css"
 import Profile from '../Profile'
+import MapContainer from "../Map";
 
 
 const ListingIndex = () => {
@@ -35,6 +36,7 @@ const ListingIndex = () => {
         
         
     return (
+        <>
         <div className="listing-page">
             <div className="listing-container">
             {showArray.map((item, i) => (
@@ -42,11 +44,16 @@ const ListingIndex = () => {
                 
             ))}
             </div>
+         <div className="map">
+            <MapContainer />
         </div>
+        </div>
+        </>
     );
     }else{
         return <div> loading</div>
     }
+    
     
 
 };

@@ -14,11 +14,16 @@ const ProfileDetails = () => {
     const [list, setList] = useState();
     const dispatch = useDispatch();
     const { listingId } = useParams();
+    const [filteredListings, setFilteredListings] = useState([])
    
 
     useEffect(()=>{
         dispatch(fetchListings())
     },[]);
+
+    useEffect(()=>{
+        setFilteredListings(filteredListings);
+    }, [])
 
     const handleDelete = ()=>{
         
