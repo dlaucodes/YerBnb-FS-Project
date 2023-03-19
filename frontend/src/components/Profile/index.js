@@ -10,15 +10,15 @@ import { fetchListings, getListings, fetchListing } from '../../store/listing';
 
 const ProfileDetails = () => {
     const currentUser = useSelector((state)=> state.session.user);
-    const listings = useSelector(state => state.listing)
-    const [list, setList] = useState()
+    const listings = useSelector(state => state.listing);
+    const [list, setList] = useState();
     const dispatch = useDispatch();
     const { listingId } = useParams();
    
 
     useEffect(()=>{
         dispatch(fetchListings())
-    },[])
+    },[]);
 
     const handleDelete = ()=>{
         
@@ -114,7 +114,7 @@ const ProfileDetails = () => {
                 <div className="right-divider"></div>
                 <div className="user-listings">
                     <div className="listing-info">
-                        {Object.keys(listings.listings).map((key) => {
+                        {listings && Object.keys(listings.listings).map((key) => {
                         const listing = listings.listings[key];
                         if (listings && (listing.ownerId === currentUser.id)){
                             return (
