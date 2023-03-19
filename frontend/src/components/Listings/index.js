@@ -54,8 +54,6 @@ const ListingIndex = () => {
         return <div> loading</div>
     }
     
-    
-
 };
 
 export default ListingIndex;
