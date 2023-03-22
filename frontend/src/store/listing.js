@@ -20,7 +20,15 @@ export const receiveListings = (listings) => {
     }
 };
 
-
+export const createListing = (formData) => async (dispatch) => {
+    const res = await csrfFetch("/api/listings", {
+        method: "POST",
+        body: formData
+    });
+    const data = await res.json();
+    dispatch(receiveListing(data));
+    return res;
+}
 
 export const removeListing = (listingId)=>{
     return {

@@ -3,6 +3,7 @@ import {useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { createListing } from "../../store/listing";
 
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
@@ -46,24 +47,25 @@ const ListForm = ({setShowListFormModal}) =>{
             })
         }
         
-        const response = await fetch('api/listings', {
-            method: 'POST',
-            body: formData
-        })
+      //   const response = await fetch('api/listings', {
+      //       method: 'POST',
+      //       body: formData
+      //   })
         
-      console.log(owner.id)
+      // console.log(owner.id)
         
-        if (response.ok) {
-            const message = await response.json();
-            setTitle("")
-            setPhotoFile(null)
-            setPhotoUrl(null)
-            setDescription("")
-            setPrice("")
-            setLocation("")
-            setLat("")
-            setLng("")
-        }
+        // if (response.ok) {
+        //     const message = await response.json();
+        //     setTitle("")
+        //     setPhotoFile(null)
+        //     setPhotoUrl(null)
+        //     setDescription("")
+        //     setPrice("")
+        //     setLocation("")
+        //     setLat("")
+        //     setLng("")
+        // }
+        dispatch(createListing(formData))
         setShowListFormModal(false) && <Redirect to="/" />
         
         
