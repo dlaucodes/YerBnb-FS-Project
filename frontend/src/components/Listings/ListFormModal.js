@@ -65,7 +65,7 @@ const ListForm = ({setShowListFormModal}) =>{
             setLng("")
         }
         setShowListFormModal(false) && <Redirect to="/" />
-
+        
         
     }
     

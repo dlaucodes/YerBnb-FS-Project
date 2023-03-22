@@ -20,6 +20,8 @@ export const receiveListings = (listings) => {
     }
 };
 
+
+
 export const removeListing = (listingId)=>{
     return {
         type: REMOVE_LISTING,
@@ -54,9 +56,8 @@ export const fetchListings = () => async (dispatch)=>{
 };
 
 export const deleteListing = (listingId) => async (dispatch)=>{
-    const res = await csrfFetch(`/api/listing/${listingId}`, {
+    const res = await csrfFetch(`/api/listings/${listingId}`, {
         method: "DELETE"
-
     })
   dispatch(removeListing(listingId));
 };

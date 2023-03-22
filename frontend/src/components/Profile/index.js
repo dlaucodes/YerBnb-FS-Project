@@ -4,7 +4,7 @@ import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
-import { fetchListings, getListings, fetchListing } from '../../store/listing';
+import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
 
 
 
@@ -16,6 +16,7 @@ const ProfileDetails = () => {
     const { listingId } = useParams();
     const [filteredListings, setFilteredListings] = useState([])
    
+    console.log(listings)
 
     useEffect(()=>{
         dispatch(fetchListings())
@@ -25,8 +26,8 @@ const ProfileDetails = () => {
         setFilteredListings(filteredListings);
     }, [])
 
-    const handleDelete = ()=>{
-        
+    const handleDelete = (id)=>{
+       dispatch(deleteListing(id)) 
     } 
     
     const uploadPhoto = (e)=> {
@@ -118,7 +119,23 @@ const ProfileDetails = () => {
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
-       
+                    {listings.listings && <div className="listing-info">
+                        {Object.keys(listings.listings).map((key) => {
+                        const listing = listings.listings[key];
+                        if (listings && (listing.ownerId === currentUser.id)){
+                            return (
+                            <div key={key}>
+                            <p>
+                         {<img src={listing.photoUrls[0]}></img>}Owner id:{listing.ownerId}</p><p>
+                         {listing.title}</p><button onClick={() => {handleDelete(listing.id)}}>delete</button>
+                         
+                            {/* <p>Listing ID: {key}</p> */}
+                                {/* Other listing details */}
+                            </div>
+                        );
+                    }
+                    })}
+                    </div>}
                 </div>
                 </div>
             </div>
@@ -131,20 +148,4 @@ const ProfileDetails = () => {
  
 export default ProfileDetails
 
-            //  <div className="listing-info">
-            //             {Object.keys(listings.listings).map((key) => {
-            //             const listing = listings.listings[key];
-            //             if (listings && (listing.ownerId === currentUser.id)){
-            //                 return (
-            //                 <div key={key}>
-            //                 <p>
-            //              {<img src={listing.photoUrls[0]}></img>}Owner id:{listing.ownerId}</p><p>
-            //              {listing.title}</p>
-                         
-            //                 {/* <p>Listing ID: {key}</p> */}
-            //                     {/* Other listing details */}
-            //                 </div>
-            //             );
-            //         }
-            //         })}
-            //         </div>
+ 
