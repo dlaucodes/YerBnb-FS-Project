@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Redirect } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
@@ -13,28 +13,45 @@ const ProfileDetails = () => {
     const listings = useSelector(state => state.listing);
     const [list, setList] = useState();
     const dispatch = useDispatch();
-    const { listingId } = useParams();
+    const { id } = useParams();
     const [filteredListings, setFilteredListings] = useState([])
+    const [changeListing, setChangeListing] = useState(0);
+    const [changeProfile, setChangeProfile] = useState(0);
+    const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
    
     console.log(listings)
+
+    const refresh = () => {
+        window.location.reload();
+    }
 
     useEffect(()=>{
         dispatch(fetchListings())
     },[]);
 
+    // useEffect(()=>{
+        
+    // },[])
+
     useEffect(()=>{
-        setFilteredListings(filteredListings);
-    }, [])
+        dispatch(fetchListings())
+    },[listings.listing], changeListing);
+
+
 
     const handleDelete = (id)=>{
-       dispatch(deleteListing(id)) 
+       dispatch(deleteListing(id))
+       setChangeListing(changeListing + 1);
     } 
     
-    const uploadPhoto = (e)=> {
+    console.log(id)
+
+    const uploadPhoto = async (e)=> {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
         formData.append('user[photo]', file);
-        dispatch(userActions.updateUser(formData));
+        await dispatch(userActions.updateUser(formData));
+        setTimeout(refresh, 800);
     }
 
     // const profilePictureUrl = currentUser.photoUrl
@@ -53,7 +70,7 @@ const ProfileDetails = () => {
                     {currentUser.photoUrl ? (
                     <>
                     <div className='profile-picture-container' viewBox="0 0 125 125">
-                    {<img src={currentUser.photoUrl}></img>}
+                    {<img src={profilePic}></img>}
                     </div>
                     </>
                 ) : (
@@ -127,7 +144,8 @@ const ProfileDetails = () => {
                             <div key={key}>
                             <p>
                          {<img src={listing.photoUrls[0]}></img>}Owner id:{listing.ownerId}</p><p>
-                         {listing.title}</p><button onClick={() => {handleDelete(listing.id)}}>delete</button>
+                         {listing.title}</p>
+                         <button onClick={() => {handleDelete(listing.id)}}>delete</button>
                          
                             {/* <p>Listing ID: {key}</p> */}
                                 {/* Other listing details */}
