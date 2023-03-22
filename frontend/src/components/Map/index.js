@@ -6,6 +6,7 @@ const MapContainer = () => {
   const mapStyles = {        
     height: "auto",
     width: "100%"};
+    
   
   const defaultCenter = {
     lat: 40.730610, lng: -73.935242
@@ -18,6 +19,8 @@ const MapContainer = () => {
           mapContainerStyle={mapStyles}
           zoom={12}
           center={defaultCenter}
+          disableDefaultUI={true}
+          clickableIcons={false}  
         />
      </LoadScript>
   )

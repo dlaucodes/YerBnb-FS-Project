@@ -51,7 +51,7 @@ const ListingIndex = () => {
         </>
     );
     }else{
-        return <div> loading</div>
+        return <div> loading...</div>
     }
     
 };
