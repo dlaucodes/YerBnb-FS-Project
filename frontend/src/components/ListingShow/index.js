@@ -10,6 +10,7 @@ import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
 import ProfileDetails from "../Profile"
 import { fetchUsers, getUser } from "../../store/user";
+import { object } from "prop-types";
 
 
 
@@ -27,6 +28,7 @@ const ListingShow = () => {
     const listings = useSelector(state=>getListings(state))
     // const item = test[0].id
     const dispatch = useDispatch()
+    const users = useSelector(state=>state.user.users)
     // const users = useSelector(state=>)
     // const listings = useSelector(state => state.listings)
     // const listingsarray = useSelector(getListings)
@@ -38,7 +40,10 @@ const ListingShow = () => {
         dispatch(fetchListings())
     },[])
 
-    // console.log(state)
+    console.log(users)
+
+    
+
 
     useEffect(()=>{
         dispatch(fetchUsers())
@@ -47,7 +52,11 @@ const ListingShow = () => {
    
     if(listings[0]){
         let listing = listings[0][listingId]
-        // const sessionUserIsOwner = sessionUser ? (sessionUser.id === listing.ownerId) : null
+        const ownerId = listing.ownerId;
+        let owner = Object.values(users).find(user => user.id === ownerId);
+        const photoUrl = owner ? owner.photoUrl : null; 
+        const hostName = owner ? owner.firstName : null;
+      
     return (
     <>
         {/* {listingId} */}
@@ -105,12 +114,12 @@ const ListingShow = () => {
             <div className="listing-info-left">
             
             <div className="host-info">
+
                 <div className="host-name">
-                    Hosted by name
+                    Hosted by {hostName}
                 </div>
                 <div className="host-picture">
-                    host picture
-                    {/* <img src={profilePictureUrl} alt="Profile Picture" /> */}
+                   <img src={photoUrl}/>
                 </div>
             </div>
 

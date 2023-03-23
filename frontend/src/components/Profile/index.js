@@ -50,7 +50,7 @@ const ProfileDetails = () => {
         const formData = new FormData();
         formData.append('user[photo]', file);
         await dispatch(userActions.updateUser(formData));
-        setTimeout(refresh, 800);
+        setTimeout(refresh, 500);
     }
 
     // const profilePictureUrl = currentUser.photoUrl
