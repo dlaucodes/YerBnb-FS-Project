@@ -28,9 +28,6 @@ const ProfileDetails = () => {
         dispatch(fetchListings())
     },[]);
 
-    // useEffect(()=>{
-        
-    // },[])
 
     useEffect(()=>{
         dispatch(fetchListings())
@@ -53,7 +50,7 @@ const ProfileDetails = () => {
         setTimeout(refresh, 500);
     }
 
-    // const profilePictureUrl = currentUser.photoUrl
+    
     
     
    
@@ -75,9 +72,9 @@ const ProfileDetails = () => {
                 ) : (
                     <>
 
-            <svg className='profile-picture-container' width={125} height={125} viewBox="0 0 32 32" fill={'#717171'}>
-          <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
-        </svg>
+                <svg className='profile-picture-container' width={125} height={125}     viewBox="0 0 32 32" fill={'#717171'}>
+                    <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
+                </svg>
             </>
           )}
                         <label id='update-photo-label' htmlFor="update-photo">Update photo</label>
@@ -135,23 +132,29 @@ const ProfileDetails = () => {
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
+                    <div className="listing-section-text">Listings</div>
                     {listings.listings && <div className="listing-info">
+                    
                         {Object.keys(listings.listings).map((key) => {
                         const listing = listings.listings[key];
                         if (listings && (listing.ownerId === currentUser.id)){
                             return (
                             <div key={key}>
-                            <p>
-                         {<img src={listing.photoUrls[0]}></img>}Owner id:{listing.ownerId}</p><p>
-                         {listing.title}</p>
-                         <button onClick={() => {handleDelete(listing.id)}}>delete</button>
-                         
-                            {/* <p>Listing ID: {key}</p> */}
-                                {/* Other listing details */}
+                                <div className="listing-card">
+                                    <div className="profile-listing-top">                                
+                                    {<img src={listing.photoUrls[0]}></img>}{listing.title}</div>
+                                        <div className="profile-listing-ruler"></div>
+                                    <div className="profile-listing-options">
+                                        <button>edit</button>
+                                        <button onClick={() => {handleDelete(listing.id)}}>delete</button>
+                                    </div>
+                                
+                                </div>
                             </div>
                         );
                     }
-                    })}
+                })}
+                    
                     </div>}
                 </div>
                 </div>
