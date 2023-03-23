@@ -53,9 +53,9 @@ const ListingShow = () => {
     if(listings[0]){
         let listing = listings[0][listingId]
         const ownerId = listing.ownerId;
-        let owner = Object.values(users).find(user => user.id === ownerId);
-        const photoUrl = owner ? owner.photoUrl : null; 
-        const hostName = owner ? owner.firstName : null;
+        const owner = Object.values(users).find(user => user.id === ownerId);
+        const photoUrl = owner ? owner.photoUrl : ""; 
+        const hostName = owner ? owner.firstName : "Philip";
       
     return (
     <>
@@ -119,7 +119,7 @@ const ListingShow = () => {
                     Hosted by {hostName}
                 </div>
                 <div className="host-picture">
-                   <img src={photoUrl}/>
+                   {owner && <img src={photoUrl}/>}
                 </div>
             </div>
 
