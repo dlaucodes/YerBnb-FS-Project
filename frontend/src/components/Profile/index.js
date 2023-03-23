@@ -38,7 +38,11 @@ const ProfileDetails = () => {
     const handleDelete = (id)=>{
        dispatch(deleteListing(id))
        setChangeListing(changeListing + 1);
-    } 
+    }
+
+    const handleEdit = ()=>{
+
+    }
     
     console.log(id)
 
@@ -145,10 +149,10 @@ const ProfileDetails = () => {
                                     {<img src={listing.photoUrls[0]}></img>}{listing.title}</div>
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
-                                        <button>edit</button>
+                                        <button onClick={()=>{handleEdit()}}>edit</button>
                                         <button onClick={() => {handleDelete(listing.id)}}>delete</button>
                                     </div>
-                                
+                                    
                                 </div>
                             </div>
                         );
