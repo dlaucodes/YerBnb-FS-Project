@@ -55,7 +55,7 @@ const ListingShow = () => {
         const ownerId = listing.ownerId;
         const owner = Object.values(users).find(user => user.id === ownerId);
         const photoUrl = owner ? owner.photoUrl : ""; 
-        const hostName = owner ? owner.firstName : "Philip";
+        const hostName = owner ? owner.firstName : "";
       
     return (
     <>
