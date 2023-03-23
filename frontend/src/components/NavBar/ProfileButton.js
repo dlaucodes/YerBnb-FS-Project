@@ -62,7 +62,7 @@ return (
         {currentUser ? (
           <>
           <div className='profile-photo' viewBox="0 0 32 32">
-            {<img src={currentUser.photoUrl}></img>}
+            {<img src={currentUser.photoUrl}/>}
           </div>
         </>
           ) : (

@@ -126,6 +126,7 @@
     font-size: 25px;
     height: 80px;
     margin-top: 20px;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #a8a8a8;
 }
