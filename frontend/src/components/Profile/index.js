@@ -16,7 +16,6 @@ const ProfileDetails = () => {
     const { id } = useParams();
     const [filteredListings, setFilteredListings] = useState([])
     const [changeListing, setChangeListing] = useState(0);
-    const [changeProfile, setChangeProfile] = useState(0);
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
    
     console.log(listings)

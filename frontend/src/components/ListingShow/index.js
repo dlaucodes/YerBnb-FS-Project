@@ -9,13 +9,14 @@ import csrfFetch from "../../store/csrf";
 import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
 import ProfileDetails from "../Profile"
+import { fetchUsers, getUser } from "../../store/user";
 
 
 
 
 
 
-const ListingShow = ({profilePictureUrl}) => {
+const ListingShow = () => {
     // const location = useLocation()
     // const listingId = location.pathname.slice(10)
     // const item = location.item
@@ -26,6 +27,7 @@ const ListingShow = ({profilePictureUrl}) => {
     const listings = useSelector(state=>getListings(state))
     // const item = test[0].id
     const dispatch = useDispatch()
+    // const users = useSelector(state=>)
     // const listings = useSelector(state => state.listings)
     // const listingsarray = useSelector(getListings)
     // const gettingListing = useSelector(getListing(listingId)) 
@@ -35,6 +37,12 @@ const ListingShow = ({profilePictureUrl}) => {
     useEffect(()=>{
         dispatch(fetchListings())
     },[])
+
+    // console.log(state)
+
+    useEffect(()=>{
+        dispatch(fetchUsers())
+    }, [])
     
    
     if(listings[0]){
@@ -101,6 +109,7 @@ const ListingShow = ({profilePictureUrl}) => {
                     Hosted by name
                 </div>
                 <div className="host-picture">
+                    host picture
                     {/* <img src={profilePictureUrl} alt="Profile Picture" /> */}
                 </div>
             </div>

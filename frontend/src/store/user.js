@@ -15,13 +15,22 @@ export const receiveUser = (user) => ({
     payload: users
   });
 
-export const fetchUsers = () => async dispatch => {
+export const fetchUsers = () => async (dispatch) => {
     const res = await csrfFetch('/api/users')
-    if (res.ok) {
-        const data = await res.json();
-        dispatch(receiveUsers(data.users));
-    }
+
+    let data = await res.json();
+    dispatch(receiveUsers(data));
+    return res;
 };
+
+// export const getUser = (userId) =>{
+//     return (
+//         (store)=>{
+//             return store.users[userId]
+//         }
+//     )
+// }
+
 
 export const updateUser = (user) => async dispatch => {
     const res = await csrfFetch(`/api/users/${user.id}`, {
@@ -33,7 +42,7 @@ export const updateUser = (user) => async dispatch => {
     return res;
 };
 
-const usersReducer = (state = {}, action) => {
+const usersReducer = (state = [], action) => {
     switch(action.type){
         case RECEIVE_USER:
             return {...state, user: action.payload}
