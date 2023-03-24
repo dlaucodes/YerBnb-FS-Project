@@ -19,8 +19,6 @@ const ListingIndex = () => {
         });
     }, []);
 
-    console.log(list)
-
     if (list){
         let array = Object.values(list)
         // let showArray = array.reverse()

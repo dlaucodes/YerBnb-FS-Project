@@ -30,6 +30,16 @@ export const createListing = (formData) => async (dispatch) => {
     return res;
 }
 
+export const editListing = (formData, listingId) => async (dispatch) =>{
+    const res = await csrfFetch(`/api/listings/${listingId}`, {
+        method: "PATCH",
+        body: formData
+    });
+    const data = await res.json();
+    dispatch(fetchListing(listingId));
+    return res;
+}
+
 export const removeListing = (listingId)=>{
     return {
         type: REMOVE_LISTING,
@@ -48,11 +58,11 @@ export const getListing = (listingId) => {
 
 
 export const fetchListing = (listingId) => async (dispatch)=>{
-    const res = await csrfFetch(`/api/listing/${listingId}`)
+    const res = await csrfFetch(`/api/listings/${listingId}`)
 
-    let data = await res.json();
-  dispatch(receiveListing(data));
-  return res;
+   const data = await res.json();
+    dispatch(receiveListing(data.listing));
+    return res;
 };
 
 export const fetchListings = () => async (dispatch)=>{

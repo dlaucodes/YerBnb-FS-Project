@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
+import ListingEditModal from './indexListEdit';
 
 
-
-const ProfileDetails = () => {
+const ProfileDetails = (props) => {
     const currentUser = useSelector((state)=> state.session.user);
     const listings = useSelector(state => state.listing);
     const [list, setList] = useState();
@@ -17,8 +17,9 @@ const ProfileDetails = () => {
     const [filteredListings, setFilteredListings] = useState([])
     const [changeListing, setChangeListing] = useState(0);
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
+    const [showListingEditModal, setShowListingEditModal] = useState(false);
    
-    console.log(listings)
+  
 
     const refresh = () => {
         window.location.reload();
@@ -40,11 +41,11 @@ const ProfileDetails = () => {
        setChangeListing(changeListing + 1);
     }
 
-    const handleEdit = ()=>{
-
-    }
+    // const handleEdit = ()=>{
+        
+    // }
     
-    console.log(id)
+
 
     const uploadPhoto = async (e)=> {
         const file = e.currentTarget.files[0];
@@ -132,7 +133,7 @@ const ProfileDetails = () => {
                 </div>
                 <div className="reviews">
                     <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
-                    <div className="lives-in-text">3 review</div>
+                    <div className="lives-in-text">Reviews</div>
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
@@ -149,7 +150,8 @@ const ProfileDetails = () => {
                                     {<img src={listing.photoUrls[0]}></img>}{listing.title}</div>
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
-                                        <button onClick={()=>{handleEdit()}}>edit</button>
+                                        <button onClick={()=>{setShowListingEditModal(true)
+                                        }}>edit</button>
                                         <button onClick={() => {handleDelete(listing.id)}}>delete</button>
                                     </div>
                                     
@@ -164,9 +166,10 @@ const ProfileDetails = () => {
                 </div>
             </div>
                 {/* {<ListingShow profilePictureUrl={profilePictureUrl}/>} */}
+        {showListingEditModal && (<ListingEditModal setShowListingEditModal = {setShowListingEditModal}/>
+        )}
         </div>
         </>
-        
      );
 }
  
