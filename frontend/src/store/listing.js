@@ -30,7 +30,7 @@ export const createListing = (formData) => async (dispatch) => {
     return res;
 }
 
-export const editListing = (formData, listingId) => async (dispatch) =>{
+export const updateListing = (formData, listingId) => async (dispatch) =>{
     const res = await csrfFetch(`/api/listings/${listingId}`, {
         method: "PATCH",
         body: formData
@@ -67,7 +67,6 @@ export const fetchListing = (listingId) => async (dispatch)=>{
 
 export const fetchListings = () => async (dispatch)=>{
     const res = await csrfFetch(`/api/listings`)
-
     let data = await res.json();
   dispatch(receiveListings(data));
   return res;

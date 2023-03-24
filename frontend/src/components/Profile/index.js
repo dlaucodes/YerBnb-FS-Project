@@ -18,8 +18,11 @@ const ProfileDetails = (props) => {
     const [changeListing, setChangeListing] = useState(0);
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
     const [showListingEditModal, setShowListingEditModal] = useState(false);
+    const [currentListingId, setCurrentListingId] = useState(null)
+   
    
   
+    console.log(currentListingId)
 
     const refresh = () => {
         window.location.reload();
@@ -45,7 +48,7 @@ const ProfileDetails = (props) => {
         
     // }
     
-
+    console.log(currentListingId, "hello")
 
     const uploadPhoto = async (e)=> {
         const file = e.currentTarget.files[0];
@@ -147,10 +150,11 @@ const ProfileDetails = (props) => {
                             <div key={key}>
                                 <div className="listing-card">
                                     <div className="profile-listing-top">                                
-                                    {<img src={listing.photoUrls[0]}></img>}{listing.title}</div>
+                                    {<img src={listing.photoUrls[0]}></img>}listing title:{listing.title}<p>listing Id:{listing.id}</p></div>
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
-                                        <button onClick={()=>{setShowListingEditModal(true)
+                                        <button onClick={()=>{setCurrentListingId(listing.id);
+                                         setShowListingEditModal(listing.id)
                                         }}>edit</button>
                                         <button onClick={() => {handleDelete(listing.id)}}>delete</button>
                                     </div>
@@ -166,10 +170,14 @@ const ProfileDetails = (props) => {
                 </div>
             </div>
                 {/* {<ListingShow profilePictureUrl={profilePictureUrl}/>} */}
-        {showListingEditModal && (<ListingEditModal setShowListingEditModal = {setShowListingEditModal}/>
+            
+        {showListingEditModal && (<ListingEditModal setShowListingEditModal={setShowListingEditModal} listingId={`${currentListingId}`}/>
         )}
+        
+       
         </div>
         </>
+         
      );
 }
  

@@ -11,6 +11,8 @@ import Reservation from "../Reservation"
 import ProfileDetails from "../Profile"
 import { fetchUsers, getUser } from "../../store/user";
 import { object } from "prop-types";
+import { fetchUser } from "../../store/profile";
+
 
 
 
@@ -21,6 +23,7 @@ const ListingShow = () => {
     // const location = useLocation()
     // const listingId = location.pathname.slice(10)
     // const item = location.item
+    const {id} = useParams()
     const [items, setItems] = useState()
     const {listingId} = useParams()
     // const photoUrl = location.photoUrl
@@ -38,18 +41,21 @@ const ListingShow = () => {
     // const item = Object.values(listingarray)[listingId -1]
     useEffect(()=>{
         dispatch(fetchListings())
-    },[])
+        //  dispatch(fetchUsers())
+    
+    },[dispatch, id])
 
     console.log(users)
 
     
 
 
-    useEffect(()=>{
-        dispatch(fetchUsers())
-    }, [])
+    // useEffect(()=>{
+       
+    // }, [])
     
-   
+//    if(users === null || users === undefined){
+//    return (null)}
     if(listings[0]){
         let listing = listings[0][listingId]
         const ownerId = listing.ownerId;

@@ -19,7 +19,7 @@
 
 .listingform-container {
     display: flex;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin-top: 20px;
 }
 

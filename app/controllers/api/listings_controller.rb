@@ -23,6 +23,7 @@ class Api::ListingsController < ActionController::API
     end
 
     def create
+    
         @listing = Listing.new(listing_params)
         # @listing.user_id = current_user.id
         # params[:listing][:photos].each do |photo|
@@ -36,6 +37,27 @@ class Api::ListingsController < ActionController::API
         end
     end
 
+    def update
+        @listing = Listing.find_by(id: params[:id])
+
+        if listing_params['photo'] 
+            @listing.photos.purge
+            @listing.photos.attach(params[:listing][photos:[]])
+        end
+        if @listing.update(listing_params)
+            @listing.save
+            render :show
+        # else
+        #   render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
+        end
+        if @listing.errors.none?
+            @listing.save
+            render :show
+        else
+            render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
     def destroy
         @listing = Listing.find_by(id: params[:id])
         if @listing 
@@ -46,6 +68,6 @@ class Api::ListingsController < ActionController::API
     end
 
     def listing_params
-        params.require(:listing).permit(:price, :title, :description, :location, :owner_id, :lat, :lng, photos:[])
+        params.require(:listing).permit(:price, :title, :description, :location, :owner_id, :lat, :lng, :id, photos:[])
     end
 end

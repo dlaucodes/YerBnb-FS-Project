@@ -3,9 +3,10 @@ import {useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import { editListing } from "../../store/listing";
+import { updateListing } from "../../store/listing";
+import { useParams } from "react-router-dom";
 
-const ListingEditForm = ({setShowListingEditModal}) =>{
+const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const dispatch = useDispatch();
     const [title,setTitle] = useState ("")
     const [photoFile, setPhotoFile] = useState(null);
@@ -24,9 +25,10 @@ const ListingEditForm = ({setShowListingEditModal}) =>{
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
+    const owner = useSelector(({session}) => session.user); 
     
     
-    const owner = useSelector(({session}) => session.user);
+    console.log(listingId, title, "yo")
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -38,7 +40,9 @@ const ListingEditForm = ({setShowListingEditModal}) =>{
         formData.append('listing[lat]', lat );
         formData.append('listing[lng]', lng);
         formData.append('listing[owner_id]', owner.id);
+        formData.append('listing[id]', listingId)
 
+        
 
         if (files && files.length > 0 && files.length < 6) {
             files.forEach((file)=> {
@@ -47,27 +51,9 @@ const ListingEditForm = ({setShowListingEditModal}) =>{
             })
         }
         
-      //   const response = await fetch('api/listings', {
-      //       method: 'POST',
-      //       body: formData
-      //   })
-        
-      // console.log(owner.id)
-        
-        // if (response.ok) {
-        //     const message = await response.json();
-        //     setTitle("")
-        //     setPhotoFile(null)
-        //     setPhotoUrl(null)
-        //     setDescription("")
-        //     setPrice("")
-        //     setLocation("")
-        //     setLat("")
-        //     setLng("")
-        // }
-        dispatch(editListing(formData))
-        setShowListingEditModal(false) && <Redirect to="/" />
-        
+        console.log(setShowListingEditModal)   
+        dispatch(updateListing(formData, listingId))
+        setShowListingEditModal(false)
         
     }
     

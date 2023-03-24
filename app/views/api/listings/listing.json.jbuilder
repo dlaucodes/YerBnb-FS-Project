@@ -20,3 +20,4 @@ end
 
 
 json.listings({})
+

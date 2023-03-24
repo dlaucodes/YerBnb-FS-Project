@@ -11,6 +11,7 @@ import ListingShow from "./components/ListingShow";
 import Footer from "./components/Footer";
 import ProfileDetails from "./components/Profile";
 import MapContainer from "./components/Map";
+import { fetchUsers } from "./store/user";
 
 
 
@@ -21,15 +22,22 @@ function App() {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.session.user)
   const listings = useSelector(state => state.listing)
+  
 
 
   useEffect(()=>{
     dispatch(fetchListings())
+    dispatch(fetchUsers())
   },[])
+
+  // if(!users || !listings || !currentUser){
+  //   return (null)
+  // }
 
   // if (listings) {
   //   console.log(Object.values(listings))
   // }
+
 
   return (
     <>
