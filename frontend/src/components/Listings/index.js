@@ -37,10 +37,14 @@ const ListingIndex = () => {
         <>
         <div className="listing-page">
             <div className="listing-container">
-            {showArray.map((item, i) => (
-                <Listing key={i} listingItem={item}/>
+                {showArray.map((item, i) => (
+                <div key={i}>
+   
+                <Listing listingItem={item} />
+                <MapContainer listingItem={item} />
                 
-            ))}
+            </div>
+  ))}
             </div>
          <div className="map">
             <MapContainer />
@@ -51,7 +55,6 @@ const ListingIndex = () => {
     }else{
         return <div> loading...</div>
     }
-    
 };
 
 export default ListingIndex;
