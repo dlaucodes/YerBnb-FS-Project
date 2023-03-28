@@ -26,9 +26,9 @@ const ProfileDetails = (props) => {
         window.location.reload();
     }
 
-    useEffect(()=>{
-        dispatch(fetchListings())
-    },[]);
+    // useEffect(()=>{
+    //     dispatch(fetchListings())
+    // },[]);
 
 
     useEffect(()=>{

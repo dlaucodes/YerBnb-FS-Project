@@ -11,10 +11,10 @@ const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
     const test = listingItem
 
-                 console.log(listingItem)
+                //  console.log(listingItem)
     useEffect(()=>{
         
-    }, [listingItem])
+    }, [])
     
     // console.log(listingItem.ownerId)
     // if(listingItem.length > 0){
@@ -23,7 +23,7 @@ const Listing = ({listingItem}) => {
        <>
         <div className="listing">
            <div className="listing-img">
-                <NavLink to={{pathname: `/listings/${listingItem.id}`}}   >
+                <NavLink to={{pathname: `/listings/${listingItem.id}`}}>
                     
                 {/* <img src={`${listingItem.photoUrls[0].imgUrl}`} /> */}
                 <img src={`${listingItem.photoUrls[0]}`}/>
@@ -35,9 +35,12 @@ const Listing = ({listingItem}) => {
             <div className="listing-price-container">
                ${listingItem.price} night
             </div>
+         
         </div>
        
-
+           
+      
+        
        </>  
      )
     //  else{

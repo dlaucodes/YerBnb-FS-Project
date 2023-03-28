@@ -24,7 +24,7 @@ const ListingIndex = () => {
         // let showArray = array.reverse()
         let listings = Object.values(array.reverse())
         let listingsarray = Object.values(listings[0])
-        let showArray = listingsarray.reverse()
+        const showArray = listingsarray.reverse()
     
         // console.log(array)
         // console.log(listings)
@@ -41,14 +41,14 @@ const ListingIndex = () => {
                 <div key={i}>
    
                 <Listing listingItem={item} />
-                <MapContainer listingItem={item} />
+                <MapContainer listingsItem={item} />
                 
-            </div>
+                </div>
   ))}
             </div>
-         <div className="map">
-            <MapContainer />
-        </div>
+            <div className="map">
+                <MapContainer />
+            </div>
         </div>
         </>
     );

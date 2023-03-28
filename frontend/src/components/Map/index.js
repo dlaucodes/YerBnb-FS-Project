@@ -1,24 +1,44 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { NavItem } from 'react-bootstrap';
+import { useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 
 
-const MapContainer = ({listingItem}) => {
-  
-  const mapStyles = {        
-    height: "auto",
-    width: "100%"};
+const MapContainer = () => {
+    const listings = useSelector(state=> state.listing)
+    
+    console.log(listings)
+
+
+    
+
+    const locations = [ {
+      name: "Location 1",
+      location: { 
+        lat: 40.73954,
+        lng: -73.937 
+      }}]
+
+     
+    
+
+    const mapStyles = {        
+        height: "auto",
+        width: "100%"};
     
   
-  const defaultCenter = {
-    lat: 40.730610, lng: -73.935242
-  }
+    const defaultCenter = {
+        lat: 40.730610, 
+        lng: -73.935242
+    }
 
-//   const locations = [{location: {lat: listingItem.lat, lng: listingItem.lng}}]
 
-//   console.log(listingItem)
+    // useEffect(()=>{
 
-//   console.log(locations)
+    // }, [listingsItem])
+
+  
   
   return (
      <LoadScript
@@ -30,14 +50,14 @@ const MapContainer = ({listingItem}) => {
           center={defaultCenter}
           disableDefaultUI={true}
           clickableIcons={false}>
-              {/* {
-              locations.map(item =>{
+
+          {
+            locations.map(item => {
               return (
-              
-                  <Marker position={item.location}/>
-                  )
-              })
-            } */}
+              <Marker key={item.name} position={item.location}/>
+              )
+            })
+         }
         </GoogleMap>  
      </LoadScript>
   )
