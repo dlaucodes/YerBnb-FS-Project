@@ -30,7 +30,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     
     console.log(listingId, "yo")
 
-    const handleSubmit = async e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('listing[price]', price);

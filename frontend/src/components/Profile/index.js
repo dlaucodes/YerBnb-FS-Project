@@ -42,9 +42,6 @@ const ProfileDetails = (props) => {
        setChangeListing(changeListing + 1);
     }
 
-    // const handleEdit = ()=>{
-        
-    // }
     
 
     const uploadPhoto = async (e)=> {
@@ -52,7 +49,7 @@ const ProfileDetails = (props) => {
         const formData = new FormData();
         formData.append('user[photo]', file);
         await dispatch(userActions.updateUser(formData));
-        setTimeout(refresh, 2000);
+        setTimeout(refresh, 600);
     }
 
     

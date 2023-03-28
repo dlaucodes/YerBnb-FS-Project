@@ -36,7 +36,7 @@ export const updateListing = (formData, listingId) => async (dispatch) =>{
         body: formData
     });
     const data = await res.json();
-    dispatch(fetchListing(listingId));
+    dispatch(fetchListing(data));
     return res;
 }
 
