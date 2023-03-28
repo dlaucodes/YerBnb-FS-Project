@@ -20,6 +20,7 @@ const ProfileDetails = (props) => {
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
    
+   
 
     const refresh = () => {
         window.location.reload();
@@ -51,7 +52,7 @@ const ProfileDetails = (props) => {
         const formData = new FormData();
         formData.append('user[photo]', file);
         await dispatch(userActions.updateUser(formData));
-        setTimeout(refresh, 500);
+        setTimeout(refresh, 2000);
     }
 
     
