@@ -17,7 +17,8 @@ const ListingIndex = () => {
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, []);
+    }, [], );
+    
 
     if (list){
         let array = Object.values(list)

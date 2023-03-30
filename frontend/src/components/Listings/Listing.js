@@ -11,7 +11,7 @@ const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
     const test = listingItem
 
-                //  console.log(listingItem)
+                 
     useEffect(()=>{
         
     }, [])

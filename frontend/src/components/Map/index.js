@@ -7,20 +7,19 @@ import { useSelector } from 'react-redux';
 
 const MapContainer = () => {
     const listings = useSelector(state=> state.listing)
-    
-    console.log(listings)
-
+ 
 
     
-
+    
     const locations = [ {
-      name: "Location 1",
-      location: { 
-        lat: 40.73954,
-        lng: -73.937 
-      }}]
 
-     
+        location: { 
+            lat: 40.73954,
+            lng: -73.937 
+        }}]
+        
+        
+        console.log(locations)
     
 
     const mapStyles = {        
@@ -34,9 +33,9 @@ const MapContainer = () => {
     }
 
 
-    // useEffect(()=>{
+    useEffect(()=>{
 
-    // }, [listingsItem])
+    }, [listingsItem])
 
   
   
@@ -50,14 +49,14 @@ const MapContainer = () => {
           center={defaultCenter}
           disableDefaultUI={true}
           clickableIcons={false}>
-
-          {
+              
+          {/* {
             locations.map(item => {
               return (
               <Marker key={item.name} position={item.location}/>
               )
             })
-         }
+         } */}
         </GoogleMap>  
      </LoadScript>
   )
