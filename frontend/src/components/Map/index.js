@@ -2,11 +2,8 @@ import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { NavItem } from 'react-bootstrap';
 import { useState, useEffect} from 'react';
-import { useSelector, useDispatch} from 'react-redux';
-import ListingEditForm from '../Profile/ListingEditForm';
-import { fetchListings } from '../../store/listing';
-
-
+import './Map.css'
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -16,7 +13,8 @@ const MapContainer = (props) => {
     const listings = props.listings
     const photos = {};
     const test = {}
-    const [selected, setSelected] = useState("")
+    const [selected, setSelected] = useState({})
+    
     
     const onSelect = item =>{
         setSelected(item)
@@ -32,11 +30,11 @@ const MapContainer = (props) => {
             location:{ 
             lat: listing.lat,
             lng: listing.lng
-            }   
+            },
+            photo: listing.photoUrls[0],
+            price: listing.price  
         }
     }    
-
-    console.log(locations)
 
 
     const mapStyles = {        
@@ -57,19 +55,35 @@ const MapContainer = (props) => {
 
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={14}
+          zoom={13}
           center={defaultCenter}
           disableDefaultUI={true}
           clickableIcons={false}>
               
           {
             locations.map((item)=> {   
-                console.log(item.id)
               return (
-                  <Marker key={item.id} position={item.location} onClick={()=> onSelect(item.location)}/>
+                  <Marker key={item.id} position={item.location} onClick={()=> onSelect(item)} label={'$'+item.price} />
                   )
             })
                     }
+                    {
+            selected.location && 
+            (
+              <InfoWindow
+              position={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+                <div className="marker-window">
+                <NavLink to={{pathname: `/listings/${selected.id}`}}>
+                <img src={selected.photo}/>
+                </NavLink>
+                  ${selected.price}
+                  </div>
+            </InfoWindow>
+            )
+         }
     
         </GoogleMap>  
      </LoadScript>
