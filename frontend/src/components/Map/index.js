@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { NavItem } from 'react-bootstrap';
 import { useState, useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
@@ -11,26 +11,33 @@ import { fetchListings } from '../../store/listing';
 
 
 const MapContainer = (props) => {
-    // const  = useSelector(state=> state.listing)
-    const locations = {};
-    const test = "1"
-    const listings = props.listings
-           
 
-    console.log(props, "props")
+    const locations = [{}];
+    const listings = props.listings
+    const photos = {};
+    const test = {}
+    const [selected, setSelected] = useState("")
+    
+    const onSelect = item =>{
+        setSelected(item)
+    }
+
   
     for(const key in listings){
         const listing = listings[key]
-        console.log(listing, "listing")
         const listingId = listing.id
-        locations[listingId] = { 
+  
+        locations[listingId] = {
+            id: listingId,
+            location:{ 
             lat: listing.lat,
             lng: listing.lng
-            
+            }   
         }
     }    
 
-    console.log(locations, "locations")
+    console.log(locations)
+
 
     const mapStyles = {        
         height: "auto",
@@ -38,17 +45,11 @@ const MapContainer = (props) => {
     
   
     const defaultCenter = {
-        lat: 40.730610, 
-        lng: -73.935242
+        lat: 40.7085, 
+        lng: -73.9520
     }
 
 
-    // useEffect(()=>{
-
-    // }, [listingsItem])
-
-  
-  
   return (
       <>
      <LoadScript
@@ -56,18 +57,20 @@ const MapContainer = (props) => {
 
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={12}
+          zoom={14}
           center={defaultCenter}
           disableDefaultUI={true}
           clickableIcons={false}>
               
           {
-            Object.values(locations).map((item, i )=> {
+            locations.map((item)=> {   
+                console.log(item.id)
               return (
-              <Marker key={i} position={item}/>
-              )
+                  <Marker key={item.id} position={item.location} onClick={()=> onSelect(item.location)}/>
+                  )
             })
-         }
+                    }
+    
         </GoogleMap>  
      </LoadScript>
      </>

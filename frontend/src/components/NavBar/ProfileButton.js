@@ -51,6 +51,7 @@ function ProfileButton(props) {
     else{return openMenu}
   }
 
+
 return (
     <div className='profile-button-div'>
       <button id="profile-button" onClick={profileButton()}>
