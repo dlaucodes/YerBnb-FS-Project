@@ -2,25 +2,35 @@ import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { NavItem } from 'react-bootstrap';
 import { useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
+import ListingEditForm from '../Profile/ListingEditForm';
+import { fetchListings } from '../../store/listing';
 
 
-const MapContainer = () => {
-    const listings = useSelector(state=> state.listing)
- 
 
-    
-    
-    const locations = [ {
 
-        location: { 
-            lat: 40.73954,
-            lng: -73.937 
-        }}]
-        
-        
-        console.log(locations)
-    
+
+const MapContainer = (props) => {
+    // const  = useSelector(state=> state.listing)
+    const locations = {};
+    const test = "1"
+    const listings = props.listings
+           
+
+    console.log(props, "props")
+  
+    for(const key in listings){
+        const listing = listings[key]
+        console.log(listing, "listing")
+        const listingId = listing.id
+        locations[listingId] = { 
+            lat: listing.lat,
+            lng: listing.lng
+            
+        }
+    }    
+
+    console.log(locations, "locations")
 
     const mapStyles = {        
         height: "auto",
@@ -33,13 +43,14 @@ const MapContainer = () => {
     }
 
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-    }, [listingsItem])
+    // }, [listingsItem])
 
   
   
   return (
+      <>
      <LoadScript
        googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
 
@@ -50,15 +61,16 @@ const MapContainer = () => {
           disableDefaultUI={true}
           clickableIcons={false}>
               
-          {/* {
-            locations.map(item => {
+          {
+            Object.values(locations).map((item, i )=> {
               return (
-              <Marker key={item.name} position={item.location}/>
+              <Marker key={i} position={item}/>
               )
             })
-         } */}
+         }
         </GoogleMap>  
      </LoadScript>
+     </>
   )
 }
 

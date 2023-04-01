@@ -11,13 +11,14 @@ import MapContainer from "../Map";
 const ListingIndex = () => {
     const [list, setList] = useState(null);
     const test = useSelector(state=> getListings(state))
+    
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
             return res.json();
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, [], );
+    }, []);
     
 
     if (list){
@@ -42,13 +43,13 @@ const ListingIndex = () => {
                 <div key={i}>
    
                 <Listing listingItem={item} />
-                <MapContainer listingsItem={item} />
-                
+              
                 </div>
   ))}
             </div>
             <div className="map">
-                <MapContainer />
+                 <MapContainer listings={showArray} />
+                
             </div>
         </div>
         </>

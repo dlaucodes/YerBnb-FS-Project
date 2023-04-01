@@ -12,9 +12,9 @@ const Listing = ({listingItem}) => {
     const test = listingItem
 
                  
-    useEffect(()=>{
+    // useEffect(()=>{
         
-    }, [])
+    // }, [])
     
     // console.log(listingItem.ownerId)
     // if(listingItem.length > 0){
@@ -34,10 +34,11 @@ const Listing = ({listingItem}) => {
             </div>
             <div className="listing-price-container">
                ${listingItem.price} night
+        {/* <MapContainer 
+        lat={listingItem.lat} lng={listingItem.lng}/> */}
             </div>
          
         </div>
-       
            
       
         

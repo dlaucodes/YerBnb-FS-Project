@@ -139,7 +139,8 @@ const ProfileDetails = (props) => {
                     
                         {Object.keys(listings.listings).map((key) => {
                         const listing = listings.listings[key];
-                        if (listings && (listing.ownerId === currentUser.id)){
+                        console.log(listing)
+                        if (listing.ownerId === currentUser.id){
                             return (
                             <div key={key}>
                                 <div className="listing-card">

@@ -28,6 +28,15 @@ function Root() {
     </ModalProvider>
   );
 }
+//react18
+// const renderApplication = () => {
+//   const root = ReactDOM.createRoot(document.getElementById("root"));
+//   root.render(
+//     <React.StrictMode>
+//       <Root />
+//     </React.StrictMode>
+//   );
+// };
 
 const renderApplication = () => {
   ReactDOM.render(

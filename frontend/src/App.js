@@ -10,7 +10,7 @@ import { fetchListings, getListings } from "./store/listing";
 import ListingShow from "./components/ListingShow";
 import Footer from "./components/Footer";
 import ProfileDetails from "./components/Profile";
-import MapContainer from "./components/Map";
+// import MapContainer from "./components/Map";
 import { fetchUsers } from "./store/user";
 
 
