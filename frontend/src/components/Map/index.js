@@ -16,6 +16,7 @@ const MapContainer = (props) => {
     const [selected, setSelected] = useState({})
     
     
+    
     const onSelect = item =>{
         setSelected(item)
     }
