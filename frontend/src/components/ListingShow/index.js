@@ -12,6 +12,7 @@ import ProfileDetails from "../Profile"
 import { fetchUsers, getUser } from "../../store/user";
 import { object } from "prop-types";
 import { fetchUser } from "../../store/profile";
+import MapContainer from "../Map";
 
 
 
@@ -164,7 +165,7 @@ const ListingShow = () => {
             </div>
         </div>
             <div className="map-container">
-                {/* <GoogleApiWrapper/> */}
+                {/* <MapContainer /> */}
             </div>
 
         {/* {sessionUserIsOwner && (
@@ -179,42 +180,4 @@ const ListingShow = () => {
  
 export default ListingShow;
 
-    //  <div className="photo-container2" >
-    //         {item.photoUrls.map((photo, i) => {
-    //                 if ( i === 5 ) {
-    //                     return
-    //                 } else if (i % 2 !== 0) {
-    //                     return (
-    //                         <div className="top-photo">
-    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
-    //                         </div>
-    //                     )
-    //                 } else if (i % 2 === 0 && i !== 0) {
-    //                     return (
-    //                         <div className="bottom-photo">
-    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
-    //                         </div>
-    //                     )
-    //                 }
-    //         })}
-    //         </div>
-
-    //  <div className="photo-container2" >
-    //         {item.photoUrls.map((photo, i) => {
-    //                 if ( i === 1 || i === 2 ) {
-    //                     return
-    //                 } else if (i % 2 !== 0) {
-    //                     return (
-    //                         <div className="top-photo">
-    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
-    //                         </div>
-    //                     )
-    //                 } else if (i % 2 === 0 && i !== 0) {
-    //                     return (
-    //                         <div className="bottom-photo">
-    //                             <img src={`${photo.imgUrl}`} className="photo-small"/>
-    //                         </div>
-    //                     )
-    //                 }
-    //         })}
-    //         </div>
+    

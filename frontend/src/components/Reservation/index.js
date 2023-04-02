@@ -1,6 +1,6 @@
 import './Reservation.css';
 
-function Reservation() {
+function Reservation(props) {
 
 
 
