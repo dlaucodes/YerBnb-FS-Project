@@ -25,6 +25,7 @@ const MapContainer = (props) => {
   
         locations.push({
             id: listingId,
+            loc: listing.location,
             location:{ 
             lat: listing.lat,
             lng: listing.lng
@@ -96,18 +97,21 @@ const MapContainer = (props) => {
                     {
             selected.location && 
             (
+                <NavLink to={{pathname: `/listings/${selected.id}`}}>
               <InfoWindow
               position={selected.location}
               clickable={true}
               onCloseClick={() => setSelected({})}
             >
                 <div className="marker-window">
-                <NavLink to={{pathname: `/listings/${selected.id}`}}>
                 <img src={selected.photo}/>
-                </NavLink>
-                  ${selected.price}
+                    <div className="marker-listing-info">
+                    <div>{selected.loc}</div>
+                    <div>${selected.price} night</div>
+                  </div>
                 </div>
             </InfoWindow>
+                </NavLink>
             )
          }
     
