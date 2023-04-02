@@ -41,7 +41,7 @@ const ListingShow = () => {
     // const item = Object.values(listingarray)[listingId -1]
     useEffect(()=>{
         dispatch(fetchListings())
-        //  dispatch(fetchUsers())
+         dispatch(fetchUsers())
     
     },[dispatch, id])
 

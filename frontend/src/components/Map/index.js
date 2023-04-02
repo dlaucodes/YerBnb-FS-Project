@@ -8,11 +8,8 @@ import { NavLink } from 'react-router-dom';
 
 
 const MapContainer = (props) => {
-
-    const locations = [{}];
+    const locations = [];
     const listings = props.listings
-    const photos = {};
-    const test = {}
     const [selected, setSelected] = useState({})
     
     
@@ -26,7 +23,7 @@ const MapContainer = (props) => {
         const listing = listings[key]
         const listingId = listing.id
   
-        locations[listingId] = {
+        locations.push({
             id: listingId,
             location:{ 
             lat: listing.lat,
@@ -34,7 +31,7 @@ const MapContainer = (props) => {
             },
             photo: listing.photoUrls[0],
             price: listing.price  
-        }
+        })
     }    
 
 
@@ -47,6 +44,27 @@ const MapContainer = (props) => {
         lat: 40.7085, 
         lng: -73.9520
     }
+    
+    const markerOptions = {
+      path:
+        `
+                  M 1,0 
+                  L 2,0 
+                  A 1 1 0 0 1 3,1
+                  A 1 1 0 0 1 2,2
+                  L 1,2 
+                  A 1 1 0 0 1 0,1
+                  A 1 1 0 0 1 1,0
+                  z
+                `,
+      fillColor: "white",
+      fillOpacity: 1,
+      strokeColor: "black",
+      strokeWeight: 1,
+      scale: 15,
+      anchor: null,
+      labelOrigin: {}
+};
 
 
   return (
@@ -64,7 +82,14 @@ const MapContainer = (props) => {
           {
             locations.map((item)=> {   
               return (
-                  <Marker key={item.id} position={item.location} onClick={()=> onSelect(item)} label={'$'+item.price} />
+                <Marker 
+            className="marker"  
+            key={item.id}
+            position={item.location}
+            onClick={() => onSelect(item)}
+            label={"$" + item.price}
+            icon={markerOptions}   
+            />
                   )
             })
                     }
@@ -81,7 +106,7 @@ const MapContainer = (props) => {
                 <img src={selected.photo}/>
                 </NavLink>
                   ${selected.price}
-                  </div>
+                </div>
             </InfoWindow>
             )
          }
