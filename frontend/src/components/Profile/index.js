@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link, Redirect } from 'react-router-dom';
+import { useParams, Link, Redirect, NavLink } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as userActions from '../../store/user'
@@ -114,7 +114,7 @@ const ProfileDetails = (props) => {
                     Hi, I'm {`${currentUser.firstName}`}
                 </div>
                 <div className="joined">
-                    Joined in 2023
+                    Joined in {`${currentUser.createdAt.substring(4,-1)}`}
                 </div>
                 <div className="edit">
                     Edit Profile
@@ -139,13 +139,14 @@ const ProfileDetails = (props) => {
                     
                         {Object.keys(listings.listings).map((key) => {
                         const listing = listings.listings[key];
-                        console.log(listing)
                         if (listing.ownerId === currentUser.id){
                             return (
                             <div key={key}>
                                 <div className="listing-card">
                                     <div className="profile-listing-top">                                
-                                    {<img src={listing.photoUrls[0]}></img>}{listing.title}</div>
+                                    <NavLink to={{pathname: `/listings/${listing.id}`}}>
+                                        <img src={listing.photoUrls[0]}></img></NavLink>{listing.title}</div>
+                                        
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
                                         <button onClick={()=>{setCurrentListingId(listing.id);
