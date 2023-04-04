@@ -136,6 +136,7 @@
 }
 
 .host-picture{
+    display: flex;
     border-radius: 50%;
     height: 60px;
     width: 60px;
@@ -146,7 +147,8 @@
 }
 
 .host-picture img{
-    width: 100%;
+    width: 65px;
+    object-fit: cover;
 }
 
 .super-host{

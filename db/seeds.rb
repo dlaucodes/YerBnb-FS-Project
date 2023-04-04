@@ -9,8 +9,8 @@
 #demo
 demo_user = User.create!(username: "Demo", password: "password", first_name: "Demo", last_name: "User")
 
-demo_photo = File.open("app/assets/images/prof.jpg")
-demo_user.photo.attach(io: demo_photo, filename: 'prof.jpg')
+demo_photo = File.open("app/assets/images/proftop.webp")
+demo_user.photo.attach(io: demo_photo, filename: 'proftop.webp')
 
 #fb
 facebook_user = User.create!(username: "FacebookDemo", password: "password", first_name: "Mark", last_name: "Burg")
@@ -38,8 +38,8 @@ git_user.photo.attach(io: git_photo, filename: 'td.png')
 #admin
 admin_user = User.create(username: "admin", password: "yeradmin", first_name: "David", last_name: "Yer")
 
-admin_photo = File.open("app/assets/images/prof.jpg")
-admin_user.photo.attach(io: admin_photo, filename: 'prof.jpg')
+admin_photo = File.open("app/assets/images/proftop.webp")
+admin_user.photo.attach(io: admin_photo, filename: 'proftop.webp')
 
 
 

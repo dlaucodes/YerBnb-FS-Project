@@ -44,8 +44,8 @@
 }
 
 .profile-picture-container img{
-    margin-top: 0px;
-    width: 125px;
+  
+   width: 125px;
     object-fit: cover;
 }
 
