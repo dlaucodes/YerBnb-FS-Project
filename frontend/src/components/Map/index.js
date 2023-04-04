@@ -42,8 +42,8 @@ const MapContainer = (props) => {
     
   
     const defaultCenter = {
-        lat: 40.7085, 
-        lng: -73.9520
+        lat: 40.72780, 
+        lng: -73.96675
     }
     
     const markerOptions = {
