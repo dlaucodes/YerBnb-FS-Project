@@ -35,111 +35,113 @@ admin_user.photo.attach(io: admin_photo, filename: 'prof.jpg')
 # demo_photo1 = File.open("app/assets/images/download.jpg")
 # demo_listing.photos.attach(io: demo_photo1, filename: 'mountkisco1.webp')
 
-#1- mission house
-demo_listing1 = Listing.create!(price: "200", title: "The Mission House Sanctuary", description: "Welcome to mission house!!
+#1- City Cabin
+demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
 
-Pets accepted on a case by case basis , please contact us before booking ( no cats owner has allergies )
-The space
-Newly built, 4 bedrooms 4 bathrooms, all bedrooms have outdoor sitting areas. Theres also a brand new Hot Tub next to the pond.
+"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", location: "New York, United States", owner_id: "6", lng: -73.994379, lat: 40.709808)
 
-3 nights minimum
-Holidays 4-6 nights minimum
-May - September 6 nights minimum", location: "Hopewell Junction, New York", owner_id: "6", lng: -73.935242, lat: 40.730610)
+demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
+demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
+demo_photo1 = File.open("app/assets/images/CityCabin/citycabin1.webp")
+demo_listing1.photos.attach(io: demo_photo1, filename: 'citycabin1.webp')
+demo_photo2 = File.open("app/assets/images/CityCabin/citycabin2.webp")
+demo_listing1.photos.attach(io: demo_photo2, filename: 'citycabin2.webp')
+demo_photo3 = File.open("app/assets/images/CityCabin/citycabin3.webp")
+demo_listing1.photos.attach(io: demo_photo3, filename: 'citycabin3.webp')
+demo_photo4 = File.open("app/assets/images/CityCabin/citycabin4.webp")
+demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
 
-demo_photomain = File.open("app/assets/images/piotrmain.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'piotrmain.webp')
-demo_photo1 = File.open("app/assets/images/piotr1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'piotr1.webp')
-demo_photo2 = File.open("app/assets/images/piotr2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'piotr2.webp')
-demo_photo3 = File.open("app/assets/images/piotr3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'piotr3.webp')
-demo_photo4 = File.open("app/assets/images/piotr4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'piotr4.webp')
+#2- Loft
+demo_listing2 = Listing.create!(price: "1200", title: "Massive 2000 sq ft loft with stunning 360 views", description: "One of a kind floor through loft with exposed brick and 30 windows, allowing views of the Empire State Building, Brooklyn and Manhattan Bridges and the East River. Features a beautiful common roof deck for even more spectacular views of this in up and coming downtown chic neighborhood.
+We mostly rent for film and photoshoots, personal rentals only available when host leaves town, please send us a message.", location: "New York, New York", owner_id: "6", lng: -73.99133, lat: 40.71327)
 
-#2- 
-demo_listing2 = Listing.create!(price: "858", title: "NEW Poconos Treetop Lakehouse: Lakefront/Spa/Sauna", description: "PERFECT for large dinners! Accessible, dog-friendly, waterfront A-line with breathtaking views only 50 ft from lake. Stepless entry/shower, elevator. Newly renovated & stylishly furnished w/ 4 bedrooms + 3 full bathrooms, hot tub, sauna, gourmet kitchen, 12 person dining table, coffee bar, fireplace, game room w/ billiards/foosball/arcade, 3 outdoor decks, Big Green Egg grill, fire pit, fire table, hammock chairs, multiple types of boats, fishing poles, work desk, high speed WiFi, 5 Smart TV’s.
-The space
-Enjoy nature with picturesque treetop and lake views while staying in the comfort of a newly renovated A-line home with all new furniture. This house is for you if you want a relaxing 4-season Poconos gathering that has something for everyone of all ages and abilities! 50 feet from edge of lake which is a rare find. Sun drenched with floor to ceiling windows entire main floor facing lake. Open floor plan with sliding glass doors throughout main floor to full length deck. All guests can enjoy meals together on our 12 person custom farm house dining table with adjoining kitchen island. Many outdoor activities included such as canoeing, kayaking, paddle boating, paddle boarding, & fishing. Come relax in our spa and 7 person hot tub or converse in our hammock swing area. Make smores together around our firepit steps from the lake. Fun game room with activities for all ages like a billiards, foosball, and a Pacman arcade table as well as board games, and laser tag. Elevator, Baby Bjorn travel crib & bouncer, highchairs, playpen, changing pad, play tent, Lego table available.", location: "Hopewell Junction, New York", owner_id: "6", lng: -73.9520, lat: 40.7085)
+demo_photomain = File.open("app/assets/images/Loft/loft0.webp")
+demo_listing2.photos.attach(io: demo_photomain, filename: 'loft0.webp')
+demo_photo1 = File.open("app/assets/images/Loft/loft1.webp")
+demo_listing2.photos.attach(io: demo_photo1, filename: 'loft1.webp')
+demo_photo2 = File.open("app/assets/images/Loft/loft2.webp")
+demo_listing2.photos.attach(io: demo_photo2, filename: 'loft2.webp')
+demo_photo3 = File.open("app/assets/images/Loft/loft3.webp")
+demo_listing2.photos.attach(io: demo_photo3, filename: 'loft3.webp')
+demo_photo4 = File.open("app/assets/images/Loft/loft4.webp")
+demo_listing2.photos.attach(io: demo_photo4, filename: 'loft4.webp')
 
-demo_photomain = File.open("app/assets/images/Poconos/Poconosmain.webp")
-demo_listing2.photos.attach(io: demo_photomain, filename: 'Poconosmain.webp')
-demo_photo1 = File.open("app/assets/images/Poconos/Poconos1.webp")
-demo_listing2.photos.attach(io: demo_photo1, filename: 'Poconos1.webp')
-demo_photo2 = File.open("app/assets/images/Poconos/Poconos2.webp")
-demo_listing2.photos.attach(io: demo_photo2, filename: 'Poconos2.webp')
-demo_photo3 = File.open("app/assets/images/Poconos/Poconos3.webp")
-demo_listing2.photos.attach(io: demo_photo3, filename: 'Poconos3.webp')
-demo_photo4 = File.open("app/assets/images/Poconos/Poconos4.webp")
-demo_listing2.photos.attach(io: demo_photo4, filename: 'Poconos4.webp')
+#3 - Architectural Digest Style Oasis
+demo_listing3 = Listing.create!(price: "425", title: "Architectural Digest Style Oasis", description: "Hello, welcome to this sunny and spacious LIC gem, centrally located to great restaurants, bars, and shopping. The apartment has been designed with peace, tranquility and comfort in mind.
 
-#3
-demo_listing3 = Listing.create!(price: "279", title: "Modern firetower chalet with majestic views", description: "If you want to wake up to amazing views, beautiful countryside, and 70 acres of private countryside, come to the Firetower Chalet. Guests love this chalet for the breathtaking views, miles of hiking trails, comfortable master bedroom, and fully stocked kitchen. The Chalet is 3 minutes from the exciting town of Bloomsburg, and only 10-15 minutes from the #1 family amusement park in the country, Knoebels. This Chalet has amazing views to help you make amazing memories.
-The space
-The Firetower Chalet takes inspiration from fire watch towers found in western forests. You’ll have the whole house to yourself. On the first floor there is a full living area featuring seating, a smart-TV, a fully stocked kitchen fit-for-a-chef, and a bathroom. The Kitchen features a refrigerator, electric stove, oven, microwave, sink, french press, Keurig, toaster, and waffle-maker. In the bathroom, you'll be treated to a spacious shower, sink and toilet. Upstairs, the whole floor is dedicated to the master bedroom, with a queen bed featuring a comfy, tuft and needle adaptive foam mattress. The real star of the room however, is the amazing views of the Pennsylvania mountains and countryside visible from the windows all around the room. Under the bed are storage drawers for clothing and other items. The drawers also come stocked with extra linens in case they are needed. The high ceilings of the room give extra room for an upstairs loft, where there is an area perfect for children or another group. The loft is carpeted and has a mattress. Outside, there is a wraparound balcony with 360 degree views of the countryside. It's the perfect spot to hang out with family and friends, and the views will take your breath away. Finally, the Firetower Chalet also has a cable suspended bridge that leads to a
-Treehouse style platform. The Firetower also has a downstairs patio, with an outdoor propane warmer, a fire-pit, and a hammock. Of course, the Firetower Chalet is set on 70 acres of Pennsylvania countryside, which you are free to explore. There are plenty of trails, animals, and activities.", location: "Bloomsburg, Pennsylvania", owner_id: "6", lng: -73.9520, lat: 40.7085)
+The R/N/E/M/7 subway trains are only a few blocks away and gets you to Manhattan in 4 minutes.
 
-demo_photomain = File.open("app/assets/images/Chalet/chaletmain.webp")
+*Reviews from February 2021 and earlier are from a former Manhattan apartment. The host has moved nearby to a much larger space. While the apartment is new, the dedication to being great hosts remains paramount*", location: "Queens, New York", owner_id: "6", lng: -73.93604, lat: 40.75012)
+
+demo_photomain = File.open("app/assets/images/Queens/queens0.webp")
 demo_listing3.photos.attach(io: demo_photomain, filename: 'chaletmain.webp')
-demo_photo1 = File.open("app/assets/images/Chalet/chalet1.webp")
-demo_listing3.photos.attach(io: demo_photo1, filename: 'chalet1.webp')
-demo_photo2 = File.open("app/assets/images/Chalet/chalet2.webp")
-demo_listing3.photos.attach(io: demo_photo2, filename: 'chalet2.webp')
-demo_photo3 = File.open("app/assets/images/Chalet/chalet3.webp")
-demo_listing3.photos.attach(io: demo_photo3, filename: 'chalet3.webp')
-demo_photo4 = File.open("app/assets/images/Chalet/chalet4.webp")
-demo_listing3.photos.attach(io: demo_photo4, filename: 'chalet4.webp')
+demo_photo1 = File.open("app/assets/images/Queens/queens1.webp")
+demo_listing3.photos.attach(io: demo_photo1, filename: 'queens1.webp')
+demo_photo2 = File.open("app/assets/images/Queens/queens2.webp")
+demo_listing3.photos.attach(io: demo_photo2, filename: 'queens2.webp')
+demo_photo3 = File.open("app/assets/images/Queens/queens3.webp")
+demo_listing3.photos.attach(io: demo_photo3, filename: 'queens3.webp')
+demo_photo4 = File.open("app/assets/images/Queens/queens4.webp")
+demo_listing3.photos.attach(io: demo_photo4, filename: 'queens4.webp')
 
-#4
-demo_listing4 = Listing.create!(price: "159", title: "A Frame Stay", description: "Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acre's of operating farm land just stone through from the River. It is an off the grid 'glamping' experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows.
-The space
-The Step 📸 featured on A&E living smaller, Forbes Magazine, timeout, and Airbnb!
+#4- Brooklyn
+demo_listing4 = Listing.create!(price: "495", title: "A Bohemian style duplex with garden", description: "This apartment is being created and styled out of love.
+A lot of research to put together vintage pieces combined with a touch of modern in an ambience that will give you a special feel.
+The outdoor area is magical lounge .
+Perfect place for an artistic or fashion Photo shoot a video , a documentary , ( day time) and a romantic get away.
 
-The Step is a 168 square foot, quaint and cozy, A-Frame located on a farm. Our unique glamping cabin holds a queen size memory foam bed and a little nook for you to sit at and eat, play a plethora of games or read a book! We have an outside sitting area or ‘kitchen’ with a picnic table, grill, some chairs, firewood, and a fire pit in the middle. The cabins electricity is run off of a small quieter gas generator. (Fear not we’ll show you how to use it, it’s easy) Our “bathroom” or outhouse is located separate from the Step. (About 20’ away from the cabin) The outhouse does not have running water- there is **NO SHOWER** and no plumbing at The
-Step. We have a small sink in the outhouse for hand washing and other water necessities :) The cabin is equipped with an AC unit for those hot summer days. The town of Montgomery is a 3 minute drive from The Step where you can grab some great local food and drinks. Montgomery is usually described as hallmark like and we agree! We have so much to do around us we would LOVE to host you and show you our favorite little getaway we built! Come relax and reconnect with nature. Get your Glamp on!", location: "Mongomery, New York", owner_id: "6", lng: -73.9520, lat: 40.7085)
+No Party allowed.
+No large gatherings , please don't inquire.", location: "Brooklyn, New York", owner_id: "6", lng: -73.95144, lat: 40.69503)
 
-demo_photomain = File.open("app/assets/images/Cabin/cabinmain.webp")
-demo_listing4.photos.attach(io: demo_photomain, filename: 'cabinmain.webp')
-demo_photo1 = File.open("app/assets/images/Cabin/cabin1.webp")
-demo_listing4.photos.attach(io: demo_photo1, filename: 'cabin1.webp')
-demo_photo2 = File.open("app/assets/images/Cabin/cabin2.webp")
-demo_listing4.photos.attach(io: demo_photo2, filename: 'cabin2.webp')
-demo_photo3 = File.open("app/assets/images/Cabin/cabin3.webp")
-demo_listing4.photos.attach(io: demo_photo3, filename: 'cabin3.webp')
-demo_photo4 = File.open("app/assets/images/Cabin/cabin4.webp")
-demo_listing4.photos.attach(io: demo_photo4, filename: 'cabin4.webp')
+demo_photomain = File.open("app/assets/images/Brooklyn/bklyn0.webp")
+demo_listing4.photos.attach(io: demo_photomain, filename: 'bklyn0.webp')
+demo_photo1 = File.open("app/assets/images/Brooklyn/bklyn1.webp")
+demo_listing4.photos.attach(io: demo_photo1, filename: 'bklyn1.webp')
+demo_photo2 = File.open("app/assets/images/Brooklyn/bklyn2.webp")
+demo_listing4.photos.attach(io: demo_photo2, filename: 'bklyn2.webp')
+demo_photo3 = File.open("app/assets/images/Brooklyn/bklyn3.webp")
+demo_listing4.photos.attach(io: demo_photo3, filename: 'bklyn3.webp')
+demo_photo4 = File.open("app/assets/images/Brooklyn/bklyn4.webp")
+demo_listing4.photos.attach(io: demo_photo4, filename: 'bklyn4.webp')
 
 #5
-demo_listing5 = Listing.create!(price: "353", title: "Paris Penthouse", description: "12 th floor
-no one in front of your extraordianry terrace but a unique view all over Paris from your loft widely open to full sky
-Eiffel Tower at 100 m First row ! A place to play , to celebrate", location: "Paris, France", owner_id: "6", lng: 380, lat: 780)
+demo_listing5 = Listing.create!(price: "248", title: "High floor Luxury Apartment with balcony", description: "A spectacular 1BD apt in a luxury building in the center of Fort Greene (10 min from Manhattan). Spacious, clean and modern decorated. Big balcony with the amazing view of Manhattan bridge and Hudson river - perfect place to have your morning coffee :)
 
-demo_photomain = File.open("app/assets/images/Paris/parismain.webp")
-demo_listing5.photos.attach(io: demo_photomain, filename: 'parismain.webp')
-demo_photo1 = File.open("app/assets/images/Paris/paris1.webp")
-demo_listing5.photos.attach(io: demo_photo1, filename: 'paris1.webp')
-demo_photo2 = File.open("app/assets/images/Paris/paris2.webp")
-demo_listing5.photos.attach(io: demo_photo2, filename: 'paris2.webp')
-demo_photo3 = File.open("app/assets/images/Paris/paris3.webp")
-demo_listing5.photos.attach(io: demo_photo3, filename: 'paris3.webp')
-demo_photo4 = File.open("app/assets/images/Paris/paris4.webp")
-demo_listing5.photos.attach(io: demo_photo4, filename: 'paris4.webp')
+Located walking distance from everything you need - Whole Foods, Traders Joe, bars, restaurants, Fort Greene park, Barclay Center and easy access to almost all trains (2,3,4,5,A,B,C,F,J,R,Q)
+", location: "Brooklyn, New York", owner_id: "6", lng: -73.97996, lat: 40.68839)
+
+demo_photomain = File.open("app/assets/images/HighRise/hr0.webp")
+demo_listing5.photos.attach(io: demo_photomain, filename: 'hr0.webp')
+demo_photo1 = File.open("app/assets/images/HighRise/hr1.webp")
+demo_listing5.photos.attach(io: demo_photo1, filename: 'hr1.webp')
+demo_photo2 = File.open("app/assets/images/HighRise/hr2.webp")
+demo_listing5.photos.attach(io: demo_photo2, filename: 'hr2.webp')
+demo_photo3 = File.open("app/assets/images/HighRise/hr3.webp")
+demo_listing5.photos.attach(io: demo_photo3, filename: 'hr3.webp')
+demo_photo4 = File.open("app/assets/images/HighRise/hr4.webp")
+demo_listing5.photos.attach(io: demo_photo4, filename: 'hr4.webp')
 
 #6
-demo_listing6 = Listing.create!(price: "291", title: "Le MICA Chalet", description: "The MICA, top-of-the-range micro-accommodation located in the heart of the recreational-forestry area the Maelström. Live the immersive experience of a boreal nature just 25 minutes from Old Quebec. Treat yourself to a panoramic view of the Laurentian Park as well as breathtaking sunsets at the highest peak of Lac-Beauport. Discover the unique topography of the mountain by exploring some 20km of trails accessible in all seasons.
+demo_listing6 = Listing.create!(price: "1200", title: "Architectural Digest Featured Home with PARK VIEWS", description: "3 bedroom/3 bath. Built in 1883, this private residence has been with unobstructed views of the Flatiron Building, Madison Square Park and The Clocktower.
 
-With its minimalist design, clean lines and maximum fenestration, this tiny house blends into its environment, giving way to the spectacle of nature. Taking its name from the mineral with blond hues and silver reflections that makes up the characteristic rocky outcrops of Mont Tourbillon, the MICA clings to the mountain and blends perfectly into its environment.", location: "Quebec, Canada", owner_id: "6", lng: -73.9520, lat: 40.7085)
+Featured in Architectural Digest, Interior Design and The New York Times, this apartment truly is one of a kind!
+The space
+The unit was professionally designed and it has been remodeled from top to bottom and rebuilt with only Italian materials. The walls that separate the bedrooms from the main space are made with a glass paneling that can transition appearance from solid to transparent; this allows one to control the amount of light entering the rooms. These incredibly designed bedrooms are inspired by earth, air, and fire, and are all equipped with built-in wardrobes and unmatched views. The spacious master bedroom is the most exceptional of all with a large closet that measures 14 ft long and is double the depth of what you would typically find. Storage like this is impossible to come by in the city! The en suite wet bath has a spa-like feel, outfitted with a steam room, Italian marble and wood teak floors.
 
-demo_photomain = File.open("app/assets/images/Lemica/lemicamain.webp")
-demo_listing6.photos.attach(io: demo_photomain, filename: 'lemicamain.webp')
-demo_photo1 = File.open("app/assets/images/Lemica/lemica1.webp")
-demo_listing6.photos.attach(io: demo_photo1, filename: 'lemica1.webp')
-demo_photo2 = File.open("app/assets/images/Lemica/lemica2.webp")
-demo_listing6.photos.attach(io: demo_photo2, filename: 'lemica2.webp')
-demo_photo3 = File.open("app/assets/images/Lemica/lemica3.webp")
-demo_listing6.photos.attach(io: demo_photo3, filename: 'lemica3.webp')
-demo_photo4 = File.open("app/assets/images/Lemica/lemica4.webp")
-demo_listing6.photos.attach(io: demo_photo4, filename: 'lemica4.webp')
+French oak flooring runs throughout the residence, as well as a built-in spanning 90 ft in length. This built-in houses the chef's kitchen that includes Gaggenau appliances and a large wine fridge. Equipped with an out-venting, restaurant quality exhaust, you can cook up an array of meals and still have space to entertain. Another aspect of the kitchen is the versatile 10 ft island that can extend to add an additional 5 ft! Just off the kitchen is a large dining room with amazing windows and a dining table that can seat 12 people. The open concept and 14 ft ceilings make the residence feel massive.
+
+Other notable features are an in-unit washer/dryer, surround sound audio system, double pane windows, automated shades, and the list goes on. You can also control A/C, lighting, air filtration and more at the touch of a button.", location: "New York, New York", owner_id: "6", lng: -73.98900, lat: 40.74195)
+
+demo_photomain = File.open("app/assets/images/ParkViews/pv0.webp")
+demo_listing6.photos.attach(io: demo_photomain, filename: 'pv0.webp')
+demo_photo1 = File.open("app/assets/images/ParkViews/pv1.webp")
+demo_listing6.photos.attach(io: demo_photo1, filename: 'pv1.webp')
+demo_photo2 = File.open("app/assets/images/ParkViews/pv2.webp")
+demo_listing6.photos.attach(io: demo_photo2, filename: 'pv2.webp')
+demo_photo3 = File.open("app/assets/images/ParkViews/pv3.webp")
+demo_listing6.photos.attach(io: demo_photo3, filename: 'pv3.webp')
+demo_photo4 = File.open("app/assets/images/ParkViews/pv4.webp")
+demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 
 # #7
 # demo_listing1 = Listing.create!(price: "200", title: "The Mission House Sanctuary", description: location: "Hopewell Junction, New York", owner_id: "1", lng: 500, lat: 600)
