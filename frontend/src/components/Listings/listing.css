@@ -43,8 +43,9 @@
 }
 
 .listing-img img{
-    height: 300px;
-    width: auto;    
+    height: 320px;
+    width: auto;
+    object-fit: cover;    
 }
 
 .listing-price-container{
