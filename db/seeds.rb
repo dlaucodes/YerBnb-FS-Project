@@ -5,19 +5,37 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+#demo
 demo_user = User.create!(username: "Demo", password: "password", first_name: "Demo", last_name: "User")
 
-# demo_photomain = File.open("app/assets/images/piotrmain.webp")
-# demo_user.photo.attach(io: demo_photomain, filename: 'piotrmain.webp')
+demo_photo = File.open("app/assets/images/prof.jpg")
+demo_user.photo.attach(io: demo_photo, filename: 'prof.jpg')
 
+#fb
 facebook_user = User.create!(username: "FacebookDemo", password: "password", first_name: "Mark", last_name: "Burg")
 
-google_user = User.create!(username: "GoogleDemo", password: "password", first_name: "Larry", last_name: "Paige")
+fb_photo = File.open("app/assets/images/fb.png")
+facebook_user.photo.attach(io: fb_photo, filename: 'fb.png')
 
+#google
+google_user = User.create!(username: "GoogleDemo", password: "password", first_name: "Larry", last_name: "Paige")
+google_photo = File.open("app/assets/images/lp.webp")
+google_user.photo.attach(io: google_photo, filename: 'lp.webp')
+
+#apple
 apple_user = User.create!(username: "AppleDemo", password: "password", first_name: "Timothy", last_name: "Book")
 
+apple_photo = File.open("app/assets/images/tc.jpeg")
+apple_user.photo.attach(io: apple_photo, filename: 'tc.jpeg')
+
+#git
 git_user = User.create!(username: "GitDemo", password: "password", first_name: "Dommy", last_name: "Tohmke")
 
+git_photo = File.open("app/assets/images/td.png")
+git_user.photo.attach(io: git_photo, filename: 'td.png')
+
+#admin
 admin_user = User.create(username: "admin", password: "yeradmin", first_name: "David", last_name: "Yer")
 
 admin_photo = File.open("app/assets/images/prof.jpg")
