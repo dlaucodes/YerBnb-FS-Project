@@ -4,7 +4,7 @@ class Api::ReservationsController < ActionController::API
     before_action :require_logged_in
 
     def index
-        @reservations = reservations.all
+        @reservations = Reservation.all
         render :index
         
     end
