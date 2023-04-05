@@ -4,6 +4,7 @@ import { NavItem } from 'react-bootstrap';
 import { useState, useEffect} from 'react';
 import './Map.css'
 import { NavLink } from 'react-router-dom';
+import icon from '../../assets/icon.png'
 
 
 
@@ -46,26 +47,7 @@ const MapContainer = (props) => {
         lng: -73.96675
     }
     
-    const markerOptions = {
-      path:
-        `
-                  M 1,0 
-                  L 2,0 
-                  A 1 1 0 0 1 3,1
-                  A 1 1 0 0 1 2,2
-                  L 1,2 
-                  A 1 1 0 0 1 0,1
-                  A 1 1 0 0 1 1,0
-                  z
-                `,
-      fillColor: "white",
-      fillOpacity: 1,
-      strokeColor: "black",
-      strokeWeight: 1,
-      scale: 15,
-      anchor: null,
-      labelOrigin: {}
-};
+    
 
 
   return (
@@ -89,7 +71,8 @@ const MapContainer = (props) => {
             position={item.location}
             onClick={() => onSelect(item)}
             label={"$" + item.price}
-            icon={markerOptions}   
+            icon={icon}
+              
             />
                   )
             })
@@ -102,6 +85,7 @@ const MapContainer = (props) => {
               position={selected.location}
               clickable={true}
               onCloseClick={() => setSelected({})}
+
             >
                 <div className="marker-window">
                 <img src={selected.photo}/>

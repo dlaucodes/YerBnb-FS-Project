@@ -159,7 +159,7 @@ const ListingShow = () => {
             </div>
             <div className="listing-info-right">
             <div className="reservation-container-outer">
-                <Reservation />
+                
             </div>
           
             </div>
