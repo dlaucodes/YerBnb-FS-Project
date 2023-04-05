@@ -5,7 +5,7 @@ import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
 import ProfileButton from './ProfileButton';
 import './NavBar.css';
-import logo from '../../assets/yerbnbheader.png'
+import logo from '../../assets/yerbnblogo1.png'
 
 function NavBar() {
   const sessionUser = useSelector((state) => state.session.user);
