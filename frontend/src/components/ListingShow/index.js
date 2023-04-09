@@ -159,9 +159,6 @@ const ListingShow = () => {
                 {listing.description}
                 </p>
             </div>
-            <div className="reviews-container">
-                Reviews here
-            </div>
             </div>
             <div className="listing-info-right">
             <div className="reservation-container-outer">
@@ -169,7 +166,24 @@ const ListingShow = () => {
             </div>
           
             </div>
+            <div className="reviews-container">
+                <div className="listing-header">
+                    <div className="listing-rating">rating</div>
+                    <div className="listing-review-total">number of ratings</div>
+                </div>
+                <div className="listing-review-stats">
+                    review stats
+                </div>
+                <div className="listing-reviews-outer"> 
+                    <div className="listing-reviews-card">
+                        Reviews mapped out
+                    </div>
+                </div>
+               
+            </div>
         </div>
+
+        
             <div className="map-container">
                 {/* <MapContainer /> */}
             </div>
