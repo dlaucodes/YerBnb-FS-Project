@@ -40,6 +40,9 @@ const ListingShow = () => {
     // const listingvalues = Object.values(listings)
     // const listingarray = (listingvalues[0])
     // const item = Object.values(listingarray)[listingId -1]
+   
+    
+    
     useEffect(()=>{
         dispatch(fetchListings())
          dispatch(fetchUsers())
@@ -156,10 +159,13 @@ const ListingShow = () => {
                 {listing.description}
                 </p>
             </div>
+            <div className="reviews-container">
+                Reviews here
+            </div>
             </div>
             <div className="listing-info-right">
             <div className="reservation-container-outer">
-                
+                Reservation container
             </div>
           
             </div>
