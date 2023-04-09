@@ -43,6 +43,7 @@ const ProfileDetails = (props) => {
     }
 
     
+    
 
     const uploadPhoto = async (e)=> {
         const file = e.currentTarget.files[0];
@@ -131,6 +132,26 @@ const ProfileDetails = (props) => {
                 <div className="reviews">
                     <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
                     <div className="lives-in-text">Reviews</div>
+                </div>
+                <div className="right-divider"></div>
+                <div className="user-trips">
+                    <div className="trips-section-text">Trips</div>
+                    
+                    <div className="trips-info">
+                        <div className="trips-card">
+                            trip
+                            <div className="profile-listing-ruler"></div>
+                                <div className="profile-listing-options">
+                                    <button>
+                                        review
+                                    </button>
+                                    <button>
+                                        remove
+                                    </button>
+                                </div>
+                    
+                        </div>
+                    </div>
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
