@@ -1,6 +1,8 @@
 .listing-page{
     top: 80px;  
     display: flex;
+    min-width: 99%;
+    min-height: 90vh;
     justify-content: center;
     align-content: center;
     position: absolute;
@@ -12,10 +14,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    max-width: 50%;
+    height: 50%;
     gap: 10px;  
-    margin-top: 20px;
-   
+    margin-top: 20px; 
 }
 
 .listing{
@@ -67,5 +69,6 @@
 
 .map{
     display: flex;
+    position: relative;
     width: 50%;
 }
