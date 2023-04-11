@@ -2,22 +2,42 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./listing.css"
 import MapContainer from "../Map";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchReviews } from "../../store/review";
 
 
 
 
 
-const Listing = ({listingItem}) => {
+
+const Listing = ({listingItem, reviewItem}) => {
     const [item, setItem] = useState(listingItem)
     const test = listingItem
+    const dispatch = useDispatch()
+    const reviews = useSelector(state=>state.review.reviews)
+    const reviewsArray= []
+    const ownerId = 
 
-                 
-    // useEffect(()=>{
+    useEffect(()=>{
+        dispatch(fetchReviews())
+    }, [])
+
+    for(const key in reviews){
+        const review = reviews[key]
+        const listingReviewId = review.listingId
         
-    // }, [])
+
+        // reviewsArray.push({
+        //     id: review.id,
+        //     rating: review.rating,
+        //     body: review.body,
+        //     listingReviewId: review.listingId
+        // })
+
+        console.log(listingReviewId)
+    }
+                 
     
-    // console.log(listingItem.ownerId)
-    // if(listingItem.length > 0){
     return ( 
         
        <>
@@ -39,7 +59,7 @@ const Listing = ({listingItem}) => {
             </div>
          
         </div>
-           
+       
       
         
        </>  

@@ -15,15 +15,11 @@ const ListingIndex = () => {
     const test = useSelector(state=> getListings(state));
     const dispatch = useDispatch();
     const reviews = useSelector(state=> state.review.reviews)
-    const review = []
+    const reviewsArray = []
     
-    for(const key in reviews){
-        const review = reviews[key]
-        const listingId = review.listing_id
+ 
 
-        console.log(review)
-        console.log(review.listingId)
-    }
+    // if listingid == review.listingId then return the rating for that listing
     
     
     useEffect(() => {
@@ -50,8 +46,8 @@ const ListingIndex = () => {
         // console.log(array)
         // console.log(listings)
         // was used to test for the data 
-        
-        
+        // console.log(showArray)
+        console.log(reviewsArray)
         
         
     return (
@@ -60,17 +56,21 @@ const ListingIndex = () => {
             <div className="listing-container">
                 {showArray.map((item, i) => (
                 <div key={i}>
-   
                 <Listing listingItem={item} />
-                
                 </div>
-  ))}
+                ))};
+                
+          
             </div>
+            
             <div className="map">
                  <MapContainer listings={showArray} />
                 
             </div>
+             
         </div>
+            
+            
         </>
     );
     }else{

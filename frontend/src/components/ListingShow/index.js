@@ -49,7 +49,7 @@ const ListingShow = () => {
     
     },[dispatch, id])
 
-    console.log(users)
+ 
 
     
 
