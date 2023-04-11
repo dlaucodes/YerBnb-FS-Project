@@ -14,7 +14,17 @@ const ListingIndex = () => {
     const [list, setList] = useState(null);
     const test = useSelector(state=> getListings(state));
     const dispatch = useDispatch();
+    const reviews = useSelector(state=> state.review.reviews)
+    const review = []
+    
+    for(const key in reviews){
+        const review = reviews[key]
+        const listingId = review.listing_id
 
+        console.log(review)
+        console.log(review.listingId)
+    }
+    
     
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
@@ -27,6 +37,7 @@ const ListingIndex = () => {
 
     useEffect(()=>{
         dispatch(fetchReviews())
+        
     }, [])
 
     if (list){
@@ -51,7 +62,7 @@ const ListingIndex = () => {
                 <div key={i}>
    
                 <Listing listingItem={item} />
-              
+                
                 </div>
   ))}
             </div>
