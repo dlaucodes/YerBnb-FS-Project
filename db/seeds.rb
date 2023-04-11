@@ -190,7 +190,9 @@ demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 # demo_listing1.photos.attach(io: demo_photo4, filename: 'piotr4.webp')
 
 
+demo_review1 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "testing"
 
+)
 
 
 
