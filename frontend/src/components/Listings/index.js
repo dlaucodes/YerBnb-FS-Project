@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import csrfFetch from "../../store/csrf";
 import { getListings } from "../../store/listing";
 import Listing from "./Listing";
 import "./listing.css"
 import Profile from '../Profile'
 import MapContainer from "../Map";
+import {fetchReviews} from "../../store/review"
+
 
 
 const ListingIndex = () => {
     const [list, setList] = useState(null);
-    const test = useSelector(state=> getListings(state))
+    const test = useSelector(state=> getListings(state));
+    const dispatch = useDispatch();
+
     
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
@@ -20,6 +24,10 @@ const ListingIndex = () => {
         });
     }, []);
     
+
+    useEffect(()=>{
+        dispatch(fetchReviews())
+    }, [])
 
     if (list){
         let array = Object.values(list)

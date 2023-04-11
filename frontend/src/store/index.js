@@ -3,8 +3,9 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import listingReducer from "./listing"
 import userReducer from "./user";
+import reviewReducer from "./review";
 
-const rootReducer = combineReducers({ session: sessionReducer, listing: listingReducer, user: userReducer});
+const rootReducer = combineReducers({ session: sessionReducer, listing: listingReducer, user: userReducer, review: reviewReducer});
 
 let enhancer;
 
