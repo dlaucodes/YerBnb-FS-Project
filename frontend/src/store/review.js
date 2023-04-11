@@ -28,6 +28,20 @@ export const createReview = (formData) => async (dispatch)=>{
     return res;
 }
 
+export const fetchReview = (reviewId)=> async (dispatch){
+    const res = await csrfFetch(`/api/reviews/${reviewId}`);
+    const data = await res.json();
+    dispatch(receiveReview(data));
+    return res;
+}
+
+export const fetchReviews = ()=> async (dispatch){
+    const res = await csrfFetch(`api/reviews`);
+    const data = await res.json();
+    dispatch(receiveReviews(data));
+    return res
+}
+
 const reviewReducer = (state = [], action) =>{
     switch(action.type){
         case RECEIVE_REVIEW:
