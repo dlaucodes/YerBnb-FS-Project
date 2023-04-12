@@ -84,6 +84,7 @@ label {
 
 }
 
+
 .verification-container{
     display: flex;
     align-items: center;
@@ -199,8 +200,12 @@ label {
     display: flex;
     width: 100%;
     font-size: 23px;
-    height: 80px;
     align-items: center;
+}
+
+.review-card {
+    display: flex;
+    height: 200px;
 }
 
 .trips-section-text {
