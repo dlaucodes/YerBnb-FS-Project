@@ -47,9 +47,9 @@ const ListingIndex = () => {
         // console.log(listings)
         // was used to test for the data 
         // console.log(showArray)
-        console.log(reviewsArray)
+        // console.log(reviewsArray)
         
-        
+       
     return (
         <>
         <div className="listing-page">
@@ -64,8 +64,7 @@ const ListingIndex = () => {
             </div>
             
             <div className="map">
-                 <MapContainer listings={showArray} />
-                
+                 <MapContainer listings={showArray} />    
             </div>
              
         </div>

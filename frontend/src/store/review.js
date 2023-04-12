@@ -42,6 +42,10 @@ export const fetchReviews = () => async (dispatch)=>{
     return res
 }
 
+export const getReviews = (state)=>{
+    return Object.values(state.review)
+}
+
 const reviewReducer = (state = [], action) =>{
     switch(action.type){
         case RECEIVE_REVIEW:
