@@ -12,14 +12,8 @@ import {fetchReviews} from "../../store/review"
 
 const ListingIndex = () => {
     const [list, setList] = useState(null);
-    const test = useSelector(state=> getListings(state));
     const dispatch = useDispatch();
-    const reviews = useSelector(state=> state.review.reviews)
-    const reviewsArray = []
-    
  
-
-    // if listingid == review.listingId then return the rating for that listing
     
     
     useEffect(() => {

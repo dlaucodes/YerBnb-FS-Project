@@ -56,7 +56,7 @@ admin_user.photo.attach(io: admin_photo, filename: 'proftop.webp')
 #1- City Cabin
 demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
 
-"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", location: "New York, United States", owner_id: "6", lng: -73.994379, lat: 40.709808)
+"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", location: "New York, New York", owner_id: "6", lng: -73.994379, lat: 40.709808)
 
 demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
 demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
@@ -190,9 +190,32 @@ demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 # demo_listing1.photos.attach(io: demo_photo4, filename: 'piotr4.webp')
 
 
-demo_review1 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "testing")
+demo_review1 = Review.create!(rating: "4", user_id: "1", listing_id: "1", body: "Definitely a wonderful stay and well worth the featured Best NYC Yerbnbs!")
 
-demo_review2 = Review.create!(rating: "4", user_id: "2", listing_id: "1", body: "testing123")
+demo_review2 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "The flat was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.")
+
+demo_review3 = Review.create!(rating: "5", user_id:"3", listing_id:"1", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!")
+
+demo_review4 = Review.create!(rating: "5", user_id:"4", listing_id:"2", body:"Well worth the price! The place was absolutely gorgeous and massive!")
+
+demo_review5 = Review.create!(rating: "5", user_id:"5", listing_id:"2", body:"The pictures do not do this place justice, It was well lit and convenient!")
+
+demo_review6 = Review.create!(rating: "5", user_id:"4", listing_id:"3", body:"Where do I begin?  Everything looked and felt amazing, well furnished and even had an accessible roof patio!")
+
+demo_review7 = Review.create!(rating: "4", user_id:" 3", listing_id:"3", body:"Great views and the art in the apartment definitely tied the place together.")
+
+demo_review8 = Review.create!(rating: "5", user_id:"2", listing_id:"4", body:"Was looking for a place in Brooklyn and stumbled across this listing.  The decoration is well put together and above all, it was clean and cozy.")
+
+demo_review9 = Review.create!(rating: "5", user_id:"1", listing_id:"4", body:"Bohemian styling was definitely a great choice for this apartment located in Brooklyn.  The garden was also a great place to relax and hang out.  Will be coming back!")
+
+demo_review10 = Review.create!(rating: "4", user_id:"2", listing_id:"5", body:"Was visiting town for the weekend and found this amazing apartment with great views.  The only reason for a missing star was due to the elevator not working at the time of rental.")
+
+demo_review11 = Review.create!(rating: "5", user_id:"3", listing_id:"5", body:"Apartment had great views, clean, host was super communicative.")
+
+demo_review12 = Review.create!(rating: "5", user_id:"5", listing_id:"6", body:"This place was amazing.  The park view, the convenience of being footsteps away from everything was well worth the price.")
+
+demo_review13  = Review.create!(rating: "5", user_id:"4", listing_id:"6", body:"Beautiful home, beautiful view, would come back again.")
+
 
 
 
