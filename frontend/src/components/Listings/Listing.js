@@ -5,6 +5,7 @@ import MapContainer from "../Map";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchReviews, getReviews } from "../../store/review";
 import { getListings } from "../../store/listing";
+import Profile from "../Profile";
 
 
 
@@ -63,9 +64,6 @@ const Listing = ({listingItem}) => {
             </div>
             </div>
         </div>
-       
-      
-        
        </>  
      )
 }

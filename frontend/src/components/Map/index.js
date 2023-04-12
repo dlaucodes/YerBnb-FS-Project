@@ -8,12 +8,13 @@ import icon from '../../assets/icon.png'
 
 
 
-const MapContainer = (props) => {
+const MapContainer = ({listingArray, reviewsArray}) => {
     const locations = [];
-    const listings = props.listings
+    const listings = listingArray
+    const reviews = reviewsArray
     const [selected, setSelected] = useState({})
-    
-    
+  
+
     
     const onSelect = item =>{
         setSelected(item)
@@ -92,6 +93,18 @@ const MapContainer = (props) => {
                     <div className="marker-listing-info">
                     <div>{selected.loc}</div>
                     <div>${selected.price} night</div>
+                    
+                    {/* <div className="listing-rating">
+                        <div className="rating-star">
+                        <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
+                        </div>
+                        {(() => {
+                        const filteredReview = reviews.filter(review => review.listingId === selected.id);
+                        const sum = filteredReview.reduce((total, review) => total + review.rating, 0);
+                        const average = sum / filteredReview.length;
+                        return isNaN(average) ? '' : average.toFixed(1);
+                        })()}
+                    </div> */}
                   </div>
                 </div>
             </InfoWindow>

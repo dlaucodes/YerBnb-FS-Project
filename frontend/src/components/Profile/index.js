@@ -6,10 +6,12 @@ import * as userActions from '../../store/user'
 import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
 import ListingEditModal from './indexListEdit';
+import { fetchReviews, getReviews } from '../../store/review';
 
 
-const ProfileDetails = (props) => {
+const ProfileDetails = () => {
     const currentUser = useSelector((state)=> state.session.user);
+    const reviews = useSelector(state=>getReviews(state))
     const listings = useSelector(state => state.listing);
     const [list, setList] = useState();
     const dispatch = useDispatch();
@@ -19,20 +21,24 @@ const ProfileDetails = (props) => {
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
+    const reviewsArray= []
    
-   
+    for(const key in reviews){
+        const review = reviews[key]
+        for(const object in review){
+            const reviewObject = review[object]
+                reviewsArray.push(reviewObject)
+        }
+    }
 
     const refresh = () => {
         window.location.reload();
     }
 
-    // useEffect(()=>{
-    //     dispatch(fetchListings())
-    // },[]);
-
 
     useEffect(()=>{
         dispatch(fetchListings())
+        dispatch(fetchReviews())
     },[listings.listing], changeListing);
 
 
@@ -131,7 +137,18 @@ const ProfileDetails = (props) => {
                 </div>
                 <div className="reviews">
                     <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
-                    <div className="lives-in-text">Reviews</div>
+                    <div className="lives-in-text">Reviews
+                    {(() => {
+                    const filteredReview = reviewsArray.filter(review => review.userId === currentUser.id);
+                        
+                        return (
+                            filteredReview.map((item)=>{
+                                return((item.body))
+                            })
+                        
+                        )
+                    })()}
+                    </div>
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-trips">

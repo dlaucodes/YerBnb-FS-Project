@@ -6,7 +6,7 @@ import Listing from "./Listing";
 import "./listing.css"
 import Profile from '../Profile'
 import MapContainer from "../Map";
-import {fetchReviews} from "../../store/review"
+import { fetchReviews } from "../../store/review"
 
 
 
@@ -53,7 +53,7 @@ const ListingIndex = () => {
             </div>
             
             <div className="map">
-                 <MapContainer listings={showArray} />    
+                 <MapContainer listingArray={showArray} />    
             </div>
              
         </div>
