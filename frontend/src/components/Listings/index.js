@@ -47,7 +47,7 @@ const ListingIndex = () => {
                 <div key={i}>
                 <Listing listingItem={item} />
                 </div>
-                ))};
+                ))}
                 
           
             </div>

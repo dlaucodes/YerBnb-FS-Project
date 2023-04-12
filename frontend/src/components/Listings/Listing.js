@@ -62,20 +62,12 @@ const Listing = ({listingItem}) => {
                 })()}
             </div>
             </div>
-
-         
         </div>
        
       
         
        </>  
      )
-    //  else{
-    //      return (
-    //      <div>
-    //          loading...
-    //     </div>)
-    //  }
 }
  
 export default Listing;
