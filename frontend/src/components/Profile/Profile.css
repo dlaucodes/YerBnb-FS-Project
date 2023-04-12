@@ -186,8 +186,9 @@ label {
     align-items: center;
 }
 
-.lives-in-text{
+.review-title{
     margin-left: 10px;
+    width: 100%;
 }
 
 .right-divider{
@@ -198,14 +199,29 @@ label {
 
 .reviews{
     display: flex;
+    flex-direction: column;
     width: 100%;
     font-size: 23px;
+    border: 1px solid red;  
+}
+.review-header{
+    display: flex;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.review-star{
+    display: flex;
     align-items: center;
 }
 
 .review-card {
     display: flex;
-    height: 200px;
+    border: 1px solid grey;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .trips-section-text {
