@@ -18,6 +18,7 @@ import { fetchUsers } from "./store/user";
 
 
 
+
 function App() {
   const dispatch = useDispatch()
   const currentUser = useSelector(state => state.session.user)
@@ -28,6 +29,7 @@ function App() {
   useEffect(()=>{
     dispatch(fetchListings())
     dispatch(fetchUsers())
+  
   },[])
 
   // if(!users || !listings || !currentUser){
