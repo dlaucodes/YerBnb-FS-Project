@@ -17,16 +17,15 @@ const Listing = ({listingItem}) => {
     const dispatch = useDispatch()
     const reviews = useSelector(state=>getReviews(state))
     const listings = useSelector(state=>getListings(state))
-    const selectedReview = []
+    const reviewsArray = []
 
-    console.log(reviews)
-
-    
-
-
-    
-
-
+    for(const key in reviews){
+        const review = reviews[key]
+        for(const object in review){
+            const reviewObject = review[object]
+                reviewsArray.push(reviewObject)
+        }
+    }
 
     useEffect(()=>{
         dispatch(fetchReviews())
@@ -39,8 +38,6 @@ const Listing = ({listingItem}) => {
         <div className="listing">
            <div className="listing-img">
                 <NavLink to={{pathname: `/listings/${listingItem.id}`}}>
-                    
-                {/* <img src={`${listingItem.photoUrls[0].imgUrl}`} /> */}
                 <img src={`${listingItem.photoUrls[0]}`}/>
                 </NavLink>
             </div>
@@ -49,9 +46,16 @@ const Listing = ({listingItem}) => {
             </div>
             <div className="listing-price-container">
                ${listingItem.price} night
-        {/* <MapContainer 
-        lat={listingItem.lat} lng={listingItem.lng}/> */}
             </div>
+            <div className="listing-rating">
+                {(() => {
+                const reviews = reviewsArray.filter(item => item.listingId === listingItem.id);
+                const sum = reviews.reduce((total, item) => total + item.rating, 0);
+                const average = sum / reviews.length;
+                return isNaN(average) ? '' : average.toFixed(1);
+                })()}
+            </div>
+
          
         </div>
        

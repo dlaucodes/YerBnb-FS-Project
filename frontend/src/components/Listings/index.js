@@ -43,11 +43,6 @@ const ListingIndex = () => {
         let listingsarray = Object.values(listings[0])
         const showArray = listingsarray.reverse()
     
-        // console.log(array)
-        // console.log(listings)
-        // was used to test for the data 
-        // console.log(showArray)
-        // console.log(reviewsArray)
         
        
     return (
