@@ -200,7 +200,7 @@ label {
 .reviews{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     font-size: 23px;
     border: 1px solid red;  
 }
@@ -221,7 +221,7 @@ label {
     border-radius: 8px;
     margin-bottom: 8px;
     padding: 5px 0px 4px 5px;
-    justify-content: center;
+    align-items: center;
 }
 
 .trips-section-text {

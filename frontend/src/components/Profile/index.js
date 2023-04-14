@@ -24,7 +24,7 @@ const ProfileDetails = () => {
     const [currentListingId, setCurrentListingId] = useState(null)
     const reviewsArray = []
    
-    console.log(reviews)
+    
 
     for(const key in reviews){
         const review = reviews[key]
@@ -56,9 +56,6 @@ const ProfileDetails = () => {
         dispatch(deleteReview(id))
     }
 
-    
-    
-
     const uploadPhoto = async (e)=> {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
@@ -75,6 +72,7 @@ const ProfileDetails = () => {
     window.open(mailto)
   }
 
+    if (currentUser){
     return (
         <>
         <div className="profile-container">
@@ -237,6 +235,7 @@ const ProfileDetails = () => {
         </>
          
      );
+}
 }
  
 export default ProfileDetails
