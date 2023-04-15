@@ -45,6 +45,10 @@ const ProfileDetails = () => {
         dispatch(fetchReviews())
     },[listings.listing], changeListing);
 
+    useEffect(()=>{
+        
+    },[getListings])
+
 
 
     const handleDelete = (id)=>{

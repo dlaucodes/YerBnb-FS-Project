@@ -13,6 +13,7 @@ import { fetchUsers, getUser } from "../../store/user";
 import { object } from "prop-types";
 import { fetchUser } from "../../store/profile";
 import MapContainer from "../Map";
+import { getReviews, fetchReviews } from "../../store/review";
 
 
 
@@ -33,6 +34,7 @@ const ListingShow = () => {
     // const item = test[0].id
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
+    const reviews = useSelector(state=>getReviews(state))
     // const users = useSelector(state=>)
     // const listings = useSelector(state => state.listings)
     // const listingsarray = useSelector(getListings)
@@ -46,20 +48,12 @@ const ListingShow = () => {
     useEffect(()=>{
         dispatch(fetchListings())
          dispatch(fetchUsers())
-    
+         dispatch(fetchReviews())
     },[dispatch, id])
 
+    console.log(reviews)
+
  
-
-    
-
-
-    // useEffect(()=>{
-       
-    // }, [])
-    
-//    if(users === null || users === undefined){
-//    return (null)}
     if(listings[0]){
         let listing = listings[0][listingId]
         const ownerId = listing.ownerId;
@@ -187,12 +181,6 @@ const ListingShow = () => {
             <div className="map-container">
                 {/* <MapContainer /> */}
             </div>
-
-        {/* {sessionUserIsOwner && (
-            <div>
-                Session User is Owner
-            </div>
-        )} */}
         </div>
     </>
     )}
