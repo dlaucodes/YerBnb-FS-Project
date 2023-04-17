@@ -10,12 +10,10 @@ import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
 import ProfileDetails from "../Profile"
 import { fetchUsers, getUser } from "../../store/user";
-import { object } from "prop-types";
 import { fetchUser } from "../../store/profile";
 import MapContainer from "../Map";
 import { getReviews, fetchReviews } from "../../store/review";
-import ReviewIndex from "../Reviews";
-import { review } from "../Reviews"
+import ReviewFormModal from '../ReviewModal'
 
 
 
@@ -28,8 +26,9 @@ const ListingShow = (props) => {
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
     const reviewItems = []
-    const [showReviewModal, setShowReviewModal] = useState(false)
+    const [showReviewFormModal, setShowReviewFormModal] = useState(false)
    
+    
     for(const key in reviews[0]){
         const review = reviews[0][key]
         const reviewId = review.id
@@ -204,10 +203,11 @@ const ListingShow = (props) => {
                     )}
                 </div>
                 <div className="listing-create-review">
-                <button onClick={()=>{setShowReviewModal(true)}}>write review</button>
+                <button onClick={()=>{setShowReviewFormModal(true)}}>write review</button>
                 </div>    
             </div>
         </div>
+        {showReviewFormModal && (<ReviewFormModal setShowReviewFormModal={setShowReviewFormModal}/> )}
         </div>
     </>
     )}

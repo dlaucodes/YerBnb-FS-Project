@@ -32,9 +32,7 @@ function ProfileButton(props) {
 
   useEffect(() => {
     if (!showMenu) return;
-  
     document.addEventListener('click', closeMenu);
-  
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 

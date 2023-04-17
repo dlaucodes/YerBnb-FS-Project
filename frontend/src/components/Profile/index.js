@@ -45,9 +45,9 @@ const ProfileDetails = () => {
         dispatch(fetchReviews())
     },[listings.listing], changeListing);
 
-    useEffect(()=>{
+    // useEffect(()=>{
         
-    },[getListings])
+    // },[getListings])
 
 
 
