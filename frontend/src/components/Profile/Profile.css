@@ -70,7 +70,7 @@ label {
     display: none;
 }
 
-.reviews-container{
+.profile-reviews-container{
     display: flex;
     height: 25px;
     width: 320px;
@@ -204,7 +204,7 @@ label {
     font-size: 23px;
     border: 1px solid red;  
 }
-.review-header{
+.profile-review-header{
     display: flex;
     width: 100%;
     margin-bottom: 8px;

@@ -19,28 +19,17 @@ import { review } from "../Reviews"
 
 
 
-const ListingShow = () => {
-    // const location = useLocation()
-    // const listingId = location.pathname.slice(10)
-    // const item = location.item
+const ListingShow = (props) => {
     const {id} = useParams()
     const [items, setItems] = useState()
     const {listingId} = useParams()
-    // const photoUrl = location.photoUrl
-    // const sessionUser = useSelector(state=>state.session.user)
     const listings = useSelector(state=>getListings(state))
-    // const item = test[0].id
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
     const reviewItems = []
-    // const users = useSelector(state=>)
-    // const listings = useSelector(state => state.listings)
-    // const listingsarray = useSelector(getListings)
-    // const gettingListing = useSelector(getListing(listingId)) 
-    // const listingvalues = Object.values(listings)
-    // const listingarray = (listingvalues[0])
-    // const item = Object.values(listingarray)[listingId -1]
+    const [showReviewModal, setShowReviewModal] = useState(false)
+   
     for(const key in reviews[0]){
         const review = reviews[0][key]
         const reviewId = review.id
@@ -190,22 +179,23 @@ const ListingShow = () => {
             </div>
             <div className="listing-reviews-container">
                 <div className="listing-review-header">
-                    <div className="listing-rating">
+                    <div className="listing-show-rating">
                         <div className="rating-star">
-                <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
-                </div>
-                {(() => {
-                
-                const sum = filteredReviews.reduce((total, review) => total + review.rating, 0);
-                const average = sum / filteredReviews.length;
-                return isNaN(average) ? '' : average.toFixed(1);
-                })()}
+                            <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
+                        </div>
+                            {(() => {
+                            const sum = filteredReviews.reduce((total, review) => total + review.rating, 0);
+                            const average = sum / filteredReviews.length;
+                            return isNaN(average) ? '' : average.toFixed(1);
+                            })()}
+                    </div> ·
+                    <div className="listing-review-total">
+                        {filteredReviews.length} Reviews
                     </div>
-                    <div className="listing-review-total">{filteredReviews.length} Reviews</div>
                 </div>
-                <div className="listing-review-stats">
+                {/* <div className="listing-review-stats">
                     review stats
-                </div>
+                </div> */}
                 <div className="listing-reviews-outer"> 
                     {filteredReviews.map((review, i)=>
                     <div className="listing-reviews-card">
@@ -213,14 +203,11 @@ const ListingShow = () => {
                     </div>
                     )}
                 </div>
-               
+                <div className="listing-create-review">
+                <button onClick={()=>{setShowReviewModal(true)}}>write review</button>
+                </div>    
             </div>
         </div>
-
-
-            <div className="map-container">
-                {/* <MapContainer /> */}
-            </div>
         </div>
     </>
     )}
