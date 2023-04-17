@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ProfileDetails from "./components/Profile";
 // import MapContainer from "./components/Map";
 import { fetchUsers } from "./store/user";
+import ReviewIndex from "./components/Reviews";
 
 
 
@@ -52,6 +53,7 @@ function App() {
       <Switch>
         <Route exact path="/">
             <ListingIndex />
+           
         </Route>
         <Route exact path="/listings/:listingId">
             <ListingShow />
@@ -59,9 +61,6 @@ function App() {
         <Route path="/profiles/:id/">
           {currentUser ? <ProfileDetails /> : <Redirect to="/"/>}
         </Route>
-        {/* <Route exact path="/signup">
-          <SignupForm />
-        </Route> */}
       </Switch>
         
       <Footer/>

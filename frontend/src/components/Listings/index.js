@@ -26,16 +26,15 @@ const ListingIndex = () => {
     
 
     useEffect(()=>{
-        dispatch(fetchReviews())
-        
+        dispatch(fetchReviews())   
     }, [])
 
     if (list){
         let array = Object.values(list)
         // let showArray = array.reverse()
         let listings = Object.values(array.reverse())
-        let listingsarray = Object.values(listings[0])
-        const showArray = listingsarray.reverse()
+        let listingsArray = Object.values(listings[0])
+        const showArray = listingsArray.reverse()
     
         
        
@@ -48,17 +47,11 @@ const ListingIndex = () => {
                 <Listing listingItem={item} />
                 </div>
                 ))}
-                
-          
             </div>
-            
             <div className="map">
                  <MapContainer listingArray={showArray} />    
             </div>
-             
         </div>
-            
-            
         </>
     );
     }else{

@@ -14,10 +14,8 @@ import { object } from "prop-types";
 import { fetchUser } from "../../store/profile";
 import MapContainer from "../Map";
 import { getReviews, fetchReviews } from "../../store/review";
-
-
-
-
+import ReviewIndex from "../Reviews";
+import { review } from "../Reviews"
 
 
 
@@ -35,6 +33,7 @@ const ListingShow = () => {
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
+    const reviewItems = []
     // const users = useSelector(state=>)
     // const listings = useSelector(state => state.listings)
     // const listingsarray = useSelector(getListings)
@@ -42,7 +41,27 @@ const ListingShow = () => {
     // const listingvalues = Object.values(listings)
     // const listingarray = (listingvalues[0])
     // const item = Object.values(listingarray)[listingId -1]
-   
+    for(const key in reviews[0]){
+        const review = reviews[0][key]
+        const reviewId = review.id
+        const reviewListingId = review.listingId
+        const reviewBody = review.body
+        
+        reviewItems.push({
+            id: reviewId,
+            listingId: reviewListingId,
+            body: reviewBody
+        })
+    }
+
+    const reviewId = Object.values(reviews[0]).map((review, i)=>
+        review.id
+    )
+
+    // console.log(reviewId)
+
+    // console.log(reviewItems, "hfjksdahfjkasdjkfhkljasd")
+    
     
     
     useEffect(()=>{
@@ -51,15 +70,22 @@ const ListingShow = () => {
          dispatch(fetchReviews())
     },[dispatch, id])
 
-    console.log(reviews)
+    
+
 
  
-    if(listings[0]){
+    if(listings[0] || reviews[0]){
         let listing = listings[0][listingId]
         const ownerId = listing.ownerId;
         const owner = Object.values(users).find(user => user.id === ownerId);
         const photoUrl = owner ? owner.photoUrl : ""; 
         const hostName = owner ? owner.firstName : "";
+        const filteredReviews = (reviewItems).filter(review => review.listingId === listing.id)
+        
+        
+        console.log(filteredReviews)
+
+        // const reviewOwner = Object.values(users).find(user=>user.id)
       
     return (
     <>
@@ -169,9 +195,11 @@ const ListingShow = () => {
                     review stats
                 </div>
                 <div className="listing-reviews-outer"> 
+                    {filteredReviews.map((review, i)=>
                     <div className="listing-reviews-card">
-                        Reviews mapped out
+                        {review.body}
                     </div>
+                    )}
                 </div>
                
             </div>

@@ -62,7 +62,7 @@ export const getReviews = (state)=>{
     return Object.values(state.review)
 }
 
-const reviewReducer = (state = [], action) =>{
+const reviewReducer = (state = {}, action) =>{
     switch(action.type){
         case RECEIVE_REVIEW:
             return {...state, review: null}
