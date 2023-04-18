@@ -7,7 +7,7 @@ import { createListing } from "../../store/listing";
 
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
-    const [title,setTitle] = useState ("")
+    const [title, setTitle] = useState ("")
     const [photoFile, setPhotoFile] = useState(null);
     const [photoFile2, setPhotoFile2] = useState (null);
     const [photoFile3, setPhotoFile3] = useState (null);
@@ -24,8 +24,6 @@ const ListForm = ({setShowListFormModal}) =>{
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
-    
-    
     const owner = useSelector(({session}) => session.user);
 
     const handleSubmit = async e => {
@@ -47,24 +45,6 @@ const ListForm = ({setShowListFormModal}) =>{
             })
         }
         
-      //   const response = await fetch('api/listings', {
-      //       method: 'POST',
-      //       body: formData
-      //   })
-        
-      // console.log(owner.id)
-        
-        // if (response.ok) {
-        //     const message = await response.json();
-        //     setTitle("")
-        //     setPhotoFile(null)
-        //     setPhotoUrl(null)
-        //     setDescription("")
-        //     setPrice("")
-        //     setLocation("")
-        //     setLat("")
-        //     setLng("")
-        // }
         dispatch(createListing(formData))
         setShowListFormModal(false) && <Redirect to="/" />
         

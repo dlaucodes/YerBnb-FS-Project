@@ -1,0 +1,10 @@
+.review-form{
+    background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 682px;
+        width: 574px;
+}

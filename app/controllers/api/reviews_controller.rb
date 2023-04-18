@@ -9,8 +9,9 @@ class Api::ReviewsController < ActionController::API
 
     def create
         @review = Review.new(review_params)
+        @review.photos.attach(params[:review][photos:[]])
         if @review.save
-            render :show
+            render json: {message: "you did it!"}
         else
             render json: @review.errors.full_messages, status: 422
         end
@@ -26,7 +27,7 @@ class Api::ReviewsController < ActionController::API
     end
 
     def review_params
-        params.require(:review).permit(:body, :rating, :listing_id, :user_id, :id)
+        params.require(:review).permit(:body, :rating, :listing_id, :user_id, :id, photos:[])
     end
 
 
