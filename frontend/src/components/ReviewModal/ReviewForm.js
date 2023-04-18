@@ -17,7 +17,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
     const {listingId} = useParams()
     const photoUrl = owner ? owner.photoUrl : ""
     console.log(owner)
-    const photo = "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=636&h=424"
+    // const photo = "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=636&h=424"
     
 
     const handleSubmit = async e =>{
@@ -26,7 +26,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
         formData.append('review[rating]', rating);
         formData.append('review[body]', body);
         formData.append('review[user_id]', owner.id);
-        formData.append('review[photo]', photo)
+        formData.append('review[review_pic]', photoUrl)
         formData.append('review[listing_id]', listingId)
 
         console.log(photoUrl)
