@@ -192,6 +192,10 @@ demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 
 demo_review1 = Review.create!(rating: "4", user_id: "1", listing_id: "1", body: "Definitely a wonderful stay and well worth the featured Best NYC Yerbnbs!")
 
+# demo_reviewmain = File.open("app/assets/images/ParkViews/pv0.webp")
+# demo_review1.photos.attach(io: demo_reviewmain, filename: 'pv0.webp')
+
+
 demo_review2 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "The flat was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.")
 
 demo_review3 = Review.create!(rating: "5", user_id:"3", listing_id:"1", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!")

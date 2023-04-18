@@ -73,7 +73,7 @@ const ListingShow = (props) => {
         const filteredReviews = (reviewItems).filter(review => review.listingId === listing.id)
         
         
-        console.log(filteredReviews)
+        console.log(photoUrl)
 
         // const reviewOwner = Object.values(users).find(user=>user.id)
       

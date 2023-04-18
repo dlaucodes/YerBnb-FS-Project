@@ -5,5 +5,5 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :listing
 
-  has_many_attached :photos
+  has_one_attached :photo
 end

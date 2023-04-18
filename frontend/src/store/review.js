@@ -28,7 +28,7 @@ export const removeReview = (reviewId)=>{
 
 
 export const createReview = (formData) => async (dispatch)=>{
-    const res = await csrfFetch("/api/reviews", {
+    const res = await csrfFetch(`/api/reviews`, {
         method: "POST",
         body: formData
     });
