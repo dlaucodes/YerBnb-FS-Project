@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_190831) do
     t.bigint "user_id"
     t.bigint "listing_id"
     t.string "reviewer_pic"
+    t.string "listing_pic"
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

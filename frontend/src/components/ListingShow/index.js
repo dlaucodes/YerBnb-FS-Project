@@ -25,7 +25,7 @@ const ListingShow = (props) => {
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
-    const reviewItems = []
+    let reviewItems = []
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
    
     
@@ -35,12 +35,18 @@ const ListingShow = (props) => {
         const reviewListingId = review.listingId
         const reviewBody = review.body
         const reviewRating = review.rating
-        
+        const reviewerPic = review.reviewerPic
+        const listingPic = review.listingPic
+         
+        console.log(review.reviewerPic)
+
         reviewItems.push({
             id: reviewId,
             listingId: reviewListingId,
             body: reviewBody,
-            rating: reviewRating
+            rating: reviewRating,
+            reviewer: reviewerPic,
+            listing: listingPic
         })
     }
 
@@ -72,8 +78,6 @@ const ListingShow = (props) => {
         const hostName = owner ? owner.firstName : "";
         const filteredReviews = (reviewItems).filter(review => review.listingId === listing.id)
         
-        
-        console.log(photoUrl)
 
         // const reviewOwner = Object.values(users).find(user=>user.id)
       
@@ -196,10 +200,16 @@ const ListingShow = (props) => {
                     review stats
                 </div> */}
                 <div className="listing-reviews-outer"> 
-                    {filteredReviews.map((review, i)=>
+                    {filteredReviews.map((review, i)=>{
+                        return(
                     <div className="listing-reviews-card">
-                        {review.body}
-                    </div>
+                        <div listing-reviewer-container>
+                       <img src={`${review.reviewer}`}/>
+                       </div>
+                       {review.body}
+                        
+                    </div>)}
+
                     )}
                 </div>
                 <div className="listing-create-review">

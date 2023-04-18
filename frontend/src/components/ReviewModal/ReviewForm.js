@@ -5,19 +5,27 @@ import * as sessionActions from '../../store/session';
 import { Modal } from '../../context/modal'
 import {createReview} from "../../store/review"
 import { useParams } from 'react-router-dom';
+import { getListings } from '../../store/listing';
+import usersReducer from '../../store/user';
 
 
 
 
 const ReviewForm = ({setShowReviewFormModal})=>{
     const dispatch = useDispatch()
-    const owner = useSelector(({session})=> session.user)
+    const owner = useSelector(state=>state.user)
     const [rating, setRating] = useState("")
     const [body, setBody] = useState("")
     const {listingId} = useParams()
-    const photoUrl = owner ? owner.photoUrl : ""
+    const listings = useSelector(state=> getListings(state))
+    const listing = listings[0][listingId]
+    // const photoUrl = owner ? owner.photoUrl : ""
+    // console.log(owner)
     console.log(owner)
-    // const photo = "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=636&h=424"
+
+    console.log(listing.photoUrls[0], "hi")
+
+   
     
 
     const handleSubmit = async e =>{
@@ -26,16 +34,13 @@ const ReviewForm = ({setShowReviewFormModal})=>{
         formData.append('review[rating]', rating);
         formData.append('review[body]', body);
         formData.append('review[user_id]', owner.id);
-        formData.append('review[review_pic]', photoUrl)
+        formData.append('review[reviewer_pic]', owner.photoUrl)
         formData.append('review[listing_id]', listingId)
-
-        console.log(photoUrl)
+        formData.append('review[listing_pic]', listing.photoUrls[0])
 
         dispatch(createReview(formData))
         setShowReviewFormModal(false)
     }
-
-    console.log(listingId)
 
     const closeModal = () =>{
         setShowReviewFormModal(false)
