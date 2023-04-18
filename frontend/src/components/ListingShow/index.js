@@ -203,8 +203,8 @@ const ListingShow = (props) => {
                     {filteredReviews.map((review, i)=>{
                         return(
                     <div className="listing-reviews-card">
-                        <div listing-reviewer-container>
-                       <img src={`${review.reviewer}`}/>
+                        <div className="listing-reviewer-container">
+                        <img src={`${review.reviewer}`}/>
                        </div>
                        {review.body}
                         
