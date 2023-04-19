@@ -164,14 +164,17 @@ const ProfileDetails = () => {
                             if ((review.userId === currentUser.id)){
                                 return(
                                         <div className="review-card">
-                                            <div className="review-listing-pic">
-                                                <img src={`${review.listingPic}` } alt=""/>
+                                            <div className="review-card-left">
+                                                <div className="review-listing-pic">
+                                                    <img src={`${review.listingPic}` } alt=""/>
+                                                </div>
                                             </div>
+                                            <div className="review-card-right">
                                             <div className="profile-review">
                                                 {review.body}
                                             </div>
                                             <button id="profile-listing-delete" onClick={() => {handleReviewDelete(review.id)}}>delete</button>
-                                    
+                                            </div>
                                         </div>
                                 
                                 )

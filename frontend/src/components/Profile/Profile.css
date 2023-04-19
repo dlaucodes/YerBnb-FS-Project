@@ -216,7 +216,6 @@ label {
 
 .review-card {
     display: flex;
-    flex-direction: column;
     border: 1px solid grey;
     font-size: 12px;
     border-radius: 8px;
@@ -225,28 +224,45 @@ label {
     align-items: center;
     width: 400px;
 }
+.review-card-left{
+    display: flex;
+    width: 50%;
+
+}
 
 .review-listing-pic{
     display: flex;
-    width: 33%;
-    overflow: hidden; 
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.review-card-right{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
 }
 
 .review-listing-pic img{
     display: flex;
+    width: 150px;
+    object-fit: cover;
     border-radius: 8px;
-    width: 33%;
-    object-fit: contain;
 }
 
 .profile-review{
     display: flex;
-    width: 33%;
+    width: 100%;
 }
 
 #profile-listing-delete{
     display: flex;
-    width: 33%;
+    width: 100%;
 }
 
 .trips-section-text {
