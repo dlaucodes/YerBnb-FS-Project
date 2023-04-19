@@ -216,14 +216,19 @@ label {
 
 .review-card {
     display: flex;
-    border: 1px solid grey;
+    border: 1px solid #c8c8c8;
     font-size: 12px;
     border-radius: 8px;
     margin-bottom: 8px;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 350px;
 }
+
+.review-card:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
+}
+
 .review-card-left{
     display: flex;
     width: 50%;
@@ -245,12 +250,15 @@ label {
 .review-card-right{
     display: flex;
     width: 50%;
+    height: 100px;
     flex-direction: column;
+    /* border: 1px solid green; */
+    justify-content: center;
 }
 
 .review-listing-pic img{
     display: flex;
-    width: 150px;
+    width: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -258,11 +266,34 @@ label {
 .profile-review{
     display: flex;
     width: 100%;
+    /* border: 1px solid blue; */
+    height: 50px;
 }
 
-#profile-listing-delete{
+.delete-review-container{
     display: flex;
     width: 100%;
+    /* border: 1px solid red; */
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-review-container button {
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    color: black;
+    background-color: #fefefe;
+    width: 120px;
+    cursor: pointer;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.delete-review-container button:hover {
+    background-color: #e0024c;
+    color: white;
 }
 
 .trips-section-text {

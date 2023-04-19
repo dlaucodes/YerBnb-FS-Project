@@ -23,8 +23,6 @@ const ProfileDetails = () => {
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
     const reviewsArray = []
-   
-    
 
     for(const key in reviews){
         const review = reviews[key]
@@ -166,14 +164,17 @@ const ProfileDetails = () => {
                                         <div className="review-card">
                                             <div className="review-card-left">
                                                 <div className="review-listing-pic">
-                                                    <img src={`${review.listingPic}` } alt=""/>
+                                                    <NavLink to={{pathname: `/listings/${review.listingId}`}}>
+                                                    <img src={`${review.listingPic}` } alt=""/></NavLink>
                                                 </div>
                                             </div>
                                             <div className="review-card-right">
                                             <div className="profile-review">
                                                 {review.body}
                                             </div>
-                                            <button id="profile-listing-delete" onClick={() => {handleReviewDelete(review.id)}}>delete</button>
+                                            <div className="delete-review-container">
+                                            <button onClick={() => {handleReviewDelete(review.id)}}>remove review</button>
+                                            </div>
                                             </div>
                                         </div>
                                 
