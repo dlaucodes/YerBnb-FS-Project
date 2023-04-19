@@ -37,7 +37,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
         formData.append('review[reviewer_pic]', owner.photoUrl)
         formData.append('review[listing_id]', listingId)
         formData.append('review[listing_pic]', listing.photoUrls[0])
-
+        formData.append('review[reviewer_name]', owner.firstName)
         dispatch(createReview(formData))
         setShowReviewFormModal(false)
     }

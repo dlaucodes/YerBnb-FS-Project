@@ -37,8 +37,7 @@ const ListingShow = (props) => {
         const reviewRating = review.rating
         const reviewerPic = review.reviewerPic
         const listingPic = review.listingPic
-         
-        console.log(review.reviewerPic)
+        
 
         reviewItems.push({
             id: reviewId,
@@ -204,7 +203,9 @@ const ListingShow = (props) => {
                         return(
                     <div className="listing-reviews-card">
                         <div className="listing-reviewer-container">
-                        <img src={`${review.reviewer}`}/>
+                            <div className="listing-reviewer-picture">
+                                <img src={`${review.reviewer}`}/>
+                            </div>
                        </div>
                        {review.body}
                         

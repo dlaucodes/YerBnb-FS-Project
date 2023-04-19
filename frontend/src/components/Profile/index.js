@@ -85,7 +85,7 @@ const ProfileDetails = () => {
                     {currentUser.photoUrl ? (
                         <>
                     <div className='profile-picture-container' viewBox="0 0 125 125">
-                    {<img src={profilePic}></img>}
+                    {<img src={profilePic} alt=""></img>}
                     </div>
                     </>
                 ) : (
@@ -164,8 +164,13 @@ const ProfileDetails = () => {
                             if ((review.userId === currentUser.id)){
                                 return(
                                         <div className="review-card">
+                                            <div className="review-listing-pic">
+                                                <img src={`${review.listingPic}` } alt=""/>
+                                            </div>
+                                            <div className="profile-review">
                                                 {review.body}
-                                                <button onClick={() => {handleReviewDelete(review.id)}}>delete</button>
+                                            </div>
+                                            <button id="profile-listing-delete" onClick={() => {handleReviewDelete(review.id)}}>delete</button>
                                     
                                         </div>
                                 
@@ -209,7 +214,7 @@ const ProfileDetails = () => {
                                 <div className="listing-card">
                                     <div className="profile-listing-top">                                
                                     <NavLink to={{pathname: `/listings/${listing.id}`}}>
-                                        <img src={listing.photoUrls[0]}></img></NavLink>{listing.title}</div>
+                                        <img src={listing.photoUrls[0]} alt=""></img></NavLink>{listing.title}</div>
                                         
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
