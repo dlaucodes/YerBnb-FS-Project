@@ -222,7 +222,7 @@ label {
     margin-bottom: 8px;
     justify-content: center;
     align-items: center;
-    width: 350px;
+    width: 400px;
 }
 
 .review-card:hover {
@@ -267,7 +267,7 @@ label {
     display: flex;
     width: 100%;
     /* border: 1px solid blue; */
-    height: 50px;
+    height: 100%;
 }
 
 .delete-review-container{
