@@ -360,11 +360,12 @@ label {
 }
 
 .listing-info img{
-    width: 150px;
+    width: 200px;
     border-radius: 12px;
     margin-left: 5px;
     margin-right: 5px;
-    margin-bottom: 2px;   
+    margin-bottom: 1px;
+    margin-top: -4px;   
 }
 
 .listing-info img:hover{
