@@ -212,6 +212,7 @@
 
 .listing-review-header{
     display: flex;
+    margin-top: 18px;
     height: 50px;
     /* border: 1px solid red; */
     width: 100%;
@@ -325,7 +326,14 @@
 .listing-create-review button{
     border: none;
     background: none;
-    font-style: underline;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.listing-create-review button:hover{
+    color: #e0024c;
+    cursor: pointer;
+    scale: 1.05;
 }
 
 /* .map-container{
