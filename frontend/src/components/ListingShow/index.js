@@ -27,6 +27,9 @@ const ListingShow = (props) => {
     const reviews = useSelector(state=>getReviews(state))
     let reviewItems = []
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' })
+    
    
     
     for(const key in reviews[0]){
@@ -37,6 +40,10 @@ const ListingShow = (props) => {
         const reviewRating = review.rating
         const reviewerPic = review.reviewerPic
         const listingPic = review.listingPic
+        const reviewerName = review.reviewerName
+        const reviewCreatedAt = review.createdAt
+        const date = new Date(review.createdAt);
+        const month = date.toLocaleString('default', { month: 'long' });
         
 
         reviewItems.push({
@@ -45,13 +52,15 @@ const ListingShow = (props) => {
             body: reviewBody,
             rating: reviewRating,
             reviewer: reviewerPic,
-            listing: listingPic
+            listing: listingPic,
+            reviewerName: reviewerName,
+            createdAt: reviewCreatedAt,
+            reviewDate: month
         })
     }
 
-    const reviewId = Object.values(reviews[0]).map((review, i)=>
-        review.id
-    )
+    console.log(month)
+    
 
     // console.log(reviewId)
 
@@ -190,9 +199,12 @@ const ListingShow = (props) => {
                             const average = sum / filteredReviews.length;
                             return isNaN(average) ? '' : average.toFixed(1);
                             })()}
-                    </div> ·
+                    </div> 
+                        <div className="dot">
+                            ·
+                        </div>
                     <div className="listing-review-total">
-                        {filteredReviews.length} Reviews
+                        {filteredReviews.length} reviews
                     </div>
                 </div>
                 {/* <div className="listing-review-stats">
@@ -200,21 +212,38 @@ const ListingShow = (props) => {
                 </div> */}
                 <div className="listing-reviews-outer"> 
                     {filteredReviews.map((review, i)=>{
+                        <div key={i}></div>
                         return(
                     <div className="listing-reviews-card">
                         <div className="listing-reviewer-container">
                             <div className="listing-reviewer-picture">
                                 <img src={`${review.reviewer}`}/>
                             </div>
-                       </div>
-                       {review.body}
-                        
-                    </div>)}
+                                <div className="listing-reviewer-info">
+                                    <div className="listing-reviewer-name">
+                                        {review.reviewerName}
+                                    </div>
+                                    <div className="reviewer-dates">
+
+                                        <div className="review-created-month">
+                                        {review.reviewDate}
+                                        </div>
+                                        <div className="review-created-year">
+                                        {(review.createdAt).slice(0, 4)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="listing-review-body">
+                                {review.body}
+                            </div>
+                    </div>)
+                    }
 
                     )}
                 </div>
                 <div className="listing-create-review">
-                <button onClick={()=>{setShowReviewFormModal(true)}}>write review</button>
+                <button onClick={()=>{setShowReviewFormModal(true)}}>write a review</button>
                 </div>    
             </div>
         </div>

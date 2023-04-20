@@ -13,17 +13,14 @@ import usersReducer from '../../store/user';
 
 const ReviewForm = ({setShowReviewFormModal})=>{
     const dispatch = useDispatch()
-    const owner = useSelector(state=>state.user)
+    const users = useSelector(state=>state.user.users)
+    const currentUser = useSelector(state=>state.session.user)
+    const owner = Object.values(users).filter(user=>user.id === currentUser.id)
     const [rating, setRating] = useState("")
     const [body, setBody] = useState("")
     const {listingId} = useParams()
     const listings = useSelector(state=> getListings(state))
     const listing = listings[0][listingId]
-    // const photoUrl = owner ? owner.photoUrl : ""
-    // console.log(owner)
-    console.log(owner)
-
-    console.log(listing.photoUrls[0], "hi")
 
    
     
@@ -33,13 +30,14 @@ const ReviewForm = ({setShowReviewFormModal})=>{
         const formData = new FormData();
         formData.append('review[rating]', rating);
         formData.append('review[body]', body);
-        formData.append('review[user_id]', owner.id);
-        formData.append('review[reviewer_pic]', owner.photoUrl)
-        formData.append('review[listing_id]', listingId)
-        formData.append('review[listing_pic]', listing.photoUrls[0])
-        formData.append('review[reviewer_name]', owner.firstName)
-        dispatch(createReview(formData))
-        setShowReviewFormModal(false)
+        formData.append('review[user_id]', owner[0].id);
+        formData.append('review[reviewer_pic]', owner[0].photoUrl);
+        formData.append('review[listing_id]', listingId);
+        formData.append('review[listing_pic]', listing.photoUrls[0]);
+        formData.append('review[reviewer_name]', owner[0].firstName);
+        
+        dispatch(createReview(formData));
+        setShowReviewFormModal(false);
     }
 
     const closeModal = () =>{

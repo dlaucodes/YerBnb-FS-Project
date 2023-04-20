@@ -19,6 +19,7 @@ const ProfileDetails = () => {
     const { id } = useParams();
     const [filteredListings, setFilteredListings] = useState([])
     const [changeListing, setChangeListing] = useState(0);
+    const [changeReview, setChangeReview] = useState(0);
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
@@ -32,6 +33,8 @@ const ProfileDetails = () => {
         }
     }
 
+    console.log(filteredListings)
+
     const refresh = () => {
         window.location.reload();
     }
@@ -41,12 +44,16 @@ const ProfileDetails = () => {
     useEffect(()=>{
         dispatch(fetchListings())
         dispatch(fetchReviews())
-    },[listings.listing], changeListing);
+        dispatch(deleteListing())
+        dispatch(deleteReview())
+    },[listings.listing], setChangeListing, setChangeReview);
 
     // useEffect(()=>{
         
     // },[getListings])
+    useEffect(()=>{
 
+    }, [])
 
 
     const handleDelete = (id)=>{
@@ -56,6 +63,7 @@ const ProfileDetails = () => {
 
     const handleReviewDelete =(id)=>{
         dispatch(deleteReview(id))
+        setChangeReview(changeReview + 1)
     }
 
     const uploadPhoto = async (e)=> {
@@ -63,6 +71,7 @@ const ProfileDetails = () => {
         const formData = new FormData();
         formData.append('user[photo]', file);
         await dispatch(userActions.updateUser(formData));
+        setProfilePic(currentUser.photoUrl)
         setTimeout(refresh, 600);
     }
 
@@ -155,7 +164,6 @@ const ProfileDetails = () => {
                             </div>
                      
                      <div>
-    
                         {reviewsArray.map((review, i)=>{
                             <div key={i}>
                                 </div>
@@ -210,7 +218,8 @@ const ProfileDetails = () => {
                     <div className="listing-section-text">Listings</div>
                     {listings.listings && <div className="listing-info">
                     
-                        {Object.keys(listings.listings).map((key) => {
+                        {Object.keys(listings.listings).map((key, i) => {
+                            <div key={i}></div>
                             const listing = listings.listings[key];
                             if (listing.ownerId === currentUser.id){
                                 return (

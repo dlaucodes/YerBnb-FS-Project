@@ -190,32 +190,32 @@ demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 # demo_listing1.photos.attach(io: demo_photo4, filename: 'piotr4.webp')
 
 
-demo_review1 = Review.create!(rating: "4", user_id: "1", listing_id: "1", body: "Definitely a wonderful stay and well worth the featured Best NYC Yerbnbs!", reviewer_pic: "https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp")
+demo_review1 = Review.create!(rating: "4", user_id: "1", listing_id: "1", body: "Definitely a wonderful stay and well worth the featured Best NYC Yerbnbs!", reviewer_pic: "https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp", reviewer_name: "David")
 
 
-demo_review2 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "The flat was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp")
+demo_review2 = Review.create!(rating: "5", user_id: "2", listing_id: "1", body: "The flat was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp", reviewer_name:"Mark")
 
-demo_review3 = Review.create!(rating: "5", user_id:"3", listing_id:"1", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp")
+demo_review3 = Review.create!(rating: "5", user_id:"3", listing_id:"1", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp", reviewer_name:"Larry")
 
-demo_review4 = Review.create!(rating: "5", user_id:"4", listing_id:"2", body:"Well worth the price! The place was absolutely gorgeous and massive!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"")
+demo_review4 = Review.create!(rating: "5", user_id:"4", listing_id:"2", body:"Well worth the price! The place was absolutely gorgeous and massive!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/loft0.webp", reviewer_name:"Tim")
 
-demo_review5 = Review.create!(rating: "5", user_id:"5", listing_id:"2", body:"The pictures do not do this place justice, It was well lit and convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/loft0.webp")
+demo_review5 = Review.create!(rating: "5", user_id:"5", listing_id:"2", body:"The pictures do not do this place justice, It was well lit and convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/loft0.webp", reviewer_name:"Tommy")
 
-demo_review6 = Review.create!(rating: "5", user_id:"4", listing_id:"3", body:"Where do I begin?  Everything looked and felt amazing, well furnished and even had an accessible roof patio!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/queens0.webp")
+demo_review6 = Review.create!(rating: "5", user_id:"4", listing_id:"3", body:"Where do I begin?  Everything looked and felt amazing, well furnished and even had an accessible roof patio!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/queens0.webp", reviewer_name:"Tim")
 
-demo_review7 = Review.create!(rating: "4", user_id:" 3", listing_id:"3", body:"Great views and the art in the apartment definitely tied the place together.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/queens0.webp")
+demo_review7 = Review.create!(rating: "4", user_id:" 3", listing_id:"3", body:"Great views and the art in the apartment definitely tied the place together.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/queens0.webp", reviewer_name:"Larry")
 
-demo_review8 = Review.create!(rating: "5", user_id:"2", listing_id:"4", body:"Was looking for a place in Brooklyn and stumbled across this listing.  The decoration is well put together and above all, it was clean and cozy.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bklyn0.webp")
+demo_review8 = Review.create!(rating: "5", user_id:"2", listing_id:"4", body:"Was looking for a place in Brooklyn and stumbled across this listing.  The decoration is well put together and above all, it was clean and cozy.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bklyn0.webp", reviewer_name:"Mark")
 
-demo_review9 = Review.create!(rating: "5", user_id:"1", listing_id:"4", body:"Bohemian styling was definitely a great choice for this apartment located in Brooklyn.  The garden was also a great place to relax and hang out.  Will be coming back!", reviewer_pic: "https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bklyn0.webp")
+demo_review9 = Review.create!(rating: "5", user_id:"1", listing_id:"4", body:"Bohemian styling was definitely a great choice for this apartment located in Brooklyn.  The garden was also a great place to relax and hang out.  Will be coming back!", reviewer_pic: "https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bklyn0.webp", reviewer_name: "David")
 
-demo_review10 = Review.create!(rating: "4", user_id:"2", listing_id:"5", body:"Was visiting town for the weekend and found this amazing apartment with great views.  The only reason for a missing star was due to the elevator not working at the time of rental.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/hr0.webp")
+demo_review10 = Review.create!(rating: "4", user_id:"2", listing_id:"5", body:"Was visiting town for the weekend and found this amazing apartment with great views.  The only reason for a missing star was due to the elevator not working at the time of rental.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/hr0.webp", reviewer_name:"Mark")
 
-demo_review11 = Review.create!(rating: "5", user_id:"3", listing_id:"5", body:"Apartment had great views, clean, host was super communicative.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/hr0.webp")
+demo_review11 = Review.create!(rating: "5", user_id:"3", listing_id:"5", body:"Apartment had great views, clean, host was super communicative.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/hr0.webp", reviewer_name:"Larry")
 
-demo_review12 = Review.create!(rating: "5", user_id:"5", listing_id:"6", body:"This place was amazing.  The park view, the convenience of being footsteps away from everything was well worth the price.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/pv0.webp")
+demo_review12 = Review.create!(rating: "5", user_id:"5", listing_id:"6", body:"This place was amazing.  The park view, the convenience of being footsteps away from everything was well worth the price.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/pv0.webp", reviewer_name:"Tommy")
 
-demo_review13  = Review.create!(rating: "5", user_id:"4", listing_id:"6", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/pv0.webp")
+demo_review13  = Review.create!(rating: "5", user_id:"4", listing_id:"6", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/pv0.webp", reviewer_name:"Tim")
 
 
 
