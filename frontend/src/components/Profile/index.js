@@ -24,16 +24,21 @@ const ProfileDetails = () => {
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
     const reviewsArray = []
+    const filteredReviews = reviews.filter(review=> review.userId === id)
 
+    
     for(const key in reviews){
         const review = reviews[key]
         for(const object in review){
             const reviewObject = review[object]
-                reviewsArray.push(reviewObject)
+            reviewsArray.push(reviewObject)
         }
     }
-
-    console.log(filteredListings)
+    
+    console.log(id)
+    console.log(reviewsArray)
+    console.log(filteredReviews)
+    
 
     const refresh = () => {
         window.location.reload();
