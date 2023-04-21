@@ -35,7 +35,8 @@ const ReviewIndex = ()=>{
             <div className="reviews-container">
                 {reviewsArray.map((review, i)=>
                     <div key={i}>
-                        <ListingShow review={review}/>                        
+
+                        <ListingShow review1={reviewsArray}/>                        
                     </div>
                 )}
             </div>

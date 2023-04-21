@@ -25,12 +25,13 @@ const ListingShow = (props) => {
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
-    let reviewItems = []
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' })
+    const reviewItems = []
     
-   
+    
+    
     
     for(const key in reviews[0]){
         const review = reviews[0][key]
@@ -59,7 +60,7 @@ const ListingShow = (props) => {
         })
     }
 
-    console.log(month)
+    
     
 
     // console.log(reviewId)
@@ -78,7 +79,7 @@ const ListingShow = (props) => {
 
 
  
-    if(listings[0]){
+    if(listings[0] || reviews[0]){
         let listing = listings[0][listingId]
         const ownerId = listing.ownerId;
         const owner = Object.values(users).find(user => user.id === ownerId);
