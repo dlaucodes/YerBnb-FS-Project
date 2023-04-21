@@ -49,9 +49,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
 
     return(
         <>
-        <form className="review-form" onSubmit={handleSubmit}>
-       
-        <div className="review-area">
+            <div className="review-form">
             <div className='review-form-header'>
                 <div className="close-span-container">
                     <div onClick={closeModal}  className="close-modal"><span >╳</span>
@@ -61,6 +59,10 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                     Review
                 </div>
             </div>
+
+            <form className="rewview-inner" onSubmit={handleSubmit}>
+       
+            <div className="review-area">
              <div className="star-rating">
                 {[...Array(5)].map((star, i) => {
                     i += 1;
@@ -92,6 +94,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
          
         </div>
         </form>
+            </div>
         </>
     )
 
