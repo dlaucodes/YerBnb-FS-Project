@@ -13,11 +13,13 @@ import { fetchUsers, getUser } from "../../store/user";
 import { fetchUser } from "../../store/profile";
 import MapContainer from "../Map";
 import { getReviews, fetchReviews } from "../../store/review";
-import ReviewFormModal from '../ReviewModal'
+import ReviewFormModal from '../ReviewModal';
+import LoginFormModal from '../LoginFormModal';
 
 
 
 const ListingShow = (props) => {
+    const currentUser = useSelector(state=>state.session.user)
     const {id} = useParams()
     const [items, setItems] = useState()
     const {listingId} = useParams()
@@ -26,6 +28,7 @@ const ListingShow = (props) => {
     const users = useSelector(state=>state.user.users)
     const reviews = useSelector(state=>getReviews(state))
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
+    const [showLoginModal, setShowLoginModal] = useState(false)
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' })
     const reviewItems = []
@@ -60,7 +63,14 @@ const ListingShow = (props) => {
         })
     }
 
-    
+     const writeReview = (e) => {
+        e.preventDefault();
+        if (currentUser) {
+            setShowReviewFormModal(true);
+        } else {
+            setShowLoginModal(true);
+        }
+    } 
     
 
     // console.log(reviewId)
@@ -244,14 +254,26 @@ const ListingShow = (props) => {
                     )}
                 </div>
                 <div className="listing-create-review">
-                <button onClick={()=>{setShowReviewFormModal(true)}}>write a review</button>
+                    
+                <button onClick={writeReview}>write a review</button>
                 </div>    
             </div>
+            <div>
+            {showReviewFormModal && (<ReviewFormModal setShowReviewFormModal={setShowReviewFormModal}/> )}
+            </div>
+            <div>
+                {showLoginModal && <LoginFormModal setShowLoginModal={setShowLoginModal}/>}
+            </div>
         </div>
-        {showReviewFormModal && (<ReviewFormModal setShowReviewFormModal={setShowReviewFormModal}/> )}
+        
         </div>
     </>
-    )}
+    )}else{
+        return(
+            <>
+            </>
+        )
+    }
 }
  
 export default ListingShow;

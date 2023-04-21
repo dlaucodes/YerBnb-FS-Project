@@ -27,7 +27,6 @@ const ReviewForm = ({setShowReviewFormModal})=>{
     const listing = listings[0][listingId]
 
    
-   console.log(owner.firstName)
 
     const handleSubmit = async e =>{
         e.preventDefault();
