@@ -49,31 +49,38 @@ const ReviewForm = ({setShowReviewFormModal})=>{
 
     return(
         <>
-        <form className="reviewform" onSubmit={handleSubmit}>
-        <div onClick={closeModal}  className="close-modal"><span >╳</span>
-        </div>
+        <form className="review-form" onSubmit={handleSubmit}>
        
-        <div className="review-form">
+        <div className="review-area">
+            <div className='review-form-header'>
+                <div className="close-span-container">
+                    <div onClick={closeModal}  className="close-modal"><span >╳</span>
+                    </div>
+                </div>
+                <div className="review-header-title">
+                    Review
+                </div>
+            </div>
              <div className="star-rating">
                 {[...Array(5)].map((star, i) => {
                     i += 1;
                 return (
-                <button id='star-button' type="button" key={i}
-                    className={i <= (hover || rating) ? "on" : "off"}
+                <button id='star' type="button" key={i}
+                    className={i <= (hover || rating) ? "clicked" : "unclicked"}
                     onClick={() => setRating(i)}
                     onMouseEnter={() => setHover(i)}
                     onMouseLeave={() => setHover(rating)}
                     >
-              <span className="star">&#9733;</span>
-            </button>
-          );
-        })}
+                <span className="star">&#9733;</span>
+                </button>
+                );
+                })}
       </div>
             <div className="input-field">
-            <input
+            <textarea
               className="review-form-body"
-              placeholder="body"
-              type="textarea"
+              placeholder="review this Yerbnb"
+              type="text-area"
               value={body}
               onChange={(e) => setBody(e.target.value)}
               required
