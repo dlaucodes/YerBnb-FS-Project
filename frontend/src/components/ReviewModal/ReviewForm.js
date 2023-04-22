@@ -57,7 +57,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                 </div>
             </div>
 
-            <form className="rewview-inner" onSubmit={handleSubmit}>
+            <form className="review-inner" onSubmit={handleSubmit}>
        
             <div className="review-area">
              <div className="star-rating">
@@ -78,7 +78,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                 <div className="input-field">
                     <textarea
                         className="review-form-body"
-                        placeholder="review this Yerbnb"
+                        placeholder="review this Yerbnb."
                         type="text-area"
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
@@ -90,7 +90,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
             </div>
          
         </div>
-        </form>
+            </form>
             </div>
         </>
     )
