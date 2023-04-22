@@ -6,9 +6,6 @@ import { Modal } from '../../context/modal'
 import {createReview} from "../../store/review"
 import { useParams } from 'react-router-dom';
 import { getListings } from '../../store/listing';
-import usersReducer from '../../store/user';
-
-
 
 
 const ReviewForm = ({setShowReviewFormModal})=>{
@@ -49,7 +46,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
 
     return(
         <>
-            <div className="review-form">
+        <div className="review-form">
             <div className='review-form-header'>
                 <div className="close-span-container">
                     <div onClick={closeModal}  className="close-modal"><span >╳</span>
@@ -73,23 +70,23 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                     onMouseEnter={() => setHover(i)}
                     onMouseLeave={() => setHover(rating)}
                     >
-                <span className="star">&#9733;</span>
+                    <span className="star">&#9733;</span>
                 </button>
                 );
                 })}
-      </div>
-            <div className="input-field">
-            <textarea
-              className="review-form-body"
-              placeholder="review this Yerbnb"
-              type="text-area"
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
-              required
-            />
             </div>
-            <div className="signup-div">
-            <button id="signup-button" type="submit">Review</button>
+                <div className="input-field">
+                    <textarea
+                        className="review-form-body"
+                        placeholder="review this Yerbnb"
+                        type="text-area"
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                        required
+                    />
+            </div>
+            <div className="signup-button-div">
+                <button id="signup-button" type="submit">Review</button>
             </div>
          
         </div>
