@@ -35,6 +35,14 @@ export const createReservation = (formData) => async (dispatch) =>{
     return res;
 }
 
+export const fetchReservations = () => async(dispatch)=>{
+    const res = await csrfFetch(`/api/reservations`)
+    let data = await res.json();
+    dispatch(receiveReservations(data));
+    return res;
+}
+
+
 const reservationReducer = (state = [], action) =>{
     switch(action.type){
         case RECEIVE_RESERVATION:
