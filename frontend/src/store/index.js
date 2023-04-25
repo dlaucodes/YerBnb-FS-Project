@@ -4,8 +4,9 @@ import sessionReducer from "./session";
 import listingReducer from "./listing"
 import userReducer from "./user";
 import reviewReducer from "./review";
+import reservationReducer from "./reservation";
 
-const rootReducer = combineReducers({ session: sessionReducer, listing: listingReducer, user: userReducer, review: reviewReducer});
+const rootReducer = combineReducers({ session: sessionReducer, listing: listingReducer, user: userReducer, review: reviewReducer, reservation: reservationReducer});
 
 let enhancer;
 

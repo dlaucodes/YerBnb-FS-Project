@@ -35,3 +35,17 @@ export const createReservation = (formData) => async (dispatch) =>{
     return res;
 }
 
+const reservationReducer = (state = [], action) =>{
+    switch(action.type){
+        case RECEIVE_RESERVATION:
+            return {...state, reservation: action.payload}
+        case RECEIVE_RESERVATIONS:
+            return {...state, ...action.payload}
+        case REMOVE_RESERVATION:
+            return {...state, reservation: null}
+        default:
+            return state;
+    }
+}
+
+export default reservationReducer;
