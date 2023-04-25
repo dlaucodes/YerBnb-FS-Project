@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './Reservation.css';
 
 const Reservation = ()=>{
-    const [startDate, setStartDate] = useState("")
-    const [endDate, setEndDate] = useState("")
-    const []
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    
 
     return(
     <div className="reservation-container">
