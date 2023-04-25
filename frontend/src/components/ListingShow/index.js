@@ -195,8 +195,8 @@ const ListingShow = (props) => {
             </div>
             <div className="listing-info-right">
             <div className="reservation-container-outer">
-                <Reservation />
             </div>
+                <Reservation />
           
             </div>
             <div className="listing-reviews-container">
