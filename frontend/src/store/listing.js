@@ -82,7 +82,6 @@ export const deleteListing = (listingId) => async (dispatch)=>{
 
 
 const listingReducer = (state = [], action) => {
-    let newState = {...state}
     switch(action.type){
         case REMOVE_LISTING:
             return {...state, listing: null}

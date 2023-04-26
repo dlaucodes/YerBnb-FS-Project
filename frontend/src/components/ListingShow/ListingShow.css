@@ -180,13 +180,14 @@
 .listing-info-right{
     display: flex;
     width: 50%;
-    
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid purple;    */
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .reservation-container-outer{
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     justify-content: center;
 }
