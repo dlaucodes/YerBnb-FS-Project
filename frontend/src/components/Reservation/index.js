@@ -9,6 +9,7 @@ import { fetchUsers } from '../../store/user';
 import { fetchReservations, createReservation } from '../../store/reservation';
 import { Dispatch } from 'react';
 import LoginFormModal from '../LoginFormModal';
+import { formatDistanceStrict, formatDistance } from 'date-fns'
 
 
 
@@ -27,6 +28,16 @@ const Reservation = ({listing})=>{
     const temp = new Date();
     const today = new Date(temp.setHours(0,0,0,0));
     const price = listing.price;
+
+    function diffDays() {
+    return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
+    }
+
+    function numDays() {
+    return diffDays().split(' ')[0]
+    }
+
+    // console.log(numDays())
 
     //  useEffect(() => {
     //     setDays( Math.floor(((endDate.getTime() - (new Date(startDate.setHours(0,0,0,0))).getTime())/1000/60/60/24) < 0 ? 0 : ((endDate.getTime() - (new Date(startDate.setHours(0,0,0,0))).getTime())/1000/60/60/24)));
@@ -88,20 +99,24 @@ const Reservation = ({listing})=>{
         <form className="reservation-form">
             <div className="reservation-date-container">
             <input 
-            className="date-input"
+            className="date-input-start"
             type="date"
             value={startDate}
             onChange={(e)=> setStartDate(e.target.value)} required
             min={today}
             />
             <input 
-            className="date-input"
+            className="date-input-end"
             type="date"
             value={endDate}
             onChange={(e)=> setEndDate(e.target.value)} required
             min={startDate}
             />
-            </div>     
+            </div>
+            <div className="reservation-guest-count-outer">
+                <div className="reservation-guest-count">
+                </div>     
+            </div>
 
             <button className="reserve-button" onClick={handleSubmit}>
                 Reserve
@@ -114,7 +129,7 @@ const Reservation = ({listing})=>{
             <div className="reservation-totals">
                 <div className="reservation-subtotal">
                     <div className="reservation-subtotal-left">
-                    {listing.price} x nights
+                    ${listing.price} x nights
                     </div>
                     <div className="reservation-subtotal-right">
                         $4983084
