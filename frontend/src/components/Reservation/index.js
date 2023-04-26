@@ -23,22 +23,23 @@ const Reservation = ({listing})=>{
     const [guests, setGuests] = useState(1);
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
-    const [days, setDays] = useState(0);
+    const [numDays, setNumDays] = useState(0);
     const guestId = currentUser ? guest.id : "";
     const temp = new Date();
     const today = new Date(temp.setHours(0,0,0,0));
     const price = listing.price;
     const maxGuests = listing.guests;
+    
 
-    console.log(listing.guests)
-
-    function diffDays() {
+    function daysRange() {
     return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
     }
 
-    function numDays() {
-    return diffDays().split(' ')[0]
+    function totalDays() {
+    return daysRange().split(' ')[0]
     }
+
+    
 
     // console.log(numDays())
 
@@ -66,12 +67,10 @@ const Reservation = ({listing})=>{
         const formData = new FormData();
         formData.append('reservation[listing_pic]', listing.photoUrls[0]);
         formData.append('reservation[guest_id]', guestId)
-        formData.append('reservation[days]', days)
         formData.append('reservation[start_date]', startDate)
         formData.append('reservation[end_date]', endDate)
         formData.append('reservation[guests]', guests)
-        formData.append('reservation[listing_id]', listing.id)
-        formData.append('reservation[total]', total) 
+        formData.append('reservation[listing_id]', listing.id) 
 
         if(currentUser){
             dispatch(createReservation(formData)).
@@ -118,6 +117,62 @@ const Reservation = ({listing})=>{
             </div>
             <div className="reservation-guest-count-outer">
                 <div className="reservation-guest-count">
+                    <select
+                        value={guests}
+                        className="reservation-guest-select"
+                        onChange={(e)=>(setGuests(e.target.value))}
+                    >
+                        <option 
+                        disabled={maxGuests < 1 ? 'disabled' : ''}
+                        hidden={maxGuests < 1 ? 'hidden' : ''} 
+                        value="1">1 guest</option>
+                        <option 
+                        disabled={maxGuests < 2 ? 'disabled' : ''}
+                        hidden={maxGuests < 2 ? 'hidden' : ''}
+
+                        value="2">2 guests</option>
+                        <option 
+                        disabled={maxGuests < 3 ? 'disabled' : ''}
+                        hidden={maxGuests < 3 ? 'hidden' : ''} 
+                        value="3">3 guests</option>
+                        <option 
+                        disabled={maxGuests < 4 ? 'disabled' : ''}
+                        hidden={maxGuests < 4 ? 'hidden' : ''} 
+                        value="4">4 guests</option>
+                        <option 
+                        disabled={maxGuests < 5 ? 'disabled' : ''}
+                        hidden={maxGuests < 5 ? 'hidden' : ''} 
+                        value="5">5 guests</option>
+                        <option 
+                        disabled={maxGuests < 6 ? 'disabled' : ''}
+                        hidden={maxGuests < 6 ? 'hidden' : ''} 
+                        value="6">6 guests</option>
+                        <option 
+                        disabled={maxGuests < 7 ? 'disabled' : ''} 
+                        hidden={maxGuests < 7 ? 'hidden' : ''}
+                        value="7">7 guests</option>
+                        <option 
+                        disabled={maxGuests < 8 ? 'disabled' : ''} 
+                        hidden={maxGuests < 8 ? 'hidden' : ''}
+                        value="8">8 guests</option>
+                        <option 
+                        disabled={maxGuests < 9 ? 'disabled' : ''}
+                        hidden={maxGuests < 9 ? 'hidden' : ''} 
+                        value="9">9 guests</option>
+                        <option 
+                        disabled={maxGuests < 10 ? 'disabled' : ''}
+                        hidden={maxGuests < 10 ? 'hidden' : ''} 
+                        value="10">10 guests</option>
+                        <option 
+                        disabled={maxGuests < 11 ? 'disabled' : ''}
+                        hidden={maxGuests < 11 ? 'hidden' : ''} 
+                        value="11">11 guests</option>
+                        <option 
+                        disabled={maxGuests < 12 ? 'disabled' : ''}
+                        hidden={maxGuests < 12 ? 'hidden' : ''} 
+                        value="12">12 guests</option>
+
+                        </select>
                 </div>     
             </div>
 
@@ -132,10 +187,10 @@ const Reservation = ({listing})=>{
             <div className="reservation-totals">
                 <div className="reservation-subtotal">
                     <div className="reservation-subtotal-left">
-                    ${listing.price} x nights
+                    ${listing.price} x {(startDate && endDate) ? totalDays() : 0} nights
                     </div>
                     <div className="reservation-subtotal-right">
-                        $4983084
+                        ${(startDate && endDate ? totalDays() : 0) * (listing.price)}
                     </div>
                 </div>
                 <div className="cleaning-fee">
@@ -143,7 +198,7 @@ const Reservation = ({listing})=>{
                         Cleaning fee 
                     </div>
                     <div className="cleaning-fee-right">
-                        $1828
+                        ${Math.floor((startDate && endDate ? totalDays() : 0) * (listing.price) * 0.09 * 5)}
                     </div>
                 </div>
                 <div className="service-fee">
