@@ -28,6 +28,9 @@ const Reservation = ({listing})=>{
     const temp = new Date();
     const today = new Date(temp.setHours(0,0,0,0));
     const price = listing.price;
+    const maxGuests = listing.guests;
+
+    console.log(listing.guests)
 
     function diffDays() {
     return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
