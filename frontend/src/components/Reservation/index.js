@@ -36,9 +36,9 @@ const Reservation = ({listing})=>{
     //     setTotal(listing.price * days + parseInt(listing.price * days * 0.12) + parseInt(listing.price * days * 0.08));
     // },[])
 
-    console.log(startDate)
-    console.log(endDate)
-    console.log(guest.id)
+    // console.log(startDate)
+    // console.log(endDate)
+    // console.log(guest.id)
 
 
     useEffect(()=>{
@@ -74,7 +74,7 @@ const Reservation = ({listing})=>{
         <div className="reservation-container-header">
             <div className="reservation-container-header-left">
                 <div className="reservation-listing-price">
-                    {`${price}`}
+                    ${`${price}`}
                 </div>
                 <div className="reservation-night">
                     night
@@ -122,7 +122,7 @@ const Reservation = ({listing})=>{
                 </div>
                 <div className="cleaning-fee">
                     <div className="cleaning-fee-left">
-                        cleaning fee 
+                        Cleaning fee 
                     </div>
                     <div className="cleaning-fee-right">
                         $1828
@@ -135,13 +135,13 @@ const Reservation = ({listing})=>{
                     <div className="service-fee-right">
                         $2742
                     </div>
-                    <div className="total-before-taxes">
-                        <div className="total-before-taxes-left">
-                            Total before taxes
-                        </div>
-                        <div className="total-before-taxes-right">
-                            $60000
-                        </div>
+                </div>
+                <div className="total-before-taxes">
+                    <div className="total-before-taxes-left">
+                        Total before taxes
+                    </div>
+                    <div className="total-before-taxes-right">
+                        $60000
                     </div>
                 </div>
 
