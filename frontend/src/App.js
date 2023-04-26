@@ -13,6 +13,8 @@ import ProfileDetails from "./components/Profile";
 // import MapContainer from "./components/Map";
 import { fetchUsers } from "./store/user";
 import ReviewIndex from "./components/Reviews";
+import { fetchReviews } from "./store/review";
+import { fetchReservations } from "./store/reservation";
 
 
 
@@ -30,7 +32,8 @@ function App() {
   useEffect(()=>{
     dispatch(fetchListings())
     dispatch(fetchUsers())
-  
+    dispatch(fetchReviews())
+    dispatch(fetchReservations())
   },[])
 
   // if(!users || !listings || !currentUser){

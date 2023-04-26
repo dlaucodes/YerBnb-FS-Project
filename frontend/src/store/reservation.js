@@ -26,7 +26,7 @@ export const removeReservation = (reservationId) =>{
 }
 
 export const createReservation = (formData) => async (dispatch) =>{
-    const res = await csrfFetch("api/reservations", {
+    const res = await csrfFetch(`/api/reservations`, {
         method: "POST",
         body: formData
     });

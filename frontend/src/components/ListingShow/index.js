@@ -15,6 +15,7 @@ import MapContainer from "../Map";
 import { getReviews, fetchReviews } from "../../store/review";
 import ReviewFormModal from '../ReviewModal';
 import LoginFormModal from '../LoginFormModal';
+import { fetchReservations } from "../../store/reservation";
 
 
 
@@ -83,6 +84,7 @@ const ListingShow = (props) => {
         dispatch(fetchListings())
          dispatch(fetchUsers())
          dispatch(fetchReviews())
+         dispatch(fetchReservations())
     },[dispatch, id])
 
     

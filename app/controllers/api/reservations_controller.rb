@@ -1,8 +1,8 @@
 class Api::ReservationsController < ActionController::API
 
-    wrap_parameters include: Reservation.attribite_names + ['listing_id', 'userId', 'startDate', 'endDate']
-    before_action :require_logged_in
+    wrap_parameters include: Reservation.attribute_names + ['listing_id', 'userId', 'startDate', 'endDate']
 
+    
     def index
         @reservations = Reservation.all
         render :index
