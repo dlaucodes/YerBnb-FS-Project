@@ -18,12 +18,13 @@
 
 .reservation-container-header{
     display: flex;
-    width: 100%;
-    border: 1px solid red;
+    width: 80%;
     justify-content: space-between;
     height: 70px;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
+    /* border: 1px solid red; */
 }
 
 .reservation-container-header-left{
@@ -36,17 +37,17 @@
     width: 50%;
     font-size: 25px;
     justify-content: flex-end;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .reservation-night{
     display: flex;
     align-items: center;
     width: 50%;
-    border: 1px solid blue;
     margin-left: 3px;
     padding-top: 5px;
     font-size: 14px;
+    /* border: 1px solid blue; */
 }
 
 .reservation-container-right{
@@ -85,98 +86,100 @@
     align-items: center;
     height: 30px;
     justify-content: center;
-    border: 1px solid red;
     width: 100%;
+    /* border: 1px solid red; */
 }
 
 .reservation-totals{
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
-    border: 1px solid green;
     height: 100%;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    /* border: 1px solid green; */
 }
 
 .reservation-subtotal{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .reservation-subtotal-left{
     display: flex;
     text-decoration: underline;
-    border: 1px solid red;
     width: 50%;
+    /* border: 1px solid red; */
 }
 
 .reservation-subtotal-right{
     display:flex;
     width: 50%;
-    border: 1px solid red;
     justify-content: flex-end;
+    /* border: 1px solid red; */
 }
 
 .cleaning-fee{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .cleaning-fee-left{
     display: flex;
     text-decoration: underline;
-    border: 1px solid red;
     width: 50%;
+    /* border: 1px solid red; */
 }
 
 .cleaning-fee-right{
     display: flex;
     width: 50%;
-    border: 1px solid red;
     justify-content: flex-end;
+    /* border: 1px solid red; */
 }
 
 .service-fee{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .service-fee-left{
     display: flex;
     text-decoration: underline;
-    border: 1px solid red;
     width: 50%;
+    /* border: 1px solid red; */
 }
 
 .service-fee-right{
     display: flex;
     width: 50%;
-    border: 1px solid red;
     justify-content: flex-end;
+    /* border: 1px solid red; */
 }
 
 .total-before-taxes{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .total-before-taxes-left{
     display: flex;
     text-decoration: underline;
-    border: 1px solid red;
     width: 50%;
+    /* border: 1px solid red; */
 }
 
 .total-before-taxes-right{
     display: flex;
     width: 50%;
-    border: 1px solid red;
     justify-content: flex-end;
+    /* border: 1px solid red; */
 }
