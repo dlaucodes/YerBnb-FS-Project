@@ -196,8 +196,7 @@ const ListingShow = (props) => {
             <div className="listing-info-right">
             <div className="reservation-container-outer">
             </div>
-                <Reservation />
-          
+                <Reservation listing={listing}/>
             </div>
             <div className="listing-reviews-container">
                 <div className="listing-review-header">
@@ -261,6 +260,7 @@ const ListingShow = (props) => {
             <div>
             {showReviewFormModal && (<ReviewFormModal setShowReviewFormModal={setShowReviewFormModal}/> )}
             </div>
+            
             <div>
                 {showLoginModal && <LoginFormModal setShowLoginModal={setShowLoginModal}/>}
             </div>

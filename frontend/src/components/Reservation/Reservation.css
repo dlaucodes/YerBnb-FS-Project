@@ -1,15 +1,13 @@
 .reservation-container{
-    width: 100%;
+    width: 1000px;
     border: 1px solid rgb(221, 221, 221);
     background-color: white;
-    position: sticky;
     
-   
+ 
     margin-top: 48px;
     margin-bottom: 48px;
     border-radius: 12px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    max-width: 372.33px;
     max-height: 541px;
     min-height: 494px;
     height: 494px;
