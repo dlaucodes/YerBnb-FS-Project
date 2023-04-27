@@ -73,7 +73,7 @@ const Reservation = ({listing})=>{
 
         if(currentUser){
             dispatch(createReservation(formData)).
-            then( history.push(`/profiles/${currentUser.id}`))
+            then(history.push(`/profiles/${currentUser.id}`))
            
         }else{
             setShowLoginModal(true);

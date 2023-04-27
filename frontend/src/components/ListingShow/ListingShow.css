@@ -16,8 +16,72 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 100;
     align-items: center;
-    height: 40px;
+    height: 50px;
     margin-top: 20px;
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
+}
+.sub-title{
+    display: flex;
+    width: 90%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+}
+
+.listing-review-subtitle{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+}
+
+.header-star{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+    margin-right: 2px;
+}
+
+.listing-header-rating{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+    
+}
+
+.header-dot{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.listing-header-total{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+    text-decoration: underline;
+}
+
+.location-container{
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    height: 30px;
+    text-decoration: underline;
+    /* border: 1px solid blue; */
 }
 
 .photo-container {
@@ -102,17 +166,6 @@
 }
 
 
-.location-container{
-    display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
-    width: 90%;
-    align-items: center;
-    height: 50px;
-    /* border: 1px solid blue; */
-    margin-bottom: 10px;
-    text-decoration: underline;
-}
 
 .host-info{
     display: flex;
