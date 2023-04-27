@@ -7,10 +7,10 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { fetchUsers } from '../../store/user';
 import { fetchReservations, createReservation } from '../../store/reservation';
+import { fetchReviews, getReviews} from "../../store/review";
 import { Dispatch } from 'react';
 import LoginFormModal from '../LoginFormModal';
 import { formatDistanceStrict, formatDistance } from 'date-fns'
-
 
 
 const Reservation = ({listing})=>{
@@ -29,6 +29,23 @@ const Reservation = ({listing})=>{
     const today = new Date(temp.setHours(0,0,0,0));
     const price = listing.price;
     const maxGuests = listing.guests;
+    const reviews = useSelector(state=>getReviews(state))
+    const reviewsArray = []
+
+    for(const key in reviews){
+        const review = reviews[key]
+        for(const object in review){
+            const reviewObject = review[object]
+                reviewsArray.push(reviewObject)
+        }
+    }
+
+    useEffect(()=>{
+        dispatch(fetchReviews())
+    }, [])
+
+
+   
     
 
     function daysRange() {
@@ -38,23 +55,6 @@ const Reservation = ({listing})=>{
     function totalDays() {
     return daysRange().split(' ')[0]
     }
-
-    
-
-    // console.log(numDays())
-
-    //  useEffect(() => {
-    //     setDays( Math.floor(((endDate.getTime() - (new Date(startDate.setHours(0,0,0,0))).getTime())/1000/60/60/24) < 0 ? 0 : ((endDate.getTime() - (new Date(startDate.setHours(0,0,0,0))).getTime())/1000/60/60/24)));
-    // },[])
- 
-    // useEffect(() => {
-    //     setTotal(listing.price * days + parseInt(listing.price * days * 0.12) + parseInt(listing.price * days * 0.08));
-    // },[])
-
-    // console.log(startDate)
-    // console.log(endDate)
-    // console.log(guest.id)
-
 
     useEffect(()=>{
         fetchListings()
@@ -94,7 +94,17 @@ const Reservation = ({listing})=>{
                 </div>
             </div>
             <div className="reservation-container-header-right">
-                review info
+                <div className="listing-rating">
+                <div className="rating-star">
+                <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
+                </div>
+                {(() => {
+                const filteredReview = reviewsArray.filter(review => review.listingId === listing.id);
+                const sum = filteredReview.reduce((total, review) => total + review.rating, 0);
+                const average = sum / filteredReview.length;
+                return isNaN(average) ? '' : average.toFixed(1);
+                })()}
+            </div>
             </div>
         </div>
 

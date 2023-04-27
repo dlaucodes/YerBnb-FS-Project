@@ -35,8 +35,6 @@ const ListingShow = (props) => {
     const reviewItems = []
     
     
-    
-    
     for(const key in reviews[0]){
         const review = reviews[0][key]
         const reviewId = review.id
@@ -72,13 +70,6 @@ const ListingShow = (props) => {
             setShowLoginModal(true);
         }
     } 
-    
-
-    // console.log(reviewId)
-
-    // console.log(reviewItems, "hfjksdahfjkasdjkfhkljasd")
-    
-    
     
     useEffect(()=>{
         dispatch(fetchListings())

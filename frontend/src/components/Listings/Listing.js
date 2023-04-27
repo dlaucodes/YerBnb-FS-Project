@@ -8,10 +8,6 @@ import { getListings } from "../../store/listing";
 import Profile from "../Profile";
 
 
-
-
-
-
 const Listing = ({listingItem}) => {
     const [item, setItem] = useState(listingItem)
     const test = listingItem

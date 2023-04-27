@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { fetchReviews } from "../../store/review";
 import ListingShow from "../ListingShow";
 import csrfFetch from "../../store/csrf";
+import Reservation from "../Reservation";
 
 const ReviewIndex = ()=>{
     const [list, setList] = useState(null);
@@ -35,11 +36,13 @@ const ReviewIndex = ()=>{
             <div className="reviews-container">
                 {reviewsArray.map((review, i)=>
                     <div key={i}>
-
-                        <ListingShow review1={reviewsArray}/>                        
+                        {review}
+                                           
                     </div>
                 )}
+                {reviewsArray && <Reservation reviewsArray={reviewsArray}/>}
             </div>
+                    
             </>
         );
     }else{
