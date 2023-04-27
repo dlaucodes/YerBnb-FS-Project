@@ -32,7 +32,47 @@
 .reservation-container-header-left{
     display: flex;
     width: 50%;
+    /* border: 1px solid red; */
 }
+
+.reservation-container-header-right{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    /* border: 1px solid green; */
+    justify-content: flex-end;
+}
+
+.listing-reservation-rating{
+    display: flex;
+    font-size: 14px;
+    margin-left: 3px;
+    font-weight: 400;
+}
+
+.reservation-rating-star{
+    display: flex;
+    margin-right: 3px;
+}
+
+.reservation-dot{
+    display: flex;
+    margin-left: 2px;
+    margin-right: 2px;;
+}
+
+.reservation-review{
+    display:flex;
+}
+
+.reservation-review-count{
+    display: flex;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    color: #828282;
+}
+
 
 .reservation-date-top{
     display: flex;
