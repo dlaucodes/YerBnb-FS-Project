@@ -266,6 +266,9 @@ const ListingShow = (props) => {
             <div>
                 {showLoginModal && <LoginFormModal setShowLoginModal={setShowLoginModal}/>}
             </div>
+            <div>
+                
+            </div>
         </div>
         
         </div>
@@ -273,6 +276,7 @@ const ListingShow = (props) => {
     )}else{
         return(
             <>
+            {<ProfileDetails list={listings}/>}
             </>
         )
     }

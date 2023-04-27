@@ -15,7 +15,6 @@ const ProfileDetails = () => {
     const reviews = useSelector(state=>getReviews(state));
     const test = useSelector(state=> getReviews(state));
     const listings = useSelector(state => state.listing);
-    const [list, setList] = useState();
     const dispatch = useDispatch();
     const { id } = useParams();
     const [filteredListings, setFilteredListings] = useState([])
@@ -25,7 +24,10 @@ const ProfileDetails = () => {
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
     const reviewsArray = []
-    const filteredReviews = reviews.filter(review=> review.userId === id)
+    // const filteredReviews = reviews.filter(review=> review.userId === id)
+    const reservations = useSelector(state=>state.reservation.reservations)
+    // const filteredReservations = reservations.filter(reservation=> reservation.guestId === id)
+   
 
     
     for(const key in reviews){
@@ -78,14 +80,11 @@ const ProfileDetails = () => {
         const formData = new FormData();
         formData.append('user[photo]', file);
         await dispatch(userActions.updateUser(formData));
-        setProfilePic(currentUser.photoUrl)
+        setProfilePic(currentUser.photoUrl);
         setTimeout(refresh, 600);
     }
 
     
-    
-    
-   
     const buttonMailto = (mailto) =>{
     window.open(mailto)
   }
@@ -204,13 +203,39 @@ const ProfileDetails = () => {
                 <div className="user-trips">
                     <div className="trips-section-text">Trips</div>
                     
-                    <div className="trips-info">
+                    {reservations && <div className="trips-info">
+                        {Object.keys(reservations).map((key, i)=>{
+                            const reservation = reservations[key];
+                            if(reservation.guestId === currentUser.id){
+                                return(
+
                         <div className="trips-card">
-                            trip
+                            <div className="trips-card-top">
+                                <div className="trips-card-left">
+                                    <div className="trips-listing-pic">
+                                        <NavLink to={{pathname: `/listings/${reservation.listingId}`}}>
+                                        <img src={`${reservation.listingPic}`} alt=""/>
+                                        
+                                        </NavLink>
+                                        
+                                    </div>
+                                </div>
+                                <div className="trips-card-right">
+                                    <div>
+                                        hello
+                                    </div>
+                                    <div>
+                                        hello
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            
                             <div className="profile-listing-ruler"></div>
                                 <div className="profile-listing-options">
                                     <button>
-                                        review
+                                        edit
                                     </button>
                                     <button>
                                         remove
@@ -218,7 +243,13 @@ const ProfileDetails = () => {
                                 </div>
                     
                         </div>
+                                )
+                            }
+                        })}
+
                     </div>
+                        }   
+
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
@@ -226,7 +257,6 @@ const ProfileDetails = () => {
                     {listings.listings && <div className="listing-info">
                     
                         {Object.keys(listings.listings).map((key, i) => {
-                            <div key={i}></div>
                             const listing = listings.listings[key];
                             if (listing.ownerId === currentUser.id){
                                 return (

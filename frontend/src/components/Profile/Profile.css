@@ -312,8 +312,12 @@ label {
     justify-content: flex-start;
     /* align-items: center; */
     flex-direction: column;
-    width: 350px;
+    width: 400px;
     overflow: hidden;
+    
+   
+    
+   
     /* border: 1px solid red  */
 }
 
@@ -322,6 +326,49 @@ label {
     margin-bottom: 8px;
     border-radius: 8px;
 }
+
+.trips-card-top{
+    display: flex;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.trips-card-left{
+    display: flex;
+    width: 50%;
+    border: 1px solid red;
+}
+
+.trips-listing-pic{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.trips-listing-pic img{
+    width: 200px;
+    border-radius: 12px;    
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+    margin-top: -4px;
+}
+
+.trips-card-right{
+    display: flex;
+    width: 50%;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .trips-card:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.30);
