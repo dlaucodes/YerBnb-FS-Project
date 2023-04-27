@@ -60,9 +60,9 @@ const ProfileDetails = () => {
     // useEffect(()=>{
         
     // },[getListings])
-    useEffect(()=>{
+    // useEffect(()=>{
 
-    }, [])
+    // }, [])
 
 
     const handleDelete = (id)=>{

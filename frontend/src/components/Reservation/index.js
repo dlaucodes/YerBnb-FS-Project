@@ -73,8 +73,8 @@ const Reservation = ({listing})=>{
         formData.append('reservation[listing_id]', listing.id) 
 
         if(currentUser){
-            dispatch(createReservation(formData))
-            // then( history.push(`/profiles/${currentUser.id}`))
+            dispatch(createReservation(formData)).
+            then( history.push(`/profiles/${currentUser.id}`))
            
         }else{
             setShowLoginModal(true);
@@ -99,21 +99,30 @@ const Reservation = ({listing})=>{
         </div>
 
         <form className="reservation-form">
-            <div className="reservation-date-container">
-            <input 
-            className="date-input-start"
-            type="date"
-            value={startDate}
-            onChange={(e)=> setStartDate(e.target.value)} required
-            min={today}
-            />
-            <input 
-            className="date-input-end"
-            type="date"
-            value={endDate}
-            onChange={(e)=> setEndDate(e.target.value)} required
-            min={startDate}
-            />
+            <div className="reservation-date-top">
+                <div className="reservation-date-container">
+                    <div className="input-date-left">
+                    <span className="reservation-date-span">CHECK-IN</   span>
+                        <input 
+                        className="date-input-start"
+                        type="date"
+                        value={startDate}
+                        onChange={(e)=> setStartDate(e.target.value)} required
+                        min={today}
+                        />
+
+                    </div>
+                    <div className="input-date-right">
+                        <span className="reservation-date-span">CHECK-OUT</span>
+                        <input 
+                        className="date-input-end"
+                        type="date"
+                        value={endDate}
+                        onChange={(e)=> setEndDate(e.target.value)} required
+                        min={startDate}
+                        />
+                    </div>
+                </div>
             </div>
             <div className="reservation-guest-count-outer">
                 <div className="reservation-guest-count">

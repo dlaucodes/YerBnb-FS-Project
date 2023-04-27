@@ -273,13 +273,14 @@ const ListingShow = (props) => {
         
         </div>
     </>
-    )}else{
-        return(
-            <>
-            {<ProfileDetails list={listings}/>}
-            </>
-        )
-    }
+    )}
+    // else{
+    //     return(
+    //         <>
+    //         {/* {<ProfileDetails list={listings}/>} */}
+    //         </>
+    //     )
+    // }
 }
  
 export default ListingShow;
