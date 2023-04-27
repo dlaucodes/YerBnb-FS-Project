@@ -191,7 +191,7 @@ const ListingShow = (props) => {
             </div>
                 <Reservation listing={listing}/>
             </div>
-            <div className="listing-reviews-container">
+            <div className="listing-reviews-container" id="listing-reviews-top">
                 <div className="listing-review-header">
                     <div className="listing-show-rating">
                         <div className="rating-star">

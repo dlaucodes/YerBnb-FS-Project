@@ -25,8 +25,7 @@ const Reservation = ({listing})=>{
     const [endDate, setEndDate] = useState("");
     const [numDays, setNumDays] = useState(0);
     const guestId = currentUser ? guest.id : "";
-    const temp = new Date();
-    const today = new Date(temp.setHours(0,0,0,0));
+    const today = new Date().toISOString().split("T")[0]
     const price = listing.price;
     const maxGuests = listing.guests;
     const reviews = useSelector(state=>getReviews(state))
@@ -101,7 +100,7 @@ const Reservation = ({listing})=>{
                     <div className="reservation-review">
                         {(() => {
                             const filteredReview = reviewsArray. filter(review => review.listingId ===   listing.id);
-                            const sum = filteredReview.reduce(  (total, review) => total + review.    rating, 0);
+                            const sum = filteredReview.reduce((total, review) => total + review.    rating, 0);
                             const average = sum / filteredReview.length;
                             return (
                                 <>
@@ -112,12 +111,13 @@ const Reservation = ({listing})=>{
                                     ·
                                 </div>
                                 <div className="reservation-review-count">
+                                <a href="#listing-reviews-top">
                                     {filteredReview.length} reviews
+                                </a>
                                 </div>
                                 </>
                             );
                         })()}
-
                     </div>
                 </div>
             </div>
