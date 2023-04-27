@@ -73,8 +73,8 @@ const Reservation = ({listing})=>{
         formData.append('reservation[listing_id]', listing.id) 
 
         if(currentUser){
-            dispatch(createReservation(formData)).
-            then( history.push(`/profiles/${currentUser.id}`))
+            dispatch(createReservation(formData))
+            // then( history.push(`/profiles/${currentUser.id}`))
            
         }else{
             setShowLoginModal(true);
@@ -198,7 +198,7 @@ const Reservation = ({listing})=>{
                         Cleaning fee 
                     </div>
                     <div className="cleaning-fee-right">
-                        ${Math.floor((startDate && endDate ? totalDays() : 0) * (listing.price) * 0.09 * 5)}
+                        ${Math.floor((startDate && endDate ? totalDays() : 0) * (listing.price) * 0.08 )}
                     </div>
                 </div>
                 <div className="service-fee">
@@ -206,7 +206,7 @@ const Reservation = ({listing})=>{
                         Service Fee
                     </div>
                     <div className="service-fee-right">
-                        $2742
+                        ${Math.floor((startDate && endDate ? totalDays() : 0) * (listing.price) * 0.12 )}
                     </div>
                 </div>
                 <div className="total-before-taxes">
@@ -214,7 +214,8 @@ const Reservation = ({listing})=>{
                         Total before taxes
                     </div>
                     <div className="total-before-taxes-right">
-                        $60000
+                        ${Math.floor(
+                            ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? listing.price : 0)) + ((startDate && endDate ?listing.price : 0) * 0.2))}
                     </div>
                 </div>
 

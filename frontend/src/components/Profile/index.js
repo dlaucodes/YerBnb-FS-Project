@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
 import ListingEditModal from './indexListEdit';
 import { fetchReviews, getReviews, deleteReview } from '../../store/review';
+import { fetchReservations } from '../../store/reservation';
 
 
 const ProfileDetails = () => {
@@ -35,9 +36,9 @@ const ProfileDetails = () => {
         }
     }
     
-    console.log(id)
-    console.log(reviewsArray)
-    console.log(filteredReviews)
+    // console.log(id)
+    // console.log(reviewsArray)
+    // console.log(filteredReviews)
     
 
     const refresh = () => {
@@ -49,6 +50,7 @@ const ProfileDetails = () => {
     useEffect(()=>{
         dispatch(fetchListings())
         dispatch(fetchReviews())
+        dispatch(fetchReservations())
         dispatch(deleteListing())
         dispatch(deleteReview())
     },[listings.listing], setChangeListing, setChangeReview);
