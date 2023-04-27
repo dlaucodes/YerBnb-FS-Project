@@ -117,7 +117,9 @@ const ListingShow = (props) => {
                         ·
                     </div>
                     <div className="listing-header-total">
-                        {filteredReviews.length} reviews
+                        <a href="#listing-reviews-top">
+                            {filteredReviews.length} reviews
+                        </a>
                     </div>
                      <div className="header-dot">
                         ·
