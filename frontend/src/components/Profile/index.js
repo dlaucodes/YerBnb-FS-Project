@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
 import ListingEditModal from './indexListEdit';
 import { fetchReviews, getReviews, deleteReview } from '../../store/review';
-import { fetchReservations } from '../../store/reservation';
+import { fetchReservations, deleteReservation } from '../../store/reservation';
 import {formatDistanceStrict} from 'date-fns'
 
 
@@ -53,15 +53,12 @@ const ProfileDetails = () => {
         dispatch(fetchReservations())
         dispatch(deleteListing())
         dispatch(deleteReview())
+        dispatch(deleteReservation())
     },[listings.listing], setChangeListing, setChangeReview);
 
-    // useEffect(()=>{
-        
-    // },[getListings])
-    // useEffect(()=>{
-
-    // }, [])
-
+    const handleReservationDelete = (id)=>{
+        dispatch(deleteReservation(id))
+    }
 
     const handleDelete = (id)=>{
        dispatch(deleteListing(id))
@@ -251,7 +248,7 @@ const ProfileDetails = () => {
                                     <button>
                                         edit
                                     </button>
-                                    <button>
+                                    <button onClick={()=>{handleReservationDelete(reservation.id)}}>
                                         remove
                                     </button>
                                 </div>

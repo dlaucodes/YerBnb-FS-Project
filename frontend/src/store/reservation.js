@@ -42,15 +42,22 @@ export const fetchReservations = () => async(dispatch)=>{
     return res;
 }
 
+export const deleteReservation= (reservationId) => async (dispatch)=>{
+    const res = await csrfFetch(`/api/reservations/${reservationId}`, {
+        method: "DELETE"
+    })
+    dispatch(removeReservation(reservationId));
+}
+
 
 const reservationReducer = (state = [], action) =>{
     switch(action.type){
+        case REMOVE_RESERVATION:
+            return {...state, reservation: null}
         case RECEIVE_RESERVATION:
             return {...state, reservation: action.payload}
         case RECEIVE_RESERVATIONS:
             return {...state, ...action.payload}
-        case REMOVE_RESERVATION:
-            return {...state, reservation: null}
         default:
             return state;
     }

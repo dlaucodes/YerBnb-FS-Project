@@ -64,8 +64,8 @@ export const getReviews = (state)=>{
 
 const reviewReducer = (state = {}, action) =>{
     switch(action.type){
-        // case REMOVE_REVIEW:
-        //     return {...state, review: null}
+        case REMOVE_REVIEW:
+            return {...state, review: null}
         case RECEIVE_REVIEW:
             return {...state, review: action.payload}
         case RECEIVE_REVIEWS:
