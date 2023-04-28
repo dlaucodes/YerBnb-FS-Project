@@ -39,14 +39,11 @@ const ProfileDetails = () => {
         }
     }
 
-    
 
     const refresh = () => {
         window.location.reload();
     }
 
-   
-   
     useEffect(()=>{
         dispatch(fetchListings())
         dispatch(fetchReviews())
@@ -171,20 +168,30 @@ const ProfileDetails = () => {
                             if ((review.userId === currentUser.id)){
                                 return(
                                         <div className="review-card">
-                                            <div className="review-card-left">
-                                                <div className="review-listing-pic">
-                                                    <NavLink to={{pathname: `/listings/${review.listingId}`}}>
-                                                    <img src={`${review.listingPic}` } alt=""/></NavLink>
+                                            <div className="review-card-top">
+                                                <div className="review-card-left">
+                                                    <div className="review-listing-pic">
+                                                        <NavLink to={{pathname: `/listings/${review.listingId}`}}>
+                                                        <img src={`${review.listingPic}` } alt=""/></NavLink>
+                                                    </div>
                                                 </div>
+                                                <div className="review-card-right">
+                                                    <div className="profile-review">
+                                                        {review.body}
+                                                    </div>
+                                                </div>
+
                                             </div>
-                                            <div className="review-card-right">
-                                            <div className="profile-review">
-                                                {review.body}
-                                            </div>
-                                            <div className="delete-review-container">
-                                            <button onClick={() => {handleReviewDelete(review.id)}}>remove review</button>
-                                            </div>
-                                            </div>
+                                                 <div className="profile-listing-ruler"></div>
+                            
+                                                    <div className="profile-listing-options">
+                                                    <button onClick={() => {handleReviewDelete(review.id)}}>
+                                                        delete
+                                                    </button>
+                                                </div>
+
+                                               
+
                                         </div>
                                 
                                 )
@@ -235,24 +242,19 @@ const ProfileDetails = () => {
                                         {reservation.guests} guest(s)
                                     </div>
                                     <div className="trip-total">
+                                        trip total: 
                                         ${Math.floor(
                             ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? reservation.listingPrice : 0)) + ((startDate && endDate ? reservation.listingPrice : 0) * 0.2))}
                                     </div>
                                 </div>
-
-
                             </div>
                             
                             <div className="profile-listing-ruler"></div>
                                 <div className="profile-listing-options">
-                                    <button>
-                                        edit
-                                    </button>
                                     <button onClick={()=>{handleReservationDelete(reservation.id)}}>
-                                        remove
+                                        delete
                                     </button>
                                 </div>
-                    
                         </div>
                                 )
                             }
