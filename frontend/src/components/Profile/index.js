@@ -185,9 +185,17 @@ const ProfileDetails = () => {
                                                  <div className="profile-listing-ruler"></div>
                             
                                                     <div className="profile-listing-options">
-                                                    <button onClick={() => {handleReviewDelete(review.id)}}>
+                                                    <div className="button-left">
+                                                        <button>
+                                                            edit
+                                                        </button>
+                                                    </div>
+                                                    <div className="button-right">
+                                                        <button onClick={() => {handleReviewDelete(review.id)}}>
                                                         delete
                                                     </button>
+
+                                                    </div>
                                                 </div>
 
                                                
@@ -250,7 +258,7 @@ const ProfileDetails = () => {
                             </div>
                             
                             <div className="profile-listing-ruler"></div>
-                                <div className="profile-listing-options">
+                                <div className="profile-listing-option">
                                     <button onClick={()=>{handleReservationDelete(reservation.id)}}>
                                         delete
                                     </button>
@@ -281,10 +289,14 @@ const ProfileDetails = () => {
                                         
                                         <div className="profile-listing-ruler"></div>
                                     <div className="profile-listing-options">
-                                        <button onClick={()=>{setCurrentListingId(listing.id);
-                                         setShowListingEditModal(listing.id)
-                                        }}>edit</button>
-                                        <button onClick={() => {handleDelete(listing.id)}}>delete</button>
+                                        <div className="button-left">
+                                            <button onClick={()=>{setCurrentListingId(listing.id);
+                                            setShowListingEditModal(listing.id)
+                                            }}>edit</button>
+                                        </div>
+                                        <div className="button-right">
+                                            <button onClick={() => {handleDelete(listing.id)}}>delete</button>
+                                        </div>
                                     </div>
                                     
                                 </div>
