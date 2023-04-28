@@ -48,7 +48,7 @@ class Api::ReservationsController < ActionController::API
     end
 
     def reservation_params
-        params.require(:reservation).permit(:reserved, :listing_id, :guest_id, :start_date, :end_date, :listing_pic, :total, :guests, :days)
+        params.require(:reservation).permit(:reserved, :listing_id, :guest_id, :start_date, :end_date, :listing_pic, :listing_price, :listing_title, :guests)
     end
 
 end

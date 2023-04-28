@@ -44,9 +44,6 @@ const Reservation = ({listing})=>{
     }, [])
 
 
-   
-    
-
     function daysRange() {
     return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
     }
@@ -70,6 +67,9 @@ const Reservation = ({listing})=>{
         formData.append('reservation[end_date]', endDate)
         formData.append('reservation[guests]', guests)
         formData.append('reservation[listing_id]', listing.id) 
+        formData.append('reservation[listing_price', listing.price)
+        formData.append('reservation[listing_title]', listing.title)
+       
 
         if(currentUser){
             dispatch(createReservation(formData)).
