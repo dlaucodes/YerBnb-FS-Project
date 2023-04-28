@@ -18,14 +18,25 @@ class Api::ReviewsController < ActionController::API
 
     def create
         @review = Review.new(review_params)
-        
         @review.photo.attach(params[:review][:photo])
-
-
         if @review.save
             render json: {message: "you did it"}
         else
             render json: @review.errors.full_messages, status: 422
+        end
+    end
+
+    def update
+        @review = Review.find_by(id: params[:id])
+        if @review.update(review_params)
+            @review.save
+            render :show
+        end
+         if @review.errors.none?
+            @review.save
+            render :show
+        else
+            render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

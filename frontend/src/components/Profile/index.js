@@ -2,13 +2,14 @@ import React from 'react';
 import { useParams, Link, Redirect, NavLink } from 'react-router-dom';
 import './Profile.css';
 import { useDispatch, useSelector } from 'react-redux';
-import * as userActions from '../../store/user'
+import * as userActions from '../../store/user';
 import { useEffect, useState } from 'react';
 import { fetchListings, getListings, fetchListing, deleteListing } from '../../store/listing';
 import ListingEditModal from './indexListEdit';
 import { fetchReviews, getReviews, deleteReview } from '../../store/review';
 import { fetchReservations, deleteReservation } from '../../store/reservation';
-import {formatDistanceStrict} from 'date-fns'
+import {formatDistanceStrict} from 'date-fns';
+import ReviewEditModal from './indexReviewEdit';
 
 
 const ProfileDetails = () => {
@@ -23,7 +24,9 @@ const ProfileDetails = () => {
     const [changeReview, setChangeReview] = useState(0);
     const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
     const [showListingEditModal, setShowListingEditModal] = useState(false);
+    const [showReviewEditModal, setShowReviewEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
+    const [currentReviewId, setCurrentReviewId] = useState(null)
     const reviewsArray = []
     // const filteredReviews = reviews.filter(review=> review.userId === id)
     const reservations = useSelector(state=>state.reservation.reservations)
@@ -186,9 +189,9 @@ const ProfileDetails = () => {
                             
                                                     <div className="profile-listing-options">
                                                     <div className="button-left">
-                                                        <button>
-                                                            edit
-                                                        </button>
+                                                        <button onClick={()=>{setCurrentReviewId(review.id);
+                                                        setShowReviewEditModal(review.id)
+                                                        }}>edit</button>
                                                     </div>
                                                     <div className="button-right">
                                                         <button onClick={() => {handleReviewDelete(review.id)}}>
@@ -308,6 +311,8 @@ const ProfileDetails = () => {
                     </div>}
                 </div>
                 </div>
+                {showReviewEditModal && (<ReviewEditModal setShowReviewEditModal={setShowReviewEditModal} reviewId={`${currentReviewId}`}/>
+        )}
             </div>
             
         {showListingEditModal && (<ListingEditModal setShowListingEditModal={setShowListingEditModal} listingId={`${currentListingId}`}/>

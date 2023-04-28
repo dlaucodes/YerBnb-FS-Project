@@ -26,7 +26,7 @@ export const removeReview = (reviewId)=>{
     }
 }
 
-export const editReview = (formData, reviewId) => async (dispatch)=>{
+export const updateReview = (formData, reviewId) => async (dispatch)=>{
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "PATCH",
         body: formData
