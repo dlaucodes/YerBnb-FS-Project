@@ -309,7 +309,6 @@ const ProfileDetails = () => {
                 </div>
                 </div>
             </div>
-                {/* {<ListingShow profilePictureUrl={profilePictureUrl}/>} */}
             
         {showListingEditModal && (<ListingEditModal setShowListingEditModal={setShowListingEditModal} listingId={`${currentListingId}`}/>
         )}

@@ -172,8 +172,8 @@ label {
     font-size: 23px;
     height: 30px;
     align-items: center;
-    border: 1px solid green;
     margin-top: 10px;
+    /* border: 1px solid green; */
 }
 
 .lives-in{
@@ -274,8 +274,8 @@ label {
 .profile-review{
     display: flex;
     width: 100%;
-    border: 1px solid blue;
     height: 100%;
+    /* border: 1px solid blue; */
 }
 
 /* .delete-review-container{

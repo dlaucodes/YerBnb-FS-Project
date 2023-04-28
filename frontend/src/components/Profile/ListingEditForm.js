@@ -27,8 +27,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [lng, setLng] = useState("");
     const owner = useSelector(({session}) => session.user); 
     
-    
-    // console.log(listingId, "yo")
+  
 
     const handleSubmit = async (e) => {
         e.preventDefault();

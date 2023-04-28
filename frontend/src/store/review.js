@@ -26,6 +26,15 @@ export const removeReview = (reviewId)=>{
     }
 }
 
+export const editReview = (formData, reviewId) => async (dispatch)=>{
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: "PATCH",
+        body: formData
+    });
+    const data = await res.json();
+    dispatch(fetchReview(data));
+    return res
+}
 
 export const createReview = (formData) => async (dispatch)=>{
     const res = await csrfFetch(`/api/reviews`, {
@@ -40,7 +49,7 @@ export const createReview = (formData) => async (dispatch)=>{
 export const fetchReview = (reviewId)=> async (dispatch)=>{
     const res = await csrfFetch(`/api/reviews/${reviewId}`);
     const data = await res.json();
-    dispatch(receiveReview(data));
+    dispatch(receiveReview(data.review));
     return res;
 }
 

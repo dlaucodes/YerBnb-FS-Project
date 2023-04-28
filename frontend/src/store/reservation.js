@@ -50,6 +50,7 @@ export const deleteReservation= (reservationId) => async (dispatch)=>{
 }
 
 
+
 const reservationReducer = (state = [], action) =>{
     switch(action.type){
         case REMOVE_RESERVATION:
