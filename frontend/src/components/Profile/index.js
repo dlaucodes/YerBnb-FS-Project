@@ -8,6 +8,7 @@ import { fetchListings, getListings, fetchListing, deleteListing } from '../../s
 import ListingEditModal from './indexListEdit';
 import { fetchReviews, getReviews, deleteReview } from '../../store/review';
 import { fetchReservations } from '../../store/reservation';
+import {formatDistanceStrict} from 'date-fns'
 
 
 const ProfileDetails = () => {
@@ -37,10 +38,7 @@ const ProfileDetails = () => {
             reviewsArray.push(reviewObject)
         }
     }
-    
-    // console.log(id)
-    // console.log(reviewsArray)
-    // console.log(filteredReviews)
+
     
 
     const refresh = () => {
@@ -206,6 +204,17 @@ const ProfileDetails = () => {
                     {reservations && <div className="trips-info">
                         {Object.keys(reservations).map((key, i)=>{
                             const reservation = reservations[key];
+                            const startDate = reservation.startDate
+                            const endDate = reservation.endDate
+
+                            function daysRange(){
+                            return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
+                            }
+
+                            function totalDays(){
+                            return daysRange().split(' ')[0]
+                            }
+
                             if(reservation.guestId === currentUser.id){
                                 return(
 
@@ -215,17 +224,22 @@ const ProfileDetails = () => {
                                     <div className="trips-listing-pic">
                                         <NavLink to={{pathname: `/listings/${reservation.listingId}`}}>
                                         <img src={`${reservation.listingPic}`} alt=""/>
-                                        
-                                        </NavLink>
-                                        
+                                        </NavLink>    
                                     </div>
                                 </div>
                                 <div className="trips-card-right">
-                                    <div>
-                                        hello
+                                    <div className="trip-title">
+                                        {reservation.listingTitle}
                                     </div>
-                                    <div>
-                                        hello
+                                    <div className="trip-dates">
+                                       {reservation.startDate} - {reservation.endDate}
+                                    </div>
+                                    <div className="trip-guest-count">
+                                        {reservation.guests} guest(s)
+                                    </div>
+                                    <div className="trip-total">
+                                        ${Math.floor(
+                            ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? reservation.listingPrice : 0)) + ((startDate && endDate ? reservation.listingPrice : 0) * 0.2))}
                                     </div>
                                 </div>
 

@@ -31,6 +31,8 @@ const Reservation = ({listing})=>{
     const reviews = useSelector(state=>getReviews(state))
     const reviewsArray = []
 
+    console.log(today)
+    
     for(const key in reviews){
         const review = reviews[key]
         for(const object in review){
