@@ -27,6 +27,8 @@ const ProfileDetails = () => {
     const [showReviewEditModal, setShowReviewEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
     const [currentReviewId, setCurrentReviewId] = useState(null)
+    const [currentReviewPic, setCurrentReviewPic] = useState(null)
+    const [currentReviewListingId, setCurrentReviewListingId] = useState(null)
     const reviewsArray = []
     // const filteredReviews = reviews.filter(review=> review.userId === id)
     const reservations = useSelector(state=>state.reservation.reservations)
@@ -190,7 +192,9 @@ const ProfileDetails = () => {
                                                     <div className="profile-listing-options">
                                                     <div className="button-left">
                                                         <button onClick={()=>{setCurrentReviewId(review.id);
-                                                        setShowReviewEditModal(review.id)
+                                                        setShowReviewEditModal(review.id);
+                                                        setCurrentReviewListingId(review.listingId);
+                                                        setCurrentReviewPic(review.listingPic);
                                                         }}>edit</button>
                                                     </div>
                                                     <div className="button-right">
@@ -311,7 +315,7 @@ const ProfileDetails = () => {
                     </div>}
                 </div>
                 </div>
-                {showReviewEditModal && (<ReviewEditModal setShowReviewEditModal={setShowReviewEditModal} reviewId={`${currentReviewId}`}/>
+                {showReviewEditModal && (<ReviewEditModal setShowReviewEditModal={setShowReviewEditModal} reviewId={`${currentReviewId}`} reviewPic={currentReviewPic} reviewListingId={currentReviewListingId}/>
         )}
             </div>
             

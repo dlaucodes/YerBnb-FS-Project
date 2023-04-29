@@ -3,12 +3,12 @@ import {useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Modal } from '../../context/modal';
-import {createReview} from "../../store/review";
+import {createReview, updateReview} from "../../store/review";
 import { useParams } from 'react-router-dom';
 import { getListings } from '../../store/listing';
 
 
-const ReviewEditForm = ({reviewId, setShowReviewEditModal})=>{
+const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEditModal})=>{
     const dispatch = useDispatch()
     const users = useSelector(state=>state.user.users)
     const currentUser = useSelector(state=>state.session.user)
@@ -19,10 +19,12 @@ const ReviewEditForm = ({reviewId, setShowReviewEditModal})=>{
     const [ownerName, setOwnerName] = useState(owner.firstName)
     const [ownerPic, setOwnerPic] = useState(owner.photoUrl)
     const [hover, setHover] = useState(0)
-    const {listingId} = useParams()
     const listings = useSelector(state=> getListings(state))
-    const listing = listings[0][listingId]
+    // const listing = listings[0][listingId]
 
+    console.log(reviewListingId)
+    console.log(reviewPic)
+    console.log(reviewId)
    
 
     const handleSubmit = async e =>{
@@ -32,11 +34,11 @@ const ReviewEditForm = ({reviewId, setShowReviewEditModal})=>{
         formData.append('review[body]', body);
         formData.append('review[user_id]', ownerId);
         formData.append('review[reviewer_pic]', ownerPic);
-        formData.append('review[listing_id]', listingId);
-        formData.append('review[listing_pic]', listing.photoUrls[0]);
+        // formData.append('review[listing_id]', listingId);
+        // formData.append('review[listing_pic]', listing.photoUrls[0]);
         formData.append('review[reviewer_name]', ownerName);
         
-        dispatch(createReview(formData));
+        dispatch(updateReview(formData, reviewId));
         setShowReviewEditModal(false);
     }
 
