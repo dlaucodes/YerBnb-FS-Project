@@ -492,14 +492,15 @@ label {
 .profile-listing-option button{
     text-decoration: none;
     border: none;
-    color: black;
-    background-color: #fefefe;
+    background-color: #e0024c;
+    color: white;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     width: 100%;
     cursor: pointer;
     height: 25px;
     letter-spacing: 1px;
+
 }
 
 .profile-listing-option button:hover{
@@ -522,14 +523,13 @@ label {
 .button-left button{
     text-decoration: none;
     border: none;
-    color: black;
-    background-color: #fefefe;
+    background-color: #e0024c;
+    color: white;
     border-bottom-left-radius: 8px;
     width: 100%;
     cursor: pointer;
     height: 25px;
-    letter-spacing: 1px;
-    
+    letter-spacing: 1px;  
 }
 
 .button-right button{
