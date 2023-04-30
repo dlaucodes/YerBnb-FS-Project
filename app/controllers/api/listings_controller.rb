@@ -46,7 +46,6 @@ class Api::ListingsController < ActionController::API
         end
         if @listing.errors.none?
             @listing.save
-            render :show
         else
             render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
         end

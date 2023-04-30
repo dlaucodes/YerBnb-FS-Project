@@ -56,7 +56,7 @@ const ProfileDetails = () => {
         dispatch(deleteListing())
         dispatch(deleteReview())
         dispatch(deleteReservation())
-    },[listings.listing], setChangeListing, setChangeReview);
+    },[listings.listing]);
 
     const handleReservationDelete = (id)=>{
         dispatch(deleteReservation(id))
@@ -223,8 +223,23 @@ const ProfileDetails = () => {
                     {reservations && <div className="trips-info">
                         {Object.keys(reservations).map((key, i)=>{
                             const reservation = reservations[key];
-                            const startDate = reservation.startDate
-                            const endDate = reservation.endDate
+                            const startDate = new Date(reservation.startDate)
+                            const endDate = new Date(reservation.endDate)
+
+                            const startMonth = startDate.getMonth() + 1;
+                            const startDay = startDate.getDate();
+                            const startYear = startDate.getFullYear().toString().slice(-2);
+                            const formattedStart = `${startMonth}/${startDay}/${startYear}`
+                            const endMonth = endDate.getUTCMonth() +1;
+                            const endDay = endDate.getUTCDate();
+                            const endYear = endDate.getUTCFullYear().toString().slice(-2)
+                            const formattedEnd = `${endMonth}/${endDay}/${endYear}`
+
+                            console.log(formattedStart)
+
+                            startDate.setUTCHours(0,0,0,0);
+                           
+
 
                             function daysRange(){
                             return formatDistanceStrict(new Date(startDate), new Date(endDate), {unit: 'day'})
@@ -251,7 +266,7 @@ const ProfileDetails = () => {
                                         {reservation.listingTitle}
                                     </div>
                                     <div className="trip-dates">
-                                       {reservation.startDate} - {reservation.endDate}
+                                       {formattedStart} - {formattedEnd}
                                     </div>
                                     <div className="trip-guest-count">
                                         {reservation.guests} guest(s)
@@ -259,7 +274,7 @@ const ProfileDetails = () => {
                                     <div className="trip-total">
                                         trip total: 
                                         ${Math.floor(
-                            ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? reservation.listingPrice : 0)) + ((startDate && endDate ? reservation.listingPrice : 0) * 0.2))}
+                                            ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? reservation.listingPrice : 0)) + ((startDate && endDate ? reservation.listingPrice : 0) * 0.2))}
                                     </div>
                                 </div>
                             </div>

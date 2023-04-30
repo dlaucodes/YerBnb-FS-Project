@@ -34,8 +34,8 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
         formData.append('review[body]', body);
         formData.append('review[user_id]', ownerId);
         formData.append('review[reviewer_pic]', ownerPic);
-        // formData.append('review[listing_id]', listingId);
-        // formData.append('review[listing_pic]', listing.photoUrls[0]);
+        formData.append('review[listing_id]', reviewListingId);
+        formData.append('review[listing_pic]', reviewPic);
         formData.append('review[reviewer_name]', ownerName);
         
         dispatch(updateReview(formData, reviewId));
