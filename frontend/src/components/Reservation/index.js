@@ -32,7 +32,7 @@ const Reservation = ({listing})=>{
     const reviewsArray = []
     const startObj = new Date(startDate);
 
-    startObj.setUTCHours(0,0,0,0)
+    // startDate.setUTCHours(0,0,0,0)
 
     console.log(today)
 

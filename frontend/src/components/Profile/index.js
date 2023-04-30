@@ -22,7 +22,7 @@ const ProfileDetails = () => {
     const [filteredListings, setFilteredListings] = useState([])
     const [changeListing, setChangeListing] = useState(0);
     const [changeReview, setChangeReview] = useState(0);
-    const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
+    const [profilePic, setProfilePic] = useState("")
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [showReviewEditModal, setShowReviewEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
@@ -95,7 +95,7 @@ const ProfileDetails = () => {
                     {currentUser.photoUrl ? (
                         <>
                     <div className='profile-picture-container' viewBox="0 0 125 125">
-                    {<img src={profilePic} alt=""></img>}
+                    {<img src={currentUser.photoUrl} alt=""></img>}
                     </div>
                     </>
                 ) : (
@@ -271,8 +271,11 @@ const ProfileDetails = () => {
                                     <div className="trip-guest-count">
                                         {reservation.guests} guest(s)
                                     </div>
-                                    <div className="trip-total">
+                                    <div className="profile-trip-total">
+                                        <div className="trip-total-left">
                                         trip total: 
+
+                                        </div>
                                         ${Math.floor(
                                             ((startDate && endDate ? totalDays() : 0) * (startDate && endDate ? reservation.listingPrice : 0)) + ((startDate && endDate ? reservation.listingPrice : 0) * 0.2))}
                                     </div>
