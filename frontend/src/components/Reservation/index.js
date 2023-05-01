@@ -34,7 +34,7 @@ const Reservation = ({listing})=>{
 
     // startDate.setUTCHours(0,0,0,0)
 
-    console.log(today)
+    
 
     for(const key in reviews){
         const review = reviews[key]
