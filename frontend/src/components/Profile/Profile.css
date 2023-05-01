@@ -495,8 +495,8 @@ label {
 .profile-listing-option button{
     text-decoration: none;
     border: none;
-    background-color: #e0024c;
-    color: white;
+    background-color: #fefefe;
+    color: black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     width: 100%;
@@ -507,7 +507,7 @@ label {
 }
 
 .profile-listing-option button:hover{
-    background-color: #e0024c;
+    background-color: #c8c8c8;
     color: white;
     height: 25px;   
 }
@@ -526,8 +526,8 @@ label {
 .button-left button{
     text-decoration: none;
     border: none;
-    background-color: #e0024c;
-    color: white;
+    background-color: #fefefe;
+    color: black;
     border-bottom-left-radius: 8px;
     width: 100%;
     cursor: pointer;
@@ -548,13 +548,13 @@ label {
 }
 
 .button-left button:hover{
-    background-color: #e0024c;
+    background-color: #c8c8c8;
     color: white;
     height: 25px;
 }
 
 .button-right button:hover {
-    background-color: #e0024c;
+    background-color: #c8c8c8;
     color: white;
     height: 25px;
 }
