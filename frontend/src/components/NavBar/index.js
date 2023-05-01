@@ -6,6 +6,7 @@ import LoginForm from '../LoginFormModal';
 import ProfileButton from './ProfileButton';
 import './NavBar.css';
 import logo from '../../assets/yerbnblogo1.png'
+import Search from '../Search';
 
 function NavBar() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -32,7 +33,7 @@ function NavBar() {
         </NavLink>
       </div>
       <div className="search-bar">
-        Search Bar
+        <Search />
       </div>
       <div className="profile-button-container">
         

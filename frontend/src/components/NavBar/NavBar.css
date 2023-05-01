@@ -22,17 +22,6 @@
     position: relative;
 }
 
-.search-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #a2a2a2;
-    width: 200px;
-    height: 40px;
-    border-radius: 20px;
-    position: static;
-}
-
 .profile-button-container{
     display: flex;
     justify-content: center;
