@@ -7,7 +7,7 @@ const Search = ()=>{
         <>
         <div className="search-bar">
             <div className="search-input">
-                search bar
+                Start your search
 
             </div>
             <div className='search-icon'>

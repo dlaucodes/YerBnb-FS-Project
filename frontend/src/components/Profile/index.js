@@ -299,7 +299,7 @@ const ProfileDetails = () => {
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
-                    <div className="listing-section-text">Listings</div>
+                    <div className="listing-section-text">My Listings</div>
                     {listings.listings && <div className="listing-info">
                     
                         {Object.keys(listings.listings).map((key, i) => {
