@@ -50,6 +50,10 @@
     object-fit: cover;    
 }
 
+.listing-img img:hover{
+    filter: brightness(75%)
+}
+
 .listing-information{
     margin-top: 2px;
     display: flex;
