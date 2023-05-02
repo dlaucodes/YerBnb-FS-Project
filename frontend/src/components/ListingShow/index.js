@@ -1,17 +1,11 @@
-import { Redirect, useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
-import ListingIndex from "../Listings";
-import Listing from "../Listings/Listing";
 import { getListings } from "../../store/listing";
 import { useEffect, useState } from "react";
 import "./ListingShow.css";
-import csrfFetch from "../../store/csrf";
 import { fetchListings, getListing, fetchListing } from "../../store/listing";
 import Reservation from "../Reservation"
-import ProfileDetails from "../Profile"
-import { fetchUsers, getUser } from "../../store/user";
-import { fetchUser } from "../../store/profile";
-import MapContainer from "../Map";
+import { fetchUsers} from "../../store/user";
 import { getReviews, fetchReviews } from "../../store/review";
 import ReviewFormModal from '../ReviewModal';
 import LoginFormModal from '../LoginFormModal';
@@ -22,7 +16,6 @@ import { fetchReservations } from "../../store/reservation";
 const ListingShow = (props) => {
     const currentUser = useSelector(state=>state.session.user)
     const {id} = useParams()
-    const [items, setItems] = useState()
     const {listingId} = useParams()
     const listings = useSelector(state=>getListings(state))
     const dispatch = useDispatch()
@@ -141,8 +134,8 @@ const ListingShow = (props) => {
             {listing.photoUrls.map((photo, i) => {
                 if ( i === 1 || i === 3){      
                 return (
-                            
-                <img src={`${photo}`} className="photo-small" key={i} />
+                          
+                <img src={`${photo}`} className="photo-small" alt="" key={i} />
                 
                 )
                 }     
@@ -158,7 +151,7 @@ const ListingShow = (props) => {
                 if ( i === 2 || i === 4){      
                 return (
                             
-                <img src={`${photo}`} className="photo-small" key={i}/>
+                <img src={`${photo}`} className="photo-small" alt="" key={i}/>
                
                 )
                 }     
@@ -181,7 +174,7 @@ const ListingShow = (props) => {
                     Hosted by {`${hostName}`}
                 </div>
                 <div className="host-picture">
-                   {owner && <img src={`${photoUrl}`}/>}
+                   {owner && <img src={`${photoUrl}`} alt="" />}
                 </div>
             </div>
 
@@ -246,7 +239,7 @@ const ListingShow = (props) => {
                     <div className="listing-reviews-card">
                         <div className="listing-reviewer-container">
                             <div className="listing-reviewer-picture">
-                                <img src={`${review.reviewer}`}/>
+                                <img src={`${review.reviewer}`} alt=""/>
                             </div>
                                 <div className="listing-reviewer-info">
                                     <div className="listing-reviewer-name">

@@ -41,16 +41,24 @@ const ListingIndex = () => {
     return (
         <>
         <div className="listing-page">
-            <div className="listing-container">
-                {showArray.map((item, i) => (
-                <div key={i}>
-                <Listing listingItem={item} />
+            <div className="listing-filter">
+                {/* <div className="filter">
+                    filter
+                </div> */}
+            </div>
+            <div className="listing-bottom">
+                <div className="listing-container">
+                    {showArray.map((item, i) => (
+                    <div key={i}>
+                    <Listing listingItem={item} />
+                    </div>
+                    ))}
                 </div>
-                ))}
+                <div className="map">
+                    <MapContainer listingArray={showArray} />    
+                </div>
             </div>
-            <div className="map">
-                 <MapContainer listingArray={showArray} />    
-            </div>
+
         </div>
         </>
     );

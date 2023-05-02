@@ -30,11 +30,9 @@ const Reservation = ({listing})=>{
     const maxGuests = listing.guests;
     const reviews = useSelector(state=>getReviews(state))
     const reviewsArray = []
-    const startObj = new Date(startDate);
+    // const startObj = new Date(startDate);
 
-    // startDate.setUTCHours(0,0,0,0)
-
-    
+     
 
     for(const key in reviews){
         const review = reviews[key]
@@ -46,7 +44,7 @@ const Reservation = ({listing})=>{
 
     useEffect(()=>{
         dispatch(fetchReviews())
-    }, [])
+    })
 
 
     function daysRange() {
