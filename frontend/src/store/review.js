@@ -65,6 +65,7 @@ export const deleteReview = (reviewId)=>async (dispatch)=>{
         method: "DELETE"
     })
     dispatch(removeReview(reviewId))
+    dispatch(fetchReviews())
 }
 
 export const getReviews = (state)=>{
