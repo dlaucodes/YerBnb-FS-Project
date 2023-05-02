@@ -14,8 +14,6 @@ const MapContainer = ({listingArray, reviewsArray}) => {
     const reviews = reviewsArray
     const [selected, setSelected] = useState({})
   
-
-    
     const onSelect = item =>{
         setSelected(item)
     }

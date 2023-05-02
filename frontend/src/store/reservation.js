@@ -47,14 +47,19 @@ export const deleteReservation= (reservationId) => async (dispatch)=>{
         method: "DELETE"
     })
     dispatch(removeReservation(reservationId));
+    dispatch(fetchReservations())
 }
 
 
 
-const reservationReducer = (state = [], action) =>{
+const reservationReducer = (state = {}, action) =>{
     switch(action.type){
         case REMOVE_RESERVATION:
-            return {...state, reservation: null}
+            let nextState = {...state}
+            // return {...state, reservation: null}
+            delete nextState[action.payload]
+            // debugger
+            return {...nextState}
         case RECEIVE_RESERVATION:
             return {...state, reservation: action.payload}
         case RECEIVE_RESERVATIONS:

@@ -76,7 +76,7 @@ const Reservation = ({listing})=>{
         formData.append('reservation[listing_title]', listing.title)
        
         //set logic for when dates are not entered.
-        
+
         if(currentUser){
             let timeout;
             setShowConfirmationModal(true);
@@ -84,7 +84,7 @@ const Reservation = ({listing})=>{
                 clearTimeout(timeout);
                 dispatch(createReservation(formData)).then(
                 history.push(`/profiles/${currentUser.id}`))
-            },1100)
+            },1350)
         }else{
             setShowLoginModal(true);
         }
