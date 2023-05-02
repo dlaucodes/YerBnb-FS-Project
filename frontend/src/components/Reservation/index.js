@@ -75,7 +75,8 @@ const Reservation = ({listing})=>{
         formData.append('reservation[listing_price', listing.price)
         formData.append('reservation[listing_title]', listing.title)
        
-
+        //set logic for when dates are not entered.
+        
         if(currentUser){
             let timeout;
             setShowConfirmationModal(true);
