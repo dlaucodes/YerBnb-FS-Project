@@ -43,6 +43,7 @@ export const createReview = (formData) => async (dispatch)=>{
     });
     const data = await res.json();
     dispatch(receiveReview(data));
+    dispatch(fetchReviews());
     return res;
 }
 

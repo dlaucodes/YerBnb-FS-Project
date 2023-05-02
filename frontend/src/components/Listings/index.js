@@ -13,8 +13,7 @@ import { fetchReviews } from "../../store/review"
 const ListingIndex = () => {
     const [list, setList] = useState(null);
     const dispatch = useDispatch();
- 
-    
+   
     
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
