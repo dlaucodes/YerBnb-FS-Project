@@ -143,9 +143,9 @@ const ProfileDetails = () => {
                 <div className="joined">
                     Joined in {`${currentUser.createdAt.substring(4,-1)}`}
                 </div>
-                <div className="edit">
+                {/* <div className="edit">
                     Edit Profile
-                </div>
+                </div> */}
                 <div className="about">
                     About
                 </div>
@@ -227,7 +227,7 @@ const ProfileDetails = () => {
                             const endDate = new Date(reservation.endDate)
 
                             const startMonth = startDate.getMonth() + 1;
-                            const startDay = startDate.getDate();
+                            const startDay = startDate.getDate() + 1;
                             const startYear = startDate.getFullYear().toString().slice(-2);
                             const formattedStart = `${startMonth}/${startDay}/${startYear}`
                             const endMonth = endDate.getUTCMonth() +1;
@@ -235,7 +235,6 @@ const ProfileDetails = () => {
                             const endYear = endDate.getUTCFullYear().toString().slice(-2)
                             const formattedEnd = `${endMonth}/${endDay}/${endYear}`
 
-                            console.log(formattedStart)
 
                             startDate.setUTCHours(0,0,0,0);
                            

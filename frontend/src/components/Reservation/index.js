@@ -10,7 +10,8 @@ import { fetchReservations, createReservation } from '../../store/reservation';
 import { fetchReviews, getReviews} from "../../store/review";
 import { Dispatch } from 'react';
 import LoginFormModal from '../LoginFormModal';
-import { formatDistanceStrict, formatDistance } from 'date-fns'
+import ConfirmationModal from './ConfirmationModal';
+import { formatDistanceStrict, formatDistance } from 'date-fns';
 
 
 const Reservation = ({listing})=>{
@@ -18,6 +19,7 @@ const Reservation = ({listing})=>{
     const history = useHistory();
     const dispatch = useDispatch();
     const guest = useSelector(({session})=> session.user);
+    const [showConfirmationModal, setShowConfirmationModal] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [total, setTotal] = useState(0);
     const [guests, setGuests] = useState(1);
@@ -44,7 +46,7 @@ const Reservation = ({listing})=>{
 
     useEffect(()=>{
         dispatch(fetchReviews())
-    })
+    }, [])
 
 
     function daysRange() {
@@ -75,9 +77,13 @@ const Reservation = ({listing})=>{
        
 
         if(currentUser){
-            dispatch(createReservation(formData)).
-            then(history.push(`/profiles/${currentUser.id}`))
-           
+            let timeout;
+            setShowConfirmationModal(true);
+            timeout = setTimeout(()=>{
+                clearTimeout(timeout);
+                dispatch(createReservation(formData)).then(
+                history.push(`/profiles/${currentUser.id}`))
+            },1200)
         }else{
             setShowLoginModal(true);
         }
@@ -259,6 +265,9 @@ const Reservation = ({listing})=>{
             </div>
         <div>
             {showLoginModal && <LoginFormModal setShowLoginModal={setShowLoginModal}/>}
+        </div>
+        <div>
+            {showConfirmationModal && <ConfirmationModal setShowConfirmationModal={setShowConfirmationModal}/>}
         </div>
     </div>
         </> 

@@ -69,7 +69,9 @@ const ListingShow = (props) => {
          dispatch(fetchUsers())
          dispatch(fetchReviews())
          dispatch(fetchReservations())
-    },[dispatch, id])
+    }, [])
+
+    // dispatch, id
 
     
 

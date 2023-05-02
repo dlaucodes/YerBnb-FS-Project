@@ -31,12 +31,9 @@ const ListingIndex = () => {
 
     if (list){
         let array = Object.values(list)
-        // let showArray = array.reverse()
         let listings = Object.values(array.reverse())
         let listingsArray = Object.values(listings[0])
         const showArray = listingsArray.reverse()
-    
-        
        
     return (
         <>

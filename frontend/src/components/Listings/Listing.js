@@ -30,7 +30,6 @@ const Listing = ({listingItem}) => {
 
 
     return ( 
-        
        <>
         <div className="listing">
            <div className="listing-img">

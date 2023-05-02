@@ -39,10 +39,9 @@ function ProfileButton(props) {
 
 
   const logout = () => {
-   
     dispatch(sessionActions.logoutUser());
   };
-  console.log()
+ 
 
   const profileButton = ()=>{
     if(showMenu){return closeMenu}
