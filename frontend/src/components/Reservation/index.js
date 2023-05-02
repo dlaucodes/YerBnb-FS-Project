@@ -83,7 +83,7 @@ const Reservation = ({listing})=>{
                 clearTimeout(timeout);
                 dispatch(createReservation(formData)).then(
                 history.push(`/profiles/${currentUser.id}`))
-            },1200)
+            },1100)
         }else{
             setShowLoginModal(true);
         }
