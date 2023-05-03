@@ -30,7 +30,6 @@ const ProfileDetails = () => {
     const [currentReviewPic, setCurrentReviewPic] = useState(null)
     const [currentReviewListingId, setCurrentReviewListingId] = useState(null)
     const reviewsArray = []
-    // const filteredReviews = reviews.filter(review=> review.userId === id)
     const reservations = useSelector(state=>state.reservation.reservations)
     // const filteredReservations = reservations.filter(reservation=> reservation.guestId === id)
    
@@ -55,6 +54,7 @@ const ProfileDetails = () => {
         dispatch(fetchReservations())
         
     },[listings.listing]);
+    
     // dispatch(deleteListing())
     // dispatch(deleteReview())
     // dispatch(deleteReservation())

@@ -130,6 +130,12 @@ return (
                     Help
                 </button>
               </div>
+              <div className="drop-dev-links">
+                <button id="drop-dev" onClick={()=>{
+                  // setShowDevModal(true)
+                  closeMenu()
+                }}>Developer</button>
+              </div>
         </div>
       )}
       {showSignUpModal && (<SignUpFormModal setShowSignUpModal={setShowSignUpModal}/>)}

@@ -200,8 +200,7 @@
     display: flex;
     height: 25px;
     width: 150px;
-    margin-bottom: 17px;
-    margin-top: 4px;
+    
 }
 
 #drop-help{
@@ -236,6 +235,25 @@
 }
 
 #drop-host:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+#drop-dev{
+    background-color: transparent;
+    border: 0px;
+    height: 25px;
+    width: 150px;
+    cursor: pointer;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans','Helvetica Neue', sans-serif;
+    font-size: 14px;
+    margin-bottom: 17px;
+    margin-top: 2px;
+}
+
+#drop-dev:hover{
     background-color: rgb(236, 236, 236);
 }
 
