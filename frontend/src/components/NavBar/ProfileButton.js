@@ -5,6 +5,7 @@ import SignUpFormModal from '../SignUpFormModal';
 import LoginForm from '../LoginFormModal';
 import ListFormModal from "../Listings/indexListFormModal";
 import { Redirect, Link } from 'react-router-dom'
+import DevModal from "../DevModal";
 
 
 function ProfileButton(props) {
@@ -13,6 +14,7 @@ function ProfileButton(props) {
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showListFormModal, setShowListFormModal] = useState(false);
+  const [showDevModal, setShowDevModal] = useState(false);
 
   const currentUser = useSelector((state) => {
     return state.session.user;
@@ -132,7 +134,7 @@ return (
               </div>
               <div className="drop-dev-links">
                 <button id="drop-dev" onClick={()=>{
-                  // setShowDevModal(true)
+                  setShowDevModal(true)
                   closeMenu()
                 }}>Developer</button>
               </div>
@@ -145,6 +147,8 @@ return (
       {showListFormModal && (<ListFormModal
       setShowListFormModal = {setShowListFormModal}/>
       )}
+
+      {showDevModal && (<DevModal setShowDevModal = {setShowDevModal}/>)}
     </div>
   );
 }
