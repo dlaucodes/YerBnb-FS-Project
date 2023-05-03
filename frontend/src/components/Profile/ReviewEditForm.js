@@ -20,12 +20,7 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
     const [ownerPic, setOwnerPic] = useState(owner.photoUrl)
     const [hover, setHover] = useState(0)
     const listings = useSelector(state=> getListings(state))
-    // const listing = listings[0][listingId]
 
-    console.log(reviewListingId)
-    console.log(reviewPic)
-    console.log(reviewId)
-   
 
     const handleSubmit = async e =>{
         e.preventDefault();

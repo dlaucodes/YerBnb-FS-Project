@@ -29,7 +29,6 @@ const ReviewIndex = ()=>{
         let array = Object.values(list)
         let reviews = Object.values(array)
         const reviewsArray = Object.values(reviews[0])
-        console.log(reviewsArray, "hello")
     
         return (
             <>

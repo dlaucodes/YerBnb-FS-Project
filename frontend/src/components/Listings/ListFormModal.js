@@ -24,7 +24,30 @@ const ListForm = ({setShowListFormModal}) =>{
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
+    const [city, setCity] = useState("");
     const owner = useSelector(({session}) => session.user);
+
+
+    console.log(lat)
+    console.log(lng)
+    console.log(city)
+
+    const handleCity = (e)=>{
+      const selectedCity = e.target.value;
+      if (selectedCity === "Queens"){
+        setLat("44.05")
+        setLng("55.00")
+        setCity("Queens")
+
+      }
+    }
+
+    const handleManttan = (e)=>{
+      setLat("44.05")
+        setLng("55.00")
+        setCity("Queens")
+    }
+     
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -156,6 +179,34 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
+
+                  <select onChange={handleCity}>
+                    <option value="Queens">
+                        Queens
+                    </option>
+                    <option value="Manhattan">
+                        Manhattan
+                    </option>
+                    <option value="Flushing">
+                        Flushing
+                    </option>
+                    <option value="Bronx">
+                        Bronx
+                    </option>
+                    <option value="Staten Island">
+                        Staten Island
+                    </option>
+                     <option value="New York">
+                        New York
+                    </option>
+                     <option value="Brooklyn">
+                        Brooklyn
+                    </option>
+
+                    
+                    </select>
+
+
                 <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
                 <div className="create-div"></div>
                 <button className="listing-button" type="submit">Create New Listing</button>

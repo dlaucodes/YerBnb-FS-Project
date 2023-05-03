@@ -32,9 +32,7 @@ const Reservation = ({listing})=>{
     const maxGuests = listing.guests;
     const reviews = useSelector(state=>getReviews(state))
     const reviewsArray = []
-    // const startObj = new Date(startDate);
-
-     
+    
 
     for(const key in reviews){
         const review = reviews[key]

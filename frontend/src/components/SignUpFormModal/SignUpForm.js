@@ -76,11 +76,7 @@ function SignUpForm({setShowSignUpModal, setShowLoginModal}) {
        
     </div>
 
-       <div className="errors">
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </div>
+       
 
       <div className="welcome-div">
         <h2 id="welcome-text">Welcome to Yerbnb</h2>
@@ -136,6 +132,11 @@ function SignUpForm({setShowSignUpModal, setShowLoginModal}) {
               onChange={(e) => setLastName(e.target.value)}
               required
             />
+        </div>
+        <div className="errors">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
         </div>
       <div className="signup-div">
       <button id="signup-button" type="submit">Sign Up</button>

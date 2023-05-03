@@ -36,15 +36,6 @@ function App() {
     dispatch(fetchReservations())
   },[])
 
-  // if(!users || !listings || !currentUser){
-  //   return (null)
-  // }
-
-  // if (listings) {
-  //   console.log(Object.values(listings))
-  // }
-
-
   return (
     <>
       <NavBar />

@@ -115,9 +115,7 @@ const LoginForm = ({setShowLoginModal}) => {
       </div>
      
 
-      <div className="errors">
-        {errors.map((error, i) => error)}
-      </div>
+      
 
     <div className="welcome-text">
         Welcome to Yerbnb
@@ -142,6 +140,11 @@ const LoginForm = ({setShowLoginModal}) => {
               onChange={handlePasswordError}
               required
             />
+        </div>
+        <div className="errors">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
         </div>
         <div className="password-error">{passwordError ? "password too short" : ""}</div>
 
