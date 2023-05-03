@@ -10,6 +10,8 @@ import { fetchReviews, getReviews, deleteReview } from '../../store/review';
 import { fetchReservations, deleteReservation } from '../../store/reservation';
 import {formatDistanceStrict} from 'date-fns';
 import ReviewEditModal from './indexReviewEdit';
+import homeicon from '../../assets/homeicon.jpeg';
+import tripicon from '../../assets/trips.jpeg';
 
 
 const ProfileDetails = () => {
@@ -227,7 +229,12 @@ const ProfileDetails = () => {
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-trips">
-                    <div className="trips-section-text">Trips</div>
+                    <div className="trips-section-text">
+                    <div className="home-icon">
+                        <img src={tripicon}></img>
+                    </div>
+                        Trips
+                    </div>
                     
                     {reservations && <div className="trips-info">
                         {Object.keys(reservations).map((key, i)=>{
@@ -307,7 +314,12 @@ const ProfileDetails = () => {
                 </div>
                 <div className="right-divider"></div>
                 <div className="user-listings">
-                    <div className="listing-section-text">My Listings</div>
+                    <div className="listing-section-text">
+                    <div className="home-icon">
+                        <img src={homeicon}></img>
+                    </div>
+                        My Listings
+                        </div>
                     {listings.listings && <div className="listing-info">
                     
                         {Object.keys(listings.listings).map((key, i) => {

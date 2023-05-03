@@ -175,10 +175,11 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     color: #000000;
+    margin-bottom: -4px;
 }
 
 .host-button {
-    display: inline;
+    display: flex;
     height: 25px;
     width: 150px;
 }
@@ -200,7 +201,7 @@
     display: flex;
     height: 25px;
     width: 150px;
-    
+    margin-top: 5px;
 }
 
 #drop-help{
@@ -249,7 +250,7 @@
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, 'SegoeUI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans','Helvetica Neue', sans-serif;
     font-size: 14px;
-    margin-bottom: 17px;
+    margin-bottom: 14px;
     margin-top: 2px;
 }
 
