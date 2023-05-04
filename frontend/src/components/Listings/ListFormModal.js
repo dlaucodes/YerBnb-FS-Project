@@ -185,15 +185,18 @@ const ListForm = ({setShowListFormModal}) =>{
                 <div id="create-text">Host your home</div>
             </div>
             <div className="listingform-container">
-            <div className="input-field">
+
+              <div className="list-form-top">
                 <input type="text"
-                    className="list-title"
+                    className="list-form-title"
                     value={title}
                     placeholder="Title"
                     onChange={e => setTitle(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
+
+              </div>
                 
-          <div className="bottom-row">
+          <div className="price-city-state">
                 <input type="float"
                     className="list-price"
                     value={price}
@@ -201,7 +204,10 @@ const ListForm = ({setShowListFormModal}) =>{
                     onChange={e => setPrice(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
                 <div className="city-select">
-                 <select onChange={handleCity}>
+                 <select 
+                  className="city-select"
+                  placeholder="City"
+                  onChange={handleCity}>
                     <option>
                       City
                     </option>
@@ -231,9 +237,10 @@ const ListForm = ({setShowListFormModal}) =>{
                     </option>
                 </select>
                 </div>
-                <div className='state-input'>
+                <div className='state-select'>
                 <select
                 value={state}
+                className="state-select"
                 onChange={(e) => setState(e.target.value)}
                 required>
                   <option disabled value="">State</option>
@@ -242,30 +249,33 @@ const ListForm = ({setShowListFormModal}) =>{
                   
                 </select>
               </div>
+            </div>
+
+                <div className="listing-selections">
+
                 <div className="guest-select">
-                  <select className='guests-input'
-              value={guest}
-              onChange={(e) => setGuest(e.target.value)}
-              required
-              >
-                <option value="" disabled hidden></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-              </select>
+                  <select className="guests-input"
+                    value={guest}
+                    onChange={(e) => setGuest(e.target.value)}
+                    required>
+                    <option value="" disabled hidden></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                  </select>
               </div> 
 
               <div className="bedroom-select">
@@ -287,7 +297,7 @@ const ListForm = ({setShowListFormModal}) =>{
               </div>
               
               <div className="bed-select">
-                <select className='beds-input'
+                <select className="beds-input"
                     value={bed}
                     onChange={(e) => setBed(e.target.value)}
                     required
@@ -306,11 +316,11 @@ const ListForm = ({setShowListFormModal}) =>{
                   <option value="11">11</option>
                   <option value="12">12</option>
                 </select>
-                <span className="beds-floating-label">Beds</span>
+                {/* <span className="beds-floating-label">Beds</span> */}
               </div>
 
               <div className="bath-select">
-                <select className='bathrooms-input'
+                <select className="baths-input"
                   value={bath}
                   onChange={(e) => setBath(e.target.value)}
                   required
@@ -322,34 +332,35 @@ const ListForm = ({setShowListFormModal}) =>{
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-                <span className="bathrooms-floating-label">Bathrooms</span>
+                {/* <span className="bathrooms-floating-label">Bathrooms</span> */}
               </div>
-            </div>
+                </div>
+            
+              <div className="check-box-options">
+                  <div className='wifi-checkbox'>
+                    <label htmlFor="wifi-checkbox">Wifi</label>
+                    <input 
+                      // id='wifi-checkbox'
+                      type="checkbox" 
+                      onChange={()=>setWifi(!wifi)}/>
+                  </div>
+                  <div className="pet-checkbox">
+                    <label htmlFor="pet-checkbox">Pets Allowed</label>
+                    <input 
+                      // id='pet-checkbox'
+                      type="checkbox" 
+                      onChange={()=>setPet(!pet)}/>
+                  </div>
+                  <div className='kitchen-checkbox'>
+                    <label htmlFor="kitchen-checkbox">Kitchen</label>
+                    <input 
+                      // id='kitchen-checkbox'
+                      type="checkbox" 
+                      onChange={()=>setKitchen(!kitchen)}/>
+                  </div>
 
-              <div className="check-box">
-                <div className='wifi-checkbox'>
-                  <label htmlFor="wifi-checkbox">Wifi</label>
-                  <input 
-                    id='wifi-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setWifi(!wifi)}/>
-                </div>
-                <div className='pet-checkbox'>
-                  <label htmlFor="pet-checkbox">Pets Allowed</label>
-                  <input 
-                    id='pet-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setPet(!pet)}/>
-                </div>
-                <div className='kitchen-checkbox'>
-                  <label htmlFor="kitchen-checkbox">Kitchen</label>
-                  <input 
-                    id='kitchen-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setKitchen(!kitchen)}/>
-                </div>
               </div>
-
+                <div className="form-description-container">
                  <input type="text"
                     className="list-description"
                     value={description}
@@ -357,13 +368,15 @@ const ListForm = ({setShowListFormModal}) =>{
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
 
+                </div>
+
                   
 
 
                 <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
                 <div className="create-div"></div>
                 <button className="listing-button" type="submit">Create New Listing</button>
-            </div>
+            
             </div>
         </form>
         </div>
