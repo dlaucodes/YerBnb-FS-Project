@@ -24,8 +24,8 @@ const ListForm = ({setShowListFormModal}) =>{
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
-    const [city, setCity] = useState("Astoria");
-    const [guest, setGuest] = useState(1);
+    const [city, setCity] = useState("");
+    const [guest, setGuest] = useState("");
     const [bed, setBed] = useState("")
     const [bath, setBath] = useState("")
     const [bedroom, setBedroom] = useState("")
@@ -84,7 +84,14 @@ const ListForm = ({setShowListFormModal}) =>{
       }
     }
     
-     
+    console.log(city)
+    console.log(state)
+    console.log(lat)
+    console.log(lng)
+    console.log(bath)
+    console.log(bed)
+    console.log(guest)
+    console.log(bedroom)
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -203,13 +210,13 @@ const ListForm = ({setShowListFormModal}) =>{
                     value={price}
                     placeholder="Price"
                     onChange={e => setPrice(e.target.value)}/>
-                    <label htmlFor="listing-title"></label>
                 <div className="city-select">
-                 <select 
+                 <select
+                  value={city} 
                   className="city-input"
-                  placeholder="City"
-                  onChange={handleCity}>
-                    <option>
+                  onChange={handleCity}
+                  required>
+                    <option disabled value="" selected>
                       City
                     </option>
                     <option value="Astoria">
@@ -244,7 +251,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 className="state-input"
                 onChange={(e) => setState(e.target.value)}
                 required>
-                  <option disabled value="">State</option>
+                  <option disabled value="" className="greyed">State</option>
                   <option value="New Jersey">NJ</option>
                   <option value="New York">NY</option>
                   
@@ -259,23 +266,21 @@ const ListForm = ({setShowListFormModal}) =>{
                     value={guest}
                     onChange={(e) => setGuest(e.target.value)}
                     required>
-                    <option value="" disabled hidden></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
+                    <option value="" disabled selected className="greyed">guests</option>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                    <option value="6">6 guests</option>
+                    <option value="7">7 guests</option>
+                    <option value="8">8 guests</option>
+                    <option value="9">9 guests</option>
+                    <option value="10">10 guests</option>
+                    <option value="11">11 guests</option>
+                    <option value="12">12 guests</option>
+                    <option value="13">13 guests</option>
+                    <option value="14">14 guests</option>
                   </select>
               </div> 
 
@@ -285,15 +290,15 @@ const ListForm = ({setShowListFormModal}) =>{
                   onChange={(e) => setBedroom(e.target.value)}
                   required
                 >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
+                  <option value="" disabled selected>bedrooms</option>
+                  <option value="1">1 bedroom</option>
+                  <option value="2">2 bedrooms</option>
+                  <option value="3">3 bedrooms</option>
+                  <option value="4">4 bedrooms</option>
+                  <option value="5">5 bedrooms</option>
+                  <option value="6">6 bedrooms</option>
+                  <option value="7">7 bedrooms</option>
+                  <option value="8">8 bedrooms</option>
                 </select>
               </div>
               
@@ -303,19 +308,20 @@ const ListForm = ({setShowListFormModal}) =>{
                     onChange={(e) => setBed(e.target.value)}
                     required
                 >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
+                  <option value="" disabled selected>beds</option>
+                  <option value="1">1 bed</option>
+                  <option value="2">2 beds</option>
+                  <option value="3">3 beds</option>
+                  <option value="3">4 beds</option>
+                  <option value="4">4 beds</option>
+                  <option value="5">5 beds</option>
+                  <option value="6">6 beds</option>
+                  <option value="7">7 beds</option>
+                  <option value="8">8 beds</option>
+                  <option value="9">9 beds</option>
+                  <option value="10">10 beds</option>
+                  <option value="11">11 beds</option>
+                  <option value="12">12 beds</option>
                 </select>
                 {/* <span className="beds-floating-label">Beds</span> */}
               </div>
@@ -326,12 +332,13 @@ const ListForm = ({setShowListFormModal}) =>{
                   onChange={(e) => setBath(e.target.value)}
                   required
                   >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="" disabled selected>baths</option>
+                  <option value="1">1 bath</option>
+                  <option value="2">2 baths</option>
+                  <option value="3">3 baths</option>
+                  <option value="4">4 baths</option>
+                  <option value="5">5 baths</option>
+                  <option value="5">6 baths</option>
                 </select>
                 {/* <span className="bathrooms-floating-label">Bathrooms</span> */}
               </div>

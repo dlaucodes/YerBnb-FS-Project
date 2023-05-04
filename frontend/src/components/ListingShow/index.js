@@ -78,11 +78,15 @@ const ListingShow = (props) => {
 
  
     if(listings[0]){
-        let listing = listings[0][listingId]
+        const listing = listings[0][listingId]
         const ownerId = listing.ownerId;
         const owner = Object.values(users).find(user => user.id === ownerId);
         const photoUrl = owner ? owner.photoUrl : ""; 
         const hostName = owner ? owner.firstName : "";
+        const maxGuests = listing.guests;
+        const bedroom = listing.bedrooms;
+        const beds = listing.beds;
+        const bath = listing.beds;
         const filteredReviews = (reviewItems).filter(review => review.listingId === listing.id)
         
 
@@ -171,10 +175,16 @@ const ListingShow = (props) => {
             <div className="listing-info-left">
             
             <div className="host-info">
-
+                <div className="host-info-left">
                 <div className="host-name">
                     Hosted by {`${hostName}`}
                 </div>
+                <div className="bed-bath-guests">
+                    {maxGuests} guests · {bedroom} bedroom · {beds} beds · {bath} baths 
+                </div>
+
+                </div>
+
                 <div className="host-picture">
                    {owner && <img src={`${photoUrl}`} alt="" />}
                 </div>

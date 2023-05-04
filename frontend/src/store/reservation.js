@@ -32,6 +32,7 @@ export const createReservation = (formData) => async (dispatch) =>{
     });
     const data = await res.json();
     dispatch(receiveReservation(data));
+    dispatch(fetchReservations())
     return res;
 }
 
