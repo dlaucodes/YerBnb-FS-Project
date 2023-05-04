@@ -185,6 +185,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 <div id="create-text">Host your home</div>
             </div>
             <div className="listingform-container">
+              <div className="list-specs">
 
               <div className="list-form-top">
                 <input type="text"
@@ -205,7 +206,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     <label htmlFor="listing-title"></label>
                 <div className="city-select">
                  <select 
-                  className="city-select"
+                  className="city-input"
                   placeholder="City"
                   onChange={handleCity}>
                     <option>
@@ -237,10 +238,10 @@ const ListForm = ({setShowListFormModal}) =>{
                     </option>
                 </select>
                 </div>
-                <div className='state-select'>
+                <div className="state-select">
                 <select
                 value={state}
-                className="state-select"
+                className="state-input"
                 onChange={(e) => setState(e.target.value)}
                 required>
                   <option disabled value="">State</option>
@@ -335,6 +336,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 {/* <span className="bathrooms-floating-label">Bathrooms</span> */}
               </div>
                 </div>
+              </div>
             
               <div className="check-box-options">
                   <div className='wifi-checkbox'>
