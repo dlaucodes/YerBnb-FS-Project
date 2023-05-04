@@ -40,7 +40,7 @@ const Listing = ({listingItem}) => {
             <div className="listing-information">
                 <div className="listing-information-left">
                     <div className="listing-location-container">
-                        {listingItem.location}
+                        {listingItem.city}, {listingItem.state}
                     </div>
                     <div className="listing-price-container">
                         ${listingItem.price} night

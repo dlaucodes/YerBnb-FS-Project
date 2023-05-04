@@ -24,7 +24,7 @@ const ListForm = ({setShowListFormModal}) =>{
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
-    const [city, setCity] = useState("");
+    const [city, setCity] = useState("Astoria");
     const [guest, setGuest] = useState(1);
     const [bed, setBed] = useState("")
     const [bath, setBath] = useState("")
@@ -36,20 +36,13 @@ const ListForm = ({setShowListFormModal}) =>{
     const owner = useSelector(({session}) => session.user);
 
 
-    console.log(lat)
-    console.log(lng)
-    console.log(city)
-    console.log(wifi)
-    console.log(kitchen)
-    console.log(pet)
-
     const handleCity = (e)=>{
       const selectedCity = e.target.value;
       switch (selectedCity){
         case "Astoria":
           setLat(40.76214)
           setLng(-73.92131)
-          setCity("Queens");
+          setCity("Astoria");
           break;
         case "Bronx":
           setLat(40.84436)
@@ -209,7 +202,9 @@ const ListForm = ({setShowListFormModal}) =>{
                     <label htmlFor="listing-title"></label>
                 <div className="city-select">
                  <select onChange={handleCity}>
-                    <option value="" disabled hidden></option>
+                    <option>
+                      City
+                    </option>
                     <option value="Astoria">
                       Astoria
                     </option>
@@ -242,16 +237,9 @@ const ListForm = ({setShowListFormModal}) =>{
                 onChange={(e) => setState(e.target.value)}
                 required>
                   <option disabled value="">State</option>
-                  <option value="CA">CA</option>
-                  <option value="CT">CT</option>
-                  <option value="DE">DE</option>
-                  <option value="FL">FL</option>
-                  <option value="GA">GA</option>
-                  <option value="NJ">NJ</option>
-                  <option value="NY">NY</option>
-                  <option value="RI">RI</option>
-                  <option value="TX">TX</option>
-                  <option value="WA">WA</option>
+                  <option value="New Jersey">NJ</option>
+                  <option value="New York">NY</option>
+                  
                 </select>
               </div>
                 <div className="guest-select">

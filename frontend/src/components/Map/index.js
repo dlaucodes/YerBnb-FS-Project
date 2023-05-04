@@ -25,7 +25,8 @@ const MapContainer = ({listingArray, reviewsArray}) => {
   
         locations.push({
             id: listingId,
-            loc: listing.location,
+            city: listing.city,
+            state: listing.state,
             location:{ 
             lat: listing.lat,
             lng: listing.lng
@@ -89,7 +90,7 @@ const MapContainer = ({listingArray, reviewsArray}) => {
                 <div className="marker-window">
                 <img src={selected.photo}/>
                     <div className="marker-listing-info">
-                    <div>{selected.loc}</div>
+                    <div>{selected.city},{selected.state}</div>
                     <div>${selected.price} night</div>
                     
                     {/* <div className="listing-rating">

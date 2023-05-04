@@ -120,7 +120,7 @@ const ListingShow = (props) => {
                         ·
                     </div>
                     <div className="location-container">
-                        {listing.location} 
+                        {listing.city}, {listing.state} 
                     </div>
                 </div>
             </div>
