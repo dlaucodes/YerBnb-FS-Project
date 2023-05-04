@@ -25,28 +25,71 @@ const ListForm = ({setShowListFormModal}) =>{
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
     const [city, setCity] = useState("");
+    const [guest, setGuest] = useState(1);
+    const [bed, setBed] = useState("")
+    const [bath, setBath] = useState("")
+    const [bedroom, setBedroom] = useState("")
+    const [pet, setPet] = useState(false)
+    const [wifi, setWifi] = useState(false)
+    const [kitchen, setKitchen] = useState(false)
     const owner = useSelector(({session}) => session.user);
 
 
     console.log(lat)
     console.log(lng)
     console.log(city)
+    console.log(wifi)
+    console.log(kitchen)
+    console.log(pet)
 
     const handleCity = (e)=>{
       const selectedCity = e.target.value;
-      if (selectedCity === "Queens"){
-        setLat("44.05")
-        setLng("55.00")
-        setCity("Queens")
+      switch (selectedCity){
+        case "Astoria":
+          setLat(40.76214)
+          setLng(-73.92131)
+          setCity("Queens");
+          break;
+        case "Bronx":
+          setLat(40.84436)
+          setLng(-73.85673)
+          setCity("Bronx")
+          break;
+        case "Brooklyn":
+          setLat(40.68647)
+          setLng(-73.94359)
+          setCity("Brooklyn")
+          break;
+        case "Flushing":
+          setLat(40.75727)
+          setLng(-73.83439)
+          setCity("Flushing")
+          break;
+        case "Long Island City":
+          setLat(40.74612)
+          setLng(-73.95436)
+          setCity("Long Island City")
+          break;
+        case "New York":
+          setLat(40.72771)
+          setLng(-74.00006)
+          setCity("New York")
+          break;
+        case "Queens":
+          setLat(40.76220)
+          setLng(-73.91938)
+          setCity("Queens")
+          break;
+        case "Williamsburg":
+          setLat(40.70842)
+          setLng(-73.96188)
+          setCity("Williamsburg")
+        default:
 
+          break;
       }
     }
-
-    const handleManttan = (e)=>{
-      setLat("44.05")
-        setLng("55.00")
-        setCity("Queens")
-    }
+    
      
 
     const handleSubmit = async e => {
@@ -59,6 +102,9 @@ const ListForm = ({setShowListFormModal}) =>{
         formData.append('listing[lat]', lat );
         formData.append('listing[lng]', lng);
         formData.append('listing[owner_id]', owner.id);
+        formData.append('listing[city]', city)
+        formData.append('listing[guests]', guest)
+        formData.append('listing[pets_allowed]', pet)
 
 
         if (files && files.length > 0 && files.length < 6) {
@@ -150,29 +196,151 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Title"
                     onChange={e => setTitle(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
+                
+          <div className="bottom-row">
                 <input type="float"
                     className="list-price"
                     value={price}
                     placeholder="Price"
                     onChange={e => setPrice(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                 <input type="text"
-                    className="list-location"
-                    value={location}
-                    placeholder="Location"
-                    onChange={e =>setLocation(e.target.value)}/>
-                      <label htmlFor="listing-lat"></label>
-                <input type="float"
-                    className="list-lat"
-                    value={lat}
-                    placeholder="Latitude"
-                    onChange={e =>setLat(e.target.value)}/>
-                    <label htmlFor="listing-title"></label>
-                <input type="float"
-                    className="list-lng"
-                    value={lng}
-                    placeholder="Longitude"
-                    onChange={e =>setLng(e.target.value)}/>
+                <div className="city-select">
+                 <select onChange={handleCity}>
+                    <option value="" disabled hidden></option>
+                    <option value="Astoria">
+                      Astoria
+                    </option>
+                    <option value="Bronx">
+                      Bronx
+                    </option>
+                     <option value="Brooklyn">
+                      Brooklyn
+                    </option>
+                    <option value="Flushing">
+                      Flushing
+                    </option>
+                    <option value="Long Island City">
+                      Long Island City
+                    </option>
+                    <option value="New York">
+                      New York
+                    </option>
+                    <option value="Queens">
+                      Queens
+                    </option>
+                     <option value="Williamsburg">
+                      Williamsburg
+                    </option>
+                </select>
+                </div>
+                <div className="guest-select">
+                  <select className='guests-input'
+              value={guest}
+              onChange={(e) => setGuest(e.target.value)}
+              required
+              >
+                <option value="" disabled hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
+              </div> 
+
+              <div className="bedroom-select">
+                <select className='bedrooms-input'
+                  value={bedroom}
+                  onChange={(e) => setBedroom(e.target.value)}
+                  required
+                >
+                  <option value="" disabled hidden></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              
+              <div className="bed-select">
+                <select className='beds-input'
+                    value={bed}
+                    onChange={(e) => setBed(e.target.value)}
+                    required
+                >
+                  <option value="" disabled hidden></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <span className="beds-floating-label">Beds</span>
+              </div>
+
+              <div className="bath-select">
+                <select className='bathrooms-input'
+                  value={bath}
+                  onChange={(e) => setBath(e.target.value)}
+                  required
+                  >
+                  <option value="" disabled hidden></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span className="bathrooms-floating-label">Bathrooms</span>
+              </div>
+            </div>
+
+              <div className="check-box">
+                <div className='wifi-checkbox'>
+                  <label htmlFor="wifi-checkbox">Wifi</label>
+                  <input 
+                    id='wifi-checkbox'
+                    type="checkbox" 
+                    onChange={()=>setWifi(!wifi)}/>
+                </div>
+                <div className='pet-checkbox'>
+                  <label htmlFor="pet-checkbox">Pets Allowed</label>
+                  <input 
+                    id='pet-checkbox'
+                    type="checkbox" 
+                    onChange={()=>setPet(!pet)}/>
+                </div>
+                <div className='kitchen-checkbox'>
+                  <label htmlFor="kitchen-checkbox">Kitchen</label>
+                  <input 
+                    id='kitchen-checkbox'
+                    type="checkbox" 
+                    onChange={()=>setKitchen(!kitchen)}/>
+                </div>
+              </div>
+
                  <input type="text"
                     className="list-description"
                     value={description}
@@ -180,31 +348,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
 
-                  <select onChange={handleCity}>
-                    <option value="Queens">
-                        Queens
-                    </option>
-                    <option value="Manhattan">
-                        Manhattan
-                    </option>
-                    <option value="Flushing">
-                        Flushing
-                    </option>
-                    <option value="Bronx">
-                        Bronx
-                    </option>
-                    <option value="Staten Island">
-                        Staten Island
-                    </option>
-                     <option value="New York">
-                        New York
-                    </option>
-                     <option value="Brooklyn">
-                        Brooklyn
-                    </option>
-
-                    
-                    </select>
+                  
 
 
                 <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
