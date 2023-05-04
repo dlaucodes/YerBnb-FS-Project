@@ -56,7 +56,7 @@ admin_user.photo.attach(io: admin_photo, filename: 'proftop.webp')
 #1- City Cabin
 demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
 
-"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", location: "New York, New York", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5)
+"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5, bedrooms: 2, beds: 3, baths: 2, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
 demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
@@ -71,7 +71,7 @@ demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
 
 #2- Loft
 demo_listing2 = Listing.create!(price: "1200", title: "Massive 2000 sq ft loft with stunning 360 views", description: "One of a kind floor through loft with exposed brick and 30 windows, allowing views of the Empire State Building, Brooklyn and Manhattan Bridges and the East River. Features a beautiful common roof deck for even more spectacular views of this in up and coming downtown chic neighborhood.
-We mostly rent for film and photoshoots, personal rentals only available when host leaves town, please send us a message.", location: "New York, New York", owner_id: "6", lng: -73.99133, lat: 40.71327, guests: 8)
+We mostly rent for film and photoshoots, personal rentals only available when host leaves town, please send us a message.", owner_id: "6", lng: -73.99133, lat: 40.71327, guests: 8, bedrooms: 4, beds: 8, baths: 3, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Loft/loft0.webp")
 demo_listing2.photos.attach(io: demo_photomain, filename: 'loft0.webp')
@@ -89,7 +89,7 @@ demo_listing3 = Listing.create!(price: "425", title: "Architectural Digest Style
 
 The R/N/E/M/7 subway trains are only a few blocks away and gets you to Manhattan in 4 minutes.
 
-*Reviews from February 2021 and earlier are from a former Manhattan apartment. The host has moved nearby to a much larger space. While the apartment is new, the dedication to being great hosts remains paramount*", location: "Queens, New York", owner_id: "6", lng: -73.93604, lat: 40.75012, guests: 6)
+*Reviews from February 2021 and earlier are from a former Manhattan apartment. The host has moved nearby to a much larger space. While the apartment is new, the dedication to being great hosts remains paramount*", owner_id: "6", lng: -73.93604, lat: 40.75012, guests: 6, bedrooms: 2, beds: 4, baths: 1, city: "Queens", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Queens/queens0.webp")
 demo_listing3.photos.attach(io: demo_photomain, filename: 'chaletmain.webp')
@@ -109,7 +109,7 @@ The outdoor area is magical lounge .
 Perfect place for an artistic or fashion Photo shoot a video , a documentary , ( day time) and a romantic get away.
 
 No Party allowed.
-No large gatherings , please don't inquire.", location: "Brooklyn, New York", owner_id: "6", lng: -73.95144, lat: 40.69503, guests: 8)
+No large gatherings , please don't inquire.", owner_id: "6", lng: -73.95144, lat: 40.69503, guests: 8, bedrooms: 3, beds: 7, baths: 2, city: "Brooklyn", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Brooklyn/bklyn0.webp")
 demo_listing4.photos.attach(io: demo_photomain, filename: 'bklyn0.webp')
@@ -126,7 +126,7 @@ demo_listing4.photos.attach(io: demo_photo4, filename: 'bklyn4.webp')
 demo_listing5 = Listing.create!(price: "248", title: "High floor Luxury Apartment with balcony", description: "A spectacular 1BD apt in a luxury building in the center of Fort Greene (10 min from Manhattan). Spacious, clean and modern decorated. Big balcony with the amazing view of Manhattan bridge and Hudson river - perfect place to have your morning coffee :)
 
 Located walking distance from everything you need - Whole Foods, Traders Joe, bars, restaurants, Fort Greene park, Barclay Center and easy access to almost all trains (2,3,4,5,A,B,C,F,J,R,Q)
-", location: "Brooklyn, New York", owner_id: "6", lng: -73.97996, lat: 40.68839, guests: 5)
+", owner_id: "6", lng: -73.97996, lat: 40.68839, guests: 5, bedrooms: 3, beds: 4, baths: 1, city: "Brooklyn", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/HighRise/hr0.webp")
 demo_listing5.photos.attach(io: demo_photomain, filename: 'hr0.webp')
@@ -148,7 +148,7 @@ The unit was professionally designed and it has been remodeled from top to botto
 
 French oak flooring runs throughout the residence, as well as a built-in spanning 90 ft in length. This built-in houses the chef's kitchen that includes Gaggenau appliances and a large wine fridge. Equipped with an out-venting, restaurant quality exhaust, you can cook up an array of meals and still have space to entertain. Another aspect of the kitchen is the versatile 10 ft island that can extend to add an additional 5 ft! Just off the kitchen is a large dining room with amazing windows and a dining table that can seat 12 people. The open concept and 14 ft ceilings make the residence feel massive.
 
-Other notable features are an in-unit washer/dryer, surround sound audio system, double pane windows, automated shades, and the list goes on. You can also control A/C, lighting, air filtration and more at the touch of a button.", location: "New York, New York", owner_id: "6", lng: -73.98900, lat: 40.74195, guests: 8)
+Other notable features are an in-unit washer/dryer, surround sound audio system, double pane windows, automated shades, and the list goes on. You can also control A/C, lighting, air filtration and more at the touch of a button.", owner_id: "6", lng: -73.98900, lat: 40.74195, guests: 8, bedrooms: 3, beds: 5, baths: 3, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/ParkViews/pv0.webp")
 demo_listing6.photos.attach(io: demo_photomain, filename: 'pv0.webp')

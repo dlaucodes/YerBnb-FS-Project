@@ -32,6 +32,7 @@ const ListForm = ({setShowListFormModal}) =>{
     const [pet, setPet] = useState(false)
     const [wifi, setWifi] = useState(false)
     const [kitchen, setKitchen] = useState(false)
+    const [state, setState] = useState("")
     const owner = useSelector(({session}) => session.user);
 
 
@@ -98,13 +99,15 @@ const ListForm = ({setShowListFormModal}) =>{
         formData.append('listing[price]', price);
         formData.append('listing[title]', title);
         formData.append('listing[description]', description);
-        formData.append('listing[location]', location );
         formData.append('listing[lat]', lat );
         formData.append('listing[lng]', lng);
         formData.append('listing[owner_id]', owner.id);
-        formData.append('listing[city]', city)
-        formData.append('listing[guests]', guest)
-        formData.append('listing[pets_allowed]', pet)
+        formData.append('listing[city]', city);
+        formData.append('listing[guests]', guest);
+        formData.append('listing[pets_allowed]', pet);
+        formData.append('listing[kitchen]', kitchen);
+        formData.append('listing[wifi]', wifi);
+        formData.append('listing[state]', state);
 
 
         if (files && files.length > 0 && files.length < 6) {
@@ -233,6 +236,24 @@ const ListForm = ({setShowListFormModal}) =>{
                     </option>
                 </select>
                 </div>
+                <div className='state-input'>
+                <select
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required>
+                  <option disabled value="">State</option>
+                  <option value="CA">CA</option>
+                  <option value="CT">CT</option>
+                  <option value="DE">DE</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NY">NY</option>
+                  <option value="RI">RI</option>
+                  <option value="TX">TX</option>
+                  <option value="WA">WA</option>
+                </select>
+              </div>
                 <div className="guest-select">
                   <select className='guests-input'
               value={guest}
