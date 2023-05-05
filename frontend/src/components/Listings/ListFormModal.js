@@ -18,7 +18,7 @@ const ListForm = ({setShowListFormModal}) =>{
     const [photoUrl3, setPhotoUrl3] = useState(null);
     const [photoUrl4, setPhotoUrl4] = useState(null);
     const [photoUrl5, setPhotoUrl5] = useState(null);
-    const [files, setFiles] = useState(null);
+    const [files, setFiles] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [location, setLocation] = useState("");
@@ -84,14 +84,6 @@ const ListForm = ({setShowListFormModal}) =>{
       }
     }
     
-    console.log(city)
-    console.log(state)
-    console.log(lat)
-    console.log(lng)
-    console.log(bath)
-    console.log(bed)
-    console.log(guest)
-    console.log(bedroom)
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -101,6 +93,9 @@ const ListForm = ({setShowListFormModal}) =>{
         formData.append('listing[description]', description);
         formData.append('listing[lat]', lat );
         formData.append('listing[lng]', lng);
+        formData.append('listing[beds]', bed)
+        formData.append('listing[bedrooms]', bedroom)
+        formData.append('listing[baths]', bath)
         formData.append('listing[owner_id]', owner.id);
         formData.append('listing[city]', city);
         formData.append('listing[guests]', guest);
@@ -363,7 +358,6 @@ const ListForm = ({setShowListFormModal}) =>{
                   <div className='kitchen-checkbox'>
                     <label htmlFor="kitchen-checkbox">Kitchen</label>
                     <input 
-                      // id='kitchen-checkbox'
                       type="checkbox" 
                       onChange={()=>setKitchen(!kitchen)}/>
                   </div>
@@ -376,15 +370,27 @@ const ListForm = ({setShowListFormModal}) =>{
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-
                 </div>
 
                   
 
+              <div className="list-form-file">
+                <label className="custom-file-upload">
+                <input type="file" id="file-upload" name="file" onChange=     {handleFile} accept="image" multiple/>
+                Select photos
+                </label>
+                      <div className="file-num">
+                        {files.length}
+                      <div className="out-of">
+                        / 5 photos selected
 
-                <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
-                <div className="create-div"></div>
+                      </div>
+                      </div>
+              </div>
+
+              <div className="list-form-button">
                 <button className="listing-button" type="submit">Create New Listing</button>
+              </div>
             
             </div>
         </form>

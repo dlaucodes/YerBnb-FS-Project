@@ -19,14 +19,14 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [photoUrl3, setPhotoUrl3] = useState(null);
     const [photoUrl4, setPhotoUrl4] = useState(null);
     const [photoUrl5, setPhotoUrl5] = useState(null);
-    const [files, setFiles] = useState(null);
+    const [files, setFiles] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
     const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
-    const [city, setCity] = useState("Astoria");
-    const [guest, setGuest] = useState(1);
+    const [city, setCity] = useState("");
+    const [guest, setGuest] = useState("");
     const [bed, setBed] = useState("")
     const [bath, setBath] = useState("")
     const [bedroom, setBedroom] = useState("")
@@ -34,7 +34,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [wifi, setWifi] = useState(false)
     const [kitchen, setKitchen] = useState(false)
     const [state, setState] = useState("")
-    const owner = useSelector(({session}) => session.user); 
+    const owner = useSelector(({session}) => session.user);
     
     const handleCity = (e)=>{
       const selectedCity = e.target.value;
@@ -84,7 +84,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
       }
     }
 
-    const handleSubmit = async (e) => {
+      const handleSubmit = async e => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('listing[price]', price);
@@ -92,8 +92,10 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
         formData.append('listing[description]', description);
         formData.append('listing[lat]', lat );
         formData.append('listing[lng]', lng);
+        formData.append('listing[beds]', bed)
+        formData.append('listing[bedrooms]', bedroom)
+        formData.append('listing[baths]', bath)
         formData.append('listing[owner_id]', owner.id);
-        formData.append('listing[id]', listingId)
         formData.append('listing[city]', city);
         formData.append('listing[guests]', guest);
         formData.append('listing[pets_allowed]', pet);
@@ -118,7 +120,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     }
     
     
-    const handleFile = e =>{
+  const handleFile = e =>{
         const file = e.currentTarget.files[0];
         const file2 = e.currentTarget.files[1];
         const file3 = e.currentTarget.files[2];
@@ -186,24 +188,31 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                 <div id="create-text">Host your home</div>
             </div>
             <div className="listingform-container">
-            <div className="input-field">
+              <div className="list-specs">
+
+              <div className="list-form-top">
                 <input type="text"
-                    className="list-title"
+                    className="list-form-title"
                     value={title}
                     placeholder="Title"
                     onChange={e => setTitle(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
+
+              </div>
                 
-          <div className="bottom-row">
+          <div className="price-city-state">
                 <input type="float"
                     className="list-price"
                     value={price}
                     placeholder="Price"
                     onChange={e => setPrice(e.target.value)}/>
-                    <label htmlFor="listing-title"></label>
                 <div className="city-select">
-                 <select onChange={handleCity}>
-                    <option>
+                 <select
+                  value={city} 
+                  className="city-input"
+                  onChange={handleCity}
+                  required>
+                    <option disabled value="" selected>
                       City
                     </option>
                     <option value="Astoria">
@@ -232,41 +241,43 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                     </option>
                 </select>
                 </div>
-                <div className='state-input'>
+                <div className="state-select">
                 <select
                 value={state}
+                className="state-input"
                 onChange={(e) => setState(e.target.value)}
                 required>
-                  <option disabled value="">State</option>
+                  <option disabled value="" className="greyed">State</option>
                   <option value="New Jersey">NJ</option>
                   <option value="New York">NY</option>
                   
                 </select>
               </div>
+            </div>
+
+                <div className="listing-selections">
+
                 <div className="guest-select">
-                  <select className='guests-input'
-              value={guest}
-              onChange={(e) => setGuest(e.target.value)}
-              required
-              >
-                <option value="" disabled hidden></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-              </select>
+                  <select className="guests-input"
+                    value={guest}
+                    onChange={(e) => setGuest(e.target.value)}
+                    required>
+                    <option value="" disabled selected className="greyed">guests</option>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                    <option value="6">6 guests</option>
+                    <option value="7">7 guests</option>
+                    <option value="8">8 guests</option>
+                    <option value="9">9 guests</option>
+                    <option value="10">10 guests</option>
+                    <option value="11">11 guests</option>
+                    <option value="12">12 guests</option>
+                    <option value="13">13 guests</option>
+                    <option value="14">14 guests</option>
+                  </select>
               </div> 
 
               <div className="bedroom-select">
@@ -275,92 +286,112 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                   onChange={(e) => setBedroom(e.target.value)}
                   required
                 >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
+                  <option value="" disabled selected>bedrooms</option>
+                  <option value="1">1 bedroom</option>
+                  <option value="2">2 bedrooms</option>
+                  <option value="3">3 bedrooms</option>
+                  <option value="4">4 bedrooms</option>
+                  <option value="5">5 bedrooms</option>
+                  <option value="6">6 bedrooms</option>
+                  <option value="7">7 bedrooms</option>
+                  <option value="8">8 bedrooms</option>
                 </select>
               </div>
               
               <div className="bed-select">
-                <select className='beds-input'
+                <select className="beds-input"
                     value={bed}
                     onChange={(e) => setBed(e.target.value)}
                     required
                 >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
+                  <option value="" disabled selected>beds</option>
+                  <option value="1">1 bed</option>
+                  <option value="2">2 beds</option>
+                  <option value="3">3 beds</option>
+                  <option value="3">4 beds</option>
+                  <option value="4">4 beds</option>
+                  <option value="5">5 beds</option>
+                  <option value="6">6 beds</option>
+                  <option value="7">7 beds</option>
+                  <option value="8">8 beds</option>
+                  <option value="9">9 beds</option>
+                  <option value="10">10 beds</option>
+                  <option value="11">11 beds</option>
+                  <option value="12">12 beds</option>
                 </select>
-                <span className="beds-floating-label">Beds</span>
+                {/* <span className="beds-floating-label">Beds</span> */}
               </div>
 
               <div className="bath-select">
-                <select className='bathrooms-input'
+                <select className="baths-input"
                   value={bath}
                   onChange={(e) => setBath(e.target.value)}
                   required
                   >
-                  <option value="" disabled hidden></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="" disabled selected>baths</option>
+                  <option value="1">1 bath</option>
+                  <option value="2">2 baths</option>
+                  <option value="3">3 baths</option>
+                  <option value="4">4 baths</option>
+                  <option value="5">5 baths</option>
+                  <option value="5">6 baths</option>
                 </select>
-                <span className="bathrooms-floating-label">Bathrooms</span>
+                {/* <span className="bathrooms-floating-label">Bathrooms</span> */}
               </div>
-            </div>
+                </div>
+              </div>
+            
+              <div className="check-box-options">
+                  <div className='wifi-checkbox'>
+                    <label htmlFor="wifi-checkbox">Wifi</label>
+                    <input 
+                      // id='wifi-checkbox'
+                      type="checkbox" 
+                      onChange={()=>setWifi(!wifi)}/>
+                  </div>
+                  <div className="pet-checkbox">
+                    <label htmlFor="pet-checkbox">Pets Allowed</label>
+                    <input 
+                      // id='pet-checkbox'
+                      type="checkbox" 
+                      onChange={()=>setPet(!pet)}/>
+                  </div>
+                  <div className='kitchen-checkbox'>
+                    <label htmlFor="kitchen-checkbox">Kitchen</label>
+                    <input 
+                      type="checkbox" 
+                      onChange={()=>setKitchen(!kitchen)}/>
+                  </div>
 
-              <div className="check-box">
-                <div className='wifi-checkbox'>
-                  <label htmlFor="wifi-checkbox">Wifi</label>
-                  <input 
-                    id='wifi-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setWifi(!wifi)}/>
-                </div>
-                <div className='pet-checkbox'>
-                  <label htmlFor="pet-checkbox">Pets Allowed</label>
-                  <input 
-                    id='pet-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setPet(!pet)}/>
-                </div>
-                <div className='kitchen-checkbox'>
-                  <label htmlFor="kitchen-checkbox">Kitchen</label>
-                  <input 
-                    id='kitchen-checkbox'
-                    type="checkbox" 
-                    onChange={()=>setKitchen(!kitchen)}/>
-                </div>
               </div>
-                 
+                <div className="form-description-container">
                  <input type="text"
                     className="list-description"
                     value={description}
                     placeholder="Description"
                     onChange={e => setDescription(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
-                <input type="file" name="file" onChange={handleFile} accept="image" multiple/>
-                <div className="create-div"></div>
+                </div>
+
+                  
+
+              <div className="list-form-file">
+                <label className="custom-file-upload">
+                <input type="file" id="file-upload" name="file" onChange=     {handleFile} accept="image" multiple/>
+                Select photos
+                </label>
+                      <div className="file-num">
+                        {files.length}
+                      <div className="out-of">
+                        / 5 photos selected
+
+                      </div>
+                      </div>
+              </div>
+
+              <div className="list-form-button">
                 <button className="listing-button" type="submit">Edit Listing</button>
-            </div>
+              </div>
             </div>
         </form>
         </div>
