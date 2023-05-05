@@ -185,7 +185,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                 <div onClick={() => setShowListingEditModal(false)} className="close-modal">
                     <span >╳</span>
                 </div>
-                <div id="create-text">Host your home</div>
+                <div id="create-text">Edit Listing</div>
             </div>
             <div className="listingform-container">
               <div className="list-specs">

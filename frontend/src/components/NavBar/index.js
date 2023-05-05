@@ -36,7 +36,6 @@ function NavBar() {
         <Search />
       </div>
       <div className="profile-button-container">
-        
         {sessionLinks}
       </div>
       

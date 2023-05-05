@@ -355,10 +355,10 @@ const ListForm = ({setShowListFormModal}) =>{
                 </div>
               </div>
                  <ul className="error-message">
-            {errors.map(error => {
-                return <li key={error}>{error}</li> 
-            })}
-          </ul>
+                  {errors.map(error => {
+                    return <li key={error}>{error}</li> 
+                  })}
+                </ul>
             
               <div className="check-box-options">
                   <div className='wifi-checkbox'>
