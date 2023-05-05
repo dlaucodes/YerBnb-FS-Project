@@ -3,11 +3,18 @@ import React, {useState} from "react";
 
 function Unsuccessful({setShowUnsuccessfulModal}){
     return (
-        <div className="success">
-            <div>
-            Reservation Unsuccessful!
-            Please Select Start and End Dates!
+        <div className="unsuccess">
+            <div className="unsuccessful">
+                <div className="msg1">
+                Reservation Unsuccessful
+
+                </div>
+                <div className="msg2">
+                 Select Check-in/out Dates
+
+                </div>
             </div>
+            
         </div>
     )
 }

@@ -82,18 +82,18 @@ const Reservation = ({listing})=>{
         if(!currentUser){
             setShowLoginModal(true);
         }
-        if(startDate === ""){
+        else if((startDate === "") || (endDate === "")){
             setShowUnsuccessfulModal(true)
             let timeout1;
             timeout1 = setTimeout(()=>{
                 clearTimeout(timeout1);
                 setShowUnsuccessfulModal(false)
-            }, 2000)
+            }, 2300)
             return
         }
         else{
             let timeout2;
-            // setShowConfirmationModal(true);
+            setShowConfirmationModal(true);
             timeout2 = setTimeout(()=>{
                 clearTimeout(timeout2);
                 dispatch(createReservation(formData)).then(
