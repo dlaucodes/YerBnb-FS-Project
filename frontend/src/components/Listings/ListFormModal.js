@@ -342,7 +342,7 @@ const ListForm = ({setShowListFormModal}) =>{
                   onChange={(e) => setBath(e.target.value)}
                   required
                   >
-                  <option value="" disabled selected>baths</option>
+                  <option value="" selected disabled>baths</option>
                   <option value="1">1 bath</option>
                   <option value="2">2 baths</option>
                   <option value="3">3 baths</option>

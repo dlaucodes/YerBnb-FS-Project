@@ -1,8 +1,8 @@
 .success{
     display: flex;
-    
+    justify-content: center;
     background-color: #e0024c;
-    
+    align-items: center;
     color: white;
     border-radius: 12px;
     width: 250px;

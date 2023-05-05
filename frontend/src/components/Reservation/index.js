@@ -88,7 +88,7 @@ const Reservation = ({listing})=>{
             timeout1 = setTimeout(()=>{
                 clearTimeout(timeout1);
                 setShowUnsuccessfulModal(false)
-            }, 2300)
+            }, 2700)
             return
         }
         else{
