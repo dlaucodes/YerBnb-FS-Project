@@ -7,6 +7,7 @@ import { createListing } from "../../store/listing";
 
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
+    const [errors, setErrors] = useState([])
     const [title, setTitle] = useState ("")
     const [photoFile, setPhotoFile] = useState(null);
     const [photoFile2, setPhotoFile2] = useState (null);
@@ -112,9 +113,21 @@ const ListForm = ({setShowListFormModal}) =>{
             })
         }
         
-        dispatch(createListing(formData))
-        setShowListFormModal(false) && <Redirect to="/" />
+        setErrors([]);
         
+        // && <Redirect to="/" />
+        return dispatch(createListing(formData)).then(()=>setShowListFormModal(false)).catch(
+          async(res)=>{
+          let data;
+          try {
+            data = await res.clone().json();
+          }catch{
+            data = await res.text();
+          }
+          if(data?.errors) setErrors(data.errors);
+          else if(data) setErrors([data]);
+          else setErrors([res.statusText]);
+        })
         
     }
     
@@ -194,7 +207,8 @@ const ListForm = ({setShowListFormModal}) =>{
                     className="list-form-title"
                     value={title}
                     placeholder="Title"
-                    onChange={e => setTitle(e.target.value)}/>
+                    onChange={e => setTitle(e.target.value)}
+                    required/>
                     <label htmlFor="listing-title"></label>
 
               </div>
@@ -204,7 +218,8 @@ const ListForm = ({setShowListFormModal}) =>{
                     className="list-price"
                     value={price}
                     placeholder="Price"
-                    onChange={e => setPrice(e.target.value)}/>
+                    onChange={e => setPrice(e.target.value)}
+                    required/>
                 <div className="city-select">
                  <select
                   value={city} 
@@ -318,8 +333,8 @@ const ListForm = ({setShowListFormModal}) =>{
                   <option value="11">11 beds</option>
                   <option value="12">12 beds</option>
                 </select>
-                {/* <span className="beds-floating-label">Beds</span> */}
               </div>
+           
 
               <div className="bath-select">
                 <select className="baths-input"
@@ -335,10 +350,15 @@ const ListForm = ({setShowListFormModal}) =>{
                   <option value="5">5 baths</option>
                   <option value="5">6 baths</option>
                 </select>
-                {/* <span className="bathrooms-floating-label">Bathrooms</span> */}
+
               </div>
                 </div>
               </div>
+                 <ul className="error-message">
+            {errors.map(error => {
+                return <li key={error}>{error}</li> 
+            })}
+          </ul>
             
               <div className="check-box-options">
                   <div className='wifi-checkbox'>
@@ -368,7 +388,8 @@ const ListForm = ({setShowListFormModal}) =>{
                     className="list-description"
                     value={description}
                     placeholder="Description"
-                    onChange={e => setDescription(e.target.value)}/>
+                    onChange={e => setDescription(e.target.value)}
+                    required />
                     <label htmlFor="listing-title"></label>
                 </div>
 
@@ -376,7 +397,14 @@ const ListForm = ({setShowListFormModal}) =>{
 
               <div className="list-form-file">
                 <label className="custom-file-upload">
-                <input type="file" id="file-upload" name="file" onChange=     {handleFile} accept="image" multiple/>
+                <input 
+                type="file" 
+                id="file-upload" 
+                name="file" 
+                onChange= {handleFile} 
+                accept="image" 
+                multiple
+                required/>
                 Select photos
                 </label>
                       <div className="file-num">

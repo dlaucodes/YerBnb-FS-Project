@@ -11,6 +11,7 @@ import { fetchReviews, getReviews} from "../../store/review";
 import { Dispatch } from 'react';
 import LoginFormModal from '../LoginFormModal';
 import ConfirmationModal from './ConfirmationModal';
+import UnsuccessfulModal from './UnsuccessfulModal';
 import { formatDistanceStrict, formatDistance } from 'date-fns';
 
 
@@ -20,6 +21,7 @@ const Reservation = ({listing})=>{
     const dispatch = useDispatch();
     const guest = useSelector(({session})=> session.user);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+    const [showUnsuccessfulModal, setShowUnsuccessfulModal] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [total, setTotal] = useState(0);
     const [guests, setGuests] = useState(1);
@@ -75,17 +77,30 @@ const Reservation = ({listing})=>{
        
         //set logic for when dates are not entered.
 
-        if(currentUser){
-            let timeout;
-            setShowConfirmationModal(true);
-            timeout = setTimeout(()=>{
-                clearTimeout(timeout);
+        console.log(startDate)
+
+        if(!currentUser){
+            setShowLoginModal(true);
+        }
+        if(startDate === ""){
+            setShowUnsuccessfulModal(true)
+            let timeout1;
+            timeout1 = setTimeout(()=>{
+                clearTimeout(timeout1);
+                setShowUnsuccessfulModal(false)
+            }, 2000)
+            return
+        }
+        else{
+            let timeout2;
+            // setShowConfirmationModal(true);
+            timeout2 = setTimeout(()=>{
+                clearTimeout(timeout2);
                 dispatch(createReservation(formData)).then(
                 history.push(`/profiles/${currentUser.id}`))
             },1350)
-        }else{
-            setShowLoginModal(true);
-        }
+
+        } 
     }
 
     return(
@@ -267,6 +282,7 @@ const Reservation = ({listing})=>{
         </div>
         <div>
             {showConfirmationModal && <ConfirmationModal setShowConfirmationModal={setShowConfirmationModal}/>}
+            {showUnsuccessfulModal && <UnsuccessfulModal setShowUnsuccessfulModal={setShowUnsuccessfulModal}/>}
         </div>
     </div>
         </> 
