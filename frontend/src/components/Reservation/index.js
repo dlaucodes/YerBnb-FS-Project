@@ -77,7 +77,7 @@ const Reservation = ({listing})=>{
        
         //set logic for when dates are not entered.
 
-        console.log(startDate)
+        
 
         if(!currentUser){
             setShowLoginModal(true);
