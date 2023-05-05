@@ -72,7 +72,7 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
                 );
                 })}
             </div>
-                <div className="input-field">
+                <div className="review-input-field">
                     <textarea
                         className="review-form-body"
                         placeholder="review this Yerbnb."
@@ -83,7 +83,7 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
                     />
             </div>
             <div className="signup-button-div">
-                <button id="signup-button" type="submit">Review</button>
+                <button id="signup-button" type="submit">Update Review</button>
             </div>
          
         </div>

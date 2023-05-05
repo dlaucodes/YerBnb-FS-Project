@@ -75,7 +75,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                 );
                 })}
             </div>
-                <div className="input-field">
+                <div className="review-input-field">
                     <textarea
                         className="review-form-body"
                         placeholder="review this Yerbnb."
@@ -85,7 +85,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                         required
                     />
             </div>
-            <div className="signup-button-div">
+            <div className="review-button-div">
                 <button id="signup-button" type="submit">Review</button>
             </div>
          

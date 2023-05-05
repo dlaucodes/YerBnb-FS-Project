@@ -4,7 +4,7 @@ import "./listing.css"
 import MapContainer from "../Map";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchReviews, getReviews } from "../../store/review";
-import { getListings } from "../../store/listing";
+import { getListings, fetchListings } from "../../store/listing";
 import Profile from "../Profile";
 
 
@@ -26,6 +26,7 @@ const Listing = ({listingItem}) => {
 
     useEffect(()=>{
         dispatch(fetchReviews())
+        dispatch(fetchListings())
     }, [])
 
 

@@ -33,6 +33,7 @@ export const updateReview = (formData, reviewId) => async (dispatch)=>{
     });
     const data = await res.json();
     dispatch(fetchReview(data));
+    dispatch(fetchReviews());
     return res
 }
 
