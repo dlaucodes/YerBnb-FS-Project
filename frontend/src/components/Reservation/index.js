@@ -82,13 +82,13 @@ const Reservation = ({listing})=>{
         if(!currentUser){
             setShowLoginModal(true);
         }
-        else if((startDate === "") || (endDate === "")){
+        else if(startDate === "" || endDate === ""){
             setShowUnsuccessfulModal(true)
             let timeout1;
             timeout1 = setTimeout(()=>{
                 clearTimeout(timeout1);
                 setShowUnsuccessfulModal(false)
-            }, 2700)
+            }, 5700)
             return
         }
         else{
