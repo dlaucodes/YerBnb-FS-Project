@@ -8,6 +8,7 @@ import { fetchListings, getListings, fetchListing, deleteListing } from '../../s
 import ListingEditModal from './indexListEdit';
 import { fetchReviews, getReviews, deleteReview } from '../../store/review';
 import { fetchReservations, deleteReservation } from '../../store/reservation';
+import {fetchUsers, updateUser} from '../../store/user';
 import {formatDistanceStrict} from 'date-fns';
 import ReviewEditModal from './indexReviewEdit';
 import homeicon from '../../assets/homeicon.jpeg';
@@ -24,7 +25,8 @@ const ProfileDetails = () => {
     const [filteredListings, setFilteredListings] = useState([])
     const [changeListing, setChangeListing] = useState(0);
     const [changeReview, setChangeReview] = useState(0);
-    const [profilePic, setProfilePic] = useState("")
+    const [profilePic, setProfilePic] = useState(currentUser.photoUrl)
+    const [uploadedFile, setUploadedFile] = useState(null)
     const [showListingEditModal, setShowListingEditModal] = useState(false);
     const [showReviewEditModal, setShowReviewEditModal] = useState(false);
     const [currentListingId, setCurrentListingId] = useState(null)
@@ -54,8 +56,9 @@ const ProfileDetails = () => {
         dispatch(fetchListings())
         dispatch(fetchReviews())
         dispatch(fetchReservations())
-        
-    },[listings.listing]);
+        dispatch(fetchUsers())
+        setProfilePic(currentUser.photoUrl)
+    },[listings.listing, currentUser.photoUrl]);
     
     // dispatch(deleteListing())
     // dispatch(deleteReview())
@@ -79,9 +82,11 @@ const ProfileDetails = () => {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
         formData.append('user[photo]', file);
-        await dispatch(userActions.updateUser(formData));
-        setProfilePic(currentUser.photoUrl);
-        setTimeout(refresh, 600);
+        await dispatch(userActions.updateUser(formData)).then(()=>{
+           setProfilePic(currentUser.photoUrl);
+            setTimeout(refresh, 200);
+        })
+        
     }
 
     
@@ -97,8 +102,8 @@ const ProfileDetails = () => {
                 <div className="left-inner-container">
                     {currentUser.photoUrl ? (
                         <>
-                    <div className='profile-picture-container' viewBox="0 0 125 125">
-                    {<img src={currentUser.photoUrl} alt=""></img>}
+                    <div key={uploadedFile ? uploadedFile.name : 'default-key'}className='profile-picture-container' viewBox="0 0 125 125">
+                    {<img src={profilePic} alt=""></img>}
                     </div>
                     </>
                 ) : (

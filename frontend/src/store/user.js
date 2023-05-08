@@ -31,6 +31,7 @@ export const updateUser = (user) => async dispatch => {
     });
     const data = await res.json();
     dispatch(sessionActions.getCurrentUser(data));
+    dispatch(fetchUsers())
     return res;
 };
 
