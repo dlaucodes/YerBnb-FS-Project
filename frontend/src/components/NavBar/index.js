@@ -32,9 +32,9 @@ function NavBar() {
         <NavLink exact to="/" className="nav-title"><img id="home-icon" src={logo}/>
         </NavLink>
       </div>
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <Search />
-      </div>
+      </div> */}
       <div className="profile-button-container">
         {sessionLinks}
       </div>
