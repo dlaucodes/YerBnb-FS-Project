@@ -27,7 +27,7 @@ const Dev = ({setShowDevModal}) =>{
                     <div className="dev-icon"><a href="https://angel.co/u/chun-k-lau" target="_blank" rel="noopener noreferrer">
                         <img src={wellfoundlogo} alt="wellfoundlogo"/></a>
                     </div>
-                
+                    <div></div>
 
             
         </div>
