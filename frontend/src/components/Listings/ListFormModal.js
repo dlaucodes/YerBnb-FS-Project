@@ -22,7 +22,6 @@ const ListForm = ({setShowListFormModal}) =>{
     const [files, setFiles] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const [location, setLocation] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
     const [city, setCity] = useState("");
@@ -115,19 +114,19 @@ const ListForm = ({setShowListFormModal}) =>{
         
         setErrors([]);
         
-        // && <Redirect to="/" />
+        // && \
         return dispatch(createListing(formData)).then(()=>setShowListFormModal(false)).catch(
           async(res)=>{
-          let data;
-          try {
-            data = await res.clone().json();
-          }catch{
-            data = await res.text();
-          }
-          if(data?.errors) setErrors(data.errors);
-          else if(data) setErrors([data]);
-          else setErrors([res.statusText]);
-        })
+            let data;
+            try {
+              data = await res.clone().json();
+            }catch{
+              data = await res.text();
+            }
+            if(data?.errors) setErrors(data.errors);
+            else if(data) setErrors([data]);
+            else setErrors([res.statusText]);
+          })
         
     }
     
