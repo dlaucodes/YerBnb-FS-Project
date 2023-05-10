@@ -43,8 +43,8 @@ const MapContainer = ({listingArray, reviewsArray}) => {
     
   
     const defaultCenter = {
-        lat: 40.69408, 
-        lng: -74.00710
+        lat: 40.69822, 
+        lng: -73.98566
     }
     
     

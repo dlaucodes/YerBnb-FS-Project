@@ -13,6 +13,7 @@ import {formatDistanceStrict} from 'date-fns';
 import ReviewEditModal from './indexReviewEdit';
 import homeicon from '../../assets/homeicon.jpeg';
 import tripicon from '../../assets/trips.jpeg';
+import defaultUser from  '../../assets/defaultprof.png';
 
 
 const ProfileDetails = () => {

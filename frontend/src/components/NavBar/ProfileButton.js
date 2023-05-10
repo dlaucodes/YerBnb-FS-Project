@@ -59,7 +59,7 @@ return (
         <g fill="none" fillRule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
         </svg>
 
-        {currentUser ? (
+        {currentUser.photoUrl ? (
           <>
           <div className='profile-photo' viewBox="0 0 32 32">
             {<img src={currentUser.photoUrl}/>}
