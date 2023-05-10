@@ -192,7 +192,7 @@ const ListingShow = (props) => {
                     </>
                 ) : (
                     <>
-                <svg className='profile-icon' width={125} height={125} viewBox="0 0 32 32" fill={'#717171'}>
+                <svg className='profile-show-icon' width={125} height={125} viewBox="0 0 32 32" fill={'#717171'}>
                 <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
                 </svg>
           
@@ -237,22 +237,31 @@ const ListingShow = (props) => {
             </div>
             <div className="listing-reviews-container" id="listing-reviews-top">
                 <div className="listing-review-header">
-                    <div className="listing-show-rating">
+                    <div className="listings-show-rating">
+                            {filteredReviews.length > 0 ? (
+                                <>
                         <div className="rating-star">
                             <svg viewBox="0 0 32 32" height="16px" width="16px"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" ></path></svg>
                         </div>
-                            {(() => {
-                            const sum = filteredReviews.reduce((total, review) => total + review.rating, 0);
-                            const average = sum / filteredReviews.length;
-                            return isNaN(average) ? '' : average.toFixed(1);
-                            })()}
-                    </div> 
+                                {(() => {
+                                const sum = filteredReviews.reduce((total, review) => total + review.rating, 0);
+                                const average = sum / filteredReviews.length;
+                                return isNaN(average) ? '' : average.toFixed(1);
+                                })()}
                         <div className="dot">
                             ·
                         </div>
-                    <div className="listing-review-total">
-                        {filteredReviews.length} reviews
-                    </div>
+                        <div className="listing-review-total">
+                            {filteredReviews.length}
+                            <div className="review-txt">
+                            reviews
+                            </div> 
+                        </div>
+                                </>
+                                
+                                ) : ("")
+                            }
+                    </div> 
                 </div>
                 {/* <div className="listing-review-stats">
                     review stats
