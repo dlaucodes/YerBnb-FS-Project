@@ -19,9 +19,6 @@ class Api::ListingsController < ActionController::API
 
     def create
         @listing = Listing.new(listing_params)
-        # @listing.user_id = current_user.id
-        # params[:listing][:photos].each do |photo|
-            # @listing.photos.attach(params[:photos])
         @listing.photos.attach(params[:listing][photos:[]])
         if @listing.save
             
@@ -41,8 +38,6 @@ class Api::ListingsController < ActionController::API
         if @listing.update(listing_params)
             @listing.save
             render :show
-        # else
-        #   render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
         end
         if @listing.errors.none?
             @listing.save

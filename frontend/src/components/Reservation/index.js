@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import { fetchUsers } from '../../store/user';
 import { fetchReservations, createReservation } from '../../store/reservation';
 import { fetchReviews, getReviews} from "../../store/review";
-import { Dispatch } from 'react';
 import LoginFormModal from '../LoginFormModal';
 import ConfirmationModal from './ConfirmationModal';
 import UnsuccessfulModal from './UnsuccessfulModal';

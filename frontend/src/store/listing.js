@@ -82,19 +82,15 @@ export const deleteListing = (listingId) => async (dispatch)=>{
   dispatch(fetchListings())
 };
 
-// not updating on the reducer to rerender the deleted listing. dispatchfetchListings() after remove is a hotfix
+
 const listingReducer = (state = [], action) => {
     switch(action.type){
         case REMOVE_LISTING:
             return {...state, listing: null}
         case RECEIVE_LISTING:
             return {...state, listing: action.payload}
-        
-            // return {...state, ...action.payload}
-            // return {...state, action.payload}
         case RECEIVE_LISTINGS:
             return {...state, ...action.payload}
-            // return {...state, ...action.payload}
         default:
             return state;
     }
