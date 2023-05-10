@@ -53,7 +53,7 @@ const MapContainer = ({listingArray, reviewsArray}) => {
   return (
       <>
      <LoadScript
-       googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
+       googleMapsApiKey={AIzaSyDw0iAzn2l3U2yAk70laf04TfH9Nc1KhDI}>
 
         <GoogleMap
           mapContainerStyle={mapStyles}
