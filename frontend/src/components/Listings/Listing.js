@@ -24,6 +24,7 @@ const Listing = ({listingItem}) => {
         }
     }
 
+
     useEffect(()=>{
         dispatch(fetchReviews())
         dispatch(fetchListings())

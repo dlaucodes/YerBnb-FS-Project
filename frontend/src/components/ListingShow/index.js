@@ -71,11 +71,6 @@ const ListingShow = (props) => {
          dispatch(fetchReservations())
     }, [])
 
-    // dispatch, id
-
-    
-
-
  
     if(listings[0]){
         const listing = listings[0][listingId]
@@ -167,9 +162,6 @@ const ListingShow = (props) => {
             }
             </div>
         </div>
-
-        {/* <div className="listing-divider">
-        </div> */}
         
         <div className="listing-descriptions">
             <div className="listing-info-left">
@@ -320,7 +312,7 @@ const ListingShow = (props) => {
             </div>
             
             <div>
-                {showLoginModal && <LoginFormModal setShowLoginModal={setShowLoginModal}/>}
+                {showLoginModal && (<LoginFormModal setShowLoginModal={setShowLoginModal}/>)}
             </div>
             <div>
                 

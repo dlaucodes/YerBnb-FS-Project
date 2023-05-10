@@ -114,7 +114,6 @@ const ListForm = ({setShowListFormModal}) =>{
         
         setErrors([]);
         
-        // && \
         return dispatch(createListing(formData)).then(()=>setShowListFormModal(false)).catch(
           async(res)=>{
             let data;
