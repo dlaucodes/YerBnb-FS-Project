@@ -3,12 +3,16 @@ import {useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import { updateListing } from "../../store/listing";
+import { getListings, updateListing } from "../../store/listing";
 import { useParams } from "react-router-dom";
+
 
 const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const dispatch = useDispatch();
-    const [title, setTitle] = useState ("")
+    const listings = useSelector(state=>getListings(state))
+    const listId = listingId
+    const listing = listings[0][listId]
+    const [title, setTitle] = useState (listing.title)
     const [photoFile, setPhotoFile] = useState(null);
     const [photoFile2, setPhotoFile2] = useState (null);
     const [photoFile3, setPhotoFile3] = useState (null);
@@ -20,21 +24,27 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [photoUrl4, setPhotoUrl4] = useState(null);
     const [photoUrl5, setPhotoUrl5] = useState(null);
     const [files, setFiles] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState(listing.price);
+    const [description, setDescription] = useState(listing.description);
     const [location, setLocation] = useState("");
-    const [lat, setLat] = useState("");
-    const [lng, setLng] = useState("");
-    const [city, setCity] = useState("");
-    const [guest, setGuest] = useState("");
-    const [bed, setBed] = useState("")
-    const [bath, setBath] = useState("")
-    const [bedroom, setBedroom] = useState("")
-    const [pet, setPet] = useState(false)
-    const [wifi, setWifi] = useState(false)
-    const [kitchen, setKitchen] = useState(false)
-    const [state, setState] = useState("")
+    const [lat, setLat] = useState(listing.lat);
+    const [lng, setLng] = useState(listing.lng);
+    const [city, setCity] = useState(listing.city);
+    const [guest, setGuest] = useState(listing.guests);
+    const [bed, setBed] = useState(listing.beds)
+    const [bath, setBath] = useState(listing.baths)
+    const [bedroom, setBedroom] = useState(listing.bedrooms)
+    const [pet, setPet] = useState(listing.petsAllowed)
+    const [wifi, setWifi] = useState(listing.wifi)
+    const [kitchen, setKitchen] = useState(listing.kitchen)
+    const [state, setState] = useState(listing.state)
     const owner = useSelector(({session}) => session.user);
+    
+    console.log(listing)
+    console.log(listId)
+    console.log(city)
+    console.log(state)
+    console.log(bedroom)
     
     const handleCity = (e)=>{
       const selectedCity = e.target.value;
@@ -131,6 +141,10 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
         for (let i = 0; i < currentFiles.length; i++) {
         filesList.push(currentFiles[i]);
     }
+    if (currentFiles.length > 5){
+          alert("please select max 5 files")
+          e.preventDefault();
+        }
         setFiles(filesList);
         if (file) {
       const fileReader = new FileReader();
@@ -194,7 +208,8 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                 <input type="text"
                     className="list-form-title"
                     value={title}
-                    placeholder="Title"
+                    placeholder={listing.title}
+                    maxLength="50"
                     onChange={e => setTitle(e.target.value)}/>
                     <label htmlFor="listing-title"></label>
 
@@ -204,7 +219,8 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                 <input type="float"
                     className="list-price"
                     value={price}
-                    placeholder="Price"
+                    placeholder={listing.price}
+                    maxLength="10"
                     onChange={e => setPrice(e.target.value)}/>
                 <div className="city-select">
                  <select
@@ -247,7 +263,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                 className="state-input"
                 onChange={(e) => setState(e.target.value)}
                 required>
-                  <option disabled value="" className="greyed">State</option>
+                  <option  value={listing.state} className="greyed">{listing.state}</option>
                   <option value="New Jersey">NJ</option>
                   <option value="New York">NY</option>
                   
@@ -286,7 +302,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                   onChange={(e) => setBedroom(e.target.value)}
                   required
                 >
-                  <option value="" disabled selected>bedrooms</option>
+                  <option value="" selected>bedrooms</option>
                   <option value="1">1 bedroom</option>
                   <option value="2">2 bedrooms</option>
                   <option value="3">3 bedrooms</option>
@@ -365,19 +381,27 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
 
               </div>
                 <div className="form-description-container">
-                 <input type="text"
+                 <textarea type="textarea"
                     className="list-description"
                     value={description}
-                    placeholder="Description"
+                    placeholder={listing.description}
+                    maxLength="700"
                     onChange={e => setDescription(e.target.value)}/>
-                    <label htmlFor="listing-title"></label>
+    
                 </div>
 
                   
 
               <div className="list-form-file">
                 <label className="custom-file-upload">
-                <input type="file" id="file-upload" name="file" onChange=     {handleFile} accept="image" multiple/>
+                <input 
+                type="file" 
+                id="file-upload" 
+                name="file" 
+                onChange=     {handleFile} 
+                accept="image" 
+                multiple
+                />
                 Select photos
                 </label>
                       <div className="file-num">

@@ -28,7 +28,7 @@ export const createListing = (formData) => async (dispatch) => {
     });
     const data = await res.json();
     dispatch(receiveListing(data));
-    dispatch(receiveListings());
+    dispatch(receiveListings(data));
     return res;
 }
 

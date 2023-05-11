@@ -3,7 +3,7 @@ import {useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import { createListing } from "../../store/listing";
+import listingReducer, { createListing } from "../../store/listing";
 
 const ListForm = ({setShowListFormModal}) =>{
     const dispatch = useDispatch();
@@ -129,8 +129,10 @@ const ListForm = ({setShowListFormModal}) =>{
         
     }
     
+ 
     
     const handleFile = e =>{
+         
         const file = e.currentTarget.files[0];
         const file2 = e.currentTarget.files[1];
         const file3 = e.currentTarget.files[2];
@@ -138,9 +140,14 @@ const ListForm = ({setShowListFormModal}) =>{
         const file5 = e.currentTarget.files[4];
         const currentFiles = e.currentTarget.files;
         const filesList = [];
+
         for (let i = 0; i < currentFiles.length; i++) {
         filesList.push(currentFiles[i]);
     }
+    if (currentFiles.length > 5){
+          alert("please select max 5 files")
+          e.preventDefault();
+        }
         setFiles(filesList);
         if (file) {
       const fileReader = new FileReader();
@@ -206,6 +213,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     value={title}
                     placeholder="Title"
                     onChange={e => setTitle(e.target.value)}
+                    maxLength="50"
                     required/>
                     <label htmlFor="listing-title"></label>
 
@@ -217,6 +225,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     value={price}
                     placeholder="Price"
                     onChange={e => setPrice(e.target.value)}
+                    maxLength="5"
                     required/>
                 <div className="city-select">
                  <select
@@ -382,13 +391,16 @@ const ListForm = ({setShowListFormModal}) =>{
 
               </div>
                 <div className="form-description-container">
-                 <input type="text"
+                 <textarea type="textarea"
                     className="list-description"
+                    rows="5"
+                    cols="33"
                     value={description}
                     placeholder="Description"
+                    maxLength="700"
                     onChange={e => setDescription(e.target.value)}
                     required />
-                    <label htmlFor="listing-title"></label>
+                  
                 </div>
 
                   
@@ -402,7 +414,7 @@ const ListForm = ({setShowListFormModal}) =>{
                 onChange= {handleFile} 
                 accept="image" 
                 multiple
-                required/>
+                />
                 Select photos
                 </label>
                       <div className="file-num">
