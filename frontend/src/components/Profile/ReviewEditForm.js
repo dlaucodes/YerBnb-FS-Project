@@ -3,23 +3,27 @@ import {useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { Modal } from '../../context/modal';
-import {createReview, updateReview} from "../../store/review";
+import {createReview, getReviews, updateReview} from "../../store/review";
 import { useParams } from 'react-router-dom';
 import { getListings } from '../../store/listing';
 
 
 const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEditModal})=>{
     const dispatch = useDispatch()
+    const reviews = useSelector(state=>getReviews(state))
+    const review = reviews[0][reviewId]
     const users = useSelector(state=>state.user.users)
     const currentUser = useSelector(state=>state.session.user)
     const owner = Object.values(users).find(user=>user.id === currentUser.id)
-    const [rating, setRating] = useState(5)
-    const [body, setBody] = useState("")
+    const [rating, setRating] = useState(review.rating)
+    const [body, setBody] = useState(review.body)
     const [ownerId, setOwnerId] = useState(owner.id)
     const [ownerName, setOwnerName] = useState(owner.firstName)
     const [ownerPic, setOwnerPic] = useState(owner.photoUrl)
     const [hover, setHover] = useState(0)
     const listings = useSelector(state=> getListings(state))
+
+    console.log(review)
 
 
     const handleSubmit = async e =>{
@@ -36,6 +40,8 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
         dispatch(updateReview(formData, reviewId));
         setShowReviewEditModal(false);
     }
+
+    console.log(reviews)
 
     const closeModal = () =>{
         setShowReviewEditModal(false)
