@@ -385,7 +385,7 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
                     className="list-description"
                     value={description}
                     placeholder={listing.description}
-                    maxLength="700"
+                    maxLength="1000"
                     onChange={e => setDescription(e.target.value)}/>
     
                 </div>

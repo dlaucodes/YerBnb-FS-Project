@@ -23,7 +23,6 @@ const ReviewEditForm = ({reviewId, reviewPic, reviewListingId, setShowReviewEdit
     const [hover, setHover] = useState(0)
     const listings = useSelector(state=> getListings(state))
 
-    console.log(review)
 
 
     const handleSubmit = async e =>{

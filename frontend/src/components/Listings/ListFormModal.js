@@ -397,7 +397,7 @@ const ListForm = ({setShowListFormModal}) =>{
                     cols="33"
                     value={description}
                     placeholder="Description"
-                    maxLength="700"
+                    maxLength="1000"
                     onChange={e => setDescription(e.target.value)}
                     required />
                   

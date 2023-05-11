@@ -202,6 +202,16 @@ const ProfileDetails = () => {
                                                 </div>
                                             </div>
                                             <div className="review-card-right">
+                                                <div className="star-rating">
+                                                {[...Array(review.rating)].map((star, i) => {
+                                                    i += 1;
+                                                    return (
+                                                
+                                                        <span className="star">&#9733;</span>
+                                                   
+                                                    );
+                                                    })}
+                                                </div>
                                                  <div className="profile-review">
                                                     {review.body}
                                                 </div>
