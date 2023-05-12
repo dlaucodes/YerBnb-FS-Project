@@ -136,7 +136,7 @@ return (
                 <button id="drop-dev" onClick={()=>{
                   setShowDevModal(true)
                   closeMenu()
-                }}>Developer</button>
+                }}>Meet the Developer</button>
               </div>
         </div>
       )}

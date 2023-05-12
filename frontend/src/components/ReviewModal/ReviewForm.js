@@ -82,6 +82,7 @@ const ReviewForm = ({setShowReviewFormModal})=>{
                         type="text-area"
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
+                        maxLength="800"
                         required
                     />
             </div>

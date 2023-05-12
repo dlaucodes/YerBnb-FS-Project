@@ -26,7 +26,6 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [files, setFiles] = useState("");
     const [price, setPrice] = useState(listing.price);
     const [description, setDescription] = useState(listing.description);
-    const [location, setLocation] = useState("");
     const [lat, setLat] = useState(listing.lat);
     const [lng, setLng] = useState(listing.lng);
     const [city, setCity] = useState(listing.city);
@@ -39,12 +38,6 @@ const ListingEditForm = ({listingId, setShowListingEditModal}) =>{
     const [kitchen, setKitchen] = useState(listing.kitchen)
     const [state, setState] = useState(listing.state)
     const owner = useSelector(({session}) => session.user);
-    
-    console.log(listing)
-    console.log(listId)
-    console.log(city)
-    console.log(state)
-    console.log(bedroom)
     
     const handleCity = (e)=>{
       const selectedCity = e.target.value;

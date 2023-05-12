@@ -14,23 +14,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
     width: 25%;
-    
+    gap: 5px;
+    /* border: 1px solid red; */
 }
 
 
 .dev-icon img {
+    display: flex;
     width: 40px;
-    height: auto;
+    
 }
 
 .dev-icon:hover{
     background-color: rgb(238, 238, 238);
     border-radius: 50%;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    height: 70px;
-    width: 70px;
+    height: 77%;
+    width: 25%;
 }
 
 

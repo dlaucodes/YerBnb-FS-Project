@@ -11,22 +11,25 @@ const Dev = ({setShowDevModal}) =>{
     return (
         <>
         <div className="dev-container">
-            
-                    <div className="dev-icon">
-                        <a href="mailto: dlaucodes@gmail.com">
-                        <img src={emaillogo} alt="gmaillogo"/></a>
-                    </div>
-                    <div className="dev-icon"><a href="https://github.com/dlaucodes/" target="_blank" rel="noopener noreferrer">
-                        <img src={gitlogo} alt="githublogo"/></a>
-                    </div>      
                     
-                    <div className="dev-icon"><a href="https://www.linkedin.com/in/dlaucodes/" target="_blank" rel="noopener noreferrer">
-                        <img src={linkedinlogo} alt="linkedinlogo"/></a>
-                    </div>
+                    <a className="dev-icon" href="mailto: dlaucodes@gmail.com"> 
+                        <img src={emaillogo} alt="gmaillogo"/>
+                    </a>
+
+                    <a className="dev-icon" href="https://github.com/dlaucodes/" target="_blank" rel="noopener noreferrer">
+                        <img src={gitlogo} alt="githublogo"/>
+                    </a>
+                         
                     
-                    <div className="dev-icon"><a href="https://angel.co/u/chun-k-lau" target="_blank" rel="noopener noreferrer">
-                        <img src={wellfoundlogo} alt="wellfoundlogo"/></a>
-                    </div>
+                    <a className="dev-icon" href="https://www.linkedin.com/in/dlaucodes/" target="_blank" rel="noopener noreferrer">
+                        <img src={linkedinlogo} alt="linkedinlogo"/>
+                    </a>
+                    
+                    
+                    <a className="dev-icon" href="https://angel.co/u/chun-k-lau" target="_blank" rel="noopener noreferrer">
+                        <img src={wellfoundlogo} alt="wellfoundlogo"/>
+                    </a>
+                    
                     <div></div>
 
             
