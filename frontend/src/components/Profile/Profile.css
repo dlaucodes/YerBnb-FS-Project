@@ -580,3 +580,11 @@ label {
 
     }
 }
+
+@media (max-width: 400px) {
+    .profile-container {
+        width: 100%;
+        zoom: 60%;
+
+    }
+}

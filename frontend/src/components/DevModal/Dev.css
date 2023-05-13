@@ -36,5 +36,12 @@
     width: 25%;
 }
 
+@media (max-width: 515px) {
+    .dev-container {
+
+
+        zoom: 80%;
+    }
+}
 
 
