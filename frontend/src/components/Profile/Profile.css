@@ -565,3 +565,18 @@ label {
     height: 25px;
 }
 
+@media (max-width: 930px) {
+    .profile-container {
+        width: 100%;
+        zoom: 95%;
+
+    }
+}
+
+@media (max-width: 610px) {
+    .profile-container {
+        width: 100%;
+        zoom: 80%;
+
+    }
+}

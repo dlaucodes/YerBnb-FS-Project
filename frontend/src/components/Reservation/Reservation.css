@@ -356,10 +356,10 @@
     /* border: 1px solid red; */
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
     .reservation-container {
         
-        width: 100%;
-        zoom: 50%;
+        
+        zoom: 80%;
     }
 }

@@ -118,7 +118,7 @@
     /* border: 1px solid blue; */
 }
 
-@media (max-width: 390px) {
+@media (max-width: 658px) {
     .listing-page {
         margin-top: 80px;
         width: 100%;

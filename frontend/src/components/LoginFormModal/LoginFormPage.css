@@ -297,8 +297,8 @@
     }
 }
 
-@media (max-width: 600px) {
-    .signup {
+@media (max-width: 610px) {
+    .login {
         width: 100%;
         zoom: 60%;
     }
