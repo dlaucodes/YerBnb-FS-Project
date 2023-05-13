@@ -410,4 +410,8 @@
 }
 
 
-
+@media (max-width: 390px) {
+   #root {
+        width: 90.5vw;
+    }
+}
