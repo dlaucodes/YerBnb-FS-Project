@@ -297,6 +297,13 @@
     }
 }
 
+@media (max-width: 600px) {
+    .signup {
+        width: 100%;
+        zoom: 60%;
+    }
+}
+
 /* .overlay{
     background-color: yellow;
     width: 100%;

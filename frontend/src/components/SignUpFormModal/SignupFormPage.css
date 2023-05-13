@@ -289,3 +289,11 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 600px) {
+    .signup {
+        width: 100%;
+        zoom: 60%;
+    }
+}
+

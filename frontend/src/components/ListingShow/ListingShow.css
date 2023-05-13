@@ -410,18 +410,20 @@
 }
 
 
-@media (min-width: 390px) {
-    .listing-template{
+
+
+@media (max-width: 530px) {
+    .listing-template {
         margin-top: 180px;
         width: 100%;
         zoom: 50%;
     }
+
+   
 }
 
-@media (min-width: 375px) {
-    .listing-template {
-        margin-top: 180px;
-        width: 100%;
+@media (max-width: 520px){
+    .title-container {
         zoom: 50%;
     }
 }
