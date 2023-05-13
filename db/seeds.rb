@@ -193,21 +193,31 @@ demo_listing8.photos.attach(io: demo_photo3, filename: 'wh3.webp')
 demo_photo4 = File.open("app/assets/images/Weehawken/wh4.webp")
 demo_listing8.photos.attach(io: demo_photo4, filename: 'wh4.webp')
 
-#9
-demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
+#9- art
+demo_listing1 = Listing.create!(price: "118", title: "Artist 1BR with exposed brick, 30 mins to NYC", description: 
 
-"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5, bedrooms: 2, beds: 3, baths: 2, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
+"Enjoy yourself in this industrial feel, exposed brick apartment. The apartment features an open-concept interior and stylish furnishings
 
-demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
-demo_photo1 = File.open("app/assets/images/CityCabin/citycabin1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'citycabin1.webp')
-demo_photo2 = File.open("app/assets/images/CityCabin/citycabin2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'citycabin2.webp')
-demo_photo3 = File.open("app/assets/images/CityCabin/citycabin3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'citycabin3.webp')
-demo_photo4 = File.open("app/assets/images/CityCabin/citycabin4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
+Features:
+-50 inch TV with Netflix
+-renovated kitchen with quartz countertop, dishwasher, pots & pans
+-queen size bed
+-modern bathroom
+-fast internet
+-late check in
+-access to NYC 24/7 via PATH train in ~30 mins
+", owner_id: "3", lng: -74.03965, lat: 40.71520, guests: 3, bedrooms: 1, beds: 1, baths: 1, city: "Jersey City", wifi: true, kitchen: true, pets_allowed: false, state: "New Jersey")
+
+demo_photomain = File.open("app/assets/images/Art1/a0.webp")
+demo_listing1.photos.attach(io: demo_photomain, filename: 'a0.webp')
+demo_photo1 = File.open("app/assets/images/Art1/a1.webp")
+demo_listing1.photos.attach(io: demo_photo1, filename: 'a1.webp')
+demo_photo2 = File.open("app/assets/images/Art1/a2.webp")
+demo_listing1.photos.attach(io: demo_photo2, filename: 'a2.webp')
+demo_photo3 = File.open("app/assets/images/Art1/a3.webp")
+demo_listing1.photos.attach(io: demo_photo3, filename: 'a3.webp')
+demo_photo4 = File.open("app/assets/images/Art1/a4.webp")
+demo_listing1.photos.attach(io: demo_photo4, filename: 'a4.webp')
 
 #10
 demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
