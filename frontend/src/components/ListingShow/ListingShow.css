@@ -410,8 +410,18 @@
 }
 
 
-@media (max-width: 390px) {
-   #root {
-        width: 90.5vw;
+@media (min-width: 390px) {
+    .listing-template{
+        margin-top: 180px;
+        width: 100%;
+        zoom: 50%;
+    }
+}
+
+@media (min-width: 375px) {
+    .listing-template {
+        margin-top: 180px;
+        width: 100%;
+        zoom: 50%;
     }
 }
