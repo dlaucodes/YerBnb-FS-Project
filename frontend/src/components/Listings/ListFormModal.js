@@ -298,6 +298,9 @@ const ListForm = ({setShowListFormModal}) =>{
                     <option value="12">12 guests</option>
                     <option value="13">13 guests</option>
                     <option value="14">14 guests</option>
+                    <option value="15">15 guests</option>
+                    <option value="16">16 guests</option>
+                    <option value="17">17 guests</option>
                   </select>
               </div> 
 
