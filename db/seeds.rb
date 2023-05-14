@@ -164,23 +164,23 @@ demo_listing6.photos.attach(io: demo_photo4, filename: 'pv4.webp')
 #7- Private Garden UES-2
 demo_listing7 = Listing.create!(price: "210", title: "LUXURY APT w PRIVATE GARDEN NYC UES", description: 
 
-"This spacious, 600sq. ft. 1 bedroom apt has a large living room and a separate full kitchen and a large bedroom with a queen size bed. Enjoy your own private entrance and direct access to an additional 350 sq ft private statue garden with plenty of room for outdoor entertaining. The apartment is on the ground level of a historically landmarked townhouse, nestled in the center of a row of brownstones, located on a beautiful tree-lined block of Manhattan's upper east side.", owner_id: "2", lng: -73.95482, lat: 40.77935,, guests: 3, bedrooms: 1, beds: 1, baths: 1, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
+"This spacious, 600sq. ft. 1 bedroom apt has a large living room and a separate full kitchen and a large bedroom with a queen size bed. Enjoy your own private entrance and direct access to an additional 350 sq ft private statue garden with plenty of room for outdoor entertaining. The apartment is on the ground level of a historically landmarked townhouse, nestled in the center of a row of brownstones, located on a beautiful tree-lined block of Manhattan's upper east side.", owner_id: "2", lng: -73.95482, lat: 40.77935, guests: 3, bedrooms: 1, beds: 1, baths: 1, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/UES/ues0.webp")
 demo_listing7.photos.attach(io: demo_photomain, filename: 'ues0.webp')
-demo_photo1 = File.open("app/assets/images/UES/webp01.webp")
+demo_photo1 = File.open("app/assets/images/UES/ues01.webp")
 demo_listing7.photos.attach(io: demo_photo1, filename: 'ues01.webp')
-demo_photo2 = File.open("app/assets/images/UES/webp02.webp")
+demo_photo2 = File.open("app/assets/images/UES/ues02.webp")
 demo_listing7.photos.attach(io: demo_photo2, filename: 'ues02.webp')
-demo_photo3 = File.open("app/assets/images/UES/webp03.webp")
+demo_photo3 = File.open("app/assets/images/UES/ues03.webp")
 demo_listing7.photos.attach(io: demo_photo3, filename: 'ues03.webp')
-demo_photo4 = File.open("app/assets/images/UES/webp04.webp")
+demo_photo4 = File.open("app/assets/images/UES/ues04.webp")
 demo_listing7.photos.attach(io: demo_photo4, filename: 'ues04.webp')
 
 #8-weehawken-2
 demo_listing8 = Listing.create!(price: "426", title: "Interior Designer's Abode - Minutes to Manhatttan", description: 
 
-"Views Galore! I welcome everyone to our NYC getaway, or better known as the "house with the blue door." As soon as you step through the Morrocan inspired door, you are overwhelmed with the spectacular views of the one and only Manhattan Skyline. The sunroom the perfect place to snuggle up with a book and some tea, although I warn you, the views may be distracting. State of the art kitchen, with breathtaking white marble floors. Enjoy the wood burning fireplace, as you dine with friends/family.", owner_id: "2", lng: -74.01664, lat: 40.77249, guests: 7, bedrooms: 3, beds: 3, baths: 2, city: "Weehawken", wifi: true, kitchen: true, pets_allowed: true, state: "New Jersey")
+'Views Galore! I welcome everyone to our NYC getaway, or better known as the "house with the blue door." As soon as you step through the Morrocan inspired door, you are overwhelmed with the spectacular views of the one and only Manhattan Skyline. The sunroom the perfect place to snuggle up with a book and some tea, although I warn you, the views may be distracting. State of the art kitchen, with breathtaking white marble floors. Enjoy the wood burning fireplace, as you dine with friends/family.', owner_id: "2", lng: -74.01664, lat: 40.77249, guests: 7, bedrooms: 3, beds: 3, baths: 2, city: "Weehawken", wifi: true, kitchen: true, pets_allowed: true, state: "New Jersey")
 
 demo_photomain = File.open("app/assets/images/Weehawken/wh0.webp")
 demo_listing8.photos.attach(io: demo_photomain, filename: 'wh0.webp')
@@ -193,8 +193,8 @@ demo_listing8.photos.attach(io: demo_photo3, filename: 'wh3.webp')
 demo_photo4 = File.open("app/assets/images/Weehawken/wh4.webp")
 demo_listing8.photos.attach(io: demo_photo4, filename: 'wh4.webp')
 
-#9- art
-demo_listing1 = Listing.create!(price: "118", title: "Artist 1BR with exposed brick, 30 mins to NYC", description: 
+#9- art-3
+demo_listing9 = Listing.create!(price: "118", title: "Artist 1BR with exposed brick, 30 mins to NYC", description: 
 
 "Enjoy yourself in this industrial feel, exposed brick apartment. The apartment features an open-concept interior and stylish furnishings
 
@@ -209,38 +209,41 @@ Features:
 ", owner_id: "3", lng: -74.03965, lat: 40.71520, guests: 3, bedrooms: 1, beds: 1, baths: 1, city: "Jersey City", wifi: true, kitchen: true, pets_allowed: false, state: "New Jersey")
 
 demo_photomain = File.open("app/assets/images/Art1/a0.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'a0.webp')
+demo_listing9.photos.attach(io: demo_photomain, filename: 'a0.webp')
 demo_photo1 = File.open("app/assets/images/Art1/a1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'a1.webp')
+demo_listing9.photos.attach(io: demo_photo1, filename: 'a1.webp')
 demo_photo2 = File.open("app/assets/images/Art1/a2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'a2.webp')
+demo_listing9.photos.attach(io: demo_photo2, filename: 'a2.webp')
 demo_photo3 = File.open("app/assets/images/Art1/a3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'a3.webp')
+demo_listing9.photos.attach(io: demo_photo3, filename: 'a3.webp')
 demo_photo4 = File.open("app/assets/images/Art1/a4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'a4.webp')
+demo_listing9.photos.attach(io: demo_photo4, filename: 'a4.webp')
 
-#10
-demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
+#10- bk apt -3
+demo_listing_10 = Listing.create!(price: "181", title: "Stylish Arty Apt in Brooklyn", description: 
+
+"*** IMPORTANT *** This property is associated to The Invisible Dog Art Center, a vibrant Arts Non for Profit Organization located just next door I have created 14 years ago. When you book my place, you also participate actively to the development and support of emerging artists: 100% of the rental fees goes to the artists.
+
+We took an extra care of cleaning due to the pandemic. Ask for details.
+No extra guests are allowed during your stay", owner_id: "3", lng: -73.994379, lat: 40.709808, guests: 2, bedrooms: 1, beds: 1, baths: 1, city: "Brooklyn", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
+
+demo_photomain = File.open("app/assets/images/BkApt/bka0.webp")
+demo_listing_10.photos.attach(io: demo_photomain, filename: 'bka0.webp')
+demo_photo1 = File.open("app/assets/images/BkApt/bka1.webp")
+demo_listing_10.photos.attach(io: demo_photo1, filename: 'bka1.webp')
+demo_photo2 = File.open("app/assets/images/BkApt/bka2.webp")
+demo_listing_10.photos.attach(io: demo_photo2, filename: 'bka2.webp')
+demo_photo3 = File.open("app/assets/images/BkApt/bka3.webp")
+demo_listing_10.photos.attach(io: demo_photo3, filename: 'bka3.webp')
+demo_photo4 = File.open("app/assets/images/BkApt/bka4.webp")
+demo_listing_10.photos.attach(io: demo_photo4, filename: 'bka4.webp')
+
+#11-4
+demo_listing_11 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
 
 "Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5, bedrooms: 2, beds: 3, baths: 2, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
-demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
-demo_photo1 = File.open("app/assets/images/CityCabin/citycabin1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'citycabin1.webp')
-demo_photo2 = File.open("app/assets/images/CityCabin/citycabin2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'citycabin2.webp')
-demo_photo3 = File.open("app/assets/images/CityCabin/citycabin3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'citycabin3.webp')
-demo_photo4 = File.open("app/assets/images/CityCabin/citycabin4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
-
-#11
-demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
-
-"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5, bedrooms: 2, beds: 3, baths: 2, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
-
-demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
+demo_photomain = File.open("app/assets/images/BkApt/bka0.webp")
 demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
 demo_photo1 = File.open("app/assets/images/CityCabin/citycabin1.webp")
 demo_listing1.photos.attach(io: demo_photo1, filename: 'citycabin1.webp')
