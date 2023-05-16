@@ -28,15 +28,18 @@ function NavBar() {
 
   return (
     <header className="site-header">
-      <div className="home_icon">
-        <NavLink exact to="/" className="nav-title"><img id="home-icon" src={logo}/>
-        </NavLink>
-      </div>
-      {/* <div className="search-bar">
-        <Search />
-      </div> */}
-      <div className="profile-button-container">
-        {sessionLinks}
+      <div className="header-inner">
+        <div className="home_icon">
+          <NavLink exact to="/" className="nav-title"><img id="home-icon" src={logo}/>
+          </NavLink>
+        </div>
+        {/* <div className="search-bar">
+          <Search />
+        </div> */}
+        <div className="profile-button-container">
+          {sessionLinks}
+        </div>
+
       </div>
       
             

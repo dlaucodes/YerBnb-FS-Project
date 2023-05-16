@@ -302,21 +302,7 @@ demo_listing1.photos.attach(io: demo_photo3, filename: 'citycabin3.webp')
 demo_photo4 = File.open("app/assets/images/CityCabin/citycabin4.webp")
 demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
 
-#15
-demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 
 
-"Spacious and cozy historical flat apartment. Has its own private entrance with 1000 sqft of space. Exposed wood beams with designer mid-century furniture throughout the apartment and a newly renovated kitchen. Enjoy easy walking distance to the LES, East Village and Tribeca and quiet block with great nightlife around the corner. Recently featured on GQ as one of the best rentals in the city!", owner_id: "6", lng: -73.994379, lat: 40.709808, guests: 5, bedrooms: 2, beds: 3, baths: 2, city: "New York", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
-
-demo_photomain = File.open("app/assets/images/CityCabin/citycabin0.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'citycabin0.webp')
-demo_photo1 = File.open("app/assets/images/CityCabin/citycabin1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'citycabin1.webp')
-demo_photo2 = File.open("app/assets/images/CityCabin/citycabin2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'citycabin2.webp')
-demo_photo3 = File.open("app/assets/images/CityCabin/citycabin3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'citycabin3.webp')
-demo_photo4 = File.open("app/assets/images/CityCabin/citycabin4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'citycabin4.webp')
 
 
 demo_review1 = Review.create!(rating: "4", user_id: "4", listing_id: "1", body: "Definitely a wonderful stay and well worth the featured Best NYC Yerbnbs!", reviewer_pic: "https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/citycabin0.webp", reviewer_name: "Tim")
