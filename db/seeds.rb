@@ -227,15 +227,15 @@ demo_listing_10 = Listing.create!(price: "181", title: "Stylish Arty Apt in Broo
 We took an extra care of cleaning due to the pandemic. Ask for details.
 No extra guests are allowed during your stay", owner_id: "3", lng: -73.994379, lat: 40.709808, guests: 2, bedrooms: 1, beds: 1, baths: 1, city: "Brooklyn", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
-demo_photomain = File.open("app/assets/images/Gstudio/gs0.webp")
+demo_photomain = File.open("app/assets/images/BkApt/bka0.webp")
 demo_listing_10.photos.attach(io: demo_photomain, filename: 'bka0.webp')
-demo_photo1 = File.open("app/assets/images/Gstudio/gs1.webp")
+demo_photo1 = File.open("app/assets/images/BkApt/bka1.webp")
 demo_listing_10.photos.attach(io: demo_photo1, filename: 'bka1.webp')
-demo_photo2 = File.open("app/assets/images/Gstudio/gs2.webp")
+demo_photo2 = File.open("app/assets/images/BkApt/bka2.webp")
 demo_listing_10.photos.attach(io: demo_photo2, filename: 'bka2.webp')
-demo_photo3 = File.open("app/assets/images/Gstudio/gs3.webp")
+demo_photo3 = File.open("app/assets/images/BkApt/bka3.webp")
 demo_listing_10.photos.attach(io: demo_photo3, filename: 'bka3.webp')
-demo_photo4 = File.open("app/assets/images/Gstudio/gs4.webp")
+demo_photo4 = File.open("app/assets/images/BkApt/bka4.webp")
 demo_listing_10.photos.attach(io: demo_photo4, filename: 'bka4.webp')
 
 #11-Garage Studio-4
@@ -244,15 +244,15 @@ demo_listing_11 = Listing.create!(price: "435", title: "Garage Studio - Unique D
 "Ever dream to live like an artist? Old Garage Studio might be the only such and true to life experience you could have. This is our fully equipped home. Our labor of love. Available only when we travel. We host art pieces from around the world. Some, even furniture, are available for sale. Please do ask. Cozy and immensely spacious. A home away from home. Inspiring to work and create. Ideal for a family, friends long weekend and/or longer stays. Continue to read our full story, we like stories.", owner_id: "4", lng: -73.95993, lat: 40.70670, guests: 6, bedrooms: 3, beds: 3, baths: 1, city: "Brooklyn", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Gstudio/gs0.webp")
-demo_listing1.photos.attach(io: demo_photomain, filename: 'gs0.webp')
+demo_listing_11.photos.attach(io: demo_photomain, filename: 'gs0.webp')
 demo_photo1 = File.open("app/assets/images/Gstudio/gs1.webp")
-demo_listing1.photos.attach(io: demo_photo1, filename: 'gs1.webp')
+demo_listing_11.photos.attach(io: demo_photo1, filename: 'gs1.webp')
 demo_photo2 = File.open("app/assets/images/Gstudio/gs2.webp")
-demo_listing1.photos.attach(io: demo_photo2, filename: 'gs2.webp')
+demo_listing_11.photos.attach(io: demo_photo2, filename: 'gs2.webp')
 demo_photo3 = File.open("app/assets/images/Gstudio/gs3.webp")
-demo_listing1.photos.attach(io: demo_photo3, filename: 'gs3.webp')
+demo_listing_11.photos.attach(io: demo_photo3, filename: 'gs3.webp')
 demo_photo4 = File.open("app/assets/images/Gstudio/gs4.webp")
-demo_listing1.photos.attach(io: demo_photo4, filename: 'gs4.webp')
+demo_listing_11.photos.attach(io: demo_photo4, filename: 'gs4.webp')
 
 #12
 demo_listing1 = Listing.create!(price: "320", title: "Cabin in the City (GQ featured Best NYC Yerbnbs)", description: 

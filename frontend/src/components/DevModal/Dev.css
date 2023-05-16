@@ -42,6 +42,18 @@
 
         zoom: 80%;
     }
+
+
+}
+
+@media (max-width: 390px) {
+    .dev-container {
+        
+        zoom: 60%;
+
+    }
+
+
 }
 
 
