@@ -40,20 +40,18 @@ const ListingIndex = () => {
         const filteredArray = showArray.filter((item) => {
         const lowercaseSearch = searchInput.toLowerCase();
         return (
-        searchInput === "" || // Show all items if searchInput is empty
+        searchInput === "" || 
         (item.city && item.city.toLowerCase().includes(lowercaseSearch)) ||
         (item.state && item.state.toLowerCase().includes(lowercaseSearch))
       );
     });
         
-       
-     
-    //     showArray is an array of objects that contain each listing's info
+    
         
         return (
             <>
             
-                <form className="search-bar">
+        <form className="search-bar">
             <input className="search-input"
             type="text"
             action="search"
