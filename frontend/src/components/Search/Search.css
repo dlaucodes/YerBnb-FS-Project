@@ -24,8 +24,15 @@
 
 .search-input{
     display: flex;
-    width: 60%;
+    width: 75%;
     margin-left: 20px;
+    outline: none;
+    height: 80%;
+}
+
+.search-bar input[type="text"]{
+    outline: none;
+    border: none;
 }
 
 .search-icon{

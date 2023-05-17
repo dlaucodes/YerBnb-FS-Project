@@ -16,7 +16,7 @@ const ListingIndex = () => {
     const [list, setList] = useState(null);
     const dispatch = useDispatch();
     const [searchInput, setSearchInput] = useState("")
-    
+    const loweredSearch = searchInput.toLowerCase()
     // console.log(search)
     
     useEffect(() => {
@@ -37,23 +37,17 @@ const ListingIndex = () => {
         const listings = Object.values(array.reverse())
         const listingsArray = Object.values(listings[0])
         const showArray = listingsArray.reverse()
-        const filteredArray = showArray
+        const filteredArray = showArray.filter((item) => {
+        const lowercaseSearch = searchInput.toLowerCase();
+        return (
+        searchInput === "" || // Show all items if searchInput is empty
+        (item.city && item.city.toLowerCase().includes(lowercaseSearch)) ||
+        (item.state && item.state.toLowerCase().includes(lowercaseSearch))
+      );
+    });
         
        
-        // .filter(item => (item.city).toLowerCase().includes(search))
-
-        
-    //     const showArray = showArray.filter((item) => {
-          
-    //     const lowercaseSearch = searchInput.toLowerCase();
-    //     const city = item.city ? item.city.toString() : "";
-      
-    //   return (
-    //     searchInput === "" || // Show all items if searchInput is empty
-    //     item.city.toLowerCase().includes(lowercaseSearch)
-        
-    //   );
-    // });
+     
     //     showArray is an array of objects that contain each listing's info
         
         return (
