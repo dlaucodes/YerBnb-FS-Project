@@ -37,3 +37,8 @@
     background-color: #ff0156;
     margin-right: 5px;
 }
+
+.hidden{
+    display: hidden;
+    overflow: hidden;
+}
