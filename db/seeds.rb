@@ -339,9 +339,37 @@ demo_review12 = Review.create!(rating: "5", user_id:"5", listing_id:"6", body:"T
 demo_review13  = Review.create!(rating: "5", user_id:"4", listing_id:"6", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/pv0.webp", reviewer_name:"Tim")
 
 
+demo_review14  = Review.create!(rating: "5", user_id:"4", listing_id:"7", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/ues0.webp", reviewer_name:"Tim")
 
+demo_review15 = Review.create!(rating: "5", user_id:"3", listing_id:"7", body:"Apartment had great views, clean, host was super communicative.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/ues0.webp", reviewer_name:"Larry")
 
+demo_review16  = Review.create!(rating: "5", user_id:"4", listing_id:"8", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/wh0.webp", reviewer_name:"Tim")
 
+demo_review17 = Review.create!(rating: "5", user_id:"3", listing_id:"8", body:"Apartment had great views, clean, host was super communicative.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/wh0.webp", reviewer_name:"Larry")
+
+demo_review18 = Review.create!(rating: "5", user_id:"5", listing_id:"9", body:"This place was amazing.  The park view, the convenience of being footsteps away from everything was well worth the price.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/a0.webp", reviewer_name:"Tommy")
+
+demo_review19  = Review.create!(rating: "4.5", user_id:"4", listing_id:"9", body:"Beautiful home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/a0.webp", reviewer_name:"Tim")
+
+demo_review20 = Review.create!(rating: "5", user_id:"5", listing_id:"10", body:"This place was amazing.  The park view, the convenience of being footsteps away from everything was well worth the price.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/td.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bka0.webp", reviewer_name:"Tommy")
+
+demo_review21  = Review.create!(rating: "4.5", user_id:"4", listing_id:"10", body:"Stylish home, beautiful view, would come back again.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/tc.jpeg", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/bka0.webp", reviewer_name:"Tim")
+
+demo_review22 = Review.create!(rating: "4", user_id:" 3", listing_id:"11", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/gs0.webp", reviewer_name:"Larry")
+
+demo_review23 = Review.create!(rating: "5", user_id:"2", listing_id:"11", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/gs0.webp", reviewer_name:"Mark")
+
+demo_review24 = Review.create!(rating: "4", user_id:" 3", listing_id:"12", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Larry")
+
+demo_review25 = Review.create!(rating: "5", user_id:"2", listing_id:"12", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", reviewer_name:"Mark")
+
+demo_review26 = Review.create!(rating: "4", user_id:" 3", listing_id:"13", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Larry")
+
+demo_review27 = Review.create!(rating: "5", user_id:"2", listing_id:"13", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", reviewer_name:"Mark")
+
+demo_review28 = Review.create!(rating: "5", user_id: "2", listing_id: "14", body: "The Loft was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/th0.webp", reviewer_name:"Mark")
+
+demo_review29 = Review.create!(rating: "5", user_id:"3", listing_id:"14", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/th0.webp", reviewer_name:"Larry")
 
 
 
