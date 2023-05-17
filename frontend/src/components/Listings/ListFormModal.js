@@ -132,7 +132,8 @@ const ListForm = ({setShowListFormModal}) =>{
             if(data?.errors) setErrors(data.errors);
             else if(data) setErrors([data]);
             else setErrors([res.statusText]);
-          }).then(history.push({pathname: `/`})).then(refresh, 20)
+          }).then(setShowListFormModal(false))
+          
         
     }
     

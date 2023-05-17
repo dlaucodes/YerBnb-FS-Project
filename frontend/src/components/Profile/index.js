@@ -61,9 +61,7 @@ const ProfileDetails = () => {
         setProfilePic(currentUser.photoUrl)
     },[listings.listing, currentUser.photoUrl]);
     
-    // dispatch(deleteListing())
-    // dispatch(deleteReview())
-    // dispatch(deleteReservation())
+
     
     const handleReservationDelete = (id)=>{
         dispatch(deleteReservation(id))

@@ -21,7 +21,7 @@ const ListingIndex = () => {
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, []);
+    }, [list]);
     
 
     useEffect(()=>{
