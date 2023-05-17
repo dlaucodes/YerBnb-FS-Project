@@ -72,7 +72,7 @@ const ListingShow = (props) => {
     }, [])
 
  
-    if(listings[0]){
+    if(listings.length > 0){
         const listing = listings[0][listingId]
         const ownerId = listing.ownerId;
         const owner = Object.values(users).find(user => user.id === ownerId);

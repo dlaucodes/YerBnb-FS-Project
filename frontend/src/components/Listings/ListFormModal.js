@@ -3,6 +3,7 @@ import {useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { useHistory } from 'react-router-dom';
 import listingReducer, { createListing } from "../../store/listing";
 
 const ListForm = ({setShowListFormModal}) =>{
@@ -34,7 +35,13 @@ const ListForm = ({setShowListFormModal}) =>{
     const [kitchen, setKitchen] = useState(false)
     const [state, setState] = useState("")
     const owner = useSelector(({session}) => session.user);
+    const history = useHistory();
+    const listings = useSelector(state => state.listing.listings)
 
+
+    const refresh = () => {
+        window.location.reload();
+    }
 
     const handleCity = (e)=>{
       const selectedCity = e.target.value;
@@ -111,10 +118,10 @@ const ListForm = ({setShowListFormModal}) =>{
 
             })
         }
-        
+
         setErrors([]);
         
-        return dispatch(createListing(formData)).then(()=>setShowListFormModal(false)).catch(
+        return dispatch(createListing(formData)).catch(
           async(res)=>{
             let data;
             try {
@@ -125,7 +132,7 @@ const ListForm = ({setShowListFormModal}) =>{
             if(data?.errors) setErrors(data.errors);
             else if(data) setErrors([data]);
             else setErrors([res.statusText]);
-          })
+          }).then(history.push({pathname: `/`})).then(refresh, 20)
         
     }
     
