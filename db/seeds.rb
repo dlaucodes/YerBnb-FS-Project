@@ -295,7 +295,7 @@ demo_listing_14 = Listing.create!(price: "633", title: "Award-winning Townhouse 
 "The Corner Townhouse is a spacious and modern oasis in the center of Williamsburg. Its beautiful award-winning design has been featured in Metropolis and Wallpaper* magazines. The refreshing design is coupled with luxury amenities and a private rooftop garden with views of the East River.
 
 Located in the heart of hip Williamsburg, the house is a sanctuary in the middle of what's happening.
-", owner_id: "5", lng: -73.96253, lat: 40.71783, guests: 6, bedrooms: 3, beds: 3, baths: 3.5, city: "Williamsburg", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
+", owner_id: "5", lng: -73.96253, lat: 40.71782, guests: 6, bedrooms: 3, beds: 3, baths: 3.5, city: "Williamsburg", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Townhouse/th0.webp")
 demo_listing_14.photos.attach(io: demo_photomain, filename: 'th0.webp')
