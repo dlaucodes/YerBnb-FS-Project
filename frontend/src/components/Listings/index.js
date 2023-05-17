@@ -57,7 +57,7 @@ const ListingIndex = () => {
             <input className="search-input"
             type="text"
             action="search"
-            placeholder="search" onChange={(e)=> setSearchInput(e.target.value)}>
+            placeholder="Search by Location" onChange={(e)=> setSearchInput(e.target.value)}>
                 
             </input>
             <div className='search-icon'>
