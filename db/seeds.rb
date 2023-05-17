@@ -180,7 +180,7 @@ demo_listing7.photos.attach(io: demo_photo4, filename: 'ues04.webp')
 #8-weehawken-2
 demo_listing8 = Listing.create!(price: "426", title: "Interior Designer's Abode - Minutes to Manhatttan", description: 
 
-'Views Galore! I welcome everyone to our NYC getaway, or better known as the "house with the blue door." As soon as you step through the Morrocan inspired door, you are overwhelmed with the spectacular views of the one and only Manhattan Skyline. The sunroom the perfect place to snuggle up with a book and some tea, although I warn you, the views may be distracting. State of the art kitchen, with breathtaking white marble floors. Enjoy the wood burning fireplace, as you dine with friends/family.', owner_id: "2", lng: -74.01664, lat: 40.77249, guests: 7, bedrooms: 3, beds: 3, baths: 2, city: "Weehawken", wifi: true, kitchen: true, pets_allowed: true, state: "New Jersey")
+'Views Galore! I welcome everyone to our NYC getaway, or better known as the "house with the blue door." As soon as you step through the Morrocan inspired door, you are overwhelmed with the spectacular views of the one and only Manhattan Skyline. The sunroom the perfect place to snuggle up with a book and some tea, although I warn you, the views may be distracting. State of the art kitchen, with breathtaking white marble floors. Enjoy the wood burning fireplace, as you dine with friends/family.', owner_id: "1", lng: -74.01664, lat: 40.77249, guests: 7, bedrooms: 3, beds: 3, baths: 2, city: "Weehawken", wifi: true, kitchen: true, pets_allowed: true, state: "New Jersey")
 
 demo_photomain = File.open("app/assets/images/Weehawken/wh0.webp")
 demo_listing8.photos.attach(io: demo_photomain, filename: 'wh0.webp')
@@ -295,7 +295,7 @@ demo_listing_14 = Listing.create!(price: "633", title: "Award-winning Townhouse 
 "The Corner Townhouse is a spacious and modern oasis in the center of Williamsburg. Its beautiful award-winning design has been featured in Metropolis and Wallpaper* magazines. The refreshing design is coupled with luxury amenities and a private rooftop garden with views of the East River.
 
 Located in the heart of hip Williamsburg, the house is a sanctuary in the middle of what's happening.
-", owner_id: "5", lng: -73.96253, lat: 40.71782, guests: 6, bedrooms: 3, beds: 3, baths: 3.5, city: "Williamsburg", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
+", owner_id: "1", lng: -73.96253, lat: 40.71782, guests: 6, bedrooms: 3, beds: 3, baths: 3.5, city: "Williamsburg", wifi: true, kitchen: true, pets_allowed: true, state: "New York")
 
 demo_photomain = File.open("app/assets/images/Townhouse/th0.webp")
 demo_listing_14.photos.attach(io: demo_photomain, filename: 'th0.webp')
@@ -361,15 +361,33 @@ demo_review23 = Review.create!(rating: "5", user_id:"2", listing_id:"11", body:"
 
 demo_review24 = Review.create!(rating: "4", user_id:" 3", listing_id:"12", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Larry")
 
-demo_review25 = Review.create!(rating: "5", user_id:"2", listing_id:"12", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", reviewer_name:"Mark")
+demo_review25 = Review.create!(rating: "5", user_id:"2", listing_id:"12", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Mark")
 
-demo_review26 = Review.create!(rating: "4", user_id:" 3", listing_id:"13", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Larry")
+demo_review26 = Review.create!(rating: "4", user_id:" 3", listing_id:"13", body:"Great views and clean.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", reviewer_name:"Larry")
 
 demo_review27 = Review.create!(rating: "5", user_id:"2", listing_id:"13", body:"Amazing views, convenient, well priced, lots of ammenities.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", reviewer_name:"Mark")
 
 demo_review28 = Review.create!(rating: "5", user_id: "2", listing_id: "14", body: "The Loft was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/fb.png", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/th0.webp", reviewer_name:"Mark")
 
 demo_review29 = Review.create!(rating: "5", user_id:"3", listing_id:"14", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/lp.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/th0.webp", reviewer_name:"Larry")
+
+demo_review28 = Review.create!(rating: "5", user_id: "1", listing_id: "11", body: "The Loft was well equipped and clean!  Would recommend to anyone who wanted to stay close to the heart of NYC.", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/gs0.webp", reviewer_name:"Demo")
+
+demo_review29 = Review.create!(rating: "5", user_id:"1", listing_id:"12", body: "Amazing YerBnB, I stayed with some friends over the weekend and it was super convenient!", reviewer_pic:"https://yerbnb-dev.s3.amazonaws.com/proftop.webp", listing_pic: "https://yerbnb-dev.s3.amazonaws.com/s0.webp", reviewer_name:"Demo")
+
+#-----------------------reservations------------------------------
+
+demo_res1 = Reservation.create!(end_date: "2023-05-17", guest_id:"1", guests:"3", listing_id:"13", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", listing_price:"444", listing_title: "Legal Airbnb Lovely Rare Garden Home w/ Loft#10303", start_date: "2023-05-15")
+
+demo_res1 = Reservation.create!(end_date: "2023-05-20", guest_id:"2", guests:"3", listing_id:"14", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/th0.webp", listing_price:"633", listing_title: "Award-winning Townhouse in Williamsburg", start_date: "2023-05-15")
+
+demo_res1 = Reservation.create!(end_date: "2023-04-17", guest_id:"3", guests:"3", listing_id:"5", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/hr0.webp", listing_price:"248", listing_title: "High floor Luxury Apartment with balcony", start_date: "2023-04-15")
+
+demo_res1 = Reservation.create!(end_date: "2023-05-17", guest_id:"4", guests:"3", listing_id:"4", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/l0.webp", listing_price:"495", listing_title: "A Bohemian style duplex with garden", start_date: "2023-05-15")
+
+demo_res1 = Reservation.create!(end_date: "2023-05-28", guest_id:"5", guests:"3", listing_id:"2", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/loft0.webp", listing_price:"1200", listing_title: "Massive 2000 sq ft loft with stunning 360 views", start_date: "2023-05-25")
+
+demo_res1 = Reservation.create!(end_date: "2023-05-23", guest_id:"6", guests:"3", listing_id:"12", listing_pic:"https://yerbnb-dev.s3.amazonaws.com/s0.webp", listing_price:"700", listing_title: "Sonder Battery Park | Studio Apartment", start_date: "2023-05-16")
 
 
 
