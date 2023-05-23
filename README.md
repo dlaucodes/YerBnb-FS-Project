@@ -21,7 +21,7 @@
 <p>
     User Auth Demo:
     <br>
-    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/yerbnbss1.png">
+    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
 </p>
 <ul>
     <li>Users are able to Sign Up
