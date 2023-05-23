@@ -13,7 +13,7 @@
 
 ## Features
 
-## Listings
+### Listings
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo1.gif">
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo2.gif">
@@ -35,7 +35,7 @@ Users can view and create Listings
     <li>Users can sign in as a Demo User
 </ul>
 
-## Reviews
+### Reviews
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/reviewdemo.gif">
 
@@ -43,7 +43,7 @@ Users can view and create Listings
     <li>When logged in, Users can leave reviews for a listing.
 </ul>
 
-## Reservations
+### Reservations
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/reservation.gif">
 
@@ -64,7 +64,9 @@ Users can view and create Listings
     <li>Users can update and delete their listings
 <ul>
 
-## Search
+<br>
+
+### Search
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/search.gif">
 
@@ -72,7 +74,7 @@ Users can view and create Listings
     <li>Users are able to filter listings based on city or state in real time
 <ul>
 
-## Technologies, Libraries, APIs
+### Technologies, Libraries, APIs
 
 <br>
 <ul>
