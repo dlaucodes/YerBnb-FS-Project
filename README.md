@@ -34,8 +34,9 @@
 
 Listing Demo:
 <br>
-<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo1.gif">
-<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo1.gif">
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo1.gif">
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo2.gif">
+
 </p>
 <p>
 Users can view and create Listings
@@ -43,7 +44,6 @@ Users can view and create Listings
 <br>
 
 <br>
-
 
 ## Technologies, Libraries, APIs
 
