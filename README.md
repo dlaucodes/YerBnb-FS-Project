@@ -13,6 +13,18 @@
 
 ## Features
 
+### User Auth
+
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
+
+<br>
+<ul>
+    <li>Users are able to Sign Up
+    <li>Users are able to Log in
+    <li>Users are able to Log out
+    <li>Users can sign in as a Demo User
+</ul>
+
 ### Listings
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo1.gif">
@@ -25,17 +37,7 @@
 
 <br>
 
-## User Auth
 
-<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
-
-<br>
-<ul>
-    <li>Users are able to Sign Up
-    <li>Users are able to Log in
-    <li>Users are able to Log out
-    <li>Users can sign in as a Demo User
-</ul>
 
 ### Reviews
 
