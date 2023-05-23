@@ -66,7 +66,7 @@ Users can view and create Listings
 
 ## Search
 
-<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/search.png">
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/search.gif">
 
 <ul>
     <li>Users are able to filter listings based on city or state in real time
