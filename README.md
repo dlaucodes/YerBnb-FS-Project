@@ -26,7 +26,7 @@ Users can view and create Listings
 
 ## User Auth
 
-    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
 
 <ul>
     <li>Users are able to Sign Up
@@ -36,6 +36,7 @@ Users can view and create Listings
 </ul>
 
 ## Reviews
+
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/reviewdemo.gif">
 
 <ul>
@@ -52,7 +53,7 @@ Users can view and create Listings
     <li>After a successful reservation, user is redirected to their profile page to view reservation confirmation
 </ul>
 
-## Profile Page
+## Profile
 
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/profile.png">
 
@@ -63,7 +64,13 @@ Users can view and create Listings
     <li>Users can update and delete their listings
 <ul>
 
+## Search
 
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/search.png">
+
+<ul>
+    <li>Users are able to filter listings based on city or state in real time
+<ul>
 
 ## Technologies, Libraries, APIs
 
