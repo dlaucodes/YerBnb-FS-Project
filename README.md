@@ -13,27 +13,8 @@
 
 ## Features
 
-<br>
+## Listings
 
-### User Auth
-
-<br>
-<p>
-    User Auth Demo:
-    <br>
-    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
-</p>
-<ul>
-    <li>Users are able to Sign Up
-    <li>Users are able to Log in
-    <li>Users are able to Log out
-    <li>Users can sign in as a Demo User
-</ul>
-
-### Listings
-
-Listing Demo:
-<br>
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo1.gif">
 <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/listingdemo2.gif">
 
@@ -43,7 +24,46 @@ Users can view and create Listings
 </p>
 <br>
 
-<br>
+## User Auth
+
+    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/userauth.gif">
+
+<ul>
+    <li>Users are able to Sign Up
+    <li>Users are able to Log in
+    <li>Users are able to Log out
+    <li>Users can sign in as a Demo User
+</ul>
+
+## Reviews
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/reviewdemo.gif">
+
+<ul>
+    <li>When logged in, Users can leave reviews for a listing.
+</ul>
+
+## Reservations
+
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/reservation.gif">
+
+<ul>
+    <li>Error handling for when no dates are selected for a reservation
+    <li>Message appears for users when a reservation is successful
+    <li>After a successful reservation, user is redirected to their profile page to view reservation confirmation
+</ul>
+
+## Profile Page
+
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/app/assets/images/profile.png">
+
+<ul>
+    <li>Users are able to update their profile picture
+    <li>Users are able to edit and delete their reviews
+    <li>Users can remove reservations
+    <li>Users can update and delete their listings
+<ul>
+
+
 
 ## Technologies, Libraries, APIs
 
@@ -66,11 +86,7 @@ Users can view and create Listings
 
 <br>
 <ul>
-    <li> Search Bar functionality
-    <li> Airbnb API
-    <li> Reserve a Listing
-    <li> Review a Listing
-    <li> View Map of Listing
+    <li> Airbnb API implementation
 </ul>
 <br>
 

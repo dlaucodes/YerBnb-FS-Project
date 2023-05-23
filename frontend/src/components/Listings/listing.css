@@ -13,12 +13,6 @@
     /* border: 1px solid green;   */
 }
 
-/* .listing-filter{
-    height: 50px;
-    width: 100%;
-    border: 1px solid red;
-} */
-
 .listing-container{
     display: flex;
     flex-wrap: wrap;
