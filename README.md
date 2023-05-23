@@ -1,9 +1,9 @@
 # YERBNB
 
 ## Background
-
+    <img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/authdemo.gif">
 <p>
-    Yerbnb is a fullstack clone of AirBnb.  Users are able to view, book and review listings.
+    Yerbnb is a fullstack clone of AirBnb.  Users are able to experience hosting, updating, and removing listings.  Users are also able to make reservations and write reviews when signed in.  Users also have the option to update and delete their reservations and reviews in their personal profile page.  
     <br>
     Live site: https://yerbnb.herokuapp.com/
 </p>
