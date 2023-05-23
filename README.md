@@ -32,17 +32,18 @@
 
 ### Listings
 
+Listing Demo:
+<br>
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo1.gif">
+<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo1.gif">
+</p>
 <p>
 Users can view and create Listings
 </p>
 <br>
 
-Listing Demo:
 <br>
 
-<p>
-<img src="https://github.com/dlaucodes/YerBnb-FS-Project/blob/main/listingdemo.gif">
-</p>
 
 ## Technologies, Libraries, APIs
 
