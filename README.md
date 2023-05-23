@@ -46,11 +46,13 @@ Listing Demo:
 
 <br>
 <ul>
+    <li> JavaScript
+    <li> React.js
+    <li> Redux.js
     <li> Ruby on Rails
     <li> CSS/HTML
     <li> AWS
     <li> Google Maps API
-    <li> JavaScript
     <li> PostgreSQL
     <li> React/Redux
 </ul>
