@@ -32,8 +32,7 @@ function ProfileButton(props) {
     window.open(mailto)
   }
 
-  useEffect(() => {
-    if (!showMenu) return;
+  useEffect(() =>  { if (!showMenu) return;
     document.addEventListener('click', closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
