@@ -315,7 +315,7 @@ const ListingShow = (props) => {
                 {showLoginModal && (<LoginFormModal setShowLoginModal={setShowLoginModal}/>)}
             </div>
             <div>
-                
+                {showLoginModal && (<LoginFormModal setShowLoginModal={setShowLoginModal}/>)}
             </div>
         </div>
         
