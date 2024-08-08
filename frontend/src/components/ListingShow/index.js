@@ -68,10 +68,6 @@ const ListingShow = (props) => {
         }
     } 
 
-    // const showPic = (e) =>{
-    //     e.preventDefault();
-    //     setListingShowPicModal(true);
-    // }
 
     const handlePhotoClick = (photoUrl) =>{
         setSelectedPhoto(photoUrl)
