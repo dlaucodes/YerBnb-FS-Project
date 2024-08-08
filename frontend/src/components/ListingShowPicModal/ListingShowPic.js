@@ -1,10 +1,10 @@
-// import './listingshowpic.css';
+import './listingshowpic.css';
 import React from 'react';
 
 function ListingShowPic({ photoUrl }) {
     return (
-        <div className="unsuccess">
-            <img src={photoUrl} className="" alt=""/>
+        <div className="showpicmodal">
+            <img src={photoUrl} className="modalpic" alt=""/>
         </div>
     );
 }

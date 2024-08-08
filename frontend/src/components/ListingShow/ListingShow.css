@@ -111,6 +111,11 @@
     width: 100%;
 }
 
+.photo-container1 img:hover { 
+    filter: brightness(75%);
+    cursor: pointer;  
+}
+
 .right-photocontainer{
     display: flex;
     width: 50%;
@@ -125,7 +130,6 @@
     display: flex;
     overflow: hidden;
     border-top-right-radius: 12px; 
-     
 }
 
 .photo-container3 {
@@ -141,9 +145,23 @@
     margin-left: 8px;
 }
 
+.photo-container2 img:hover {
+    width: 50%;
+    margin-left: 8px;  
+    filter: brightness(75%);
+    cursor: pointer;  
+} 
+
 .photo-container3 img {
     width: 50%;
-    margin-left: 8px;
+    margin-left: 8px;    
+}
+
+.photo-container3 img:hover {
+    width: 50%;
+    margin-left: 8px;  
+    filter: brightness(75%);
+    cursor: pointer;  
 }
 /* 
 .listing-divider {
