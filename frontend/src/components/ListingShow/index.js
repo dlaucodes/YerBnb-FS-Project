@@ -10,6 +10,7 @@ import { getReviews, fetchReviews } from "../../store/review";
 import ReviewFormModal from '../ReviewModal';
 import LoginFormModal from '../LoginFormModal';
 import { fetchReservations } from "../../store/reservation";
+import ListingShowPicModal from "../ListingShowPicModal";
 
 
 
@@ -23,6 +24,8 @@ const ListingShow = (props) => {
     const reviews = useSelector(state=>getReviews(state))
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false)
+    const [listingShowPicModal, setListingShowPicModal] = useState(false)
+
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' })
     const reviewItems = []
@@ -63,6 +66,11 @@ const ListingShow = (props) => {
             setShowLoginModal(true);
         }
     } 
+
+    const showPic = (e) =>{
+        e.preventDefault();
+        setListingShowPicModal(true);
+    }
     
     useEffect(()=>{
         dispatch(fetchListings())
@@ -95,6 +103,7 @@ const ListingShow = (props) => {
                 <h1>{listing.title}</h1>
             </div>
             <div className="sub-title">
+            <button onClick={showPic}>test show pic</button>
 
             <div className="listing-review-subtitle">
                     <div className="listing-header-rating">
@@ -315,7 +324,7 @@ const ListingShow = (props) => {
                 {showLoginModal && (<LoginFormModal setShowLoginModal={setShowLoginModal}/>)}
             </div>
             <div>
-                
+                {listingShowPicModal && (<ListingShowPicModal setListingShowPicModal={setListingShowPicModal}/>)}
             </div>
         </div>
         

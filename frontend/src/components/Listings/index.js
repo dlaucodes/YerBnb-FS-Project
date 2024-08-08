@@ -17,7 +17,7 @@ const ListingIndex = () => {
     const dispatch = useDispatch();
     const [searchInput, setSearchInput] = useState("")
     const loweredSearch = searchInput.toLowerCase()
-    // console.log(search)
+ 
     
     useEffect(() => {
         const res = csrfFetch('/api/listings').then(res => {
@@ -25,12 +25,12 @@ const ListingIndex = () => {
         }).then(data => {
             setList((oldData) => ({...oldData, ...data}));
         });
-    }, [list]);
+    }, []);
     
     
     useEffect(()=>{
         dispatch(fetchReviews())   
-    }, [])
+    }, [list])
     
     if (list){
         const array = Object.values(list)
