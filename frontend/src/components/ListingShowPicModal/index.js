@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Modal } from '../../context/modal';
-import ListingShowPic from './ListingShowPic'
+import ListingShowPic from './ListingShowPic';
 
-function ListingShowPicModal({setListingShowPicModal}){
-    return(
-        <Modal onClose={()=> setListingShowPicModal(false)}>
-            <ListingShowPic ListingShowPicModal={setListingShowPicModal}/>
+function ListingShowPicModal({ setListingShowPicModal, photoUrl }) {
+    return (
+        <Modal onClose={() => setListingShowPicModal(false)}>
+            <ListingShowPic photoUrl={photoUrl} />
         </Modal>
     );
 }

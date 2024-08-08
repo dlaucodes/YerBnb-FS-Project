@@ -25,6 +25,7 @@ const ListingShow = (props) => {
     const [showReviewFormModal, setShowReviewFormModal] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [listingShowPicModal, setListingShowPicModal] = useState(false)
+    const [selectedPhoto, setSelectedPhoto] = useState(null)
 
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' })
@@ -67,9 +68,14 @@ const ListingShow = (props) => {
         }
     } 
 
-    const showPic = (e) =>{
-        e.preventDefault();
-        setListingShowPicModal(true);
+    // const showPic = (e) =>{
+    //     e.preventDefault();
+    //     setListingShowPicModal(true);
+    // }
+
+    const handlePhotoClick = (photoUrl) =>{
+        setSelectedPhoto(photoUrl)
+        setListingShowPicModal(true)
     }
     
     useEffect(()=>{
@@ -103,7 +109,7 @@ const ListingShow = (props) => {
                 <h1>{listing.title}</h1>
             </div>
             <div className="sub-title">
-            <button onClick={showPic}>test show pic</button>
+            {/* <button onClick={showPic}>test show pic</button> */}
 
             <div className="listing-review-subtitle">
                     <div className="listing-header-rating">
@@ -135,41 +141,49 @@ const ListingShow = (props) => {
             <div className="photo-container">
                 {listing.photoUrls.length > 0 && 
                 <div className="photo-container1">
-                    <img src={`${listing.photoUrls[0]}`} className="photo-main" alt=""/>
-                </div>} 
-            <div className="right-photocontainer">
-                {listing.photoUrls.length > 0 &&
-           
-            <div className="photo-container2" >
-            {listing.photoUrls.map((photo, i) => {
-                if ( i === 1 || i === 3){      
-                return (
-                          
-                <img src={`${photo}`} className="photo-small" alt="" key={i} />
-                
-                )
-                }     
-                     
-            })}
-            </div>
-            }
-
-            {listing.photoUrls.length > 0 &&
-
-            <div className="photo-container3" >
-            {listing.photoUrls.map((photo, i) => {
-                if ( i === 2 || i === 4){      
-                return (
-                            
-                <img src={`${photo}`} className="photo-small" alt="" key={i}/>
-               
-                )
-                }     
-                     
-            })}
-            </div>
-            }
-            </div>
+                    <img 
+                        src={`${listing.photoUrls[0]}`} 
+                        className="photo-main" 
+                        alt=""
+                        onClick={() => handlePhotoClick(listing.photoUrls[0])}
+                    />
+                </div>}
+                <div className="right-photocontainer">
+                    {listing.photoUrls.length > 0 &&
+                    <div className="photo-container2">
+                        {listing.photoUrls.map((photo, i) => {
+                            if (i === 1 || i === 3) {
+                                return (
+                                    <img 
+                                        src={`${photo}`} 
+                                        className="photo-small" 
+                                        alt="" 
+                                        key={i}
+                                        onClick={() => handlePhotoClick(photo)} 
+                                    />
+                                );
+                            }
+                            return null;
+                        })}
+                    </div>}
+                    {listing.photoUrls.length > 0 &&
+                    <div className="photo-container3">
+                        {listing.photoUrls.map((photo, i) => {
+                            if (i === 2 || i === 4) {
+                                return (
+                                    <img 
+                                        src={`${photo}`} 
+                                        className="photo-small" 
+                                        alt="" 
+                                        key={i}
+                                        onClick={() => handlePhotoClick(photo)}
+                                    />
+                                );
+                            }
+                            return null;
+                        })}
+                    </div>}
+                </div>
         </div>
         
         <div className="listing-descriptions">
@@ -324,7 +338,7 @@ const ListingShow = (props) => {
                 {showLoginModal && (<LoginFormModal setShowLoginModal={setShowLoginModal}/>)}
             </div>
             <div>
-                {listingShowPicModal && (<ListingShowPicModal setListingShowPicModal={setListingShowPicModal}/>)}
+                {listingShowPicModal && (<ListingShowPicModal photoUrl={selectedPhoto} setListingShowPicModal={setListingShowPicModal}/>)}
             </div>
         </div>
         

@@ -1,12 +1,12 @@
 // import './listingshowpic.css';
-import React, {useState} from "react";
+import React from 'react';
 
-function ListingShowPic({setListingShowPicModal}){
+function ListingShowPic({ photoUrl }) {
     return (
         <div className="unsuccess">
-            hello
+            <img src={photoUrl} className="" alt=""/>
         </div>
-    )
+    );
 }
 
 export default ListingShowPic;
