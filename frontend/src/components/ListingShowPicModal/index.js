@@ -4,8 +4,8 @@ import ListingShowPic from './ListingShowPic'
 
 function ListingShowPicModal({setListingShowPicModal}){
     return(
-        <Modal onClose={()=> ListingShowPicModal(false)}>
-            <ReviewForm ListingShowPicModal={setListingShowPicModal}/>
+        <Modal onClose={()=> setListingShowPicModal(false)}>
+            <ListingShowPic ListingShowPicModal={setListingShowPicModal}/>
         </Modal>
     );
 }
